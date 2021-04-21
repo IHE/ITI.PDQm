@@ -1,0 +1,5 @@
+@startuml
+agent "Patient Demographics\nConsumer" as Client
+agent "Patient Demographics\nSupplier" as Server
+Server -- Client : "Mobile Patient\nDemographics Query\n[ITI-78] ↓ "
+@enduml

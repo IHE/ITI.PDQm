@@ -1,6 +1,6 @@
-id: fooBar.ihe.net
-canonical: https://profiles.ihe.net/fooBar
-name: FooBar
+id: PDQm.ihe.net
+canonical: https://profiles.ihe.net/PDQm
+name: "Patient Demographics Query for Mobile"
 status: draft
 version: 0.1.0
 fhirVersion: 4.0.1
