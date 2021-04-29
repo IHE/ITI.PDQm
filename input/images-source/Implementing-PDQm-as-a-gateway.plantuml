@@ -1,0 +1,18 @@
+@startuml
+hide footbox
+
+Participant "Patient\nDemographics\nConsumer" as Client1
+box "PDQm Implementation grouped as a façade "
+Participant "Patient\n Demographics\nSupplier" as Server1
+Participant "Patient\n Demographics\nConsumer" as Client2
+endbox
+Participant "Patient\n Demographics\nSupplier" as Server2
+
+Client1 -> Server1: Mobile Patient Demographics\nQuery [ITI-78]
+activate Client1
+activate Server1
+Activate Client2
+Activate Server2
+Client2 -> Server2: Patient Demographics\nQuery [ITI-21]\nor Patient Demographics\nQuery for HL7v3 [ITI-47]
+
+@enduml

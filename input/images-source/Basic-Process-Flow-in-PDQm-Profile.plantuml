@@ -1,0 +1,13 @@
+@startuml
+hide footbox
+skinparam ParticipantPadding 50
+participant "Patient Demographics\nConsumer" as Client
+participant "Patient Demographics\nSupplier" as Server
+
+Client -> Server : Mobile Patient Demographics\nQuery [ITI-78]
+activate Server
+activate Client
+Server -> Client : Mobile Patient Demographics\nQuery Response
+deactivate Client
+deactivate Server
+@enduml

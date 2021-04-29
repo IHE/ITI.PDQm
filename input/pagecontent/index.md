@@ -1,30 +1,19 @@
+The Patient Demographics for Mobile (PDQm) Profile provides a transaction for mobile and lightweight browser-based applications to query a patient demographics supplier for a list of patients based on user-defined search criteria and retrieve a patient’s demographic information. This profile provides a lightweight alternative to PDQ Patient Demographics Query [ITI-21] or PDQV3 Patient Demographics Query V3 [ITI-47].
 
-**This Implementation Guide template includes skeleton pages for each part of an IHE supplement. The instructions for how to fill out those sections can be found in the included [Supplement Template](suppl_template.html). This supplement template should not be included in your github repo or publication. It is included here for easy reference.**
-
-**TODO: write your executive overview here. usually one paragraph explanation of what this implementation guide solves.**
-
-[Open and Closed Issues](a_issues.html)
+[Open and Closed Issues](issues.html)
 
 ### Organization of This Guide
 This guide is organized into four main sections:
-
-1. Volume I: [Overview](1_overview.html)
-   1. [Actors and Transactions](2_actors_and_transactions.html)
-   2. [Security Considerations](3_security_considerations.html)
-   3. [Cross Profile Considerations](4_grouping.html)
-   4. [Test Plan](5_testplan.html)
+1. Volume I: [Overview](overview.html)
+  1. [Actors and Transactions](actors_and_transactions.html)
+  2. [Security Considerations](security_considerations.html)
+  3. [Cross-Profile Considerations](grouping.md)
 
 2. Volume II: Transaction Detail
-   1. [FooBar do [domain-Y]](domain-Y.html)
+   1. [Mobile Patient Demographics Query \[ITI-78\]](ITI-78.md)
 
-3. Volume III: Metadata
-   1. **TODO: point to your content profiles if you have them**
-
-4. National Extensions
-    1. **TODO: point at your national extensions if you have them**
-
-5. Appendix
-	1. **TODO: point to your appendix if you have them**
+3. Appendix
+	1. [Patient Demographics Query Implementation Guidance](appendixm.md)
 
 
 Click on any of the links above, head on over the [table of contents](toc.html), or

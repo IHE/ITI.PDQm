@@ -2,6 +2,66 @@ id: PDQm.ihe.net
 canonical: https://profiles.ihe.net/PDQm
 name: "Patient Demographics Query for Mobile"
 status: draft
-version: 0.1.0
+publisher:
+  - name: IHE IT Infrastructure Technical Committee
+  - url: https://www.ihe.net/ihe_domains/it_infrastructure/
+  - email: iti@ihe.net
+contact:
+  - name: IHE IT Infrastructure Technical Committee
+    telecom:
+      - system: url
+        value: https://www.ihe.net/ihe_domains/it_infrastructure/
+  - name: David Pyke
+    telecom:
+      - system: email
+        value: dpyke@ainq.com
+description: The Patient Demographics Query for Mobile (PDQm) Profile defines a lightweight RESTful interface to a patient demographics supplier leveraging technologies readily available to mobile applications and lightweight browser based applications.
+license: CC0-1.0
 fhirVersion: 4.0.1
+dependencies:
+parameters:
+  show-inherited-invariants: false
+  usage-stats-opt-out: false
+  logging: progress
+copyrightYear: 2020+
+releaseLabel: Rev. 2.2 – Trial Implementation
 FSHOnly: true
+
+pages:
+  index.md:
+    title: Patient Demographics Query for Mobile
+    generation: markdown
+    issues.md:
+      title: Open and Closed issues
+      generation: markdown
+  overview.md:
+    title: Overview
+    generation: markdown
+      usecases.md:
+        Title: Use Cases
+        generation: markdown
+    actors_and_transactions.md:
+      title: Actors and Transactions
+      generation: markdown
+    security_considerations.md:
+      title: Security Considerations
+      generation: markdown
+  iti-78.md:
+    title: Mobile Patient Demographics Query
+    generation: markdown
+  appendix.md:
+    title: appendix
+      generation: markdown
+
+menu:
+  IG Home: index.html
+  Contents: toc.html
+  Introduction: overview.html
+    Use Cases: usecases.html
+    Actors and Transactions: actors_and_transactions.html
+    Security Considerations: security_considerations.html
+  Transactions:
+    Mobile Patient Demographics Query: ITI-78.html
+  Appendix:
+    Patient Demographics Query Implementation Guidance: appendixm.html
+  Artifacts: artifacts.html
