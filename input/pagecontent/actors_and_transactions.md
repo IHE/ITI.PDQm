@@ -33,7 +33,7 @@ Patient Demographics Consumer |	Pediatric Demographics Option |	Section 38.2.1
 Patient Demographics Supplier |	Pediatric Demographics Option |	Section 38.2.1
 {:.grid}
 
-##### Pediatric Demographics Option
+##### Pediatric Demographics Option <a name="peddemoopt"> </a>
 The experience of immunization registries and other public health population databases has shown that retrieving patient records for an individual person in environments with large proportions of pediatric records requires additional demographic data.
 
 Information about the mother of the patient or a household telephone number is helpful in retrieving records in large population databases where data quality may be uneven.
