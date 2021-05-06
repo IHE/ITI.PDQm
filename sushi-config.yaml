@@ -18,40 +18,38 @@ contact:
 description: The Patient Demographics Query for Mobile (PDQm) Profile defines a lightweight RESTful interface to a patient demographics supplier leveraging technologies readily available to mobile applications and lightweight browser based applications.
 license: CC0-1.0
 fhirVersion: 4.0.1
-dependencies:
 parameters:
   show-inherited-invariants: false
   usage-stats-opt-out: false
   logging: progress
 copyrightYear: 2020+
 releaseLabel: Rev. 2.2 – Trial Implementation
-FSHOnly: true
 
 pages:
   index.md:
     title: Patient Demographics Query for Mobile
     generation: markdown
-    issues.md:
-      title: Open and Closed issues
-      generation: markdown
+  issues.md:
+    title: Open and Closed issues
+    generation: markdown
   overview.md:
     title: Overview
     generation: markdown
-      usecases.md:
-        Title: Use Cases
-        generation: markdown
-    actors_and_transactions.md:
-      title: Actors and Transactions
-      generation: markdown
-    security_considerations.md:
-      title: Security Considerations
-      generation: markdown
+  usecases.md:
+    title: Use Cases
+    generation: markdown
+  actors_and_transactions.md:
+    title: Actors and Transactions
+    generation: markdown
+  security_considerations.md:
+    title: Security Considerations
+    generation: markdown
   iti-78.md:
     title: Mobile Patient Demographics Query
     generation: markdown
-  appendix.md:
+  appendixm.md:
     title: appendix
-      generation: markdown
+    generation: markdown
 
 menu:
   IG Home: index.html
