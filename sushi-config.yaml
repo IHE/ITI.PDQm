@@ -33,6 +33,9 @@ pages:
   issues.md:
     title: Open and Closed issues
     generation: markdown
+  grouping.md:
+    title: Cross-Profile Considerations
+    generation: markdown
   overview.md:
     title: 38.4 Overview
     generation: markdown
@@ -60,6 +63,7 @@ menu:
     Use Cases: usecases.html
     Actors and Transactions: actors_and_transactions.html
     Security Considerations: security_considerations.html
+    Cross-Profile Considerations: grouping.html
   Transactions:
     Mobile Patient Demographics Query: ITI-78.html
   Appendix:
