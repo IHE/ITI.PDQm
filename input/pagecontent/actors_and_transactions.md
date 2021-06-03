@@ -18,7 +18,7 @@ Table 38.1-1: PDQm; Profile - Actors and Transactions
 | Patient Demographics Supplier | Mobile Patient Demographics Query [ITI-78] | Responder | R | ITI TF-2c: 3.78 |
 {:.grid}
 
-Note 1: The transaction defined in this profile corresponds to Patient Demographics Query [ITI-21] in the PDQ Profile (ITI TF-1: 8) and provides similar functionality. Note that there is no transaction which corresponds to the Patient Demographics and Visit Query [ITI-22].
+Note 1: The transaction defined in this profile corresponds to [Patient Demographics Query \[ITI-21\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-21.html) in the [PDQ Profile (ITI TF-1:8)](https://profiles.ihe.net/ITI/TF/Volume1/ch-8.html) and provides similar functionality. Note that there is no transaction which corresponds to the Patient Demographics and Visit Query [ITI-22].
 
 ##### Actor Descriptions and Actor Profile Requirements
 No additional requirements.
@@ -26,7 +26,9 @@ No additional requirements.
 
 #### PDQm Actor Options
 Options that may be selected for each actor in this profile, if any, are listed in Table 38.2-1. Dependencies between options when applicable are specified in notes.
+
 **Table 38.2-1: Patient Demographics Query for Mobile - Actors and Options**
+
 Actor	| Option Name |	Reference
 ---|---|---
 Patient Demographics Consumer |	Pediatric Demographics Option |	Section 38.2.1

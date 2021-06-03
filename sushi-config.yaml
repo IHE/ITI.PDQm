@@ -54,7 +54,8 @@ pages:
 menu:
   IG Home: index.html
   Contents: toc.html
-  Introduction: overview.html
+  Introduction:
+    Overview: overview.html
     Use Cases: usecases.html
     Actors and Transactions: actors_and_transactions.html
     Security Considerations: security_considerations.html
