@@ -1,10 +1,10 @@
-This section corresponds to transaction [ITI-78] of the IHE Technical Framework. Transaction [ITI-78] is used by the Client and Server Actors. The go [ITI-798] transaction is used to query and get back results.
+This section corresponds to transaction [ITI-78] of the IHE Technical Framework. Transaction [ITI-78] is used by the Client and Server Actors. The go [ITI-78] transaction is used to query and get back results.
 
-### Scope
+### 3.78.1 Scope
 
 This transaction is used by the Patient Demographics Consumer to solicit information about patients whose demographics data match data provided in the query parameters on the request message. The request is received by the Patient Demographics Supplier. The Patient Demographics Supplier processes the request and returns a response in the form of demographics information for the matching patients.
 
-### Actors Roles
+### 3.78.2 Actors Roles
 
 **Table: Actor Roles**
 
@@ -14,7 +14,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 | Patient Demographics Supplier | Returns demographic information for all patients matching the demographics criteria provided by the Patient Demographics Consumer |
 {:.grid}
 
-### Referenced Standards
+### 3.78.3 Referenced Standards
 
 * [HL7 FHIR Release 4](http://www.hl7.org/FHIR/R4)
 * [RFC2616	Hypertext Transfer Protocol – HTTP/1.1](https://tools.ietf.org/html/rfc2616)
@@ -24,8 +24,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 * [RFC6585	Additional HTTP Status Codes](https://tools.ietf.org/html/rfc6585)
 * [RFC1149  A Standard for the Transmission of IP Datagrams on Avian Carriers](https://tools.ietf.org/html/rfc1149)
 
-
-### Interactions
+### 3.78.4 Messages
 
 <div>
 {%include ITI-78-seq.svg%}
@@ -33,14 +32,14 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 
 <div style="clear: left"/>
 
-**Figure: Go Interactions**
+**Figure: 3.78.4-1: Interaction Diagram**
 
-### Messages
-#### Query Patient Resource message
+
+#### 3.78.4.1 Query Patient Resource message
 This message represents an HTTP GET parameterized query from the Patient Demographics Consumer to the Patient Demographics Supplier.
-##### Trigger Events
+##### 3.78.4.1.1 Trigger Events
 When a Patient Demographics Consumer needs to select a patient based on demographic information about patients whose information matches a minimal set of known data, it issues a Query Patient Resource.
-##### Message Semantics
+##### 3.78.4.1.2 Message Semantics
 The Query Patient Resource is conducted by the Patient Demographics Consumer by executing an HTTP GET against the Patient Demographics Supplier’s Patient Resource URL.
 The search target follows the FHIR http specification, addressing the Patient Resource type  http://hl7.org/fhir/R4/http.html:
 
@@ -48,7 +47,7 @@ The search target follows the FHIR http specification, addressing the Patient Re
 
 The `<query>` represents a series of encoded name-value pairs representing the filter for the query specified below, as well as control parameters to modify the behavior of the Patient Demographics Supplier such as response format, or pagination.
 
-##### Query Search Parameters
+##### 3.78.4.1.2.1 Query Search Parameters
 The Patient Demographics Consumer may supply, and the Patient Demographics Supplier shall be capable of processing, all query parameters listed below. All query parameter values shall be appropriately encoded per [RFC3986](https://tools.ietf.org/html/rfc3986) “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
 Patient Demographics Suppliers may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored, See http://hl7.org/fhir/R4/search.html#errors.
 
@@ -65,15 +64,15 @@ Parameter | definitions
 `gender` | This parameter of type `token`, when supplied, specifies the administrative gender of the person whose information is being queried. For this parameter item, a single administrative gender code from value set http://hl7.org/fhir/R4/valueset-administrative-gender.html shall be specified as the only value of the token. See [ITI TF-2x: Appendix Z.2.2](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_Appx-Z.pdf) for use of the `token` data type.
 {:.grid}
 
-###### Pediatric Demographics Option
+###### 3.78.4.1.2.2 Pediatric Demographics Option
 Additional notes are available in FHIR on mother and newborn relationship, see http://hl7.org/fhir/R4/patient.html#maternity Patient Demographics Suppliers supporting the Pediatric Demographics Option shall support the `mothersMaidenName` search extension.
 Patient Demographics Consumers supporting the Pediatric Demographics Option may use the additional mothersMaidenName search extension and the additional elements returned by the Patient Demographics Suppliers. See [ITI TF 1: 38.2.1 Pediatric Demographics Option](actors_and_transactions.html#peddemoopt).
 
-###### Parameter Modifiers
+###### 3.78.4.1.2.3 Parameter Modifiers
 Patient Demographics Suppliers shall support the `“:exact”` parameter modifier on all query parameters of type string. When supplied by the Patient Demographics Consumer, the `“:exact”` parameter modifier instructs the Patient Demographics Supplier that exact matching should be performed.
 The Patient Demographics Consumer should not use, and Patient Demographics Supplier may ignore, any additional parameter modifiers listed in the FHIR standard, which are considered out of scope in the context of this transaction
 
-###### Populating Which Domains are Returned
+###### 3.78.4.1.2.4 Populating Which Domains are Returned
 The Patient Demographics Consumer may constrain the domains from which patient identifiers are returned from the Patient Demographics Supplier in the resulting bundle. The Patient Demographics Consumer shall convey this by specifying the patient identity domains in the system component of repeating `identifier` parameters using the OR format:
 
     &identifier=urn:oid:1.2.3|,urn:oid:4.5.6|
@@ -84,11 +83,11 @@ For example, a Patient Demographics Consumer wishing to filter for patients with
 
 The Patient Demographics Consumer shall populate the patient identity domain portion of the token with values described in ITI TF-2x: Appendix E.3.
 
-###### Populating Expected Response Format
+###### 3.78.4.1.2.5 Populating Expected Response Format
 The FHIR standard provides encodings for responses as either XML or JSON. Patient Demographics Suppliers shall support both message encodings, whilst Patient Demographics Consumers shall support one and may support both.
 See ITI TF-2x: Appendix Z.6 for details.
 
-#### Expected Actions
+#### 3.78.4.1.3 Expected Actions
 The Patient Demographics Supplier shall return demographic records that reflect the match to all of the search criteria provided by the Patient Demographics Consumer. The Patient Demographics Supplier shall respond with a Query Patient Resource Response message synchronously (i.e., on the same connection as was used to initiate the request).
 
 The Patient Demographics Supplier shall return all exact matches to the query parameters sent by the Patient Demographics Consumer; IHE does not further specify matching requirements. The Patient Demographics Supplier may be able to perform other string matching (e.g., case insensitive, partial matches, etc.) which shall be indicate in its CapabilityStatement Resource (see ITI TF-2x: Appendix Z.4).
@@ -152,56 +151,56 @@ The Patient Demographics Supplier may be capable of servicing requests for respo
 The Patient Demographics Supplier may return other HTTP status codes to represent specific error conditions. When HTTP error status codes are returned by the Patient Demographics Supplier, they shall conform to the HTTP standard [RFC2616](https://tools.ietf.org/html/rfc2616). Their use is not further constrained or specified by this transaction.
 
 
-#### Query Patient Resource Response message
+#### 3.78.4.2 Query Patient Resource Response message
 
 
-##### Trigger Events
+##### 3.78.4.2.1 Trigger Events
 
 The Patient Demographics Supplier found patient demographics matching the query parameters specified by the Patient Demographics Consumer as a result of a Query Patient Resource Request.
 
-##### Message Semantics
+##### 3.78.4.2.2 Message Semantics
 
 The Query Patient Resource Response is sent from the Patient Demographics Supplier to the Patient Demographics Consumer as a Bundle of Patient Resources. The “content-type” of the response will depend upon the requested response format indicated by the Patient Demographics Consumer.
 
 See ITI TF-2x: Appendix Z.6 for more details on response format handling. See ITI TF-2x: Appendix Z.7 for handling guidance for Access Denied.
 
-###### Patient Resource Definition in the Context of Query Patient Resource Response
+###### 3.78.4.2.2.1 Patient Resource Definition in the Context of Query Patient Resource Response
 The components of the Patient Resource with cardinality greater than 0 (as shown below) are required, and the detailed description of the message is provided here. All other attributes of the response are optional.
 The Patient Resource contained within the Query Patient Resource Response message is described at http://hl7.org/fhir/R4/patient.html and is not further constrained by this transaction.
 
-###### Mother’s Maiden Name
+###### 3.78.4.2.2.2 Mother’s Maiden Name
 Patient Demographics Suppliers shall include the mother’s maiden name, if known, in an extension named mothers MaidenName. See http://hl7.org/fhir/R4/extension-patient-mothersmaidenname.html
 
-###### Resource Bundling
+###### 3.78.4.2.2.3 Resource Bundling
 Please see ITI TF-2x: Appendix Z.1 for details on the IHE guidelines for implementing FHIR bundles.
 
-###### Incremental Response Processing - Paging of Resource Bundle
+###### 3.78.4.2.2.4 Incremental Response Processing - Paging of Resource Bundle
 The Patient Demographics Supplier shall represent these incremental responses as specified FHIR Paging http://hl7.org/fhir/R4/http.html#paging
 
-###### Quality of Match
+###### 3.78.4.2.2.5 Quality of Match
 The Patient Demographics Supplier may convey the quality of each match based on strength of the particular result to the supplied query parameters. The mechanism for determining the confidence of match is considered a product specific feature and is not specified in this transaction.
 
 If the Patient Demographics Supplier wishes to convey the quality of match, it shall represent the confidence of a particular match within the bundle as a score attribute. See FHIR Relevance section http://hl7.org/fhir/R4/search.html#score
 
 
-##### Expected Actions
+##### 3.78.4.2.3 Expected Actions
 
 The constraints specified in Section 3.78.4.2.2 represent the minimum set of demographics information that must be implemented by a Patient Demographics Supplier. This does not prevent the Patient Demographics Supplier from sending additional FHIR attributes in a response; such as extensions, text, etc. The Patient Demographics Consumer shall ignore additional attributes and extensions if not understood.
 
 The consumer shall process the response in some manner specific to its application function (for example: displaying on a user interface). This application behavior is not specified by IHE.
 
 
-##### CapabilityStatement Resource
+##### 3.78.4.2.4 CapabilityStatement Resource
 Patient Demographics Suppliers implementing [ITI-78] shall provide a CapabilityStatement Resource as described in ITI TF-2x: Appendix Z.4 indicating the query operation for the Patient Resource has been implemented and shall include all query parameters implemented for the Patient Resource.
 
 
-#### Retrieve Patient Resource message
+#### 3.78.4.3 Retrieve Patient Resource message
 This message represents an HTTP GET from the Patient Demographics Consumer to the Patient Demographics Supplier and provides a mechanism for retrieving a single Patient Resource with a known resource identifier.
 
-##### Trigger Events
+##### 3.78.4.3.1 Trigger Events
 When the Patient Demographics Consumer possesses a Patient Resource’s identifier (either through query, database lookup, or other mechanism) for which it requires additional or new information, it issues a Retrieve Patient Resource operation.
 
-##### Message Semantics
+##### 3.78.4.3.2  Message Semantics
 The Retrieve Patient Resource is conducted by executing an HTTP GET against the Patient Demographics Supplier’s Patient Resource URL, providing the resource id of the patient being retrieved. The target is formatted as:
 
     GET [base]/Patient/[resourceId]
@@ -212,7 +211,7 @@ The `resourceId` included in the request always represents the unique identifier
 
 Note: The use of "http" or "https" in URL does not override requirements to use TLS for security purposes.
 
-##### Expected Actions
+##### 3.78.4.3.3 Expected Actions
 The Patient Demographics Supplier shall retrieve the demographic record indicated by the Resource identifier on the HTTP GET supplied by the Patient Demographics Consumer. The Patient Demographics Supplier shall respond to the retrieve request as described by the following cases:
 
 Case 1: The Patient Demographics Supplier finds in its information source the patient demographics record matching the `resourceId` sent in the HTTP request.
@@ -235,29 +234,29 @@ code|not-found
 
 The Patient Demographics Supplier may return other HTTP status codes to represent specific error conditions. When HTTP error status codes are returned by the Patient Demographics Supplier, they shall conform to the HTTP standard [RFC2616](https://tools.ietf.org/html/rfc2616). Their use is not further constrained or specified by this transaction.
 
-#### Retrieve Patient Resource Response message
+#### 3.78.4.4 Retrieve Patient Resource Response message
 
 The Patient Demographics Supplier’s response to a successful Retrieve Patient Resource message shall be an `HTTP 200` (OK) Status code with a Patient Resource, or an appropriate error code as defined in Section 3.78.4.2.2.1.
 
-##### Trigger Events
+##### 3.78.4.4.1 Trigger Events
 The Patient Demographics Supplier found patient demographic record matching the Resource identifier specified by the Patient Demographics Consumer.
 
-##### Message Semantics
+##### 3.78.4.4.2 Message Semantics
 The Retrieve Patient Resource response is sent from the Patient Demographics Supplier to the Patient Demographics Consumer as a single Patient Resource. See http://hl7.org/fhir/R4/patient.html for details on this resource.
 
 See ITI TF-2x: Appendix Z.6 for more details on response format handling. See ITI TF-2x: Appendix Z.7 for handling guidance for Access Denied.
 
 If the Patient Demographics Supplier is unable to produce a response in the requested format, it shall respond with an `HTTP 400` error indicating that it was unable to fulfill the request. The Patient Demographics Supplier may be capable of servicing requests for response formats not listed, but shall, at minimum, be capable of producing XML and JSON encodings.
 
-###### Patient Resource Definition in the Context of Retrieve Patient Resource Response
+###### 3.78.4.4.2.1 Patient Resource Definition in the Context of Retrieve Patient Resource Response
 The Patient Resource definition in the context of a retrieve operation is identical to the constraints placed on the Patient Resource for a search (see Section 3.78.4.2.2.1)
 
 For the complete FHIR definition of this Resource, see http://hl7.org/fhir/R4/patient.html.
 
-### Security Considerations
+### 3.78.5 Security Considerations
 See the general Security Consideration in ITI TF-1: 38.5
 
-#### Security Audit Considerations
+#### 3.78.5.1 Security Audit Considerations
 
 The Security audit criteria are similar to those for the Patient Demographics Query [ITI-21] as this transaction discloses the same type of patient information. The Mobile Patient Demographics Query is a Query Information event as defined in ITI TF-2a: Table 3.20.4.1.1.1-1. The message shall comply with the requirements in ITI TF-2a: 3.21.5.1 following differences:
 

@@ -1,5 +1,6 @@
 id: PDQm.ihe.net
 canonical: https://profiles.ihe.net/PDQm
+version: 0.1.0
 name: "Patient Demographics Query for Mobile"
 status: draft
 publisher:
@@ -27,28 +28,28 @@ releaseLabel: Rev. 2.2 – Trial Implementation
 
 pages:
   index.md:
-    title: Patient Demographics Query for Mobile
+    title: 38 Patient Demographics Query for Mobile
     generation: markdown
   issues.md:
     title: Open and Closed issues
     generation: markdown
   overview.md:
-    title: Overview
+    title: 38.4 Overview
     generation: markdown
   usecases.md:
-    title: Use Cases
+    title: 38.4.2 Use Cases
     generation: markdown
   actors_and_transactions.md:
-    title: Actors and Transactions
+    title: 3.78 Actors and Transactions
     generation: markdown
   security_considerations.md:
-    title: Security Considerations
+    title: 38.5 Security Considerations
     generation: markdown
-  iti-78.md:
-    title: Mobile Patient Demographics Query
+  ITI-78.md:
+    title: 3.78 Mobile Patient Demographics Query [ITI-78]
     generation: markdown
   appendixm.md:
-    title: appendix
+    title: Appendix M Patient Demographics Query Implementation Guidance
     generation: markdown
 
 menu:

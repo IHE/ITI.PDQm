@@ -1,4 +1,4 @@
-### Patient Demographics Query Implementation Guidance
+### M.4 Patient Demographics Query Implementation Guidance
 
 This section describes the data elements that are used in IHE profiles designed for the querying of patient demographics (Patient Demographics Query Profiles) including PDQ, PDQv3, and PDQm.
 
@@ -6,7 +6,7 @@ While the semantic representation of the data elements differs across the transa
 
 Note: More data elements may be known by the Patient Demographics Supplier and may be returned. Elements beyond those profiled are encouraged but not required of the profile. Patient Demographics Consumer Actors should be robust to receiving more data than is profiled.
 
-#### Patient Demographics Query Data Fields
+#### M.4.1 Patient Demographics Query Data Fields
 Table M.4.1-1 outlines the abstract demographics fields which are common to all Patient Demographics Query Profiles.
 
 __Table M.4.1-1: Patient Demographics Data Elements (abstract)__
@@ -45,7 +45,7 @@ Mother’s Maiden Name|PID.6|personalRelationship.name|See ITI TF-2c: 3.78.4.2.2
 Patient Birth Order|PID.25|multipleBirthOrderNumber|multipleBirthInteger
 {:.grid}
 
-#### Patient Demographics Query Parameters
+#### M.4.2 Patient Demographics Query Parameters
 Table M.4.2-1 outlines the demographics query parameters which are common to all Patient Demographics Query Profiles.
 
 __Table M.4.2-1: Patient Demographics Query Parameters (abstract)__

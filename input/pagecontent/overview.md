@@ -29,7 +29,7 @@ OperationOutcome|normative
 Bundle|normative
 {: .grid}
 
-### Concepts
+38.4 Concepts
 The PDQm Profile supports all of the use cases of PDQ while keeping the technology as lightweight as possible. Example uses include:
 •	Mobile devices used by physicians (for example: a mobile app for electronic patient charts) which need to establish patient context by scanning a bracelet,
 *	Web based EHR/EMR applications which wish to provide dynamic updates of patient demographic information such as a non-postback search, additional demographic detail, etc.
@@ -39,7 +39,7 @@ The PDQm Profile supports all of the use cases of PDQ while keeping the technolo
 Each of these specific use cases is generalized into two general use cases. The first is one where a system must obtain patient demographics to populate a user interface via a known demographic field (such as bracelet ID) or search parameters provided by a user. The second is as a prerequisite step whereby an application must obtain an identifier from another patient ID domain in order to complete another workflow.
 This profile is applicable for use by any application which requires access to patient demographics where lightweight REST/JSON or REST/XML is a more suitable technology than traditional PDQ or PDQv3 Profiles.
 
-### Basic Process Flow in Patient Demographics Query for Mobile Profile
+38.43.3 Basic Process Flow in Patient Demographics Query for Mobile Profile
 
 <div>
 {%include Basic-Process-Flow-in-PDQm-Profile.svg%}
