@@ -1,12 +1,13 @@
-id: PDQm.ihe.net
-canonical: https://profiles.ihe.net/PDQm
+id: ihe.pdqm.fhir
+canonical: https://profiles.ihe.net/ITI/PDQm
 version: 0.1.0
-name: "Patient Demographics Query for Mobile"
+name: IHE_PDQm
+title: "Patient Demographics Query for Mobile"
 status: draft
 publisher:
-  - name: IHE IT Infrastructure Technical Committee
-  - url: https://www.ihe.net/ihe_domains/it_infrastructure/
-  - email: iti@ihe.net
+  name: Integrating the Healthcare Enterprise (IHE)
+  url: http://ihe.net
+  email: secretary@ihe.net
 contact:
   - name: IHE IT Infrastructure Technical Committee
     telecom:
@@ -17,51 +18,66 @@ contact:
       - system: email
         value: dpyke@ainq.com
 description: The Patient Demographics Query for Mobile (PDQm) Profile defines a lightweight RESTful interface to a patient demographics supplier leveraging technologies readily available to mobile applications and lightweight browser based applications.
-license: CC0-1.0
+license: CC-BY-SA-4.0
 fhirVersion: 4.0.1
-parameters:
-  show-inherited-invariants: false
-  usage-stats-opt-out: false
-  logging: progress
+parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+  path-resource:
+    - input/resources
+    - fsh-generated/resources
+    - input/examples
+  path-pages:
+    - input/pagecontent
+    - fsh-generated/includes
+  active-tables: 'false'
+  apply-contact: 'true'
+  apply-jurisdiction: 'true'
+  apply-publisher: 'true'
+  apply-version: 'true'
+  show-inherited-invariants: 'false'
+  usage-stats-opt-out: 'true'
+  autoload-resources: 'true'
+  shownav: 'true'
+copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
 copyrightYear: 2020+
-releaseLabel: Rev. 2.2 – Trial Implementation
+releaseLabel: ci-build
+jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
 
 pages:
   index.md:
-    title: 38 Patient Demographics Query for Mobile
+    title: "38 Patient Demographics Query for Mobile"
     generation: markdown
   issues.md:
-    title: Open and Closed issues
+    title: "Open and Closed issues"
     generation: markdown
   overview.md:
-    title: 38.4 Overview
+    title: "38.4 Overview"
     generation: markdown
   usecases.md:
-    title: 38.4.2 Use Cases
+    title: "38.4.2 Use Cases"
     generation: markdown
   actors_and_transactions.md:
-    title: 3.78 Actors and Transactions
+    title: "3.78 Actors and Transactions"
     generation: markdown
   security_considerations.md:
-    title: 38.5 Security Considerations
+    title: "38.5 Security Considerations"
     generation: markdown
   ITI-78.md:
-    title: 3.78 Mobile Patient Demographics Query [ITI-78]
+    title: "3.78 Mobile Patient Demographics Query [ITI-78]"
     generation: markdown
   appendixm.md:
-    title: Appendix M Patient Demographics Query Implementation Guidance
+    title: "Appendix M Patient Demographics Query Implementation Guidance"
     generation: markdown
 
 menu:
   IG Home: index.html
   Contents: toc.html
   Introduction:
-    Overview: overview.html
-    Use Cases: usecases.html
-    Actors and Transactions: actors_and_transactions.html
-    Security Considerations: security_considerations.html
+    "Overview": overview.html
+    "Use Cases": usecases.html
+    "Actors and Transactions": actors_and_transactions.html
+    "Security Considerations": security_considerations.html
   Transactions:
-    Mobile Patient Demographics Query: ITI-78.html
+    "Mobile Patient Demographics Query": ITI-78.html
   Appendix:
-    Patient Demographics Query Implementation Guidance: appendixm.html
+    "Patient Demographics Query Implementation Guidance": appendixm.html
   Artifacts: artifacts.html

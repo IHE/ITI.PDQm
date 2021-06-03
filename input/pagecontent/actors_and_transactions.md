@@ -3,7 +3,7 @@ The Patient Demographics for Mobile (PDQm) Profile provides a transaction for mo
 ### 38.1 PDQm Actors, Transactions, and Content Modules
 Figure 38.1-1 shows the actors directly involved in the Patient Demographics Query for Mobile Profile and the relevant transactions between them. Note that the actors in this profile are the same as the actors defined in the PDQ Profile (ITI TF-1: 8.1).
 <div>
-{%insert PDQm-Actor-Diagram.svg %}
+{%include PDQm-Actor-Diagram.svg %}
 </div>
 **Figure 38.1: PQDm Actor Diagram**
 
@@ -32,7 +32,7 @@ Patient Demographics Consumer |	Pediatric Demographics Option |	Section 38.2.1
 Patient Demographics Supplier |	Pediatric Demographics Option |	Section 38.2.1
 {:.grid}
 
-#### 38.2.1 Pediatric Demographics Option <a name="peddemoopt"> </a>
+#### 38.2.1 Pediatric Demographics Option 
 The experience of immunization registries and other public health population databases has shown that retrieving patient records for an individual person in environments with large proportions of pediatric records requires additional demographic data.
 
 Information about the mother of the patient or a household telephone number is helpful in retrieving records in large population databases where data quality may be uneven.
