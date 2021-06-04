@@ -22,7 +22,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 * [RFC3986	Uniform Resource Identifier (URI): Generic Syntax](https://tools.ietf.org/html/rfc3986)
 * [RFC4627	The application/json Media Type for JavaScript Object Notation (JSON)](https://tools.ietf.org/html/rfc4627)
 * [RFC6585	Additional HTTP Status Codes](https://tools.ietf.org/html/rfc6585)
-* [RFC1149  A Standard for the Transmission of IP Datagrams on Avian Carriers](https://tools.ietf.org/html/rfc1149)
+
 
 ### 3.78.4 Messages
 
@@ -66,7 +66,7 @@ Parameter | definitions
 
 ###### 3.78.4.1.2.2 Pediatric Demographics Option
 Additional notes are available in FHIR on mother and newborn relationship, see http://hl7.org/fhir/R4/patient.html#maternity Patient Demographics Suppliers supporting the Pediatric Demographics Option shall support the `mothersMaidenName` search extension.
-Patient Demographics Consumers supporting the Pediatric Demographics Option may use the additional mothersMaidenName search extension and the additional elements returned by the Patient Demographics Suppliers. See [ITI TF 1: 38.2.1 Pediatric Demographics Option](actors_and_transactions.html#peddemoopt).
+Patient Demographics Consumers supporting the Pediatric Demographics Option may use the additional mothersMaidenName search extension and the additional elements returned by the Patient Demographics Suppliers. See [ITI TF 1: 38.2.1 Pediatric Demographics Option](actor_options.html#peddemoopt).
 
 ###### 3.78.4.1.2.3 Parameter Modifiers
 Patient Demographics Suppliers shall support the `“:exact”` parameter modifier on all query parameters of type string. When supplied by the Patient Demographics Consumer, the `“:exact”` parameter modifier instructs the Patient Demographics Supplier that exact matching should be performed.
@@ -244,23 +244,23 @@ The Patient Demographics Supplier found patient demographic record matching the 
 ##### 3.78.4.4.2 Message Semantics
 The Retrieve Patient Resource response is sent from the Patient Demographics Supplier to the Patient Demographics Consumer as a single Patient Resource. See http://hl7.org/fhir/R4/patient.html for details on this resource.
 
-See ITI TF-2x: Appendix Z.6 for more details on response format handling. See ITI TF-2x: Appendix Z.7 for handling guidance for Access Denied.
+See [ITI TF-2x: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html) for more details on response format handling. See ITI TF-2x: Appendix Z.7 for handling guidance for Access Denied.
 
 If the Patient Demographics Supplier is unable to produce a response in the requested format, it shall respond with an `HTTP 400` error indicating that it was unable to fulfill the request. The Patient Demographics Supplier may be capable of servicing requests for response formats not listed, but shall, at minimum, be capable of producing XML and JSON encodings.
 
 ###### 3.78.4.4.2.1 Patient Resource Definition in the Context of Retrieve Patient Resource Response
-The Patient Resource definition in the context of a retrieve operation is identical to the constraints placed on the Patient Resource for a search (see Section 3.78.4.2.2.1)
+The Patient Resource definition in the context of a retrieve operation is identical to the constraints placed on the Patient Resource for a search (see Section 3.78.4.2.2.1 above)
 
 For the complete FHIR definition of this Resource, see http://hl7.org/fhir/R4/patient.html.
 
 ### 3.78.5 Security Considerations
-See the general Security Consideration in ITI TF-1: 38.5
+See the general Security Consideration in [ITI TF-1: 38.5](security_considerations.html)
 
 #### 3.78.5.1 Security Audit Considerations
 
-The Security audit criteria are similar to those for the Patient Demographics Query [ITI-21] as this transaction discloses the same type of patient information. The Mobile Patient Demographics Query is a Query Information event as defined in ITI TF-2a: Table 3.20.4.1.1.1-1. The message shall comply with the requirements in ITI TF-2a: 3.21.5.1 following differences:
+The Security audit criteria are similar to those for the Patient Demographics Query [ITI-21] as this transaction discloses the same type of patient information. The Mobile Patient Demographics Query is a Query Information event as defined in [ITI TF-2a: Table 3.20.4.1.1.1-1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html). The message shall comply with the requirements in [ITI TF-2a: 3.21.5.1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-21.html) following differences:
 
-The Security audit criteria are similar to those for the Patient Demographics Query [ITI-21] as this transaction discloses the same type of patient information. The Mobile Patient Demographics Query is a Query Information event as defined in ITI TF-2a: Table 3.20.4.1.1.1-1. The message shall comply with the requirements in ITI TF-2a: 3.21.5.1 following differences:
+The Security audit criteria are similar to those for the [Patient Demographics Query \[ITI-21\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-21.html) as this transaction discloses the same type of patient information. The Mobile Patient Demographics Query is a Query Information event as defined in ITI TF-2a: Table 3.20.4.1.1.1-1. The message shall comply with the requirements in ITI TF-2a: 3.21.5.1 following differences:
 *	EventTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)
 *	Query Parameters (AuditMessage/ParticipantObjectIdentification)
     *	ParticipantObjectIdTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)

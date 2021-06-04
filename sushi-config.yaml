@@ -29,22 +29,28 @@ releaseLabel: Rev. 2.2 – Trial Implementation
 
 pages:
   index.md:
-    title: 38 Patient Demographics Query for Mobile
+    title: 38. Patient Demographics Query for Mobile
     generation: markdown
   issues.md:
     title: Open and Closed issues
     generation: markdown
   grouping.md:
-    title: Cross-Profile Considerations
+    title: 38.6 Cross-Profile Considerations
+    generation: markdown
+  actors_and_transactions.md:
+    title: 38.1 Actors and Transactions
+    generation: markdown
+  actor_options.md: 
+    title: 38.2 Actor Options
+    generation: markdown
+  required_groupings.md:
+    title: 38.3 Required Groupings
     generation: markdown
   overview.md:
     title: 38.4 Overview
     generation: markdown
   usecases.md:
     title: 38.4.2 Use Cases
-    generation: markdown
-  actors_and_transactions.md:
-    title: 3.78 Actors and Transactions
     generation: markdown
   security_considerations.md:
     title: 38.5 Security Considerations
@@ -58,14 +64,15 @@ pages:
 
 menu:
   IG Home: index.html
-  Contents: toc.html
-  Introduction:
+  Volume 1:
+    Actors and Transactions: actors_and_transactions.html
+    Actor Options: actor_options.html
+    Required Groupings: required_groupings.html
     Overview: overview.html
     Use Cases: usecases.html
-    Actors and Transactions: actors_and_transactions.html
     Security Considerations: security_considerations.html
     Cross-Profile Considerations: grouping.html
-  Transactions:
+  Volume 2:
     Mobile Patient Demographics Query: ITI-78.html
   Appendix:
     Patient Demographics Query Implementation Guidance: appendixm.html

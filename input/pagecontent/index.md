@@ -3,17 +3,21 @@ The Patient Demographics for Mobile (PDQm) Profile provides a transaction for mo
 [Open and Closed Issues](issues.html)
 
 ### Organization of This Guide
-This guide is organized into four main sections:
+This guide is organized into three main sections:
 1. Volume I: [Overview](overview.html)
-  1. [Actors and Transactions](actors_and_transactions.html)
-  2. [Security Considerations](security_considerations.html)
-  3. [Cross-Profile Considerations](grouping.html)
+    1. [Actors and Transactions](actors_and_transactions.html)
+    2. [Actor Options](actor_options.html)
+    3. [Required Groupings](required_groupings.html)
+    4. [Overview](overview.html)
+    5. [Use Cases](usecases.html)
+    6. [Security Considerations](security_considerations.html)
+    7. [Cross-Profile Considerations](grouping.html)
 
 2. Volume II: Transaction Detail
-   1. [Mobile Patient Demographics Query \[ITI-78\]](ITI-78.html)
+    1. [Mobile Patient Demographics Query \[ITI-78\]](ITI-78.html)
 
 3. Appendix
-	1. [Patient Demographics Query Implementation Guidance](appendixm.html)
+	  1. [Patient Demographics Query Implementation Guidance](appendixm.html)
 
 
 Click on any of the links above, head on over the [table of contents](toc.html), or
