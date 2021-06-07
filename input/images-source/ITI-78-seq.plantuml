@@ -7,12 +7,12 @@ participant "Patient Demographics\nSupplier" as Server
 == Query ==
 activate Client
 activate Server
-Client -> Server : Query Patient Resource (ITI TF-2c:3.78.4.1):\nHTTP GET /Patient
-Server -> Client : Query Patient Resource Response (ITI TF-2c:3.78.4.2):\nBundle (Patient)
+Client -> Server : Query Patient Resource\n(ITI TF-2c:3.78.4.1):\nHTTP GET /Patient
+Server -> Client : Query Patient Resource Response\n(ITI TF-2c:3.78.4.2):\nBundle (Patient)
 
 == Retrieve ==
-Client -> Server : Retrieve Patient Resource (ITI TF-2c:3.78.4.3):\nHTTP GET /Patient/<ResourceId>
-Server -> Client : Retrieve Patient Resource Response (ITI TF-2c:3.78.4.4):\nResource (Patient)
+Client -> Server : Retrieve Patient Resource\n(ITI TF-2c:3.78.4.3):\nHTTP GET /Patient/<ResourceId>
+Server -> Client : Retrieve Patient Resource Response\n(ITI TF-2c:3.78.4.4):\nResource (Patient)
 deactivate Server
 deactivate Client
 
