@@ -76,3 +76,4 @@ Address|@PID.11|patientAddress|address
 Domains to be Returned|QPD-8|otherIDsScopingOrganization|See ITI TF-2c: 3.78.4.1.2.4
 Mother’s Maiden Name|@PID.6|mothersMaidenName|mothersMaidenName
 Patient Telecommunications Addresses|@PID.13|patientTelecom|telecom
+{:.grid}

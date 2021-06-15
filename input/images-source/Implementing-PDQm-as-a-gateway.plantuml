@@ -3,8 +3,8 @@ hide footbox
 
 Participant "Patient\nDemographics\nConsumer" as Client1
 box "PDQm Implementation\ngrouped as a façade "
-Participant "Patient\n Demographics\nSupplier" as Server1
-Participant "Patient\n Demographics\nConsumer" as Client2
+    Participant "Patient\n Demographics\nSupplier" as Server1
+    Participant "Patient\n Demographics\nConsumer" as Client2
 endbox
 Participant "Patient\n Demographics\nSupplier" as Server2
 
