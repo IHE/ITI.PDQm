@@ -175,7 +175,7 @@ Patient Demographics Suppliers shall include the mother’s maiden name, if know
 Please see [ITI TF-2x: Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles) for details on the IHE guidelines for implementing FHIR bundles.
 
 ###### 3.78.4.2.2.4 Incremental Response Processing - Paging of Resource Bundle
-The Patient Demographics Supplier shall represent these incremental responses as specified FHIR Paging http://hl7.org/fhir/R4/http.html#paging
+The Patient Demographics Supplier shall represent these incremental responses as specified in [FHIR Paging](http://hl7.org/fhir/R4/http.html#paging)
 
 ###### 3.78.4.2.2.5 Quality of Match
 The Patient Demographics Supplier may convey the quality of each match based on strength of the particular result to the supplied query parameters. The mechanism for determining the confidence of match is considered a product specific feature and is not specified in this transaction.
@@ -191,7 +191,7 @@ The consumer shall process the response in some manner specific to its applicati
 
 
 ##### 3.78.4.2.4 CapabilityStatement Resource
-Patient Demographics Suppliers implementing [ITI-78] shall provide a CapabilityStatement Resource as described in ITI TF-2x: Appendix Z.4 indicating the query operation for the Patient Resource has been implemented and shall include all query parameters implemented for the Patient Resource.
+Patient Demographics Suppliers implementing [ITI-78] shall provide a CapabilityStatement Resource as described in [ITI TF-2x: Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource) indicating the query operation for the Patient Resource has been implemented and shall include all query parameters implemented for the Patient Resource.
 
 
 #### 3.78.4.3 Retrieve Patient Resource message

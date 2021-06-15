@@ -5,6 +5,7 @@ Figure 38.1-1 shows the actors directly involved in the Patient Demographics Que
 <div>
 {%include PDQm-Actor-Diagram.svg %}
 </div>
+
 **Figure 38.1: PQDm Actor Diagram**
 
 Table 38.1-1: PDQm; Profile - Actors and Transactions

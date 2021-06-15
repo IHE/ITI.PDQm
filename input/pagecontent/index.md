@@ -1,4 +1,4 @@
-The Patient Demographics for Mobile (PDQm) Profile provides a transaction for mobile and lightweight browser-based applications to query a patient demographics supplier for a list of patients based on user-defined search criteria and retrieve a patient’s demographic information. This profile provides a lightweight alternative to PDQ Patient Demographics Query [ITI-21] or PDQV3 Patient Demographics Query V3 [ITI-47].
+The Patient Demographics for Mobile (PDQm) Profile provides a transaction for mobile and lightweight browser-based applications to query a patient demographics supplier for a list of patients based on user-defined search criteria and retrieve a patient’s demographic information. This profile provides a lightweight alternative to PDQ Patient Demographics Query [\[ITI-21\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-21.html) or PDQV3 Patient Demographics Query V3 [\[ITI-47\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-47.html).
 
 [Open and Closed Issues](issues.html)
 
@@ -29,4 +29,4 @@ You can also download:
 * the definition resources in [json](definitions.json.zip), [xml](definitions.xml.zip), [ttl](definitions.ttl.zip), or [csv](csvs.zip) format, or
 * the example resources in [json](examples.json.zip), [xml](examples.xml.zip) or [ttl](examples.ttl.zip) format.
 
-The source code for this Implementation Guide can be found on https://github.com/IHE/ITI.PDQm
+The source code for this Implementation Guide can be found on [IHE GitHub](https://github.com/IHE/ITI.PDQm)
