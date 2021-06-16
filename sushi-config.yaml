@@ -18,12 +18,19 @@ contact:
       - system: email
         value: dpyke@ainq.com
 description: The Patient Demographics Query for Mobile (PDQm) Profile defines a lightweight RESTful interface to a patient demographics supplier leveraging technologies readily available to mobile applications and lightweight browser based applications.
-license: CC0-1.0
+license:  CC-BY-SA-4.0
 fhirVersion: 4.0.1
 parameters:
-  show-inherited-invariants: false
-  usage-stats-opt-out: false
+  show-inherited-invariants: 'false'
+  usage-stats-opt-out: 'false'
   logging: progress
+  shownav: 'true'
+  active-tables: 'false'
+  apply-contact: 'true'
+  apply-jurisdiction: 'true'
+  apply-publisher: 'true'
+  apply-version: 'true'
+
 copyrightYear: 2020+
 releaseLabel: Rev. 2.2 – Trial Implementation
 
