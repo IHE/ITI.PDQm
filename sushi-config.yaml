@@ -38,12 +38,6 @@ pages:
   index.md:
     title: 38. Patient Demographics Query for Mobile
     generation: markdown
-  issues.md:
-    title: Open and Closed issues
-    generation: markdown
-  grouping.md:
-    title: 38.6 Cross-Profile Considerations
-    generation: markdown
   actors_and_transactions.md:
     title: 38.1 Actors and Transactions
     generation: markdown
@@ -62,11 +56,17 @@ pages:
   security_considerations.md:
     title: 38.5 Security Considerations
     generation: markdown
+  grouping.md:
+    title: 38.6 Cross-Profile Considerations
+    generation: markdown
   ITI-78.md:
     title: 3.78 Mobile Patient Demographics Query [ITI-78]
     generation: markdown
   appendixm.md:
     title: Appendix M Patient Demographics Query Implementation Guidance
+    generation: markdown
+  issues.md:
+    title: Open and Closed issues
     generation: markdown
 
 menu:
