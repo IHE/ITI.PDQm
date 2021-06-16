@@ -6,6 +6,6 @@ The Patient Demographics for Mobile (PDQm) Profile provides a transaction for mo
 
 The IHE PDQm Profile text is Trial Use, this IG publication is Informative. After public comment resolution this Implementation Guide will become the Trial Use specification for PDQm.
 
-This Continuous Build will appear http://build.fhir.org/ig/IHE/ITI.PDQm/branches/master/index.html
+This Continuous Build will appear https://build.fhir.org/ig/IHE/ITI.PDQm/branches/main/index.html
 
 After review, Formal Publication will be at http://profiles.ihe.net/ITI/PDQm 
