@@ -1,5 +1,7 @@
 ### M.4 Patient Demographics Query Implementation Guidance
 
+*<p style="padding: 5px; border: 1px solid black;">Add the following section to the end of Volume 2 Appendix M:</p>*
+
 This section describes the data elements that are used in IHE profiles designed for the querying of patient demographics (Patient Demographics Query Profiles) including PDQ, PDQv3, and PDQm.
 
 While the semantic representation of the data elements differs across the transaction in the PDQ Profiles, the common set of elements and query parameters can be described using abstract terminology. This section explains the data elements and query parameters used in PDQ Profiles from an abstract definition standpoint, and then it provides a map between the three profiles’ implementation specific concept.
