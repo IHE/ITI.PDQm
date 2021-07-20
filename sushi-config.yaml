@@ -1,8 +1,8 @@
-id: PDQm.ihe.net
-canonical: https://profiles.ihe.net/PDQm
+id: IHE.ITI.PDQm
+canonical: https://profiles.ihe.net/ITI/PDQm
 version: 0.1.0
-name: Patient-Demographics-Query-for-Mobile
-title: "Patient Demographics Query for Mobile"
+name: IHE_PDQm
+title: "Patient Demographics Query for mobile (PDQm)"
 status: draft
 publisher:
   - name: IHE IT Infrastructure Technical Committee
@@ -20,7 +20,20 @@ contact:
 description: The Patient Demographics Query for Mobile (PDQm) Profile defines a lightweight RESTful interface to a patient demographics supplier leveraging technologies readily available to mobile applications and lightweight browser based applications.
 license:  CC-BY-SA-4.0
 fhirVersion: 4.0.1
-parameters:
+jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
+copyright: IHE http://www.ihe.net/Governance/#Intellectual_Property
+copyrightYear: 2020+
+releaseLabel: ci-build
+
+
+parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+  path-resource:
+    - input/resources
+    - fsh-generated/resources
+    - input/examples
+  path-pages:
+    - input/pagecontent
+    - fsh-generated/includes
   show-inherited-invariants: 'false'
   usage-stats-opt-out: 'false'
   logging: progress
@@ -30,9 +43,36 @@ parameters:
   apply-jurisdiction: 'true'
   apply-publisher: 'true'
   apply-version: 'true'
+  special-url: 
+    - urn:ihe:event-type-code
 
-copyrightYear: 2020+
-releaseLabel: Rev. 2.2 – Trial Implementation
+
+resources:
+  Patient/Patient-MohrAlissa-Red:
+    name: Patient Alissa Mohr (Red)
+    description: Patient Mohr Alisa in IHE Red Domain
+    exampleBoolean: true
+  Patient/Patient-MohrAlice:
+    name: Patient Alice Mohr
+    description: 'Patient Mohr Alice with all IHE Domain identifiers, note: this is just a consolidated identifier example will all identifiers from all the IHE domains equivalent to a golden patient, however a golden patient is not the scope of PIXm, see the IHE PMIR profile' 
+    exampleBoolean: true
+  Patient/Patient-MohrAlice-Red:
+    name: Patient Alice Mohr (Red)
+    description: Patient Mohr Alice in IHE Red Domain
+    exampleBoolean: true
+  Patient/Patient-MohrAlice-Green:
+    name: Patient Alice Mohr (Green)
+    description: Patient Mohr Alice in IHE Green Domain
+    exampleBoolean: true
+  Patient/Patient-MohrAlice-Blue:
+    name: Patient Alice Mohr (Blue)
+    description: Patient Mohr Alice in IHE Blue Domain
+    exampleBoolean: true
+  Patient/Patient-MaidenAlice-Red:
+    name: Patient Maiden Alice (Red)
+    description: Patient Maiden Alice in IHE Red Domain
+    exampleBoolean: true
+
 
 pages:
   index.md:
@@ -50,9 +90,6 @@ pages:
   overview.md:
     title: 1:38.4 Overview
     generation: markdown
-  usecases.md:
-    title: 1:38.4.2 Use Cases
-    generation: markdown
   security_considerations.md:
     title: 1:38.5 Security Considerations
     generation: markdown
@@ -65,22 +102,25 @@ pages:
   appendixm.md:
     title: Appendix M Patient Demographics Query Implementation Guidance
     generation: markdown
+  testplan.md:
+    title: "Test Plan"
+    generation: markdown
   issues.md:
     title: Open and Closed issues
     generation: markdown
 
 menu:
-  IG Home: index.html
+  PDQm Home: index.html
   Volume 1:
     Actors and Transactions: actors_and_transactions.html
     Actor Options: actor_options.html
     Required Groupings: required_groupings.html
     Overview: overview.html
-    Use Cases: usecases.html
     Security Considerations: security_considerations.html
     Cross-Profile Considerations: grouping.html
   Volume 2:
-    Mobile Patient Demographics Query: ITI-78.html
+    "Mobile Patient Demographics Query [ITI-78]": ITI-78.html
   Appendix:
-    Patient Demographics Query Implementation Guidance: appendixm.html
+    "M:Patient Demographics Query Implementation Guidance": appendixm.html
+  Test Plan: testplan.html
   Artifacts: artifacts.html

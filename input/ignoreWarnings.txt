@@ -1,1 +1,6 @@
 == Suppressed Messages ==
+
+# IHE valueset that is not yet a real valueset
+Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
+
+

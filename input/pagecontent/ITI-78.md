@@ -58,6 +58,12 @@ Parameter | definitions
 `gender` | This parameter of type `token`, when supplied, specifies the administrative gender of the person whose information is being queried. For this parameter item, a single administrative gender code from value set http://hl7.org/fhir/R4/valueset-administrative-gender.html shall be specified as the only value of the token. See [ITI TF-2:Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type.
 {:.grid}
 
+For example 
+```
+GET https://server.example.com/fhir/Patient?family=MOHR&given=ALICE&active=true&gender=female
+Accept: application/fhir+json; fhirVersion=4.0
+```
+
 ###### 2:3.78.4.1.2.2 Pediatric Demographics Option
 Additional notes are available in FHIR on mother and newborn relationship, see http://hl7.org/fhir/R4/patient.html#maternity Patient Demographics Suppliers supporting the Pediatric Demographics Option shall support the `mothersMaidenName` search extension.
 Patient Demographics Consumers supporting the Pediatric Demographics Option may use the additional mothersMaidenName search extension and the additional elements returned by the Patient Demographics Suppliers. See [ITI TF 1: 38.2.1 Pediatric Demographics Option](actor_options.html#peddemoopt).
@@ -179,7 +185,7 @@ If the Patient Demographics Supplier wishes to convey the quality of match, it s
 
 ##### 2:3.78.4.2.3 Expected Actions
 
-The constraints specified in Section 3.78.4.2.2 represent the minimum set of demographics information that must be implemented by a Patient Demographics Supplier. This does not prevent the Patient Demographics Supplier from sending additional FHIR attributes in a response; such as extensions, text, etc. The Patient Demographics Consumer shall ignore additional attributes and extensions if not understood.
+The constraints specified in Section [3.78.4.2.2](#2378422-message-semantics) represent the minimum set of demographics information that must be implemented by a Patient Demographics Supplier. This does not prevent the Patient Demographics Supplier from sending additional FHIR attributes in a response; such as extensions, text, etc. The Patient Demographics Consumer shall ignore additional attributes and extensions if not understood.
 
 The consumer shall process the response in some manner specific to its application function (for example: displaying on a user interface). This application behavior is not specified by IHE.
 
@@ -230,7 +236,7 @@ The Patient Demographics Supplier may return other HTTP status codes to represen
 
 #### 2:3.78.4.4 Retrieve Patient Resource Response message
 
-The Patient Demographics Supplier’s response to a successful Retrieve Patient Resource message shall be an `HTTP 200` (OK) Status code with a Patient Resource, or an appropriate error code as defined in Section 3.78.4.2.2.1.
+The Patient Demographics Supplier’s response to a successful Retrieve Patient Resource message shall be an `HTTP 200` (OK) Status code with a Patient Resource, or an appropriate error code as defined in Section [3.78.4.2.2.1](#2378422-message-semantics).
 
 ##### 2:3.78.4.4.1 Trigger Events
 The Patient Demographics Supplier found patient demographic record matching the Resource identifier specified by the Patient Demographics Consumer.
@@ -243,7 +249,7 @@ See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.
 If the Patient Demographics Supplier is unable to produce a response in the requested format, it shall respond with an `HTTP 400` error indicating that it was unable to fulfill the request. The Patient Demographics Supplier may be capable of servicing requests for response formats not listed, but shall, at minimum, be capable of producing XML and JSON encodings.
 
 ###### 2:3.78.4.4.2.1 Patient Resource Definition in the Context of Retrieve Patient Resource Response
-The Patient Resource definition in the context of a retrieve operation is identical to the constraints placed on the Patient Resource for a search (see Section 3.78.4.2.2.1 above)
+The Patient Resource definition in the context of a retrieve operation is identical to the constraints placed on the Patient Resource for a search (see Section [3.78.4.2.2.1](#2378422-message-semantics) above)
 
 For the complete FHIR definition of this Resource, see http://hl7.org/fhir/R4/patient.html.
 
@@ -252,11 +258,12 @@ See the general Security Consideration in [ITI TF-1: 38.5](security_consideratio
 
 #### 2:3.78.5.1 Security Audit Considerations
 
-The Security audit criteria are similar to those for the Patient Demographics Query [ITI-21] as this transaction discloses the same type of patient information. The Mobile Patient Demographics Query is a Query Information event as defined in [ITI TF-2:Table 3.20.4.1.1.1-1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html#3.20.4). The message shall comply with the requirements in [ITI TF-2:3.21.5.1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-21.html#3.21.5) following differences:
+The Mobile Patient Demographics Query Transaction is a Query Information event as defined in [Table 3.20.4.1.1.1-1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html#3.20.4.1.1.1). The Actors involved shall record audit events according to the following:
 
-The Security audit criteria are similar to those for the [Patient Demographics Query \[ITI-21\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-21.html) as this transaction discloses the same type of patient information. The Mobile Patient Demographics Query is a Query Information event as defined in ITI TF-2:Table 3.20.4.1.1.1-1. The message shall comply with the requirements in ITI TF-2:3.21.5.1 following differences:
-*	EventTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)
-*	Query Parameters (AuditMessage/ParticipantObjectIdentification)
-    *	ParticipantObjectIdTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)
-    *	ParticipantObjectQuery = Requested URL including query parameters
-    *	ParticipantObjectDetail = HTTP Request Headers contained in the query (e.g., Accept header)
+##### 2:3.78.5.1.1 Patient Demographics Consumer Audit
+
+The Patient Demographics Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [PDQm Query Consumer Audit Event Log](StructureDefinition-IHE.PDQm.Query.Audit.Consumer.html). [Audit Example for a PDQm Query transaction from consumer perspective](AuditEvent-ex-auditPdqmQuery-consumer.html).
+
+##### 2:3.78.5.1.2 Patient Demographics Supplier Audit
+
+The Patient Demographics Supplier when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [PIXm Query Manager Audit Event Log](/StructureDefinition-IHE.PDQm.Query.Audit.Supplier.html). [Audit Example for a PDQm Query transaction from supplier perspective](AuditEvent-ex-auditPdqmQuery-supplier.html).

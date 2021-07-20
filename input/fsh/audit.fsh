@@ -4,11 +4,11 @@ Expression: "$this.who = %resource.source.observer"
 Severity: #error
 
 
-Profile:        AuditProvideBundleRecipient
+Profile:        AuditPdqmQuerySupplier
 Parent:         AuditEvent
-Id:             IHE.PDQm.DemographicsConsumer.Recipient
-Title:          "Audit Event for Demographics Consumer Query at Recipient"
-Description:    "Defines constraints on the AuditEvent Resource to record when a Demographics Consumer Query happens at the Recipient.
+Id:             IHE.PDQm.Query.Audit.Supplier
+Title:          "Audit Event for PDQm Query at Supplier"
+Description:    "Defines constraints on the AuditEvent Resource to record when a Patient Demographics Query using ITI-78 as recorded at the Supplier.
 	EventTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)
 	Query Parameters 
 	ParticipantObjectIdTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)
@@ -29,28 +29,36 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent ^slicing.rules = #open
 * agent ^slicing.description = "source and recipient of the query"
 * agent contains 
-	DemographicsSource 1..1 and
-	DemographicsConsumer 1..1 
+	supplier 1..1 and
+	consumer 1..1 
 	// may be many including app identity, user identity, etc
-* agent[DemographicsConsumer].type = DCM#110153 "Source Role ID"
-* agent[DemographicsConsumer].who 1..1
-* agent[DemographicsConsumer].network 1..1
-* agent[DemographicsSource].type = DCM#110152 "Destination Role ID"
-* agent[DemographicsSource].who 1..1
-* agent[DemographicsSource] obeys val-audit-source
-* agent[DemographicsSource].network 1..1
-* entity 1..* // patient records returned
-* entity.type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1 "Person"
-* entity.role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
-* entity.query 1..1
-* entity.what 1..1
-* entity.what only Reference(Patient)
+* agent[consumer].type = DCM#110153 "Source Role ID"
+* agent[consumer].who 1..1
+* agent[consumer].network 1..1
+* agent[supplier].type = DCM#110152 "Destination Role ID"
+* agent[supplier].who 1..1
+* agent[supplier] obeys val-audit-source
+* agent[supplier].network 1..1
+* entity 1..2
+* entity ^slicing.discriminator.type = #pattern
+* entity ^slicing.discriminator.path = "type"
+* entity ^slicing.rules = #closed
+* entity ^slicing.description = "query involved, patient if found"
+* entity contains
+	patient 0..1 and
+	queryParameters 1..1
+* entity[patient].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1 "Person"
+* entity[patient].role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
+* entity[patient].what 1..1
+* entity[queryParameters].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
+* entity[queryParameters].role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
+* entity[queryParameters].query 1..1
 
-Profile:        AuditProvideBundleSSender
+Profile:        AuditPdqmQueryConsumer
 Parent:         AuditEvent
-Id:             IHE.PDQm.DemographicsConsumer.Sender
-Title:          "Audit Event for Demographics Consumer Query at Sender"
-Description:    "Defines constraints on the AuditEvent Resource to record when a Demographics Consumer Query happens at the Sender.
+Id:             IHE.PDQm.Query.Audit.Consumer
+Title:          "Audit Event for PDQm Query at Consumer"
+Description:    "Defines constraints on the AuditEvent Resource to record when a Patient Demographics Query using ITI-78 as recorded at the Consumer.
 	EventTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)
 	Query Parameters 
 	ParticipantObjectIdTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)
@@ -71,19 +79,24 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent ^slicing.rules = #open
 * agent ^slicing.description = "source and recipient of the query"
 * agent contains 
-	DemographicsSource 1..1 and
-	DemographicsConsumer 1..1 
+	supplier 1..1 and
+	consumer 1..1 
 	// may be many including app identity, user identity, etc
-* agent[DemographicsConsumer].type = DCM#110153 "Source Role ID"
-* agent[DemographicsConsumer].who 1..1
-* agent[DemographicsConsumer].network 1..1
-* agent[DemographicsSource].type = DCM#110152 "Destination Role ID"
-* agent[DemographicsSource].who 1..1
-* agent[DemographicsSource] obeys val-audit-source
-* agent[DemographicsSource].network 1..1
-* entity 0..* // patient records returned
-* entity.type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1 "Person"
-* entity.role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
-* entity.query 1..1
-* entity.what 1..1
-* entity.what only Reference(Patient)
+* agent[consumer].type = DCM#110153 "Source Role ID"
+* agent[consumer].who 1..1
+* agent[consumer] obeys val-audit-source
+* agent[consumer].network 1..1
+* agent[supplier].type = DCM#110152 "Destination Role ID"
+* agent[supplier].who 1..1
+* agent[supplier].network 1..1
+* entity 1..1
+* entity ^slicing.discriminator.type = #pattern
+* entity ^slicing.discriminator.path = "type"
+* entity ^slicing.rules = #closed
+* entity ^slicing.description = "query involved"
+* entity contains
+	queryParameters 1..1
+* entity[queryParameters].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
+* entity[queryParameters].role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
+* entity[queryParameters].query 1..1
+
