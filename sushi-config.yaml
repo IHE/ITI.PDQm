@@ -11,8 +11,8 @@ publisher:
 contact:
   - name: IHE IT Infrastructure Technical Committee
     telecom:
-      - system: url
-        value: https://www.ihe.net/ihe_domains/it_infrastructure/
+      - system: email
+        value: iti@ihe.net
   - name: David Pyke
     telecom:
       - system: email
