@@ -5,3 +5,4 @@ Title: "Patient Profile for PDQm"
 Description: "The PDQm Profile forbids modifier extensions, this FHIR profile enforces it."
 
 * modifierExtension 0..0
+* extension contains http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named MothersMaidenName 0..1 MS

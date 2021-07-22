@@ -94,23 +94,23 @@ The Patient Demographics Supplier shall return all exact matches to the query pa
 
 The information provided by the Patient Demographics Supplier to the Patient Demographics Consumer is a list of matching patients from the Patient Demographics Supplier’s information source. The mechanics of the matching algorithms used are internal to the Patient Demographics Supplier and are outside the scope of this framework.
 
-The Patient Demographics Supplier shall support at least one patient identifier domain and may support multiple identifier domains. Section 3.78.4.1.2.4 describes how the Patient Demographics Consumer may filter results based on identifiers from one or more patient identifier domains. Query responses may return patient identifiers from one or multiple patient identifier domains.
+The Patient Demographics Supplier shall support at least one patient identifier domain and may support multiple identifier domains. Section [3.78.4.1.2.4](#domainpop) describes how the Patient Demographics Consumer may filter results based on identifiers from one or more patient identifier domains. Query responses may return patient identifiers from one or multiple patient identifier domains.
 
 See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for handling guidance for Access Denied.
 
 The Patient Demographics Supplier shall respond to the query request as described by the following cases with a Query Patient Resource Response message described in Section 3.78.4.2, and shall behave according to the cases listed below:
 
-**Case 1**: The Patient Demographics Supplier finds in its information source at least one patient record matching the criteria sent as HTTP query parameters. No patient identifier domains are requested via the mechanism specified as specified in Section 3.78.4.1.2.4.
+**Case 1**: The Patient Demographics Supplier finds in its information source at least one patient record matching the criteria sent as HTTP query parameters. No patient identifier domains are requested via the mechanism specified as specified in Section [3.78.4.1.2.4](#domainpop).
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
 A Resource Bundle is returned representing the result set. The Patient Demographics Supplier populates the `total` property of the bundle with the total number of matching results. One `entry` is returned from the Patient Demographics Supplier for each Patient Resource found.
 
-**Case 2**: The Patient Demographics Supplier finds at least one patient record matching the criteria sent in the query parameters. One or more patient identifier domains are requested via the mechanism specified in Section 3.78.4.1.2.4, and Patient Demographics Supplier recognizes all domains.
+**Case 2**: The Patient Demographics Supplier finds at least one patient record matching the criteria sent in the query parameters. One or more patient identifier domains are requested via the mechanism specified in Section [3.78.4.1.2.4](#domainpop), and Patient Demographics Supplier recognizes all domains.
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
-The Patient Demographics Supplier performs its matching and returns a bundle as described in Case 1. The Patient Demographics Supplier eliminates identifiers from the result set which do not exist in the list specified per Section 3.78.4.1.2.4 (domains to be returned). If all entries in the list of patient identifiers are eliminated, which would leave the patient identifiers list empty, then the entry shall not be present in the response bundle.
+The Patient Demographics Supplier performs its matching and returns a bundle as described in Case 1. The Patient Demographics Supplier eliminates identifiers from the result set which do not exist in the list specified per Section [3.78.4.1.2.4](#domainpop) (domains to be returned). If all entries in the list of patient identifiers are eliminated, which would leave the patient identifiers list empty, then the entry shall not be present in the response bundle.
 
 **Case 3**: The Patient Demographics Supplier fails to find in its information source, any patient record matching the criteria sent as HTTP query parameters.
 
@@ -118,7 +118,7 @@ The Patient Demographics Supplier performs its matching and returns a bundle as 
 
 A Resource Bundle is returned representing the zero result set. The Patient Demographics Supplier populates the total with a value of 0 indicating no results were found. No `entry` attributes are provided in the result.
 
-**Case 4**: The Patient Demographics Supplier does not recognize one or more of the domains specified per Section 3.78.4.1.2.4.
+**Case 4**: The Patient Demographics Supplier does not recognize one or more of the domains specified per Section [3.78.4.1.2.4](#domainpop).
 
 There are two different acceptable return results. Preferred response is a `HTTP 404` to indicate that the domain is not recognized, but a `HTTP 200` with an empty result is acceptable when the Patient Demographics Supplier cannot determine that the domain is not recognized.
 
@@ -165,8 +165,8 @@ The Query Patient Resource Response is sent from the Patient Demographics Suppli
 See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for handling guidance for Access Denied.
 
 ###### 2:3.78.4.2.2.1 Patient Resource Definition in the Context of Query Patient Resource Response
-The components of the Patient Resource with cardinality greater than 0 (as shown below) are required, and the detailed description of the message is provided here. All other attributes of the response are optional.
-The Patient Resource contained within the Query Patient Resource Response message is described at http://hl7.org/fhir/R4/patient.html and is not further constrained by this transaction.
+
+The Patient Resource(s) contained within the Query Patient Resource Response message should conform to [Patient Profile for PDQm](StructureDefinition-IHE.PDQm.Patient.html).
 
 ###### 2:3.78.4.2.2.2 Mother’s Maiden Name <a name="mmn"> </a>
 Patient Demographics Suppliers shall include the mother’s maiden name, if known, in this extension: http://hl7.org/fhir/R4/extension-patient-mothersmaidenname.html
@@ -242,7 +242,7 @@ The Patient Demographics Supplier’s response to a successful Retrieve Patient 
 The Patient Demographics Supplier found patient demographic record matching the Resource identifier specified by the Patient Demographics Consumer.
 
 ##### 2:3.78.4.4.2 Message Semantics
-The Retrieve Patient Resource response is sent from the Patient Demographics Supplier to the Patient Demographics Consumer as a single Patient Resource. See http://hl7.org/fhir/R4/patient.html for details on this resource.
+The Retrieve Patient Resource response is sent from the Patient Demographics Supplier to the Patient Demographics Consumer as a single Patient Resource. 
 
 See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for handling guidance for Access Denied.
 
@@ -251,7 +251,7 @@ If the Patient Demographics Supplier is unable to produce a response in the requ
 ###### 2:3.78.4.4.2.1 Patient Resource Definition in the Context of Retrieve Patient Resource Response
 The Patient Resource definition in the context of a retrieve operation is identical to the constraints placed on the Patient Resource for a search (see Section [3.78.4.2.2.1](#2378422-message-semantics) above)
 
-For the complete FHIR definition of this Resource, see http://hl7.org/fhir/R4/patient.html.
+For the complete FHIR definition of the Patient Resource, see http://hl7.org/fhir/R4/patient.html.
 
 ### 2:3.78.5 Security Considerations
 See the general Security Consideration in [ITI TF-1: 38.5](security_considerations.html)
