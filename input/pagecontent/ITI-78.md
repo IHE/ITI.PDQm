@@ -72,7 +72,7 @@ Patient Demographics Consumers supporting the Pediatric Demographics Option may 
 Patient Demographics Suppliers shall support the `“:exact”` parameter modifier on all query parameters of type string. When supplied by the Patient Demographics Consumer, the `“:exact”` parameter modifier instructs the Patient Demographics Supplier that exact matching should be performed.
 The Patient Demographics Consumer should not use, and Patient Demographics Supplier may ignore, any additional parameter modifiers listed in the FHIR standard, which are considered out of scope in the context of this transaction
 
-###### 2:3.78.4.1.2.4 Populating Which Domains are Returned
+###### 2:3.78.4.1.2.4 Populating Which Domains are Returned <a name="domainpop"> </a>
 The Patient Demographics Consumer may constrain the domains from which patient identifiers are returned from the Patient Demographics Supplier in the resulting bundle. The Patient Demographics Consumer shall convey this by specifying the patient identity domains in the system component of repeating `identifier` parameters using the OR format:
 
     &identifier=urn:oid:1.2.3|,urn:oid:4.5.6|
@@ -168,8 +168,8 @@ See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.
 The components of the Patient Resource with cardinality greater than 0 (as shown below) are required, and the detailed description of the message is provided here. All other attributes of the response are optional.
 The Patient Resource contained within the Query Patient Resource Response message is described at http://hl7.org/fhir/R4/patient.html and is not further constrained by this transaction.
 
-###### 2:3.78.4.2.2.2 Mother’s Maiden Name
-Patient Demographics Suppliers shall include the mother’s maiden name, if known, in an extension named mothers MaidenName. See http://hl7.org/fhir/R4/extension-patient-mothersmaidenname.html
+###### 2:3.78.4.2.2.2 Mother’s Maiden Name <a name="mmn"> </a>
+Patient Demographics Suppliers shall include the mother’s maiden name, if known, in this extension: http://hl7.org/fhir/R4/extension-patient-mothersmaidenname.html
 
 ###### 2:3.78.4.2.2.3 Resource Bundling
 Please see [ITI TF-2:Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles) for details on the IHE guidelines for implementing FHIR bundles.
