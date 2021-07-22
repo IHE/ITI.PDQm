@@ -32,7 +32,7 @@ if you are looking for a specific artifact, check out the [index](artifacts.html
 
 #### Must Support
 
-PDQm uses ```Must Support``` in StructureDefinitions. This is equivalent to IHE use of **R2** as defined in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir).
+PDQm uses ```Must Support``` in StructureDefinition profiles. This is equivalent to IHE use of **R2** as defined in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir).
 
 #### Download 
 
