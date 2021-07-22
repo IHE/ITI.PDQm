@@ -1,6 +1,8 @@
 ### M.4 Patient Demographics Query Implementation Guidance
 
-<p style="padding: 5px; border: 1px solid black;"><i>Add the following section to the end of Volume 2 Appendix M:</i></p>
+
+|*Add the following section to the end of [Volume 2 Appendix M](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html):*|
+{: .grid}
 
 This section describes the data elements that are used in IHE profiles designed for the querying of patient demographics (Patient Demographics Query Profiles) including PDQ, PDQv3, and PDQm.
 
