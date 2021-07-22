@@ -43,7 +43,7 @@ Language(s) of communication|PID.15|languageCommunication|communication.language
 Marital Status|PID.16|maritalStatusCode|maritalStatus
 Non-Medical Identifiers|PID.19 and PID.20|asOtherIds|identifier
 Death Date/Time|PID.29|deceasedTime|deceasedDateTime
-Mother’s Maiden Name|PID.6|personalRelationship.name|See ITI TF-2c: 3.78.4.2.2.2
+Mother’s Maiden Name|PID.6|personalRelationship.name|[See ITI TF-2:3.78.4.2.2.2](ITI-78.html#mmn)
 Patient Birth Order|PID.25|multipleBirthOrderNumber|multipleBirthInteger
 {:.grid}
 
@@ -75,7 +75,7 @@ Name|@PID.5|livingSubjectName|given and family
 Date / Time of Birth|@PID.7|livingSubjectBirthTime|birthdate <br />Note: Birth time is not applicable in PDQm
 Gender|@PID.8|livingSubjectAdministrativeGender|gender
 Address|@PID.11|patientAddress|address
-Domains to be Returned|QPD-8|otherIDsScopingOrganization|See ITI TF-2c: 3.78.4.1.2.4
+Domains to be Returned|QPD-8|otherIDsScopingOrganization|See [ITI TF-2:3.78.4.1.2.4](ITI-78.html#domainpop)
 Mother’s Maiden Name|@PID.6|mothersMaidenName|mothersMaidenName
 Patient Telecommunications Addresses|@PID.13|patientTelecom|telecom
 {:.grid}
