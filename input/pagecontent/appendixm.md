@@ -1,6 +1,8 @@
 ### M.4 Patient Demographics Query Implementation Guidance
 
-<p style="padding: 5px; border: 1px solid black;"><i>Add the following section to the end of Volume 2 Appendix M:</i></p>
+
+|*Add the following section to the end of [Volume 2 Appendix M](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html):*|
+{: .grid}
 
 This section describes the data elements that are used in IHE profiles designed for the querying of patient demographics (Patient Demographics Query Profiles) including PDQ, PDQv3, and PDQm.
 
@@ -43,7 +45,7 @@ Language(s) of communication|PID.15|languageCommunication|communication.language
 Marital Status|PID.16|maritalStatusCode|maritalStatus
 Non-Medical Identifiers|PID.19 and PID.20|asOtherIds|identifier
 Death Date/Time|PID.29|deceasedTime|deceasedDateTime
-Mother’s Maiden Name|PID.6|personalRelationship.name|See ITI TF-2c: 3.78.4.2.2.2
+Mother’s Maiden Name|PID.6|personalRelationship.name|[See ITI TF-2:3.78.4.2.2.2](ITI-78.html#mmn)
 Patient Birth Order|PID.25|multipleBirthOrderNumber|multipleBirthInteger
 {:.grid}
 
@@ -75,7 +77,7 @@ Name|@PID.5|livingSubjectName|given and family
 Date / Time of Birth|@PID.7|livingSubjectBirthTime|birthdate <br />Note: Birth time is not applicable in PDQm
 Gender|@PID.8|livingSubjectAdministrativeGender|gender
 Address|@PID.11|patientAddress|address
-Domains to be Returned|QPD-8|otherIDsScopingOrganization|See ITI TF-2c: 3.78.4.1.2.4
+Domains to be Returned|QPD-8|otherIDsScopingOrganization|See [ITI TF-2:3.78.4.1.2.4](ITI-78.html#domainpop)
 Mother’s Maiden Name|@PID.6|mothersMaidenName|mothersMaidenName
 Patient Telecommunications Addresses|@PID.13|patientTelecom|telecom
 {:.grid}

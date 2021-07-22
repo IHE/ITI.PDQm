@@ -39,7 +39,7 @@ The search target follows the FHIR http specification, addressing the Patient Re
 
     GET [base]/Patient?<query>
 
-The `<query>` represents a series of encoded name-value pairs representing the filter for the query specified below, as well as control parameters to modify the behavior of the Patient Demographics Supplier such as response format, or pagination.
+This URL is configurable by the Patient Demographics Supplier and is subject to the following constraints. The `<query>` represents a series of encoded name-value pairs representing the filter for the query specified below, as well as control parameters to modify the behavior of the Patient Demographics Supplier such as response format, or pagination.
 
 ##### 2:3.78.4.1.2.1 Query Search Parameters
 The Patient Demographics Consumer may supply, and the Patient Demographics Supplier shall be capable of processing, all query parameters listed below. All query parameter values shall be appropriately encoded per [RFC3986](https://tools.ietf.org/html/rfc3986) “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
@@ -50,11 +50,11 @@ Parameter | definitions
 `_id` |This parameter of type string, when supplied, represents the resource identifier for the Patient Resource being queried. See [ITI TF-2:Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type. Note: A search using `_id` is always an exact match search.
 `active` | This parameter of type `token`, when supplied, specifies the active state. The active state indicates whether the patient record is active. Note: use `active=true`
 `family` and `given` | These parameters of type `string`, when supplied, specify the name of the person whose information is being queried. For this parameter the Patient Demographics Consumer may use either family name, given name or a combination of both names to filter by family, given or family and given names respectively. See [ITI TF-2:Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type.
-`identifier` | This repeating parameter of type `token`, when supplied, specifies an identifier associated with the patient whose information is being queried (e.g., a local identifier, account identifier, etc.). See [ITI TF-2:Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type. If multiple instances of this parameter are provided in the query, the query represents a logical AND condition (i.e., all of the associated identifiers must match). For example, a query searching for patients having identifier145 assigned by authority “1.2.3.4” and SSN 123456789 would be represented as:<br /> `?identifier=urn:oid:1.2.3.4\|145&identifier=urn:oid:2.16.840.1.113883.4.1\|123456789` <br />If no `system` portion of the identifier parameter is specified, then the matching would be performed on any identifier regardless of issuing system. The `identifier` specified in this parameter is expressed using the `token` search parameter type. Please see (ITI TF-2:Appendix Z.2.2)[https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters] for use of the `token` data type for patient identifiers.
+`identifier` | This repeating parameter of type `token`, when supplied, specifies an identifier associated with the patient whose information is being queried (e.g., a local identifier, account identifier, etc.). See [ITI TF-2:Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type. If multiple instances of this parameter are provided in the query, the query represents a logical AND condition (i.e., all of the associated identifiers must match). For example, a query searching for patients having identifier145 assigned by authority “1.2.3.4” and SSN 123456789 would be represented as:<br /> `?identifier=urn:oid:1.2.3.4|145&identifier=urn:oid:2.16.840.1.113883.4.1|123456789` <br />If no `system` portion of the identifier parameter is specified, then the matching would be performed on any identifier regardless of issuing system. The `identifier` specified in this parameter is expressed using the `token` search parameter type. Please see [ITI TF-2:Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type for patient identifiers.
 `telecom` | This parameter of type `token`, when supplied, specifies the telecommunications details
 `birthdate` | This parameter of type `date`, when supplied, specifies the birth date of the person whose information is being queried. The Patient Demographics Consumer shall use the date and interval mechanism to indicate a specific date of birth or a date that lies within the range specified by the parameter. See http://hl7.org/fhir/R4/search.html#date
 `address` | This parameter of type `string`, when supplied, specifies one or more address parts associated with the person whose information is being queried. For details on matching rules, see [ITI TF-2:Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters).
-`address-city,<br/> address-country,<br/> address-postalcode,<br/> address-state` | These parameters of type `string`, when supplied, specify a match against the specified address part associated with the person whose information is being queried. Note that national conventions for addresses may affect utility of these fields.
+`address-city`,<br /> `address-country`,<br /> `address-postalcode`,<br /> `address-state` | These parameters of type `string`, when supplied, specify a match against the specified address part associated with the person whose information is being queried. Note that national conventions for addresses may affect utility of these fields.
 `gender` | This parameter of type `token`, when supplied, specifies the administrative gender of the person whose information is being queried. For this parameter item, a single administrative gender code from value set http://hl7.org/fhir/R4/valueset-administrative-gender.html shall be specified as the only value of the token. See [ITI TF-2:Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type.
 {:.grid}
 
@@ -72,7 +72,7 @@ Patient Demographics Consumers supporting the Pediatric Demographics Option may 
 Patient Demographics Suppliers shall support the `“:exact”` parameter modifier on all query parameters of type string. When supplied by the Patient Demographics Consumer, the `“:exact”` parameter modifier instructs the Patient Demographics Supplier that exact matching should be performed.
 The Patient Demographics Consumer should not use, and Patient Demographics Supplier may ignore, any additional parameter modifiers listed in the FHIR standard, which are considered out of scope in the context of this transaction
 
-###### 2:3.78.4.1.2.4 Populating Which Domains are Returned
+###### 2:3.78.4.1.2.4 Populating Which Domains are Returned <a name="domainpop"> </a>
 The Patient Demographics Consumer may constrain the domains from which patient identifiers are returned from the Patient Demographics Supplier in the resulting bundle. The Patient Demographics Consumer shall convey this by specifying the patient identity domains in the system component of repeating `identifier` parameters using the OR format:
 
     &identifier=urn:oid:1.2.3|,urn:oid:4.5.6|
@@ -90,7 +90,7 @@ See [ITI TF-2:Appendix Z.6 for details](https://profiles.ihe.net/ITI/TF/Volume2/
 #### 2:3.78.4.1.3 Expected Actions
 The Patient Demographics Supplier shall return demographic records that reflect the match to all of the search criteria provided by the Patient Demographics Consumer. The Patient Demographics Supplier shall respond with a Query Patient Resource Response message synchronously (i.e., on the same connection as was used to initiate the request).
 
-The Patient Demographics Supplier shall return all exact matches to the query parameters sent by the Patient Demographics Consumer; IHE does not further specify matching requirements. The Patient Demographics Supplier may be able to perform other string matching (e.g., case insensitive, partial matches, etc.) which shall be indicate in its CapabilityStatement Resource (see [ITI TF-2:Appendix Z.4[(https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource)]).
+The Patient Demographics Supplier shall return all exact matches to the query parameters sent by the Patient Demographics Consumer; IHE does not further specify matching requirements. The Patient Demographics Supplier may be able to perform other string matching (e.g., case insensitive, partial matches, etc.) which shall be indicate in its CapabilityStatement Resource (see [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource)).
 
 The information provided by the Patient Demographics Supplier to the Patient Demographics Consumer is a list of matching patients from the Patient Demographics Supplier’s information source. The mechanics of the matching algorithms used are internal to the Patient Demographics Supplier and are outside the scope of this framework.
 
@@ -100,25 +100,25 @@ See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.
 
 The Patient Demographics Supplier shall respond to the query request as described by the following cases with a Query Patient Resource Response message described in Section 3.78.4.2, and shall behave according to the cases listed below:
 
-Case 1: The Patient Demographics Supplier finds in its information source at least one patient record matching the criteria sent as HTTP query parameters. No patient identifier domains are requested via the mechanism specified as specified in Section 3.78.4.1.2.4.
+**Case 1**: The Patient Demographics Supplier finds in its information source at least one patient record matching the criteria sent as HTTP query parameters. No patient identifier domains are requested via the mechanism specified as specified in Section 3.78.4.1.2.4.
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
 A Resource Bundle is returned representing the result set. The Patient Demographics Supplier populates the `total` property of the bundle with the total number of matching results. One `entry` is returned from the Patient Demographics Supplier for each Patient Resource found.
 
-Case 2: The Patient Demographics Supplier finds at least one patient record matching the criteria sent in the query parameters. One or more patient identifier domains are requested via the mechanism specified in Section 3.78.4.1.2.4, and Patient Demographics Supplier recognizes all domains.
+**Case 2**: The Patient Demographics Supplier finds at least one patient record matching the criteria sent in the query parameters. One or more patient identifier domains are requested via the mechanism specified in Section 3.78.4.1.2.4, and Patient Demographics Supplier recognizes all domains.
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
 The Patient Demographics Supplier performs its matching and returns a bundle as described in Case 1. The Patient Demographics Supplier eliminates identifiers from the result set which do not exist in the list specified per Section 3.78.4.1.2.4 (domains to be returned). If all entries in the list of patient identifiers are eliminated, which would leave the patient identifiers list empty, then the entry shall not be present in the response bundle.
 
-Case 3: The Patient Demographics Supplier fails to find in its information source, any patient record matching the criteria sent as HTTP query parameters.
+**Case 3**: The Patient Demographics Supplier fails to find in its information source, any patient record matching the criteria sent as HTTP query parameters.
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
 A Resource Bundle is returned representing the zero result set. The Patient Demographics Supplier populates the total with a value of 0 indicating no results were found. No `entry` attributes are provided in the result.
 
-Case 4: The Patient Demographics Supplier does not recognize one or more of the domains specified per Section 3.78.4.1.2.4.
+**Case 4**: The Patient Demographics Supplier does not recognize one or more of the domains specified per Section 3.78.4.1.2.4.
 
 There are two different acceptable return results. Preferred response is a `HTTP 404` to indicate that the domain is not recognized, but a `HTTP 200` with an empty result is acceptable when the Patient Demographics Supplier cannot determine that the domain is not recognized.
 
@@ -133,7 +133,7 @@ diagnostics|“targetSystem not found”
 
 The OperationOutcome Resource may indicate the query parameter used and the domain in error within the `diagnostics` attribute. See FHIR discussion of search error handling http://hl7.org/fhir/R4/search.html#errors
 
-Case 5: The Patient Demographics Supplier is not capable of producing a response in the requested format specified by _format parameter (specified in Section 3.78.4.1.2.5).
+**Case 5**: The Patient Demographics Supplier is not capable of producing a response in the requested format specified by _format parameter (specified in Section 3.78.4.1.2.5).
 
 `HTTP 406` (Not Acceptable) is returned as the HTTP status code.
 
@@ -168,8 +168,8 @@ See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.
 The components of the Patient Resource with cardinality greater than 0 (as shown below) are required, and the detailed description of the message is provided here. All other attributes of the response are optional.
 The Patient Resource contained within the Query Patient Resource Response message is described at http://hl7.org/fhir/R4/patient.html and is not further constrained by this transaction.
 
-###### 2:3.78.4.2.2.2 Mother’s Maiden Name
-Patient Demographics Suppliers shall include the mother’s maiden name, if known, in an extension named mothers MaidenName. See http://hl7.org/fhir/R4/extension-patient-mothersmaidenname.html
+###### 2:3.78.4.2.2.2 Mother’s Maiden Name <a name="mmn"> </a>
+Patient Demographics Suppliers shall include the mother’s maiden name, if known, in this extension: http://hl7.org/fhir/R4/extension-patient-mothersmaidenname.html
 
 ###### 2:3.78.4.2.2.3 Resource Bundling
 Please see [ITI TF-2:Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles) for details on the IHE guidelines for implementing FHIR bundles.
@@ -214,13 +214,13 @@ Note: The use of "http" or "https" in URL does not override requirements to use 
 ##### 2:3.78.4.3.3 Expected Actions
 The Patient Demographics Supplier shall retrieve the demographic record indicated by the Resource identifier on the HTTP GET supplied by the Patient Demographics Consumer. The Patient Demographics Supplier shall respond to the retrieve request as described by the following cases:
 
-Case 1: The Patient Demographics Supplier finds in its information source the patient demographics record matching the `resourceId` sent in the HTTP request.
+**Case 1**: The Patient Demographics Supplier finds in its information source the patient demographics record matching the `resourceId` sent in the HTTP request.
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
 A Patient Resource is returned representing the result.
 
-Case 2: The Patient Demographics Supplier fails to find in its information source the patient demographics record matching the `resourceId` sent in the HTTP request.
+**Case 2**: The Patient Demographics Supplier fails to find in its information source the patient demographics record matching the `resourceId` sent in the HTTP request.
 
 `HTTP 404` (Not Found) is returned as the HTTP status code
 
