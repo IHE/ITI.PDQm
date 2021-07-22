@@ -96,7 +96,7 @@ The information provided by the Patient Demographics Supplier to the Patient Dem
 
 The Patient Demographics Supplier shall support at least one patient identifier domain and may support multiple identifier domains. Section [3.78.4.1.2.4](#domainpop) describes how the Patient Demographics Consumer may filter results based on identifiers from one or more patient identifier domains. Query responses may return patient identifiers from one or multiple patient identifier domains.
 
-See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for handling guidance for Access Denied.
+See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for guidance for Access Denied.
 
 The Patient Demographics Supplier shall respond to the query request as described by the following cases with a Query Patient Resource Response message described in Section 3.78.4.2, and shall behave according to the cases listed below:
 
@@ -162,7 +162,7 @@ The Patient Demographics Supplier found patient demographics matching the query 
 
 The Query Patient Resource Response is sent from the Patient Demographics Supplier to the Patient Demographics Consumer as a Bundle of Patient Resources. The “content-type” of the response will depend upon the requested response format indicated by the Patient Demographics Consumer.
 
-See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for handling guidance for Access Denied.
+See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for guidance for Access Denied.
 
 ###### 2:3.78.4.2.2.1 Patient Resource Definition in the Context of Query Patient Resource Response
 
@@ -244,7 +244,7 @@ The Patient Demographics Supplier found patient demographic record matching the 
 ##### 2:3.78.4.4.2 Message Semantics
 The Retrieve Patient Resource response is sent from the Patient Demographics Supplier to the Patient Demographics Consumer as a single Patient Resource. 
 
-See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for handling guidance for Access Denied.
+See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for guidance for Access Denied.
 
 If the Patient Demographics Supplier is unable to produce a response in the requested format, it shall respond with an `HTTP 400` error indicating that it was unable to fulfill the request. The Patient Demographics Supplier may be capable of servicing requests for response formats not listed, but shall, at minimum, be capable of producing XML and JSON encodings.
 
