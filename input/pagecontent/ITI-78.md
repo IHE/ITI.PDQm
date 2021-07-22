@@ -39,7 +39,7 @@ The search target follows the FHIR http specification, addressing the Patient Re
 
     GET [base]/Patient?<query>
 
-The `<query>` represents a series of encoded name-value pairs representing the filter for the query specified below, as well as control parameters to modify the behavior of the Patient Demographics Supplier such as response format, or pagination.
+This URL is configurable by the Patient Demographics Supplier and is subject to the following constraints. The `<query>` represents a series of encoded name-value pairs representing the filter for the query specified below, as well as control parameters to modify the behavior of the Patient Demographics Supplier such as response format, or pagination.
 
 ##### 2:3.78.4.1.2.1 Query Search Parameters
 The Patient Demographics Consumer may supply, and the Patient Demographics Supplier shall be capable of processing, all query parameters listed below. All query parameter values shall be appropriately encoded per [RFC3986](https://tools.ietf.org/html/rfc3986) “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
