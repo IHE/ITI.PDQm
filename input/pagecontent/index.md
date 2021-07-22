@@ -1,4 +1,16 @@
-The Patient Demographics for Mobile (PDQm) Profile provides a transaction for mobile and lightweight browser-based applications to query a patient demographics supplier for a list of patients based on user-defined search criteria and retrieve a patient’s demographic information. This profile provides a lightweight alternative to PDQ Patient Demographics Query [\[ITI-21\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-21.html) or PDQV3 Patient Demographics Query V3 [\[ITI-47\]](https://profiles.ihe.net/ITI/TF/Volume2/ITI-47.html).
+The Patient Demographics Query for Mobile (PDQm) Profile defines a lightweight RESTful interface to a patient demographics supplier leveraging technologies readily available to mobile applications and lightweight browser based applications.
+
+The functionality is similar to the [PDQ](https://profiles.ihe.net/ITI/TF/Volume1/ch-8.html) and [PDQv3](https://profiles.ihe.net/ITI/TF/Volume1/ch-24.html) Profiles. The differences are driven by the use of HL7 [FHIR](http://hl7.org/fhir/). The profile leverages HTTP transport, and the JavaScript Object Notation (JSON), Simple-XML, and Representational State Transfer (REST). The payload format is defined by the HL7 [FHIR](http://hl7.org/fhir/) standard.
+
+The following list provides a few examples of how PDQm might be leveraged by implementers:
+-   A health portal securely exposing demographics data to browser-based plugins
+-   Medical devices which need to access patient demographic information
+-   Mobile devices used by physicians (example bedside eCharts) which need to establish patient context by scanning a bracelet
+-   Web based EHR/EMR applications which wish to provide dynamic updates of patient demographic information such as a non-postback search,  additional demographic detail, etc.
+-   Any low resource application which exposes patient demographic search functionality
+-   Any application using the MHD Profile to access documents may use PDQm to find an appropriate patient identifier
+
+This implementation guide is intended to be fully compliant with the HL7 [FHIR](http://hl7.org/fhir/) specification, providing only use-case driven constraints to aid with interoperability, deterministic results, and compatibility with existing PDQ and PDQv3 Profiles.
 
 <div markdown="1" class="stu-note">
 
