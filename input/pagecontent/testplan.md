@@ -30,7 +30,9 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 * Gazelle Patient Manager online: https://gazelle.ihe.net/PatientManager/home.seam
 * User Manual:  https://gazelle.ihe.net/gazelle-documentation/Patient-Manager/user.html
 * Tool support: https://gazelle.ihe.net/jira/projects/PAM
-* Actors (options) tested:  Patient Demographics Consumer, Patient Demographics Supplier 
+* Actors (options) tested:  Patient Demographics Consumer, Patient Demographics Supplier for ITI-78:
+  *  Consumer test definition: PM_PDQ_Query-Patient_Demographics_Consumer https://gazelle.ihe.net/content/pmpdqquery-patientdemographicsconsumer
+  *  Supplier test definition: PM_PDQ_Query-Patient_Demographics_Supplier https://gazelle.ihe.net/content/pmpdqquery-patientdemographicssupplier
 
 #### Gazelle External Validation Service (aka "EVS Client") - Validator
 
