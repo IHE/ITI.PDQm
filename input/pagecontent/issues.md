@@ -1,7 +1,7 @@
 <div markdown="1" class="stu-note">
 
-### Significant changes from [PDQm, Revised 2020-08-28](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf):
-- FHIR Implementation Guide instead of [pdf](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf)
+### Significant changes from PDQm, Rev 2.2:
+- FHIR Implementation Guide instead of [pdf - Rev. 2.2](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf)
 - Patient is now profiled to forbid modifier extensions
 - AuditEvent is fully profiled using structureDefinition with examples
 

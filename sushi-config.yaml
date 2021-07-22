@@ -1,6 +1,6 @@
 id: IHE.ITI.PDQm
 canonical: https://profiles.ihe.net/ITI/PDQm
-version: 0.1.0
+version: 2.2.1
 name: IHE_PDQm
 title: "Patient Demographics Query for mobile (PDQm)"
 status: draft
