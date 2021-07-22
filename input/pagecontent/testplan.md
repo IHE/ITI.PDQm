@@ -49,7 +49,7 @@ The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.
 ### Patient Demographics Consumer --> Patient Demographics Supplier Interoperability Tests:
 
 * ITI-78_(PDQm)_Search_Read
-  * Assumes a pre-defined set of Patient Resources on the Supplier actor
+  * Assumes a pre-defined set of patient demographics on the Supplier actor
 * ITI-78_Paging
 * PDQm_Query_with_Twin_Data
   * Assumes an additional set of demographics on the Supplier actor to demonstrate extra requirements for the Pediatric Demographics option.
