@@ -2,7 +2,7 @@ Instance: IHE.PDQm.client
 InstanceOf: CapabilityStatement
 Usage: #definition
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t\tCapabilityStatement for Client Actor in the IHE IT Infrastructure Technical Framework Supplement\r\n\t\t\t<a href=\"http://wiki.ihe.net/index.php/PDQm\">PDQm</a>\r\n\t\tThe IHE Profile text is Normative, this conformance resource is Informative.\r\n\t\t</div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n\t\tCapabilityStatement for Client Actor in the IHE IT Infrastructure Technical Framework Supplement\r\n\t\t\t<a href=\"https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html\">PDQm</a>\r\n\t\tThe IHE Profile text is Normative, this conformance resource is Informative.\r\n\t\t</div>"
 * url = "http://ihe.net/fhir/CapabilityStatement/capabilitystatement-IHE.PDQm.client"
 * name = "IHE_PDQm_client"
 * title = "IHE PDQm client"
@@ -16,7 +16,7 @@ Usage: #definition
 * contact[+].name = "John Moehrke"
 * contact[=].telecom.system = #email
 * contact[=].telecom.value = "JohnMoehrke@gmail.com"
-* description = "CapabilityStatement for Client Actor in the IHE IT Infrastructure Technical Framework Supplement IHE PDQm. See http://wiki.ihe.net/index.php/PDQm. The IHE Profile text is Normative, this conformance resource is Informative."
+* description = "CapabilityStatement for Client Actor in the IHE IT Infrastructure Technical Framework Supplement IHE PDQm. See https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html. The IHE Profile text is Normative, this conformance resource is Informative."
 * copyright = "IHE http://www.ihe.net/Governance/#Intellectual_Property"
 * kind = #requirements
 * fhirVersion = #4.0.1
@@ -87,7 +87,7 @@ Instance: IHE.PDQm.server
 InstanceOf: CapabilityStatement
 Usage: #definition
 * text.status = #additional
-* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\nCapabilityStatement for SERVER Actor in the IHE\r\n<a href=\"http://wiki.ihe.net/index.php\">PDQm</a>.\r\nThe IHE Profile text is Normative, this conformance resource is Informative.\r\n\t\t</div>"
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\nCapabilityStatement for SERVER Actor in the IHE\r\n<a href=\"https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html\">PDQm</a>.\r\nThe IHE Profile text is Normative, this conformance resource is Informative.\r\n\t\t</div>"
 * url = "http://ihe.net/fhir/CapabilityStatement/capabilitystatement-IHE.PDQm.server"
 * name = "IHE_PDQm_supplier"
 * title = "IHE PDQm Server"
@@ -101,7 +101,7 @@ Usage: #definition
 * contact[+].name = "John Moehrke"
 * contact[=].telecom.system = #email
 * contact[=].telecom.value = "JohnMoehrke@gmail.com"
-* description = "CapabilityStatement for Server Actor in the IHE IT Infrastructure Technical Framework Supplement IHE PDQm. See http://wiki.ihe.net/index.php/PDQm. The IHE Profile text is Normative, this conformance resource is Informative."
+* description = "CapabilityStatement for Server Actor in the IHE IT Infrastructure Technical Framework Supplement IHE PDQm. See https://profiles.ihe.net/ITI/TF/Volume1/ch-38.html. The IHE Profile text is Normative, this conformance resource is Informative."
 * copyright = "IHE http://www.ihe.net/Governance/#Intellectual_Property"
 * kind = #requirements
 * fhirVersion = #4.0.1
