@@ -30,9 +30,9 @@ Usage: #example
 * agent[supplier].requestor = false
 * agent[supplier].network.address = "http://server.example.com/fhir"
 * agent[supplier].network.type = http://hl7.org/fhir/network-type#5 "URI"
-* entity[queryParameters].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
-* entity[queryParameters].role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
-* entity[queryParameters].query = "R0VUIGh0dHBzOi8vc2VydmVyLmV4YW1wbGUuY29tL2ZoaXIvUGF0aWVudD9mYW1pbHk9TU9IUiZnaXZlbj1BTElDRSZhY3RpdmU9dHJ1ZSZnZW5kZXI9ZmVtYWxlCkFjY2VwdDogYXBwbGljYXRpb24vZmhpcitqc29uOyBmaGlyVmVyc2lvbj00LjA="
+* entity.type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
+* entity.role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
+* entity.query = "R0VUIGh0dHBzOi8vc2VydmVyLmV4YW1wbGUuY29tL2ZoaXIvUGF0aWVudD9mYW1pbHk9TU9IUiZnaXZlbj1BTElDRSZhY3RpdmU9dHJ1ZSZnZW5kZXI9ZmVtYWxlCkFjY2VwdDogYXBwbGljYXRpb24vZmhpcitqc29uOyBmaGlyVmVyc2lvbj00LjA="
 
 
 
