@@ -11,8 +11,8 @@ PDQm specifies a query transaction between two actors.  The transaction between 
 
 ### ITI-78 Patient Demographics Query for Mobile 
 
-* Pediatric Demographics Consumer initiates ITI-78 queries with various combinations of parameters, as supported
-* Pediatric Demographics Supplier responds to ITI-78 queries as appropriate 
+* Patient Demographics Consumer initiates the ITI-78 queries with various combinations of parameters, as supported
+* Patient Demographics Supplier responds to the ITI-78 queries as appropriate 
 
 ### Options
 

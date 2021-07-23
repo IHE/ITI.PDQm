@@ -99,9 +99,6 @@ pages:
   ITI-78.md:
     title: 2:3.78 Mobile Patient Demographics Query [ITI-78]
     generation: markdown
-  appendixm.md:
-    title: Appendix M Patient Demographics Query Implementation Guidance
-    generation: markdown
   testplan.md:
     title: "Test Plan"
     generation: markdown
@@ -121,7 +118,5 @@ menu:
     Cross-Profile Considerations: grouping.html
   Volume 2:
     "Mobile Patient Demographics Query [ITI-78]": ITI-78.html
-  Appendix:
-    "M:Patient Demographics Query Implementation Guidance": appendixm.html
   Test Plan: testplan.html
   Artifacts: artifacts.html

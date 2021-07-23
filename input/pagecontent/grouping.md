@@ -1,6 +1,3 @@
-Considerations when applications group PDQm actors with other IHE actors
-
-### 1:38.6 PDQm Cross Profile Considerations
 
 When the Patient Demographics Supplier is grouped with actors in other IHE profiles that perform patient information reconciliation activities (e.g., the ADT Actor in the IHE Radiology Scheduled Workflow.b Profile), the Patient Demographics Supplier may use the updated information to respond to PDQm Queries. In addition, the Patient Demographics Query for Mobile Profile may play an integral workflow role in conjunction with other IHE profiles.
 

@@ -1,6 +1,6 @@
 ### 1:38.4.1 Concepts
 The PDQm Profile supports all of the use cases of PDQ while keeping the technology as lightweight as possible. Example uses include:
-•	Mobile devices used by physicians (for example: a mobile app for electronic patient charts) which need to establish patient context by scanning a bracelet,
+*   Mobile devices used by physicians (for example: a mobile app for electronic patient charts) which need to establish patient context by scanning a bracelet,
 *	Web based EHR/EMR applications which wish to provide dynamic updates of patient demographic information such as a non-postback search, additional demographic detail, etc.
 *	A document source/consumer wishing to perform an operation in the IHE Mobile access to Health Documents (MHD) Profile, where patient ID in the appropriate patient ID domain needs to be resolved by the source/consumer,
 *	A health portal securely exposing demographics data to browser-based plugins,
@@ -41,4 +41,5 @@ A lab technician enters some basic demographics data (e.g., patient name) into a
 <div>
 {%include Basic-Process-Flow-in-PDQm-Profile.svg%}
 </div>
+<div style="clear: left"/>
 **Figure 38.4.3-1: Basic Process Flow in PDQm Profile**

@@ -89,6 +89,7 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent[supplier].type = DCM#110152 "Destination Role ID"
 * agent[supplier].who 1..1
 * agent[supplier].network 1..1
+// No slice on the consumer side, because the consumer does not know the patient they are looking for or they wouldn't be using this transaction.
 * entity 1..1
 * entity.type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity.role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
