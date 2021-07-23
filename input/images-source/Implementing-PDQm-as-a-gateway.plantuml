@@ -11,8 +11,16 @@ Participant "Patient\n Demographics\nSupplier" as Server2
 Client1 -> Server1: Mobile Patient\nDemographics\nQuery [ITI-78]
 activate Client1
 activate Server1
+Server1 --> Client2: Internal processing
 activate Client2
 activate Server2
 Client2 -> Server2: Patient Demographics\nQuery [ITI-21]\nor Patient Demographics\nQuery for HL7v3 [ITI-47]
+Client2 <- Server2: [ITI-21] or [ITI-47] Response
+Server1 <-- Client2: Internal processing
+deactivate Client2
+deactivate Server2
+Client1 <- Server1: [ITI-78] Response
+deactivate Client2
+deactivate Server1
 
 @enduml
