@@ -14,7 +14,3 @@ The Patient Demographics Supplier may act as a proxy to an existing PDQ or PDQv3
 </div>
 **Figure 38.6-1: Implementing PDQm as a gateway**
 
-<div>
-{%include Sample-PDQm-gateway-process-flow.svg%}
-</div>
-**Figure 38.6-2: Sample PDQm gateway process flow**
