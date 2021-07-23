@@ -90,13 +90,6 @@ Description:    "Defines constraints on the AuditEvent Resource to record when a
 * agent[supplier].who 1..1
 * agent[supplier].network 1..1
 * entity 1..1
-* entity ^slicing.discriminator.type = #pattern
-* entity ^slicing.discriminator.path = "type"
-* entity ^slicing.rules = #closed
-* entity ^slicing.description = "query involved"
-* entity contains
-	queryParameters 1..1
-* entity[queryParameters].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
-* entity[queryParameters].role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
-* entity[queryParameters].query 1..1
-
+* entity.type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
+* entity.role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
+* entity.query 1..1
