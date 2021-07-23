@@ -41,4 +41,5 @@ A lab technician enters some basic demographics data (e.g., patient name) into a
 <div>
 {%include Basic-Process-Flow-in-PDQm-Profile.svg%}
 </div>
+<div style="clear: left"/>
 **Figure 38.4.3-1: Basic Process Flow in PDQm Profile**
