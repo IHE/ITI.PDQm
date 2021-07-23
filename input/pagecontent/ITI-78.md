@@ -187,8 +187,7 @@ If the Patient Demographics Supplier wishes to convey the quality of match, it s
 
 The constraints specified in Section [3.78.4.2.2](#2378422-message-semantics) represent the minimum set of demographics information that must be implemented by a Patient Demographics Supplier. This does not prevent the Patient Demographics Supplier from sending additional FHIR attributes in a response; such as extensions, text, etc. The Patient Demographics Consumer shall ignore additional attributes and extensions if not understood.
 
-The consumer shall process the response in some manner specific to its application function (for example: displaying on a user interface). This application behavior is not specified by IHE.
-
+The consumer shall process the response in some manner specific to its application function (for example: displaying on a user interface). This application behavior is not specified by IHE. The Patient Demographics Consumer should be robust as the response may contain Patient Resources that match the query parameters but are not compliant with the PDQm constraints defined in [Patient Profile for PDQm](StructureDefinition-IHE.PDQm.Patient.html).
 
 ##### 2:3.78.4.2.4 CapabilityStatement Resource
 Patient Demographics Suppliers implementing [ITI-78] shall provide a CapabilityStatement Resource as described in [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource) indicating the query operation for the Patient Resource has been implemented and shall include all query parameters implemented for the Patient Resource.
