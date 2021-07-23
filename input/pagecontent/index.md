@@ -35,16 +35,14 @@ This guide is organized into three main sections:
 2. Volume 2: Transaction Detail
     1. [3.78 Mobile Patient Demographics Query \[ITI-78\]](ITI-78.html)
 
-3. Appendix
-	1. [M. Patient Demographics Query Implementation Guidance](appendixm.html)
-	1. [Test Plan](testplan.html)
+3. [Test Plan](testplan.html)
 
 Click on any of the links above, head on over the [table of contents](toc.html), or
 if you are looking for a specific artifact, check out the [index](artifacts.html).
 
 #### Must Support
 
-PDQm uses ```Must Support``` in StructureDefinition profiles. This is equivalent to IHE use of **R2** as defined in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir).
+PDQm uses ```Must Support``` in StructureDefinition profiles. This is equivalent to the IHE use of **R2** as defined in [Appendix Z](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.10-profiling-conventions-for-constraints-on-fhir).
 
 #### Download 
 
