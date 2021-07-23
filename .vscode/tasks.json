@@ -7,6 +7,11 @@
             "label": "sushi",
             "type": "shell",
             "command": "sushi ."
+        },
+        {
+            "label": "publisher",
+            "type": "shell",
+            "command": "_genonce.bat ."
         }
     ]
 }
