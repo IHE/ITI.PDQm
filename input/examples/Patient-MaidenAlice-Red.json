@@ -3,7 +3,7 @@
   "id": "Patient-MaidenAlice-Red",
   "meta": {
     "profile": [
-      "https://profiles.ihe.net/ITI/PDQm/StructureDefinition/IHE.PDQm.Patient"
+      "http://profiles.ihe.net/ITI/PDQm/StructureDefinition/IHE.PDQm.Patient"
     ]
   },
   "identifier": [
