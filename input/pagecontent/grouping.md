@@ -7,7 +7,7 @@ choose the technology stack that best fits.
 [ITI TF-2:Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) provides additional 
 details about Patient Demographics Query Profiles and their relationship with one another. 
 
-The Patient Demographics Supplier may act as a proxy to an existing PDQ or PDQv3 environment as shown in Figures 38.6-1 and 38.6-2. 
+The Patient Demographics Supplier may act as a proxy to an existing PDQ or PDQv3 environment as shown in Figure 38.6-1. 
 
 <div>
 {%include Implementing-PDQm-as-a-gateway.svg%}
