@@ -90,7 +90,7 @@ See [ITI TF-2:Appendix Z.6 for details](https://profiles.ihe.net/ITI/TF/Volume2/
 #### 2:3.78.4.1.3 Expected Actions
 The Patient Demographics Supplier shall return demographic records that reflect the match to all of the search criteria provided by the Patient Demographics Consumer. The Patient Demographics Supplier shall respond with a Query Patient Resource Response message synchronously (i.e., on the same connection as was used to initiate the request).
 
-The Patient Demographics Supplier shall return all exact matches to the query parameters sent by the Patient Demographics Consumer; IHE does not further specify matching requirements. The Patient Demographics Supplier may be able to perform other string matching (e.g., case insensitive, partial matches, etc.) which shall be indicate in its CapabilityStatement Resource (see [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource)).
+The Patient Demographics Supplier shall return all exact matches to the query parameters sent by the Patient Demographics Consumer; IHE does not further specify matching requirements. The Patient Demographics Supplier may be able to perform other string matching (e.g., case insensitive, partial matches, etc.) which shall be indicated in its CapabilityStatement Resource (see [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource)).
 
 The information provided by the Patient Demographics Supplier to the Patient Demographics Consumer is a list of matching patients from the Patient Demographics Supplier’s information source. The mechanics of the matching algorithms used are internal to the Patient Demographics Supplier and are outside the scope of this framework.
 
