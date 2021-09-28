@@ -88,7 +88,7 @@ The FHIR standard provides encodings for responses as either XML or JSON. Patien
 See [ITI TF-2:Appendix Z.6 for details](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format).
 
 #### 2:3.78.4.1.3 Expected Actions
-The Patient Demographics Supplier shall return demographic records that reflect the match to all of the search criteria provided by the Patient Demographics Consumer. The Patient Demographics Supplier shall respond with a Query Patient Resource Response message synchronously (i.e., on the same connection as was used to initiate the request).
+The Patient Demographics Supplier shall return demographic records that reflect the match to all of the search criteria provided by the Patient Demographics Consumer. The Patient Demographics Supplier shall respond with a [Query Patient Resource Response message](#query-response) synchronously (i.e., on the same connection as was used to initiate the request).
 
 The Patient Demographics Supplier shall return all exact matches to the query parameters sent by the Patient Demographics Consumer; IHE does not further specify matching requirements. The Patient Demographics Supplier may be able to perform other string matching (e.g., case insensitive, partial matches, etc.) which shall be indicated in its CapabilityStatement Resource (see [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource)).
 
@@ -98,7 +98,7 @@ The Patient Demographics Supplier shall support at least one patient identifier 
 
 See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for guidance for Access Denied.
 
-The Patient Demographics Supplier shall respond to the query request as described by the following cases with a Query Patient Resource Response message described in Section 3.78.4.2, and shall behave according to the cases listed below:
+The Patient Demographics Supplier shall respond to the query request as described by the following cases with a [Query Patient Resource Response message](#query-response), and shall behave according to the cases listed below:
 
 **Case 1**: The Patient Demographics Supplier finds in its information source at least one patient record matching the criteria sent as HTTP query parameters. No patient identifier domains are requested via the mechanism specified as specified in Section [3.78.4.1.2.4](#domainpop).
 
@@ -151,7 +151,7 @@ The Patient Demographics Supplier may be capable of servicing requests for respo
 The Patient Demographics Supplier may return other HTTP status codes to represent specific error conditions. When HTTP error status codes are returned by the Patient Demographics Supplier, they shall conform to the HTTP standard [RFC2616](https://tools.ietf.org/html/rfc2616). Their use is not further constrained or specified by this transaction.
 
 
-#### 2:3.78.4.2 Query Patient Resource Response message
+#### 2:3.78.4.2 Query Patient Resource Response message <a name="query-response"> </a>
 
 
 ##### 2:3.78.4.2.1 Trigger Events
