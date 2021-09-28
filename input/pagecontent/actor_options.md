@@ -19,7 +19,7 @@ Pediatric Demographics makes use of the following four additional demographic fi
 
 Field |	Reason for Inclusion |	Value
 ---|---|---
-Mother’s Maiden Name |	Any information about the mother is helpful in making a match	| Helps creates true positive matches
+Mother’s Maiden Name |	Any information about the mother is helpful in making a match	| Helps create true positive matches
 Patient Home Telephone | A telecom helps match into the right household | Helps create true positive matches
 Patient Multiple Birth Indicator | Indicates this person is a multiple – twin, triplet, etc. | Helps avoid false positive matches of multiples
 Patient Birth Order | Distinguishes among those multiples. | Helps avoid false positive matches of multiples
