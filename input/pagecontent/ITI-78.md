@@ -110,7 +110,7 @@ A Resource Bundle is returned representing the result set. The Patient Demograph
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
-The Patient Demographics Supplier performs its matching and returns a bundle as described in Case 1. The Patient Demographics Supplier eliminates identifiers from the result set which do not exist in the list specified per Section [3.78.4.1.2.4](#domainpop) (domains to be returned). If all entries in the list of patient identifiers are eliminated, which would leave the patient identifiers list empty, then the entry shall not be present in the response bundle.
+The Patient Demographics Supplier performs its matching and returns a bundle as described in Case 1. The Patient Demographics Supplier eliminates identifiers from the result set which do not exist in the list specified per Section [3.78.4.1.2.4](#domainpop) (domains to be returned). 
 
 **Case 3**: The Patient Demographics Supplier fails to find in its information source, any patient record matching the criteria sent as HTTP query parameters.
 
