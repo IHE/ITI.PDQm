@@ -13,12 +13,12 @@ The Patient Demographics Query for Mobile (PDQm) Profile defines a lightweight R
 This guide is organized into three main sections:
 
 1. Volume 1 [38 PDQm Introduction](volume-1.html)
-    1. [38.1 PDQm Actors and Transactions](volume-1.html#actors-and-transactions)
-    2. [38.2 PDQm Actor Options](volume-1.html#actor-options)
-    3. [38.3 PDQm Required Groupings](volume-1.html#required-groupings)
-    4. [38.4 PDQm Overview](volume-1.html#overview)
-    5. [38.5 PDQm Security Considerations](volume-1.html#security-considerations)
-    6. [38.6 PDQm Cross-Profile Considerations](volume-1.html#other-grouping)
+    1. [38.1 PDQm Actors and Transactions](volume-1.html#1381-pdqm-actors-and-transactions)
+    2. [38.2 PDQm Actor Options](volume-1.html#1382-pdqm-actor-options)
+    3. [38.3 PDQm Required Groupings](volume-1.html#1383-pdqm-required-actor-grouping)
+    4. [38.4 PDQm Overview](volume-1.html#1384-pdqm-overview)
+    5. [38.5 PDQm Security Considerations](volume-1.html#1385-pdqm-security-considerations)
+    6. [38.6 PDQm Cross-Profile Considerations](volume-1.html#1386-pdqm-cross-profile-considerations)
 
 2. Volume 2: Transaction Detail
     1. [3.78 Mobile Patient Demographics Query \[ITI-78\]](ITI-78.html)

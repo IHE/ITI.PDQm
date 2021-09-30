@@ -13,7 +13,7 @@ The following list provides a few examples of how PDQm might be leveraged by imp
 
 This implementation guide is intended to be fully compliant with the HL7 [FHIR](http://hl7.org/fhir/) specification, providing only use-case driven constraints to aid with interoperability, deterministic results, and compatibility with existing PDQ and PDQv3 Profiles.
 
-## 1:38.1 PDQm Actors, and Transactions <a name="actors-and-transactions"> </a>
+## 1:38.1 PDQm Actors, and Transactions
 
 Figure 38.1-1 shows the actors directly involved in the Patient Demographics Query for Mobile Profile and the relevant transactions between them. Note that the actors in this profile are the same as the actors defined in the PDQ Profile (ITI TF-1: 8.1).
 <div>
@@ -46,7 +46,7 @@ Mobile Patient Demographics Query is used by the Patient Demographics Consumer t
 
 For more details see the detailed [transaction description](ITI-78.html)
 
-## 1:38.2 PDQm Actor Options <a name="actor-options"> </a>
+## 1:38.2 PDQm Actor Options
 
 Options that may be selected for each actor in this profile, if any, are listed in Table 38.2-1. Dependencies between options when applicable are specified in notes.
 
@@ -58,7 +58,7 @@ Patient Demographics Consumer |	Pediatric Demographics Option |	Section 1:38.2.1
 Patient Demographics Supplier |	Pediatric Demographics Option |	Section 1:38.2.1
 {:.grid}
 
-### 1:38.2.1 Pediatric Demographics Option <a name="peddemoopt"> </a>
+### 1:38.2.1 Pediatric Demographics Option
 The experience of immunization registries and other public health population databases has shown that retrieving patient records for an individual person in environments with large proportions of pediatric records requires additional demographic data.
 
 Information about the mother of the patient or a household telephone number is helpful in retrieving records in large population databases where data quality may be uneven.
@@ -92,7 +92,7 @@ Pediatric Demographics fields are defined as the following:
 
 Note that the Pediatric Demographics Option relies on STU extensions.
 
-## 1:38.3 PDQm Required Actor Grouping <a name="required-groupings"> </a>
+## 1:38.3 PDQm Required Actor Grouping
 
 
 When the Patient Demographics Supplier is grouped with actors in other IHE profiles that perform patient information reconciliation activities (e.g., the ADT Actor in the IHE Radiology Scheduled Workflow.b Profile), the Patient Demographics Supplier may use the updated information to respond to PDQm Queries. In addition, the Patient Demographics Query for Mobile Profile may play an integral workflow role in conjunction with other IHE profiles.
@@ -111,7 +111,7 @@ The Patient Demographics Supplier may act as a proxy to an existing PDQ or PDQv3
 <br clear="all">
 **Figure 38.6-1: Implementing PDQm as a gateway**
 
-## 1:38.4 PDQm Overview <a name="overview"> </a>
+## 1:38.4 PDQm Overview
 
 ### 1:38.4.1 Concepts
 The PDQm Profile supports all of the use cases of PDQ while keeping the technology as lightweight as possible. Example uses include:
@@ -159,12 +159,12 @@ A lab technician enters some basic demographics data (e.g., patient name) into a
 <br clear="all">
 **Figure 38.4.3-1: Basic Process Flow in PDQm Profile**
 
-## 1:38.5 PDQm Security Considerations <a name="security-considerations"> </a>
+## 1:38.5 PDQm Security Considerations
 
 
 See [ITI TF-2:Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations)
 
-## 1:38.6 PDQm Cross-Profile Considerations <a name="other-grouping"> </a>
+## 1:38.6 PDQm Cross-Profile Considerations
 
 
 When the Patient Demographics Supplier is grouped with actors in other IHE profiles that perform patient information reconciliation activities (e.g., the ADT Actor in the IHE Radiology Scheduled Workflow.b Profile), the Patient Demographics Supplier may use the updated information to respond to PDQm Queries. In addition, the Patient Demographics Query for Mobile Profile may play an integral workflow role in conjunction with other IHE profiles.
