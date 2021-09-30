@@ -23,8 +23,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 <div>
 {%include ITI-78-seq.svg%}
 </div>
-
-<div style="clear: left"/>
+<br clear="all">
 
 **Figure: 3.78.4-1: Interaction Diagram**
 
@@ -66,7 +65,7 @@ Accept: application/fhir+json; fhirVersion=4.0
 
 ###### 2:3.78.4.1.2.2 Pediatric Demographics Option
 Additional notes are available in FHIR on mother and newborn relationship, see [http://hl7.org/fhir/R4/patient.html#maternity](http://hl7.org/fhir/R4/patient.html#maternity) Patient Demographics Suppliers supporting the Pediatric Demographics Option shall support the `mothersMaidenName` search extension.
-Patient Demographics Consumers supporting the Pediatric Demographics Option may use the additional mothersMaidenName search extension and the additional elements returned by the Patient Demographics Suppliers. See [ITI TF 1: 38.2.1 Pediatric Demographics Option](actor_options.html#peddemoopt).
+Patient Demographics Consumers supporting the Pediatric Demographics Option may use the additional mothersMaidenName search extension and the additional elements returned by the Patient Demographics Suppliers. See [ITI TF 1: 38.2.1 Pediatric Demographics Option](volume-1.html#13821-pediatric-demographics-option).
 
 ###### 2:3.78.4.1.2.3 Parameter Modifiers
 Patient Demographics Suppliers shall support the `“:exact”` parameter modifier on all query parameters of type string. When supplied by the Patient Demographics Consumer, the `“:exact”` parameter modifier instructs the Patient Demographics Supplier that exact matching should be performed.
@@ -251,7 +250,7 @@ If the Patient Demographics Supplier is unable to produce a response in the requ
 The Patient Resource definition in the context of a retrieve interaction is the FHIR definition of the Patient Resource, see [http://hl7.org/fhir/R4/patient.html](http://hl7.org/fhir/R4/patient.html).
 
 ### 2:3.78.5 Security Considerations
-See the general Security Consideration in [ITI TF-1: 38.5](security_considerations.html)
+See the general Security Consideration in [ITI TF-1: 38.5](volume-1.html#1385-pdqm-security-considerations)
 
 #### 2:3.78.5.1 Security Audit Considerations
 

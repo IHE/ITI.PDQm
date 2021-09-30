@@ -72,46 +72,31 @@ resources:
 
 pages:
   index.md:
-    title: 1:38. Patient Demographics Query for Mobile
+    title: Patient Demographics Query for Mobile
     generation: markdown
-  actors_and_transactions.md:
-    title: 1:38.1 Actors and Transactions
-    generation: markdown
-  actor_options.md: 
-    title: 1:38.2 Actor Options
-    generation: markdown
-  required_groupings.md:
-    title: 1:38.3 Required Groupings
-    generation: markdown
-  overview.md:
-    title: 1:38.4 Overview
-    generation: markdown
-  security_considerations.md:
-    title: 1:38.5 Security Considerations
-    generation: markdown
-  grouping.md:
-    title: 1:38.6 Cross-Profile Considerations
+  volume-1.md:
+    title: 1:38 Patient Demographics Query for Mobile (PDQm)
     generation: markdown
   ITI-78.md:
     title: 2:3.78 Mobile Patient Demographics Query [ITI-78]
     generation: markdown
   testplan.md:
-    title: "Test Plan"
+    title: PDQm Test Plan
     generation: markdown
   issues.md:
-    title: Open and Closed issues
+    title: PDQm Open and Closed issues
     generation: markdown
 
 menu:
   PDQm Home: index.html
   Volume 1:
-    Introduction: index.html
-    Actors and Transactions: actors_and_transactions.html
-    Actor Options: actor_options.html
-    Required Groupings: required_groupings.html
-    Overview: overview.html
-    Security Considerations: security_considerations.html
-    Cross-Profile Considerations: grouping.html
+    Introduction: volume-1.html
+    Actors and Transactions: volume-1.html#1381-pdqm-actors-and-transactions
+    Actor Options: volume-1.html#1382-pdqm-actor-options
+    Required Groupings: volume-1.html#1383-pdqm-required-actor-grouping
+    Overview: volume-1.html#1384-pdqm-overview
+    Security Considerations: volume-1.html#1385-pdqm-security-considerations
+    Cross-Profile Considerations: volume-1.html#1386-pdqm-cross-profile-considerations    
   Volume 2:
     "Mobile Patient Demographics Query [ITI-78]": ITI-78.html
   Test Plan: testplan.html
