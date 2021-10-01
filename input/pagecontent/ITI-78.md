@@ -201,7 +201,7 @@ When the Patient Demographics Consumer possesses a Patient Resource’s identifi
 ##### 2:3.78.4.3.2  Message Semantics
 The Retrieve Patient Resource is conducted by executing an HTTP GET against the Patient Demographics Supplier’s Patient Resource URL, providing the resource id of the patient being retrieved. The target is formatted as:
 
-    GET [base]/Patient/[resourceId]
+```    GET [base]/Patient/[resourceId]```
 
 The Patient Demographics Supplier shall respond to this query by sending a single Patient Resource instance. The specification for `[base]` is identified in Section 3.78.4.1.2.
 

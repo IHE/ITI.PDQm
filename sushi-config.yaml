@@ -86,6 +86,9 @@ pages:
   issues.md:
     title: PDQm Open and Closed issues
     generation: markdown
+  other.md:
+    title: Changes to other Profiles
+    generation: markdown
 
 menu:
   PDQm Home: index.html
@@ -101,3 +104,4 @@ menu:
     "Mobile Patient Demographics Query [ITI-78]": ITI-78.html
   Test Plan: testplan.html
   Artifacts: artifacts.html
+  Other: other.html
