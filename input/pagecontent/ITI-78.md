@@ -44,6 +44,8 @@ This URL is configurable by the Patient Demographics Supplier and is subject to 
 The Patient Demographics Consumer may supply, and the Patient Demographics Supplier shall be capable of processing, all query parameters listed below. All query parameter values shall be appropriately encoded per [RFC3986](https://tools.ietf.org/html/rfc3986) “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
 Patient Demographics Suppliers may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored, See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
 
+FHIR defines methods of supporting multiple parameter values in an AND and OR relationship. The Patient Demographics Supplier shall support both AND and OR relationships. See FHIR specification on Composite Search Parameters [http://hl7.org/fhir/R4/search.html#combining](http://hl7.org/fhir/R4/search.html#combining).
+
 Parameter | definitions
 ---|---
 `_id` |This parameter of type string, when supplied, represents the resource identifier for the Patient Resource being queried. See [ITI TF-2:Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type. Note: A search using `_id` is always an exact match search.
@@ -72,11 +74,11 @@ Patient Demographics Suppliers shall support the `“:exact”` parameter modifi
 The Patient Demographics Consumer should not use, and Patient Demographics Supplier may ignore, any additional parameter modifiers listed in the FHIR standard, which are considered out of scope in the context of this transaction
 
 ###### 2:3.78.4.1.2.4 Populating Which Domains are Returned <a name="domainpop"> </a>
-The Patient Demographics Consumer may constrain the domains from which patient identifiers are returned from the Patient Demographics Supplier in the resulting bundle. The Patient Demographics Consumer shall convey this by specifying the patient identity domains in the system component of repeating `identifier` parameters using the OR format:
+The Patient Demographics Consumer may constrain the domains from which patient identifiers are returned from the Patient Demographics Supplier in the resulting bundle. The Patient Demographics Consumer shall convey this by specifying the patient identity domains in the system component of repeating `identifier` parameters using the OR format (example of requesting results in identifier domain 1.2.3 *OR* 4.5.6):
 
     &identifier=urn:oid:1.2.3|,urn:oid:4.5.6|
 
-For example, a Patient Demographics Consumer wishing to filter for patients with a last name of SMITH having identifiers from an identity domain with OID 1.2.3.4.5 would convey this search as:
+For example, a Patient Demographics Consumer wishing to filter for patients with a last name of SMITH having identifiers from an identity domain with OID 1.2.3.4.5 would convey this search as (example of requesting a family name of SMITH *AND* in the identifier domain 1.2.3.4.5):
 
 	  ?family=SMITH&identifier=urn:oid:1.2.3.4.5|
 
@@ -155,7 +157,7 @@ The Patient Demographics Supplier may return other HTTP status codes to represen
 
 ##### 2:3.78.4.2.1 Trigger Events
 
-The Patient Demographics Supplier has results or error to report to the Patient Demographics Cnosumer. This may include finding zero or more patient demographics matching the query parameters specified by the Patient Demographics Consumer as a result of a Query Patient Resource Request. This may include errors or Access Denied.
+The Patient Demographics Supplier has results or error to report to the Patient Demographics Consumer. This may include finding zero or more patient demographics matching the query parameters specified by the Patient Demographics Consumer as a result of a Query Patient Resource Request. This may include errors or Access Denied.
 
 ##### 2:3.78.4.2.2 Message Semantics
 
