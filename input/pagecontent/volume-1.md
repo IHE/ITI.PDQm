@@ -33,7 +33,7 @@ Table 38.1-1: PDQm; Profile - Actors and Transactions
 
 
 Note 1: The Mobile Patient Demographics Query [\[ITI-78\]](ITI-78.html) transaction corresponds to the transactions used in the [PDQ](https://profiles.ihe.net/ITI/TF/Volume1/ch-8.html) and [PDQv3](https://profiles.ihe.net/ITI/TF/Volume1/ch-24.html) Profiles and provides similar functionality. 
-Note that there is no transaction which corresponds to the Patient Demographics and Visit Query [ITI-22].
+There is no transaction which corresponds to the Patient Demographics and Visit Query [ITI-22].
 See [ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) for a mapping of query fields for PDQ, PDQv3, and PDQm transactions.
 
 ### 1:38.1.1 Actor Descriptions and Actor Profile Requirements
