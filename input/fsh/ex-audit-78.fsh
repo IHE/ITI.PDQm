@@ -4,9 +4,12 @@ Title: "Audit Example of ITI-78 at Consumer"
 Description: """
 Audit Event for PDQm Query Transaction by the Patient Identifier Cross-reference Consumer
 
-where the Query was executed with a GET as follows
+where the Query was executed with a GET as follows:
+
+```
 GET https://server.example.com/fhir/Patient?family=MOHR&given=ALICE&active=true&gender=female
 Accept: application/fhir+json; fhirVersion=4.0
+```
 """
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
@@ -42,9 +45,12 @@ Title: "Audit Example of ITI-78 at Supplier"
 Description: """
 Audit Event for PDQm Query Transaction by the Patient Identifier Cross-reference Supplier
 
-where the Query was executed with a GET as follows
+where the Query was executed with a GET as follows:
+
+```
 GET https://server.example.com/fhir/Patient?family=MOHR&given=ALICE&active=true&gender=female
 Accept: application/fhir+json; fhirVersion=4.0
+```
 
 Note the Supplier may choose to record patient identities found, but is not required to.
 

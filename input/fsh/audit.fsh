@@ -8,12 +8,20 @@ Profile:        AuditPdqmQuerySupplier
 Parent:         AuditEvent
 Id:             IHE.PDQm.Query.Audit.Supplier
 Title:          "Audit Event for PDQm Query at Supplier"
-Description:    "Defines constraints on the AuditEvent Resource to record when a Patient Demographics Query using ITI-78 as recorded at the Supplier.
-	EventTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)
-	Query Parameters 
-	ParticipantObjectIdTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)
-	ParticipantObjectQuery = Requested URL including query parameters
-	ParticipantObjectDetail = HTTP Request Headers contained in the query (e.g., Accept header)"
+Description:    """
+Defines constraints on the AuditEvent (AuditMessage) Resource to record when a Patient Demographics Query using ITI-78 as recorded at the Supplier.
+- type (EventTypeCode) = EV(`110112`, `DCM`, `Query`)
+- action (EventActionCode) = `E`
+- subtype (EventTypeCode) = EV(`ITI-78`, `urn:ihe:event-type-code`, `Mobile Patient Demographics Query`)
+- agent (ActiveParticipant)
+  - supplier as the Destination
+    - this agent is the source of the auditEvent
+  - consumer as the Source
+  - other agents are allowed including identity of the application or infrastructure
+- entity (ParticipantObjectIdentification) 
+  - query parameters
+  - other entity are allowed including one to identify a patient when explicitly identified in the query parameters
+"""
 * modifierExtension 0..0
 * type = DCM#110112 "Query"
 * action = #E
@@ -58,12 +66,20 @@ Profile:        AuditPdqmQueryConsumer
 Parent:         AuditEvent
 Id:             IHE.PDQm.Query.Audit.Consumer
 Title:          "Audit Event for PDQm Query at Consumer"
-Description:    "Defines constraints on the AuditEvent Resource to record when a Patient Demographics Query using ITI-78 as recorded at the Consumer.
-	EventTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)
-	Query Parameters 
-	ParticipantObjectIdTypeCode = EV(“ITI-78”, “IHE Transactions”, “Mobile Patient Demographics Query”)
-	ParticipantObjectQuery = Requested URL including query parameters
-	ParticipantObjectDetail = HTTP Request Headers contained in the query (e.g., Accept header)"
+Description:    """
+Defines constraints on the AuditEvent (AuditMessage) Resource to record when a Patient Demographics Query using ITI-78 as recorded at the Supplier.
+- type (EventTypeCode) = EV(`110112`, `DCM`, `Query`)
+- action (EventActionCode) = `E`
+- subtype (EventTypeCode) = EV(`ITI-78`, `urn:ihe:event-type-code`, `Mobile Patient Demographics Query`)
+- agent (ActiveParticipant)
+  - supplier as the Destination
+  - consumer as the Source
+    - this agent is the source of the auditEvent
+  - other agents are allowed including identity of the application or infrastructure
+- entity (ParticipantObjectIdentification) 
+  - query parameters
+  - no patient, because the consumer does not know the patient they are looking for or they wouldn't be using this transaction.
+"""
 * modifierExtension 0..0
 * type = DCM#110112 "Query"
 * action = #E
