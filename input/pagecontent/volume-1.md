@@ -47,12 +47,12 @@ No additional requirements.
 The Patient Demographics Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
 All supported search parameters and search methods (GET, POST) shall be specified. The [search parameters defined in \[ITI-78\]](ITI-78.html#23784121-query-search-parameters) shall be supported, other parameters may be supported.
 
-This capabilities response will typically include all of the server's capabilities inclusive of all grouped Actors and additional functionality.
+This capabilities response will typically include all of the capabilities inclusive of all grouped Actors and additional functionality.
 
 ### 1:38.1.2 Transaction Descriptions
 The transactions in this profile are summarized in the sections below.
 
-#### 1:38.1.2.1 PQDm Mobile Patient Demographics Query transaction
+#### 1:38.1.2.1 Mobile Patient Demographics Query transaction
 
 Mobile Patient Demographics Query is used by the Patient Demographics Consumer to solicit information about patients whose demographics data match data provided in the query parameters on the request message. The request is received by the Patient Demographics Supplier. The Patient Demographics Supplier processes the request and returns a response in the form of demographics information for the matching patients.
 
