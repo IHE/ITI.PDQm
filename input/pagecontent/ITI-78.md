@@ -66,15 +66,11 @@ GET https://server.example.com/fhir/Patient?family=MOHR&given=ALICE&active=true&
 Accept: application/fhir+json; fhirVersion=4.0
 ```
 
-###### 2:3.78.4.1.2.2 Pediatric Demographics Option
-Additional notes are available in FHIR on mother and newborn relationship, see [http://hl7.org/fhir/R4/patient.html#maternity](http://hl7.org/fhir/R4/patient.html#maternity) Patient Demographics Suppliers supporting the Pediatric Demographics Option shall support the `mothersMaidenName` search extension.
-Patient Demographics Consumers supporting the Pediatric Demographics Option may use the additional mothersMaidenName search extension and the additional elements returned by the Patient Demographics Suppliers. See [ITI TF 1: 38.2.1 Pediatric Demographics Option](volume-1.html#13821-pediatric-demographics-option).
-
-###### 2:3.78.4.1.2.3 Parameter Modifiers
+###### 2:3.78.4.1.2.2 Parameter Modifiers
 Patient Demographics Suppliers shall support the `“:exact”` parameter modifier on all query parameters of type string. When supplied by the Patient Demographics Consumer, the `“:exact”` parameter modifier instructs the Patient Demographics Supplier that exact matching should be performed.
 The Patient Demographics Consumer should not use, and Patient Demographics Supplier may ignore, any additional parameter modifiers listed in the FHIR standard, which are considered out of scope in the context of this transaction
 
-###### 2:3.78.4.1.2.4 Populating Which Domains are Returned <a name="domainpop"> </a>
+###### 2:3.78.4.1.2.3 Populating Which Domains are Returned <a name="domainpop"> </a>
 The Patient Demographics Consumer may constrain the domains from which patient identifiers are returned from the Patient Demographics Supplier in the resulting bundle. The Patient Demographics Consumer shall convey this by specifying the patient identity domains in the system component of repeating `identifier` parameters using the OR format (example of requesting results in identifier domain 1.2.3 *OR* 4.5.6):
 
     &identifier=urn:oid:1.2.3|,urn:oid:4.5.6|
@@ -85,7 +81,7 @@ For example, a Patient Demographics Consumer wishing to filter for patients with
 
 The Patient Demographics Consumer shall populate the patient identity domain portion of the token with values described in [ITI TF-2:Appendix E](https://profiles.ihe.net/ITI/TF/Volume2/ch-E.htm).
 
-###### 2:3.78.4.1.2.5 Populating Expected Response Format <a name="format"> </a>
+###### 2:3.78.4.1.2.4 Populating Expected Response Format <a name="format"> </a>
 The FHIR standard provides encodings for responses as either XML or JSON. Patient Demographics Suppliers shall support both message encodings, whilst Patient Demographics Consumers shall support one and may support both.
 See [ITI TF-2:Appendix Z.6 for details](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format).
 
