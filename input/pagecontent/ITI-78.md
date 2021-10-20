@@ -267,3 +267,16 @@ The Patient Demographics Consumer when grouped with ATNA Secure Node or Secure A
 ##### 2:3.78.5.1.2 Patient Demographics Supplier Audit
 
 The Patient Demographics Supplier when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Patient Demographics Supplier AuditEvent](StructureDefinition-IHE.PDQm.Query.Audit.Supplier.html). [Audit Example for a PDQm Query transaction from supplier perspective](AuditEvent-ex-auditPdqmQuery-supplier.html).
+
+#### 2:3.78.5.2 Use with the Internet User Authorization (IUA) Profile  
+The [Internet User Authorization (IUA)](https://profiles.ihe.net/ITI/IUA/index.html) Profile provides support for user authentication, app authentication, and authorization decisions. When PDQm actors are grouped with IUA actors there are additional security and privacy functionality enabled by this grouping. There are additional requirements and functionality enabled through scope definitions that are transaction-specific.
+
+A Patient Demographics Consumer, when grouped with an [IUA](https://profiles.ihe.net/ITI/IUA/index.html) Authorization Client, shall use [Get Access Token \[ITI-71\]](https://profiles.ihe.net/ITI/IUA/index.html#volume-2----transactions) to request the following scope from the IUA Authorization Server. This enables the Patient Demographics Consumer to get corresponding identifiers with the Mobile Patient Demographics Query [ITI-78] transaction with the authorizing token in the combined transaction Incorporate Access Token [ITI-72].
+
+The Patient Demographics Supplier, when grouped with an [IUA](https://profiles.ihe.net/ITI/IUA/index.html) Resource Server, shall require [Incorporate Access Token \[ITI-72\]](https://profiles.ihe.net/ITI/IUA/index.html#volume-2----transactions) in all Mobile Patient Demographics Query [ITI-78] transactions, shall enforce the authorization decision in the token, and may further enforce policies beyond those made by the Authorization Server such as consent or business rules.
+
+```
+scope: ITI-78
+```
+
+This scope request authorizes the full [ITI-78] transaction. This scope implicitly requests patient-specific queries for getting corresponding demographics. Further scope refinement is allowed in realm or project-specific situations; these scopes would be in addition to the scope defined here.
