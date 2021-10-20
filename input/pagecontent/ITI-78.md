@@ -2,7 +2,7 @@ This section corresponds to transaction [ITI-78] of the IHE Technical Framework.
 
 ### 2:3.78.1 Scope
 
-This transaction is used by the Patient Demographics Consumer to solicit information about patients whose demographics data match data provided in the query parameters on the request message. The request is received by the Patient Demographics Supplier. The Patient Demographics Supplier processes the request and returns a response in the form of demographics information for the matching patients.
+This transaction is used by the Patient Demographics Consumer to solicit information about patients whose demographics data match data provided in the search parameters on the request message. The request is received by the Patient Demographics Supplier. The Patient Demographics Supplier processes the request and returns a response in the form of demographics information for the matching patients.
 
 ### 2:3.78.2 Actors Roles
 
@@ -29,20 +29,21 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 
 
 #### 2:3.78.4.1 Query Patient Resource message
-This message represents an HTTP GET parameterized query from the Patient Demographics Consumer to the Patient Demographics Supplier.
+This message represents a parameterized search from the Patient Demographics Consumer to the Patient Demographics Supplier.
+
 ##### 2:3.78.4.1.1 Trigger Events
 When a Patient Demographics Consumer needs to select a patient based on demographic information about patients whose information matches a minimal set of known data, it issues a Query Patient Resource.
 ##### 2:3.78.4.1.2 Message Semantics
-The Query Patient Resource is conducted by the Patient Demographics Consumer by executing an HTTP GET against the Patient Demographics Supplier’s Patient Resource URL.
+The Patient Demographics Consumer may use GET or POST based searches. The Patient Demographics Supplier shall support both GET and POST based [searches](http://hl7.org/fhir/R4/http.html#search).
 The search target follows the FHIR http specification, addressing the Patient Resource type  [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html):
+```
+    [base]/Patient?<parameters>
+```
+This URL is configurable by the Patient Demographics Supplier and is subject to the following constraints. The `<parameters>` represents a series of encoded name-value pairs representing the filter for the search parameters specified below, as well as control parameters to modify the behavior of the Patient Demographics Supplier such as response format, or pagination.
 
-    GET [base]/Patient?<query>
-
-This URL is configurable by the Patient Demographics Supplier and is subject to the following constraints. The `<query>` represents a series of encoded name-value pairs representing the filter for the query specified below, as well as control parameters to modify the behavior of the Patient Demographics Supplier such as response format, or pagination.
-
-##### 2:3.78.4.1.2.1 Query Search Parameters
-The Patient Demographics Consumer may supply, and the Patient Demographics Supplier shall be capable of processing, all query parameters listed below. All query parameter values shall be appropriately encoded per [RFC3986](https://tools.ietf.org/html/rfc3986) “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
-Patient Demographics Suppliers may choose to support additional query parameters beyond the subset listed below. Any additional query parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored, See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
+##### 2:3.78.4.1.2.1 Search Parameters
+The Patient Demographics Consumer may supply, and the Patient Demographics Supplier shall be capable of processing, all parameters listed below. All parameter values shall be appropriately encoded per [RFC3986](https://tools.ietf.org/html/rfc3986) “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
+Patient Demographics Suppliers may choose to support additional parameters beyond the subset listed below. Any additional parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored, See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
 
 FHIR defines methods of supporting multiple parameter values in an AND and OR relationship. The Patient Demographics Supplier shall support both AND and OR relationships. See FHIR specification on Composite Search Parameters [http://hl7.org/fhir/R4/search.html#combining](http://hl7.org/fhir/R4/search.html#combining).
 
