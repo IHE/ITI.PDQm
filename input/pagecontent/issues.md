@@ -14,6 +14,7 @@
 ### Closed Issues
 
 - Upgraded to FHIR R4
+- Case 4, where one or more identifier domains are indicated by the client but are not authoritative by the server, has been extensively discussed. The conclusion is to stay with allowing a server to return 404 or 200, and to require an OperationOutcome to indicate a warning. There is concern that the clients may not notice that they did not get results for a domain they requested, the client must take the initiative to look for the OperationOutcome to determine if they got full authoritative results. This looking for an OperationOutcome should always be inspected to assure results are what was expected. As such we did update client requirements to explicitly look for patient safety reasons.
 - PDQm_100: Added the mothersMaidenName extended search parameter. Note that PDO Option does require sub normative extensions to support mothersMaidenName
 - Addressed CP-ITI-826 – PDQm Clarify requirements for Pediatric Demographics
   -	Pediatric Demographics Option – original PDQ indicated a last update date/time, and last updated facility element. These were identified as R2 elements. These are not part of the Patient Resource, but rather the Encounter resource. These elements are thus not in scope of PDQm.
