@@ -120,15 +120,15 @@ The Patient Demographics Supplier performs its matching and returns a bundle as 
 
 A Resource Bundle is returned representing the zero result set. The Patient Demographics Supplier populates the total with a value of 0 indicating no results were found. No `entry` attributes are provided in the result.
 
-**Case 4**: The Patient Demographics Supplier does not recognize one or more of the domains specified per Section [3.78.4.1.2.4](#domainpop).
+**Case 4**: The Patient Demographics Supplier is not an authority for one or more of the domains specified per Section [3.78.4.1.2.4](#domainpop).
 
-There are two different acceptable return results. Preferred response is a `HTTP 404` to indicate that the domain is not recognized, but a `HTTP 200` with an empty result is acceptable when the Patient Demographics Supplier cannot determine that the domain is not recognized.
+There are two different acceptable return results. The preferred response is a `HTTP 404` to indicate that the domain is not recognized, but it is acceptable to respond with a `HTTP 200` with the results available (0..*).
 
 An OperationOutcome Resource is returned indicating that the patient identity domain is not recognized in an `issue` having:
 
 Attribute|Value
 ---|---
-severity|error
+severity|warning
 code|not-found
 diagnostics|“targetSystem not found”
 {:.grid}
@@ -191,7 +191,9 @@ The Patient Demographics Consumer shall process the response in some manner spec
 
 The constraints specified in Section [3.78.4.2.2](#2378422-message-semantics) represent the minimum set of demographics information that must be implemented by a Patient Demographics Supplier. This does not prevent the Patient Demographics Supplier from sending additional FHIR attributes in a response; such as extensions, text, etc. The Patient Demographics Consumer shall ignore additional attributes and extensions if not understood.
 
- The Patient Demographics Consumer should be robust as the response may contain Patient Resources that match the query parameters but are not compliant with the PDQm constraints defined in [Patient Profile for PDQm](StructureDefinition-IHE.PDQm.Patient.html).
+The Patient Demographics Consumer should be robust as the response may contain Patient Resources that match the query parameters but are not compliant with the PDQm constraints defined in [Patient Profile for PDQm](StructureDefinition-IHE.PDQm.Patient.html).
+
+The Patient Demographics Consumer should follow the [Safety Guidelines for Client Search](http://hl7.org/fhir/R4/safety.html#search)
 
 ##### 2:3.78.4.2.4 CapabilityStatement Resource
 Patient Demographics Suppliers implementing [ITI-78] shall provide a CapabilityStatement Resource as described in [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource) indicating the query interaction for the Patient Resource has been implemented and shall include all query parameters implemented for the Patient Resource.
