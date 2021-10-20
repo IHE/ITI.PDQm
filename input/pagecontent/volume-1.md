@@ -45,7 +45,7 @@ No additional requirements.
 #### 1:38.1.1.2 Patient Demographics Supplier
 
 The Patient Demographics Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
-All supported search parameters and search methods (GET, POST) shall be specified. The [search parameters defined in \[ITI-78\]](ITI-78.html#23784121-query-search-parameters) shall be supported, other parameters may be supported.
+All supported search parameters and search methods (GET, POST) shall be specified. The [search parameters defined in \[ITI-78\]](ITI-78.html#23784121-search-parameters) shall be supported, other parameters may be supported.
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped Actors and additional functionality.
 
