@@ -263,11 +263,11 @@ The Mobile Patient Demographics Query Transaction is a Query Information event a
 
 ##### 2:3.78.5.1.1 Patient Demographics Consumer Audit
 
-The Patient Demographics Consumer when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Patient Demographics Consumer AuditEvent](StructureDefinition-IHE.PDQm.Query.Audit.Consumer.html). [Audit Example for a PDQm Query transaction from consumer perspective](AuditEvent-ex-auditPdqmQuery-consumer.html).
+The Patient Demographics Consumer when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) actor shall be able to record a [Patient Demographics Consumer AuditEvent](StructureDefinition-IHE.PDQm.Query.Audit.Consumer.html). [Audit Example for a PDQm Query transaction from consumer perspective](AuditEvent-ex-auditPdqmQuery-consumer.html).
 
 ##### 2:3.78.5.1.2 Patient Demographics Supplier Audit
 
-The Patient Demographics Supplier when grouped with ATNA Secure Node or Secure Application actor shall be able to record a [Patient Demographics Supplier AuditEvent](StructureDefinition-IHE.PDQm.Query.Audit.Supplier.html). [Audit Example for a PDQm Query transaction from supplier perspective](AuditEvent-ex-auditPdqmQuery-supplier.html).
+The Patient Demographics Supplier when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) actor shall be able to record a [Patient Demographics Supplier AuditEvent](StructureDefinition-IHE.PDQm.Query.Audit.Supplier.html). [Audit Example for a PDQm Query transaction from supplier perspective](AuditEvent-ex-auditPdqmQuery-supplier.html).
 
 #### 2:3.78.5.2 Use with the Internet User Authorization (IUA) Profile  
 The [Internet User Authorization (IUA)](https://profiles.ihe.net/ITI/IUA/index.html) Profile provides support for user authentication, app authentication, and authorization decisions. When PDQm actors are grouped with IUA actors there are additional security and privacy functionality enabled by this grouping. There are additional requirements and functionality enabled through scope definitions that are transaction-specific.
