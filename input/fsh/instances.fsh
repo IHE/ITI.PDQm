@@ -2,7 +2,7 @@ Instance: IHE.PDQm.client
 InstanceOf: CapabilityStatement
 Title: "PDQm Client requirements CapabilityStatement"
 Description: """
-The PDQm Patient Demographics Consumer Actor requirements CapabililtyStatement expresses the requirements that can be utalized while being compliant.
+The PDQm Patient Demographics Consumer Actor requirements CapabililtyStatement expresses the requirements that can be utilized while being compliant.
 
 - Query against the FHIR endpoint to the Patient Resource endpoint
 - Using FHIR R4
