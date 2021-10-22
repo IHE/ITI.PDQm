@@ -43,31 +43,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
     - urn:ihe:event-type-code
 
 
-resources:
-  Patient/Patient-MohrAlissa-Red:
-    name: Patient Alissa Mohr (Red)
-    description: Patient Mohr Alisa in IHE Red Domain
-    exampleBoolean: true
-  Patient/Patient-MohrAlice:
-    name: Patient Alice Mohr
-    description: 'Patient Mohr Alice with all IHE Domain identifiers, note: this is just a consolidated identifier example will all identifiers from all the IHE domains equivalent to a golden patient, however a golden patient is not the scope of PIXm, see the IHE PMIR profile' 
-    exampleBoolean: true
-  Patient/Patient-MohrAlice-Red:
-    name: Patient Alice Mohr (Red)
-    description: Patient Mohr Alice in IHE Red Domain
-    exampleBoolean: true
-  Patient/Patient-MohrAlice-Green:
-    name: Patient Alice Mohr (Green)
-    description: Patient Mohr Alice in IHE Green Domain
-    exampleBoolean: true
-  Patient/Patient-MohrAlice-Blue:
-    name: Patient Alice Mohr (Blue)
-    description: Patient Mohr Alice in IHE Blue Domain
-    exampleBoolean: true
-  Patient/Patient-MaidenAlice-Red:
-    name: Patient Maiden Alice (Red)
-    description: Patient Maiden Alice in IHE Red Domain
-    exampleBoolean: true
+
 
 
 pages:
