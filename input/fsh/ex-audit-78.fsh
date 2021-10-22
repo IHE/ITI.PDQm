@@ -58,7 +58,7 @@ Given the Supplier chooses to record a patient in the AuditEvent
 When the search finds multiple Patients, 
 Then the Supplier would create an AuditEvent for each of those Patients. 
 
-This example shows where Patient-MohrAlice-Blue is returned. This single result does not affect the response returned on the ITI-78 that would include all results.
+This example shows where ex-patient is returned. This single result does not affect the response returned on the ITI-78 that would include all results.
 """
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
@@ -84,7 +84,7 @@ Usage: #example
 * agent[supplier].network.type = http://hl7.org/fhir/network-type#5 "URI"
 * entity[patient].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#1 "Person"
 * entity[patient].role = http://terminology.hl7.org/CodeSystem/object-role#1 "Patient"
-* entity[patient].what = Reference(Patient/Patient-MohrAlice-Blue)
+* entity[patient].what = Reference(Patient/ex-patient)
 * entity[queryParameters].type = http://terminology.hl7.org/CodeSystem/audit-entity-type#2 "System Object"
 * entity[queryParameters].role = http://terminology.hl7.org/CodeSystem/object-role#24 "Query"
 * entity[queryParameters].query = "R0VUIGh0dHBzOi8vc2VydmVyLmV4YW1wbGUuY29tL2ZoaXIvUGF0aWVudD9mYW1pbHk9TU9IUiZnaXZlbj1BTElDRSZhY3RpdmU9dHJ1ZSZnZW5kZXI9ZmVtYWxlCkFjY2VwdDogYXBwbGljYXRpb24vZmhpcitqc29uOyBmaGlyVmVyc2lvbj00LjA="

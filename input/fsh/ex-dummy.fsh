@@ -7,7 +7,7 @@ Usage: #example
 
 
 Instance:   ex-patient
-InstanceOf: Patient
+InstanceOf: PDQmPatient
 Title:      "Dummy Patient example"
 Description: "Dummy patient example for completeness sake. No actual use of this resource other than an example target"
 Usage: #example
