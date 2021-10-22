@@ -52,7 +52,7 @@ Parameter | definitions
 `_id` |This parameter of type string, when supplied, represents the resource identifier for the Patient Resource being queried. See [ITI TF-2:Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type. Note: A search using `_id` is always an exact match search.
 `active` | This parameter of type `token`, when supplied, specifies the active state. The active state indicates whether the patient record is active. Note: use `active=true`
 `family` and `given` | These parameters of type `string`, when supplied, specify the name of the person whose information is being queried. For this parameter the Patient Demographics Consumer may use either family name, given name or a combination of both names to filter by family, given or family and given names respectively. See [ITI TF-2:Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type.
-`identifier` | This repeating parameter of type `token`, when supplied, specifies an identifier associated with the patient whose information is being queried (e.g., a local identifier, account identifier, etc.). See [ITI TF-2:Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type. If multiple instances of this parameter are provided in the query, the query represents a logical AND condition (i.e., all of the associated identifiers must match). For example, a query searching for patients having identifier145 assigned by authority “1.2.3.4” and SSN 123456789 would be represented as:<br /> `?identifier=urn:oid:1.2.3.4|145&identifier=urn:oid:2.16.840.1.113883.4.1|123456789` <br />If no `system` portion of the identifier parameter is specified, then the matching would be performed on any identifier regardless of issuing system. The `identifier` specified in this parameter is expressed using the `token` search parameter type. Please see [ITI TF-2:Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type for patient identifiers.
+`identifier` | This repeating parameter of type `token`, when supplied, specifies an identifier associated with the patient whose information is being queried (e.g., a local identifier, account identifier, etc.). See [ITI TF-2:Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type. If multiple instances of this parameter are provided in the query, the query represents a logical AND condition (i.e., all of the associated identifiers must match). For example, a query searching for patients having identifier145 assigned by authority “1.2.3.4” and SSN 123456789 would be represented as:<br /> `?identifier=urn:oid:1.2.3.4|145&identifier=urn:oid:2.16.840.1.113883.4.1|123456789` <br />If no `system` portion of the identifier parameter is specified, then the matching would be performed on any identifier regardless of issuing system. 
 `telecom` | This parameter of type `token`, when supplied, specifies the telecommunications details
 `birthdate` | This parameter of type `date`, when supplied, specifies the birth date of the person whose information is being queried. The Patient Demographics Consumer shall use the date and interval mechanism to indicate a specific date of birth or a date that lies within the range specified by the parameter. See [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date)
 `address` | This parameter of type `string`, when supplied, specifies one or more address parts associated with the person whose information is being queried. For details on matching rules, see [ITI TF-2:Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters).
@@ -67,15 +67,15 @@ Accept: application/fhir+json; fhirVersion=4.0
 ```
 
 ###### 2:3.78.4.1.2.2 Parameter Modifiers
-Patient Demographics Suppliers shall support the `“:exact”` parameter modifier on all query parameters of type string. When supplied by the Patient Demographics Consumer, the `“:exact”` parameter modifier instructs the Patient Demographics Supplier that exact matching should be performed.
+Patient Demographics Suppliers shall support the `“:exact”` parameter modifier on all search parameters of type string. When supplied by the Patient Demographics Consumer, the `“:exact”` parameter modifier instructs the Patient Demographics Supplier that exact matching should be performed.
 The Patient Demographics Consumer should not use, and Patient Demographics Supplier may ignore, any additional parameter modifiers listed in the FHIR standard, which are considered out of scope in the context of this transaction
 
 ###### 2:3.78.4.1.2.3 Populating Which Domains are Returned <a name="domainpop"> </a>
-The Patient Demographics Consumer may constrain the domains from which patient identifiers are returned from the Patient Demographics Supplier in the resulting bundle. The Patient Demographics Consumer shall convey this by specifying the patient identity domains in the system component of repeating `identifier` parameters using the OR format (example of requesting results in identifier domain 1.2.3 *OR* 4.5.6):
+The Patient Demographics Consumer may constrain the domains from which patient identifiers are returned from the Patient Demographics Supplier in the resulting bundle. The Patient Demographics Consumer shall convey this by specifying the patient identity domains in the system component of repeating `identifier` parameters using the [OR format](http://hl7.org/fhir/R4/search.html#combining) (example of using `,` in a request for identifier domain `1.2.3` *OR* `4.5.6`):
 
     &identifier=urn:oid:1.2.3|,urn:oid:4.5.6|
 
-For example, a Patient Demographics Consumer wishing to filter for patients with a last name of SMITH having identifiers from an identity domain with OID 1.2.3.4.5 would convey this search as (example of requesting a family name of SMITH *AND* in the identifier domain 1.2.3.4.5):
+For example, a Patient Demographics Consumer wishing to filter for patients with a last name of SMITH having identifiers from an identity domain with OID 1.2.3.4.5 would convey this search using the [AND format](http://hl7.org/fhir/R4/search.html#combining) as (example of requesting a family name of SMITH *AND* in the identifier domain 1.2.3.4.5):
 
 	  ?family=SMITH&identifier=urn:oid:1.2.3.4.5|
 
@@ -88,9 +88,9 @@ See [ITI TF-2:Appendix Z.6 for details](https://profiles.ihe.net/ITI/TF/Volume2/
 #### 2:3.78.4.1.3 Expected Actions
 The Patient Demographics Supplier shall return demographic records that reflect the match to all of the search criteria provided by the Patient Demographics Consumer. The Patient Demographics Supplier shall respond with a [Query Patient Resource Response message](#query-response) synchronously (i.e., on the same connection as was used to initiate the request).
 
-The Patient Demographics Supplier shall return all exact matches to the query parameters sent by the Patient Demographics Consumer; IHE does not further specify matching requirements. The Patient Demographics Supplier may be able to perform other string matching (e.g., case insensitive, partial matches, etc.) which shall be indicated in its CapabilityStatement Resource (see [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource)).
+The Patient Demographics Supplier shall return all exact matches to the search parameters sent by the Patient Demographics Consumer; IHE does not further specify matching requirements. The Patient Demographics Supplier may be able to perform other string matching (e.g., case insensitive, partial matches, etc.) which shall be indicated in its CapabilityStatement Resource (see [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource)).
 
-The information provided by the Patient Demographics Supplier to the Patient Demographics Consumer is a list of matching patients from the Patient Demographics Supplier’s information source. The mechanics of the matching algorithms used are internal to the Patient Demographics Supplier and are outside the scope of this framework.
+The response provided by the Patient Demographics Supplier to the Patient Demographics Consumer is a list of matching patients from the Patient Demographics Supplier’s information source. The mechanics of the matching algorithms used are internal to the Patient Demographics Supplier and are outside the scope of this framework.
 
 The Patient Demographics Supplier shall support at least one patient identifier domain and may support multiple identifier domains. Section [3.78.4.1.2.4](#domainpop) describes how the Patient Demographics Consumer may filter results based on identifiers from one or more patient identifier domains. Query responses may return patient identifiers from one or multiple patient identifier domains.
 
@@ -98,19 +98,19 @@ See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.
 
 The Patient Demographics Supplier shall respond to the query request as described by the following cases with a [Query Patient Resource Response message](#query-response), and shall behave according to the cases listed below:
 
-**Case 1**: The Patient Demographics Supplier finds in its information source at least one patient record matching the criteria sent as HTTP query parameters. No patient identifier domains are requested via the mechanism specified as specified in Section [3.78.4.1.2.4](#domainpop).
+**Case 1**: The Patient Demographics Supplier finds at least one patient record matching the criteria sent as HTTP search parameters. No patient identifier domains are requested via the mechanism specified as specified in Section [3.78.4.1.2.4](#domainpop).
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
 A Resource Bundle is returned representing the result set. The Patient Demographics Supplier populates the `total` property of the bundle with the total number of matching results. One `entry` is returned from the Patient Demographics Supplier for each Patient Resource found.
 
-**Case 2**: The Patient Demographics Supplier finds at least one patient record matching the criteria sent in the query parameters. One or more patient identifier domains are requested via the mechanism specified in Section [3.78.4.1.2.4](#domainpop), and Patient Demographics Supplier recognizes all domains.
+**Case 2**: The Patient Demographics Supplier finds at least one patient record matching the criteria sent in the search parameters. One or more patient identifier domains are requested via the mechanism specified in Section [3.78.4.1.2.4](#domainpop), and Patient Demographics Supplier recognizes all domains.
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
 The Patient Demographics Supplier performs its matching and returns a bundle as described in Case 1. The Patient Demographics Supplier eliminates identifiers from the result set which do not exist in the list specified per Section [3.78.4.1.2.4](#domainpop) (domains to be returned). 
 
-**Case 3**: The Patient Demographics Supplier fails to find in its information source, any patient record matching the criteria sent as HTTP query parameters.
+**Case 3**: The Patient Demographics Supplier fails to find in its information source, any patient record matching the criteria sent as HTTP search parameters.
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
@@ -118,7 +118,7 @@ A Resource Bundle is returned representing the zero result set. The Patient Demo
 
 **Case 4**: The Patient Demographics Supplier is not an authority for one or more of the domains specified per Section [3.78.4.1.2.4](#domainpop).
 
-There are two different acceptable return results. The preferred response is a `HTTP 404` to indicate that the domain is not recognized, but it is acceptable to respond with a `HTTP 200` with the results available (0..*).
+There are two acceptable responses. The preferred response is a `HTTP 404` to indicate that the domain is not recognized, but it is acceptable to respond with a `HTTP 200` with the results available (0..*).
 
 An OperationOutcome Resource is returned indicating that the patient identity domain is not recognized in an `issue` having:
 
@@ -129,7 +129,7 @@ code|not-found
 diagnostics|“targetSystem not found”
 {:.grid}
 
-The OperationOutcome Resource may indicate the query parameter used and the domain in error within the `diagnostics` attribute. See FHIR discussion of search error handling [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors)
+The OperationOutcome Resource may indicate the search parameter used and the domain in error within the `diagnostics` attribute. See FHIR discussion of search error handling [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors)
 
 **Case 5**: The Patient Demographics Supplier is not capable of producing a response in the requested format specified by _format parameter (specified in Section [3.78.4.1.2.5](#format)).
 
@@ -154,7 +154,7 @@ The Patient Demographics Supplier may return other HTTP status codes to represen
 
 ##### 2:3.78.4.2.1 Trigger Events
 
-The Patient Demographics Supplier has results or error to report to the Patient Demographics Consumer. This may include finding zero or more patient demographics matching the query parameters specified by the Patient Demographics Consumer as a result of a Query Patient Resource Request. This may include errors or Access Denied.
+The Patient Demographics Supplier has results or error to report to the Patient Demographics Consumer. This may include finding zero or more patient demographics matching the search parameters specified by the Patient Demographics Consumer as a result of a Query Patient Resource Request. This may include errors or Access Denied.
 
 ##### 2:3.78.4.2.2 Message Semantics
 
@@ -176,7 +176,7 @@ Please see [ITI TF-2:Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.
 The Patient Demographics Supplier shall represent these incremental responses as specified in [FHIR Paging](http://hl7.org/fhir/R4/http.html#paging)
 
 ###### 2:3.78.4.2.2.5 Quality of Match
-The Patient Demographics Supplier may convey the quality of each match based on strength of the particular result to the supplied query parameters. The mechanism for determining the confidence of match is considered a product specific feature and is not specified in this transaction.
+The Patient Demographics Supplier may convey the quality of each match based on strength of the particular result to the supplied search parameters. The mechanism for determining the confidence of match is considered a product specific feature and is not specified in this transaction.
 
 If the Patient Demographics Supplier wishes to convey the quality of match, it shall represent the confidence of a particular match within the bundle as a score attribute. See FHIR Relevance section [http://hl7.org/fhir/R4/search.html#score](http://hl7.org/fhir/R4/search.html#score)
 
@@ -187,12 +187,12 @@ The Patient Demographics Consumer shall process the response in some manner spec
 
 The constraints specified in Section [3.78.4.2.2](#2378422-message-semantics) represent the minimum set of demographics information that must be implemented by a Patient Demographics Supplier. This does not prevent the Patient Demographics Supplier from sending additional FHIR attributes in a response; such as extensions, text, etc. The Patient Demographics Consumer shall ignore additional attributes and extensions if not understood.
 
-The Patient Demographics Consumer should be robust as the response may contain Patient Resources that match the query parameters but are not compliant with the PDQm constraints defined in [Patient Profile for PDQm](StructureDefinition-IHE.PDQm.Patient.html).
+The Patient Demographics Consumer should be robust as the response may contain Patient Resources that match the search parameters but are not compliant with the PDQm constraints defined in [Patient Profile for PDQm](StructureDefinition-IHE.PDQm.Patient.html).
 
 The Patient Demographics Consumer should follow the [Safety Guidelines for Client Search](http://hl7.org/fhir/R4/safety.html#search)
 
 ##### 2:3.78.4.2.4 CapabilityStatement Resource
-Patient Demographics Suppliers implementing [ITI-78] shall provide a CapabilityStatement Resource as described in [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource) indicating the query interaction for the Patient Resource has been implemented and shall include all query parameters implemented for the Patient Resource.
+Patient Demographics Suppliers implementing [ITI-78] shall provide a CapabilityStatement Resource as described in [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource) indicating the query interaction for the Patient Resource has been implemented and shall include all search parameters implemented for the Patient Resource.
 
 
 #### 2:3.78.4.3 Retrieve Patient Resource message
@@ -215,13 +215,13 @@ Note: The use of "http" or "https" in URL does not override requirements to use 
 ##### 2:3.78.4.3.3 Expected Actions
 The Patient Demographics Supplier shall retrieve the demographic record indicated by the Resource identifier on the HTTP GET supplied by the Patient Demographics Consumer. The Patient Demographics Supplier shall respond to the retrieve request as described by the following cases:
 
-**Case 1**: The Patient Demographics Supplier finds in its information source the patient demographics record matching the `resourceId` sent in the HTTP request.
+**Case 1**: The Patient Demographics Supplier finds the patient demographics record matching the `resourceId` sent in the HTTP request.
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
 A Patient Resource is returned representing the result.
 
-**Case 2**: The Patient Demographics Supplier fails to find in its information source the patient demographics record matching the `resourceId` sent in the HTTP request.
+**Case 2**: The Patient Demographics Supplier fails to find the patient demographics record matching the `resourceId` sent in the HTTP request.
 
 `HTTP 404` (Not Found) is returned as the HTTP status code
 
@@ -237,7 +237,7 @@ The Patient Demographics Supplier may return other HTTP status codes to represen
 
 #### 2:3.78.4.4 Retrieve Patient Resource Response message
 
-The Patient Demographics Supplier’s response to a successful Retrieve Patient Resource message shall be an `HTTP 200` (OK) Status code with a Patient Resource, or an appropriate error code as defined in [Patient Profile for PDQm](StructureDefinition-IHE.PDQm.Patient.html).
+The Patient Demographics Supplier’s response to a successful Retrieve Patient Resource message shall be an `HTTP 200` (OK) Status code with a Patient Resource, or an appropriate error code.
 
 ##### 2:3.78.4.4.1 Trigger Events
 The Patient Demographics Supplier found patient demographic record matching the Resource identifier specified by the Patient Demographics Consumer.
