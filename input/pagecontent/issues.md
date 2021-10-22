@@ -19,6 +19,7 @@ These issues were known as part of the publication, and IHE invites comments.
 - PDQm_101: Are there some elements we can get global agreement should be marked as R2 (aka, Must-Support - required to be returned if known)?
 - PDQm_102: Normative vs Trial-Implementation - Currently the HL7 FHIR standard components used (e.g., Patient, Bundle, etc) in this profile are at Normative state. Some portions of PDQm are relying on STU content (such as query parameters, mothersMaidenName).
 - PDQm_103: PDQm has a small volume 1 content. Thus breaking each H2 out into independent html files makes it harder to address. We may choose to do similar to PIXm and have just one volume 1 content with deep links.
+- [PDQm_issue_66](https://github.com/IHE/ITI.PDQm/issues/66): PDQm has allowed clients to use GET or POST search, and thus mandated that servers must support both GET and POST. The previous versions of PDQm had only mentioned GET search, but we learned that FHIR core mandated POST and does not allow us to not also mandate it. This leaves regions that want to use only one of these verbs for search seemingly forced to support both verbs for search. The current discussion in FHIR core offers that "support" could include implementing a "policy" that forces an http 405 response. This seems to be a workable solution, and the alternative would not be much different than this anyway.
 
 ### Closed Issues
 These issues have been decided and documented in the publication.

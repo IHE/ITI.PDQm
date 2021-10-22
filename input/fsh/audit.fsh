@@ -9,7 +9,7 @@ Parent:         AuditEvent
 Id:             IHE.PDQm.Query.Audit.Supplier
 Title:          "Audit Event for PDQm Query at Supplier"
 Description:    """
-Defines constraints on the AuditEvent (AuditMessage) Resource to record when a Patient Demographics Query using [ITI-78](ITI-78.html) as recorded at the Supplier.
+Defines constraints on the AuditEvent (AuditMessage) Resource to record when a Patient Demographics Query using [ITI-78](./ITI-78.html) as recorded at the Supplier.
 - type (EventTypeCode) = EV(`110112`, `DCM`, `Query`)
 - action (EventActionCode) = `E`
 - subtype (EventTypeCode) = EV(`ITI-78`, `urn:ihe:event-type-code`, `Mobile Patient Demographics Query`)
@@ -67,7 +67,7 @@ Parent:         AuditEvent
 Id:             IHE.PDQm.Query.Audit.Consumer
 Title:          "Audit Event for PDQm Query at Consumer"
 Description:    """
-Defines constraints on the AuditEvent (AuditMessage) Resource to record when a Patient Demographics Query using [ITI-78](ITI-78.html) as recorded at the Supplier.
+Defines constraints on the AuditEvent (AuditMessage) Resource to record when a Patient Demographics Query using [ITI-78](./ITI-78.html) as recorded at the Supplier.
 - type (EventTypeCode) = EV(`110112`, `DCM`, `Query`)
 - action (EventActionCode) = `E`
 - subtype (EventTypeCode) = EV(`ITI-78`, `urn:ihe:event-type-code`, `Mobile Patient Demographics Query`)
