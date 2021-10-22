@@ -72,22 +72,11 @@ Patient Demographics Supplier |	none |	.
 
 ## 1:38.3 PDQm Required Actor Grouping
 
+No required groupings.
 
-When the Patient Demographics Supplier is grouped with actors in other IHE profiles that perform patient information reconciliation activities (e.g., the ADT Actor in the IHE Radiology Scheduled Workflow.b Profile), the Patient Demographics Supplier may use the updated information to respond to PDQm Queries. In addition, the Patient Demographics Query for Mobile Profile may play an integral workflow role in conjunction with other IHE profiles.
+The Security Considerations page describes some optional groupings that may be of interest for security considerations.
 
-Those systems that manage patient demographics could implement the Patient Demographics Supplier 
-in all three profiles: PDQ, PDQv3, and PDQm. In this way the Patient Demographics Consumer can 
-choose the technology stack that best fits. 
-[ITI TF-2:Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) provides additional 
-details about Patient Demographics Query Profiles and their relationship with one another. 
-
-The Patient Demographics Supplier may act as a proxy to an existing PDQ or PDQv3 environment as shown in Figure 38.6-1. 
-
-<div>
-{%include Implementing-PDQm-as-a-gateway.svg%}
-</div>
-<br clear="all">
-**Figure 38.6-1: Implementing PDQm as a gateway**
+Cross-Profile Considerations describes some optional groupings in other related profiles.
 
 ## 1:38.4 PDQm Overview
 
