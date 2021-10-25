@@ -9,7 +9,7 @@ PDQm specifies a query transaction between two actors.  The transaction between 
 
 ## High-level Test Scope
 
-### Patient Demographics Query for Mobile [ITI-78 (https://build.fhir.org/ig/IHE/ITI.PDQm/branches/main/ITI-78.html) 
+### Patient Demographics Query for Mobile [ITI-78](https://build.fhir.org/ig/IHE/ITI.PDQm/branches/main/ITI-78.html) 
 
 * Patient Demographics Consumer initiates the ITI-78 queries with various combinations of parameters, as supported
 * Patient Demographics Supplier responds to the ITI-78 queries as appropriate 
@@ -26,20 +26,20 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 
 #### Gazelle PatientManager - Simulator 
 
-* Provider: INRIA (Rennes, France), KEREVAL (https://www.kereval.com/)
+* Provider: INRIA (Rennes, France), [KEREVAL](https://www.kereval.com/)
 * Gazelle PatientManager online: https://gazelle.ihe.net/PatientManager/home.seam
-* [User Manual] (https://gazelle.ihe.net/gazelle-documentation/Patient-Manager/user.html)
-* [Tool support] (https://gazelle.ihe.net/jira/projects/PAM)
+* [User Manual](https://gazelle.ihe.net/gazelle-documentation/Patient-Manager/user.html)
+* [Tool support](https://gazelle.ihe.net/jira/projects/PAM)
 * Actors (options) tested:  Patient Demographics Consumer, Patient Demographics Supplier for ITI-78:
-  *  Consumer test definition: [PM_PDQ_Query-Patient_Demographics_Consumer] (https://gazelle.ihe.net/content/pmpdqquery-patientdemographicsconsumer)
-  *  Supplier test definition: [PM_PDQ_Query-Patient_Demographics_Supplier] (https://gazelle.ihe.net/content/pmpdqquery-patientdemographicssupplier)
+  *  Consumer test definition: [PM_PDQ_Query-Patient_Demographics_Consumer](https://gazelle.ihe.net/content/pmpdqquery-patientdemographicsconsumer)
+  *  Supplier test definition: [PM_PDQ_Query-Patient_Demographics_Supplier](https://gazelle.ihe.net/content/pmpdqquery-patientdemographicssupplier)
 
 #### Gazelle External Validation Service (aka "EVS Client") - Validator
 
-* Provider:  INRIA (Rennes, France), KEREVAL (https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
+* Provider:  INRIA (Rennes, France), [KEREVAL](https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
 * Gazelle EVSClient online: https://gazelle.ihe.net/EVSClient/home.seam
-* [User Manual] (https://gazelle.ihe.net/gazelle-documentation/EVS-Client/user.html)
-* [Tool support] (https://gazelle.ihe.net/jira/browse/EVSCLT)
+* [User Manual](https://gazelle.ihe.net/gazelle-documentation/EVS-Client/user.html)
+* [Tool support](https://gazelle.ihe.net/jira/browse/EVSCLT)
 * Scope of testing: validation using StructureDefinitions for PDQm IG
 * Test documentation: https://gazelle.ihe.net/content/evsfhirvalidation
 
@@ -48,7 +48,7 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 
 Integration Testing in this context is where two SUT of paired actors test against each other.  Integration testing is often limited by the capability of the client (Patient Demographics Consumer), which may support only a subset of the semantics required to be supported by the server (Patient Demographics Supplier).  Full message semantics and failure-modes are generally more thoroughly exercised with unit (conformance) tests.
 
-The tests listed below are defined in [Gazelle Master Model] (https://gazelle.ihe.net/GMM) and are performed by systems testing PDQm at IHE Connectathons.
+The tests listed below are defined in [Gazelle Master Model](https://gazelle.ihe.net/GMM) and are performed by systems testing PDQm at IHE Connectathons.
 
 ### Patient Demographics Consumer --> Patient Demographics Supplier Interoperability Tests:
 
