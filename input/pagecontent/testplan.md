@@ -14,6 +14,10 @@ PDQm specifies a query transaction between two actors.  The transaction between 
 * Patient Demographics Consumer initiates the ITI-78 queries with various combinations of parameters, as supported
 * Patient Demographics Supplier responds to the ITI-78 queries as appropriate 
 
+### Options 
+
+* None
+
 ## Unit Test Procedure (Conformance Testing)
 
 Unit testing this context entails testing a SUT with a simulator or validator tool.  A simulator is an implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench.  Often, when a reference implementation is used, the negative tests are harder to simulate. A validator is an implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
@@ -49,5 +53,3 @@ The tests listed below are defined in Gazelle Master Model (https://gazelle.ihe.
 * ITI-78_(PDQm)_Search_Read
   * Assumes a pre-defined set of patient demographics on the Supplier actor
 * ITI-78_Paging
-* PDQm_Query_with_Twin_Data
-  * Assumes an additional set of demographics on the Supplier actor to demonstrate extra requirements for the Pediatric Demographics option.
