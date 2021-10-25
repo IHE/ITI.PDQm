@@ -11,3 +11,5 @@ This Continuous Build will appear https://build.fhir.org/ig/IHE/ITI.PDQm/branche
 After review, Formal Publication will be at http://profiles.ihe.net/ITI/PDQm 
 
 October 22, 2021 - ITI-Tech approved for Trial Implementation.
+
+.
