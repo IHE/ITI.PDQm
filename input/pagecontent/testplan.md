@@ -42,6 +42,7 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 * [Tool support](https://gazelle.ihe.net/jira/browse/EVSCLT)
 * Scope of testing: validation using StructureDefinitions for PDQm IG
 * Test documentation: https://gazelle.ihe.net/content/evsfhirvalidation
+* Other notes: StructureDefinitions and other conformance resources are provided in this Implementation Guide on the [Artifacts](https://build.fhir.org/ig/IHE/ITI.PDQm/branches/main/artifacts.html) page.
 
 
 ## Integration Test Procedure (Interoperability Testing)
