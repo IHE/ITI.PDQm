@@ -1,11 +1,11 @@
 <div markdown="1" class="stu-note">
 
-This Test Plan page is a prototype.   We expect the maturity of the content will improve over time.  For now, we summarize high level testing scope and available tools. Comments are welcome.
+This Test Plan page is a prototype. We expect the maturity of the content will improve over time. For now, we summarize high level testing scope and available tools. Comments are welcome.
 </div>
 
 ## Introduction
 
-PDQm specifies a query transaction between two actors.  The transaction between actors specify semantics of the data exchanged.  The PDQm test plan focuses on these semantics and on the expected actions on the server-side actor.
+PDQm specifies a query transaction between two actors. The transaction between actors specify semantics of the data exchanged. The PDQm test plan focuses on these semantics and on the expected actions on the server-side actor.
 
 ## High-level Test Scope
 
@@ -20,7 +20,7 @@ PDQm specifies a query transaction between two actors.  The transaction between 
 
 ## Unit Test Procedure (Conformance Testing)
 
-Unit testing this context entails testing a SUT with a simulator or validator tool.  A simulator is an implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench.  Often, when a reference implementation is used, the negative tests are harder to simulate. A validator is an implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
+Unit testing this context entails testing a SUT with a simulator or validator tool. A simulator is an implementation of an actor that is designed specifically to test the opposite pair actor. The simulator might be a reference implementation or may be a specially designed test-bench. Often, when a reference implementation is used, the negative tests are harder to simulate. A validator is an implementation that can check conformance. A validator may be a simulator, but may also be a standalone tool used to validate only a message encoding. Some reference implementations may be able to validate to a StructureDefinition profile, but often these do not include sufficient constraints given the overall actor conformance criteria. 
 
 ### Available tools for PDQm unit testing
 
@@ -30,13 +30,13 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 * Gazelle PatientManager online: https://gazelle.ihe.net/PatientManager/home.seam
 * [User Manual](https://gazelle.ihe.net/gazelle-documentation/Patient-Manager/user.html)
 * [Tool support](https://gazelle.ihe.net/jira/projects/PAM)
-* Actors (options) tested:  Patient Demographics Consumer, Patient Demographics Supplier for ITI-78:
+* Actors (options) tested: Patient Demographics Consumer, Patient Demographics Supplier for ITI-78:
   *  Consumer test definition: [PM_PDQ_Query-Patient_Demographics_Consumer](https://gazelle.ihe.net/content/pmpdqquery-patientdemographicsconsumer)
   *  Supplier test definition: [PM_PDQ_Query-Patient_Demographics_Supplier](https://gazelle.ihe.net/content/pmpdqquery-patientdemographicssupplier)
 
 #### Gazelle External Validation Service (aka "EVS Client") - Validator
 
-* Provider:  INRIA (Rennes, France), [KEREVAL](https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
+* Provider: INRIA (Rennes, France), [KEREVAL](https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
 * Gazelle EVSClient online: https://gazelle.ihe.net/EVSClient/home.seam
 * [User Manual](https://gazelle.ihe.net/gazelle-documentation/EVS-Client/user.html)
 * [Tool support](https://gazelle.ihe.net/jira/browse/EVSCLT)
@@ -47,7 +47,7 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 
 ## Integration Test Procedure (Interoperability Testing)
 
-Integration Testing in this context is where two SUT of paired actors test against each other.  Integration testing is often limited by the capability of the client (Patient Demographics Consumer), which may support only a subset of the semantics required to be supported by the server (Patient Demographics Supplier).  Full message semantics and failure-modes are generally more thoroughly exercised with unit (conformance) tests.
+Integration Testing in this context is where two SUT of paired actors test against each other. Integration testing is often limited by the capability of the client (Patient Demographics Consumer), which may support only a subset of the semantics required to be supported by the server (Patient Demographics Supplier). Full message semantics and failure-modes are generally more thoroughly exercised with unit (conformance) tests.
 
 The tests listed below are defined in [Gazelle Master Model](https://gazelle.ihe.net/GMM) and are performed by systems testing PDQm at IHE Connectathons.
 
