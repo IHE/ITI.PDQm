@@ -23,12 +23,12 @@ Figure 38.1-1 shows the actors directly involved in the Patient Demographics Que
 
 **Figure 38.1: PQDm Actor Diagram**
 
-Table 38.1-1: PDQm; Profile - Actors and Transactions
+**Table 38.1-1: PDQm; Profile - Actors and Transactions**
 
 | Actors  | Transactions  | Initiator or Responder | Optionality| Reference|
 |---------|---------------|:----------------------:|:---------------:|-----------------------------------|
-| Patient Demographics Consumer | Mobile Patient Demographics Query [ITI-78]  | Initiator | R  | [ITI TF-2:3.78](ITI-78.html) |
-| Patient Demographics Supplier | Mobile Patient Demographics Query [ITI-78] | Responder | R | [ITI TF-2:3.78](ITI-78.html) |
+| Patient Demographics Consumer | Mobile Patient Demographics Query [ITI-78]  | Initiator | R  | [ITI TF-2: 3.78](ITI-78.html) |
+| Patient Demographics Supplier | Mobile Patient Demographics Query [ITI-78] | Responder | R | [ITI TF-2: 3.78](ITI-78.html) |
 {:.grid}
 
 
@@ -47,7 +47,7 @@ No additional requirements.
 The Patient Demographics Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
 All supported search parameters and search methods (GET, POST) shall be specified. The [search parameters defined in \[ITI-78\]](ITI-78.html#23784121-search-parameters) shall be supported, other parameters may be supported.
 
-This capabilities response will typically include all of the capabilities inclusive of all grouped Actors and additional functionality.
+This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.
 
 ### 1:38.1.2 Transaction Descriptions
 The transactions in this profile are summarized in the sections below.
@@ -56,7 +56,7 @@ The transactions in this profile are summarized in the sections below.
 
 Mobile Patient Demographics Query is used by the Patient Demographics Consumer to solicit information about patients whose demographics data match data provided in the query parameters on the request message. The request is received by the Patient Demographics Supplier. The Patient Demographics Supplier processes the request and returns a response in the form of demographics information for the matching patients.
 
-For more details see the detailed [transaction description](ITI-78.html)
+For more details see the detailed [transaction description](ITI-78.html).
 
 ## 1:38.2 PDQm Actor Options
 
@@ -66,8 +66,8 @@ Options that may be selected for each actor in this profile, if any, are listed 
 
 Actor	| Option Name |	Reference
 ---|---|---
-Patient Demographics Consumer |	none |	.
-Patient Demographics Supplier |	none |	.
+Patient Demographics Consumer |	none |	-
+Patient Demographics Supplier |	none |	-
 {:.grid}
 
 ## 1:38.3 PDQm Required Actor Grouping
@@ -108,7 +108,7 @@ The system returns a list of patients showing Patient ID, full name, age, sex an
 #### 1:38.4.2.2 Use Case #2: Patient Identity Information Entering in Physician Offices
 In this use case a patient visits a physician for the first time. The physician system will use the PDQm Profile to import demographics information into the local application.
 
-##### 1:38.4.2.2.1 Patient Identity Information Entering in Physician Offices Use Case Description
+###### 1:38.4.2.2.1 Patient Identity Information Entering in Physician Offices Use Case Description
 A patient visits a physician office for the first time. The nurse needs to register the patient; in doing so, it is desired to record the patient’s demographic data in the practice management information system (PMIS). The physician office is connected to a hospital enterprise’s central patient registry. The nurse issues a patient query request to the central patient registry acting as a Patient Demographics Supplier, with some basic patient demographics data as search criteria. In the returned patient list, she picks an appropriate record for the patient, including the hospital’s Patient ID, to enter into the PMIS. (Note the PMIS uses a different Patient ID domain than that of the central patient registry.)
 
 #### 1:38.4.2.3 Use Case #3: Patient Demographics Query in an Enterprise with Multiple Patient ID Domains
@@ -130,7 +130,7 @@ A lab technician enters some basic demographics data (e.g., patient name) into a
 
 Actors are expected to follow the recommendations and requirements found in [ITI TF-2:Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations). 
 
-Actors have requirements in the ITI-78 [Security Considerations Section](ITI-78.html#23785-security-considerations) including requirements for Audit Logging when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), and Authentication and Authorization when grouped with [Internet User Authorization (IUA)](https://profiles.ihe.net/ITI/IUA/index.html) Actors.
+Actors have requirements in the [ITI-78] [Security Considerations Section](ITI-78.html#23785-security-considerations) including requirements for Audit Logging when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), and Authentication and Authorization when grouped with [Internet User Authorization (IUA)](https://profiles.ihe.net/ITI/IUA/index.html) Actors.
 
 ## 1:38.6 PDQm Cross-Profile Considerations
 
@@ -149,6 +149,6 @@ The Patient Demographics Supplier may act as a proxy to an existing PDQ or PDQv3
 {%include Implementing-PDQm-as-a-gateway.svg%}
 </div>
 <br clear="all">
-**Figure 38.6-1: Implementing PDQm as a gateway**
+**Figure 38.6-1: Implementing PDQm as a Gateway**
 
 
