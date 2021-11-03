@@ -248,7 +248,7 @@ See the general Security Consideration in [ITI TF-1: 38.5](volume-1.html#1385-pd
 
 #### 2:3.78.5.1 Security Audit Considerations
 
-The Mobile Patient Demographics Query Transaction is a Query Information event as defined in [Table 3.20.4.1.1.1-1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html#3.20.4.1.1.1). The Actors involved shall record audit events according to the following:
+The Mobile Patient Demographics Query Transaction is a Query Information event as defined in [Table 3.20.4.1.1.1-1](https://profiles.ihe.net/ITI/TF/Volume2/ITI-20.html#3.20.4.1.1.1). The actors involved shall record audit events according to the following:
 
 ##### 2:3.78.5.1.1 Patient Demographics Consumer Audit
 
