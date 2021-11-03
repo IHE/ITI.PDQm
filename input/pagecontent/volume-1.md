@@ -128,7 +128,7 @@ A lab technician enters some basic demographics data (e.g., patient name) into a
 
 ## 1:38.5 PDQm Security Considerations
 
-Actors are expected to follow the recommendations and requirements found in [ITI TF-2:Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations). 
+Actors are expected to follow the recommendations and requirements found in [ITI TF-2: Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations). 
 
 Actors have requirements in the [ITI-78] [Security Considerations Section](ITI-78.html#23785-security-considerations) including requirements for Audit Logging when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), and Authentication and Authorization when grouped with [Internet User Authorization (IUA)](https://profiles.ihe.net/ITI/IUA/index.html) Actors.
 
@@ -140,7 +140,7 @@ When the Patient Demographics Supplier is grouped with actors in other IHE profi
 Those systems that manage patient demographics could implement the Patient Demographics Supplier 
 in all three profiles: PDQ, PDQv3, and PDQm. In this way the Patient Demographics Consumer can 
 choose the technology stack that best fits. 
-[ITI TF-2:Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) provides additional 
+[ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) provides additional 
 details about Patient Demographics Query Profiles and their relationship with one another. 
 
 The Patient Demographics Supplier may act as a proxy to an existing PDQ or PDQv3 environment as shown in Figure 38.6-1. 
