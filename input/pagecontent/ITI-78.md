@@ -6,7 +6,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 
 ### 2:3.78.2 Actors Roles
 
-**Table: Actor Roles**
+**Table 3.78.2-1: Actor Roles**
 
 |Actor | Role |
 |---|---|
@@ -16,17 +16,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 
 ### 2:3.78.3 Referenced Standards
 
-* [HL7 FHIR Release 4](http://www.hl7.org/FHIR/R4)
-
-### 2:3.78.4 Messages
-
-<div>
-{%include ITI-78-seq.svg%}
-</div>
-<br clear="all">
-
-**Figure: 3.78.4-1: Interaction Diagram**
-
+* [HL7 FHIR Release 4](http://www.hl7.org/FHIR/
 
 #### 2:3.78.4.1 Query Patient Resource message
 This message represents a parameterized search from the Patient Demographics Consumer to the Patient Demographics Supplier.
@@ -41,7 +31,7 @@ The search target follows the FHIR http specification, addressing the Patient Re
 ```
 This URL is configurable by the Patient Demographics Supplier and is subject to the following constraints. The `<parameters>` represents a series of encoded name-value pairs representing the filter for the search parameters specified below, as well as control parameters to modify the behavior of the Patient Demographics Supplier such as response format, or pagination.
 
-##### 2:3.78.4.1.2.1 Search Parameters
+###### 2:3.78.4.1.2.1 Search Parameters
 The Patient Demographics Consumer may supply, and the Patient Demographics Supplier shall be capable of processing, all parameters listed below. All parameter values shall be appropriately encoded per [RFC3986](https://tools.ietf.org/html/rfc3986) “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
 Patient Demographics Suppliers may choose to support additional parameters beyond the subset listed below. Any additional parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored, See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
 
@@ -49,15 +39,15 @@ FHIR defines methods of supporting multiple parameter values in an AND and OR re
 
 Parameter | definitions
 ---|---
-`_id` |This parameter of type string, when supplied, represents the resource identifier for the Patient Resource being queried. See [ITI TF-2:Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type. Note: A search using `_id` is always an exact match search.
+`_id` |This parameter of type string, when supplied, represents the resource identifier for the Patient Resource being queried. See [ITI TF-2: Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type. Note: A search using `_id` is always an exact match search.
 `active` | This parameter of type `token`, when supplied, specifies the active state. The active state indicates whether the patient record is active. Note: use `active=true`
-`family` and `given` | These parameters of type `string`, when supplied, specify the name of the person whose information is being queried. For this parameter the Patient Demographics Consumer may use either family name, given name or a combination of both names to filter by family, given or family and given names respectively. See [ITI TF-2:Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type.
-`identifier` | This repeating parameter of type `token`, when supplied, specifies an identifier associated with the patient whose information is being queried (e.g., a local identifier, account identifier, etc.). See [ITI TF-2:Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type. If multiple instances of this parameter are provided in the query, the query represents a logical AND condition (i.e., all of the associated identifiers must match). For example, a query searching for patients having identifier145 assigned by authority “1.2.3.4” and SSN 123456789 would be represented as:<br /> `?identifier=urn:oid:1.2.3.4|145&identifier=urn:oid:2.16.840.1.113883.4.1|123456789` <br />If no `system` portion of the identifier parameter is specified, then the matching would be performed on any identifier regardless of issuing system. 
+`family` and `given` | These parameters of type `string`, when supplied, specify the name of the person whose information is being queried. For this parameter the Patient Demographics Consumer may use either family name, given name or a combination of both names to filter by family, given or family and given names respectively. See [ITI TF-2: Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type.
+`identifier` | This repeating parameter of type `token`, when supplied, specifies an identifier associated with the patient whose information is being queried (e.g., a local identifier, account identifier, etc.). See [ITI TF-2: Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type. If multiple instances of this parameter are provided in the query, the query represents a logical AND condition (i.e., all of the associated identifiers must match). For example, a query searching for patients having identifier145 assigned by authority “1.2.3.4” and SSN 123456789 would be represented as:<br /> `?identifier=urn:oid:1.2.3.4|145&identifier=urn:oid:2.16.840.1.113883.4.1|123456789` <br />If no `system` portion of the identifier parameter is specified, then the matching would be performed on any identifier regardless of issuing system. 
 `telecom` | This parameter of type `token`, when supplied, specifies the telecommunications details
 `birthdate` | This parameter of type `date`, when supplied, specifies the birth date of the person whose information is being queried. The Patient Demographics Consumer shall use the date and interval mechanism to indicate a specific date of birth or a date that lies within the range specified by the parameter. See [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date)
-`address` | This parameter of type `string`, when supplied, specifies one or more address parts associated with the person whose information is being queried. For details on matching rules, see [ITI TF-2:Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters).
+`address` | This parameter of type `string`, when supplied, specifies one or more address parts associated with the person whose information is being queried. For details on matching rules, see [ITI TF-2: Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters).
 `address-city`,<br /> `address-country`,<br /> `address-postalcode`,<br /> `address-state` | These parameters of type `string`, when supplied, specify a match against the specified address part associated with the person whose information is being queried. Note that national conventions for addresses may affect utility of these fields.
-`gender` | This parameter of type `token`, when supplied, specifies the administrative gender of the person whose information is being queried. For this parameter item, a single administrative gender code from value set http://hl7.org/fhir/R4/valueset-administrative-gender.html shall be specified as the only value of the token. See [ITI TF-2:Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type.
+`gender` | This parameter of type `token`, when supplied, specifies the administrative gender of the person whose information is being queried. For this parameter item, a single administrative gender code from value set http://hl7.org/fhir/R4/valueset-administrative-gender.html shall be specified as the only value of the token. See [ITI TF-2: Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type.
 `mothersMaidenName` | This parameter of type `string`, when supplied, specifies the mother's maiden (unmarried) name, commonly collected to help verify patient identity. This is search extension defined in FHIR<br />Expression: Patient.extension(`http://hl7.org/fhir/StructureDefinition/patient-extensions-Patient-mothersMaidenName`)
 {:.grid}
 
@@ -80,22 +70,22 @@ For example, a Patient Demographics Consumer wishing to filter for patients with
 
 	  ?family=SMITH&identifier=urn:oid:1.2.3.4.5|
 
-The Patient Demographics Consumer shall populate the patient identity domain portion of the token with values described in [ITI TF-2:Appendix E](https://profiles.ihe.net/ITI/TF/Volume2/ch-E.htm).
+The Patient Demographics Consumer shall populate the patient identity domain portion of the token with values described in [ITI TF-2: Appendix E](https://profiles.ihe.net/ITI/TF/Volume2/ch-E.htm).
 
 ###### 2:3.78.4.1.2.4 Populating Expected Response Format <a name="format"> </a>
 The FHIR standard provides encodings for responses as either XML or JSON. Patient Demographics Suppliers shall support both message encodings, whilst Patient Demographics Consumers shall support one and may support both.
-See [ITI TF-2:Appendix Z.6 for details](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format).
+See [ITI TF-2: Appendix Z.6 for details](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format).
 
-#### 2:3.78.4.1.3 Expected Actions
+##### 2:3.78.4.1.3 Expected Actions
 The Patient Demographics Supplier shall return demographic records that reflect the match to all of the search criteria provided by the Patient Demographics Consumer. The Patient Demographics Supplier shall respond with a [Query Patient Resource Response message](#query-response) synchronously (i.e., on the same connection as was used to initiate the request).
 
-The Patient Demographics Supplier shall return all exact matches to the search parameters sent by the Patient Demographics Consumer; IHE does not further specify matching requirements. The Patient Demographics Supplier may be able to perform other string matching (e.g., case insensitive, partial matches, etc.) which shall be indicated in its CapabilityStatement Resource (see [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource)).
+The Patient Demographics Supplier shall return all exact matches to the search parameters sent by the Patient Demographics Consumer; IHE does not further specify matching requirements. The Patient Demographics Supplier may be able to perform other string matching (e.g., case insensitive, partial matches, etc.) which shall be indicated in its CapabilityStatement Resource (see [ITI TF-2: Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource)).
 
 The response provided by the Patient Demographics Supplier to the Patient Demographics Consumer is a list of matching patients from the Patient Demographics Supplier’s information source. The mechanics of the matching algorithms used are internal to the Patient Demographics Supplier and are outside the scope of this framework.
 
 The Patient Demographics Supplier shall support at least one patient identifier domain and may support multiple identifier domains. Section [3.78.4.1.2.4](#domainpop) describes how the Patient Demographics Consumer may filter results based on identifiers from one or more patient identifier domains. Query responses may return patient identifiers from one or multiple patient identifier domains.
 
-See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for guidance for Access Denied.
+See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for guidance for Access Denied.
 
 The Patient Demographics Supplier shall respond to the query request as described by the following cases with a [Query Patient Resource Response message](#query-response), and shall behave according to the cases listed below:
 
@@ -161,7 +151,7 @@ The Patient Demographics Supplier has results or error to report to the Patient 
 
 The Query Patient Resource Response is sent from the Patient Demographics Supplier to the Patient Demographics Consumer as a Bundle of Patient Resources. The “content-type” of the response will depend upon the requested response format indicated by the Patient Demographics Consumer.
 
-See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for guidance for Access Denied.
+See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for guidance for Access Denied.
 
 ###### 2:3.78.4.2.2.1 Patient Resource Definition in the Context of Query Patient Resource Response 
 
@@ -171,7 +161,7 @@ The Patient Resource(s) contained within the Query Patient Resource Response mes
 Patient Demographics Suppliers shall include the mother’s maiden name, if known, in this extension: [http://hl7.org/fhir/R4/extension-patient-mothersmaidenname.html](http://hl7.org/fhir/R4/extension-patient-mothersmaidenname.html)
 
 ###### 2:3.78.4.2.2.3 Resource Bundling
-Please see [ITI TF-2:Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles) for details on the IHE guidelines for implementing FHIR bundles.
+Please see [ITI TF-2: Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles) for details on the IHE guidelines for implementing FHIR bundles.
 
 ###### 2:3.78.4.2.2.4 Incremental Response Processing - Paging of Resource Bundle
 The Patient Demographics Supplier shall represent these incremental responses as specified in [FHIR Paging](http://hl7.org/fhir/R4/http.html#paging)
@@ -193,7 +183,7 @@ The Patient Demographics Consumer should be robust as the response may contain P
 The Patient Demographics Consumer should follow the [Safety Guidelines for Client Search](http://hl7.org/fhir/R4/safety.html#search)
 
 ##### 2:3.78.4.2.4 CapabilityStatement Resource
-Patient Demographics Suppliers implementing [ITI-78] shall provide a CapabilityStatement Resource as described in [ITI TF-2:Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource) indicating the query interaction for the Patient Resource has been implemented and shall include all search parameters implemented for the Patient Resource.
+Patient Demographics Suppliers implementing [ITI-78] shall provide a CapabilityStatement Resource as described in [ITI TF-2: Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource) indicating the query interaction for the Patient Resource has been implemented and shall include all search parameters implemented for the Patient Resource.
 
 
 #### 2:3.78.4.3 Retrieve Patient Resource message
@@ -246,7 +236,7 @@ The Patient Demographics Supplier found patient demographic record matching the 
 ##### 2:3.78.4.4.2 Message Semantics
 The Retrieve Patient Resource response is sent from the Patient Demographics Supplier to the Patient Demographics Consumer as a single Patient Resource. 
 
-See [ITI TF-2:Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2:Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for guidance for Access Denied.
+See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format) for more details on response format handling. See [ITI TF-2: Appendix Z.7](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.7-guidance-on-access-denied-results) for guidance for Access Denied.
 
 If the Patient Demographics Supplier is unable to produce a response in the requested format, it shall respond with an `HTTP 400` error indicating that it was unable to fulfill the request. The Patient Demographics Supplier may be capable of servicing requests for response formats not listed, but shall, at minimum, be capable of producing XML and JSON encodings.
 
@@ -262,11 +252,11 @@ The Mobile Patient Demographics Query Transaction is a Query Information event a
 
 ##### 2:3.78.5.1.1 Patient Demographics Consumer Audit
 
-The Patient Demographics Consumer when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) actor shall be able to record a [Patient Demographics Consumer AuditEvent](StructureDefinition-IHE.PDQm.Query.Audit.Consumer.html). [Audit Example for a PDQm Query transaction from consumer perspective](AuditEvent-ex-auditPdqmQuery-consumer.html).
+The Patient Demographics Consumer when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) Actor shall be able to record a [Patient Demographics Consumer AuditEvent](StructureDefinition-IHE.PDQm.Query.Audit.Consumer.html). [Audit Example for a PDQm Query transaction from consumer perspective](AuditEvent-ex-auditPdqmQuery-consumer.html).
 
 ##### 2:3.78.5.1.2 Patient Demographics Supplier Audit
 
-The Patient Demographics Supplier when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) actor shall be able to record a [Patient Demographics Supplier AuditEvent](StructureDefinition-IHE.PDQm.Query.Audit.Supplier.html). [Audit Example for a PDQm Query transaction from supplier perspective](AuditEvent-ex-auditPdqmQuery-supplier.html).
+The Patient Demographics Supplier when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html) Actor shall be able to record a [Patient Demographics Supplier AuditEvent](StructureDefinition-IHE.PDQm.Query.Audit.Supplier.html). [Audit Example for a PDQm Query transaction from supplier perspective](AuditEvent-ex-auditPdqmQuery-supplier.html).
 
 #### 2:3.78.5.2 Use with the Internet User Authorization (IUA) Profile  
 The [Internet User Authorization (IUA)](https://profiles.ihe.net/ITI/IUA/index.html) Profile provides support for user authentication, app authentication, and authorization decisions. When PDQm actors are grouped with IUA actors there are additional security and privacy functionality enabled by this grouping. There are additional requirements and functionality enabled through scope definitions that are transaction-specific.
