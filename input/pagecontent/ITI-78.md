@@ -6,7 +6,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 
 ### 2:3.78.2 Actors Roles
 
-**Table 3.78.2-1: Actor Roles**
+**Table 2:3.78.2-1: Actor Roles**
 
 |Actor | Role |
 |---|---|
