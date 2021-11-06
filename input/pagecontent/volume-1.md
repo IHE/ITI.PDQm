@@ -15,15 +15,15 @@ This implementation guide is intended to be fully compliant with the HL7 [FHIR](
 
 ## 1:38.1 PDQm Actors, and Transactions
 
-Figure 38.1-1 shows the actors directly involved in the Patient Demographics Query for Mobile Profile and the relevant transactions between them. Note that the actors in this profile are the same as the actors defined in the PDQ Profile (ITI TF-1: 8.1).
+Figure 1:38.1-1 shows the actors directly involved in the Patient Demographics Query for Mobile Profile and the relevant transactions between them. Note that the actors in this profile are the same as the actors defined in the PDQ Profile (ITI TF-1: 8.1).
 <div>
 {%include PDQm-Actor-Diagram.svg %}
 </div>
 <br clear="all">
 
-**Figure 38.1: PQDm Actor Diagram**
+**Figure 1:38.1: PQDm Actor Diagram**
 
-**Table 38.1-1: PDQm; Profile - Actors and Transactions**
+**Table 1:38.1-1: PDQm; Profile - Actors and Transactions**
 
 | Actors  | Transactions  | Initiator or Responder | Optionality| Reference|
 |---------|---------------|:----------------------:|:---------------:|-----------------------------------|
@@ -60,9 +60,9 @@ For more details see the detailed [transaction description](ITI-78.html).
 
 ## 1:38.2 PDQm Actor Options
 
-Options that may be selected for each actor in this profile, if any, are listed in Table 38.2-1. Dependencies between options when applicable are specified in notes.
+Options that may be selected for each actor in this profile, if any, are listed in Table 1:38.2-1. Dependencies between options when applicable are specified in notes.
 
-**Table 38.2-1: Patient Demographics Query for Mobile - Actors and Options**
+**Table 1:38.2-1: Patient Demographics Query for Mobile - Actors and Options**
 
 Actor	| Option Name |	Reference
 ---|---|---
@@ -124,7 +124,7 @@ A lab technician enters some basic demographics data (e.g., patient name) into a
 {%include Basic-Process-Flow-in-PDQm-Profile.svg%}
 </div>
 <br clear="all">
-**Figure 38.4.3-1: Basic Process Flow in PDQm Profile**
+**Figure 1:38.4.3-1: Basic Process Flow in PDQm Profile**
 
 ## 1:38.5 PDQm Security Considerations
 
@@ -143,12 +143,12 @@ choose the technology stack that best fits.
 [ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) provides additional 
 details about Patient Demographics Query Profiles and their relationship with one another. 
 
-The Patient Demographics Supplier may act as a proxy to an existing PDQ or PDQv3 environment as shown in Figure 38.6-1. 
+The Patient Demographics Supplier may act as a proxy to an existing PDQ or PDQv3 environment as shown in Figure 1:38.6-1. 
 
 <div>
 {%include Implementing-PDQm-as-a-gateway.svg%}
 </div>
 <br clear="all">
-**Figure 38.6-1: Implementing PDQm as a Gateway**
+**Figure 1:38.6-1: Implementing PDQm as a Gateway**
 
 
