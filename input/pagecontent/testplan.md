@@ -9,7 +9,7 @@ PDQm specifies a query transaction between two actors. The transaction between a
 
 ## High-level Test Scope
 
-### Patient Demographics Query for Mobile [ITI-78](ITI-78.html) 
+### Patient Demographics Query for Mobile [[ITI-78]](ITI-78.html) 
 
 * Patient Demographics Consumer initiates the ITI-78 queries with various combinations of parameters, as supported
 * Patient Demographics Supplier responds to the ITI-78 queries as appropriate 
