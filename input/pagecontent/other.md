@@ -24,14 +24,14 @@ This section modifies other IHE profiles, and is not a part of the PDQm profile.
 
 | Transaction                              | Definition                                                                              |
 | ---------------------------------------- | --------------------------------------------------------------------------------------- |
-| Mobile Patient Demographics Query transaction \[ITI-78\]   | Performs a query against a patient demographics supplier using HTTP, REST, and JSON/XML message encoding. |
+| Mobile Patient Demographics Query \[ITI-78\]   | Performs a query against a patient demographics supplier using HTTP, REST, and JSON/XML message encoding. |
 {:.grid .table-striped}
 
 
 ## 1:8.6 PDQ Cross Profile Considerations
 
 |------------------------------------------------|
-| Editor, Add the following to section ITI 1:8.6 |
+| Editor, Add the following to section ITI TF-1: 8.6 |
 {:.grid  .bg-info}
 
 There are two additional profiles, PDQv3 (Patient Demographics Query HL7v3) and
@@ -45,7 +45,7 @@ about these Patient Demographics Query Profiles and their relationship with one 
 ## 1:24.6 PDQv3 Cross Profile Considerations
 
 |-------------------------------------------------|
-| Editor, Add the following to section ITI 1:24.6 |
+| Editor, Add the following to section ITI TF-1: 24.6 |
 {:.grid .bg-info}
 
 There are two additional profiles, PDQ (Patient Demographics Query) and PDQm (Patient
