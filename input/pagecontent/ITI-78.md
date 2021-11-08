@@ -25,7 +25,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 </div>
 <br clear="all">
 
-**Figure: 3.78.4-1: Interaction Diagram**
+**Figure: 2:3.78.4-1: Interaction Diagram**
 
 #### 2:3.78.4.1 Query Patient Resource message
 This message represents a parameterized search from the Patient Demographics Consumer to the Patient Demographics Supplier.
