@@ -16,7 +16,16 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 
 ### 2:3.78.3 Referenced Standards
 
-* [HL7 FHIR Release 4](http://www.hl7.org/FHIR/
+* [HL7 FHIR Release 4](http://www.hl7.org/FHIR/R4)
+
+### 2:3.78.4 Messages
+
+<div>
+{%include ITI-78-seq.svg%}
+</div>
+<br clear="all">
+
+**Figure: 3.78.4-1: Interaction Diagram**
 
 #### 2:3.78.4.1 Query Patient Resource message
 This message represents a parameterized search from the Patient Demographics Consumer to the Patient Demographics Supplier.
