@@ -21,7 +21,7 @@ The PDQm Patient Demographics Consumer Actor requirements CapabililtyStatement e
   - mothersMaidenName
 """
 Usage: #definition
-* url = "http://ihe.net/fhir/CapabilityStatement/capabilitystatement-IHE.PDQm.client"
+* url = "http://profiles.ihe.net/ITI/PDQm/CapabilityStatement/IHE.PDQm.client"
 * name = "IHE_PDQm_client"
 * title = "IHE PDQm client"
 * status = #active
@@ -78,7 +78,7 @@ Usage: #definition
 * rest.resource.searchParam[=].type = #date
 * rest.resource.searchParam[=].documentation = "When the resource version last changed"
 * rest.resource.searchParam[+].name = "mothersMaidenName"
-* rest.resource.searchParam[=].definition = "http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName"
+* rest.resource.searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/patient-extensions-Patient-mothersMaidenName"
 * rest.resource.searchParam[=].type = #string
 * rest.resource.searchParam[=].documentation = "Mother's maiden (unmarried) name, commonly collected to help verify patient identity."
 * rest.interaction.code = #search-system
@@ -105,7 +105,7 @@ The PDQm Patient Demographics Supplier Actor requirements CapabililtyStatement e
   - mothersMaidenName
 """
 Usage: #definition
-* url = "http://ihe.net/fhir/CapabilityStatement/capabilitystatement-IHE.PDQm.server"
+* url = "http://profiles.ihe.net/ITI/PDQm/CapabilityStatement/IHE.PDQm.server"
 * name = "IHE_PDQm_supplier"
 * title = "IHE PDQm Server"
 * status = #active
@@ -163,7 +163,7 @@ Usage: #definition
 * rest.resource.searchParam[=].type = #date
 * rest.resource.searchParam[=].documentation = "When the resource version last changed"
 * rest.resource.searchParam[+].name = "mothersMaidenName"
-* rest.resource.searchParam[=].definition = "http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName"
+* rest.resource.searchParam[=].definition = "http://hl7.org/fhir/SearchParameter/patient-extensions-Patient-mothersMaidenName"
 * rest.resource.searchParam[=].type = #string
 * rest.resource.searchParam[=].documentation = "Mother's maiden (unmarried) name, commonly collected to help verify patient identity."
 * rest.interaction.code = #search-system
