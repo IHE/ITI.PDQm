@@ -1,5 +1,5 @@
 <div markdown="1" class="stu-note">
-This section modifies other IHE profiles, and is not a part of the PDQm profile. The content here will be incorporated into the target narrative at a future time, usually when PDQm goes narrative.
+This section contains modifications to other IHE publications and profiles, and is not a part of the PDQm profile. The content here will be incorporated into the target narrative at a future time, usually when PDQm goes final-text.
 </div>
 
 ## IHE Technical Frameworks General Introduction Appendix A – Actor Summary Definitions
