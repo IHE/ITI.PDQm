@@ -191,10 +191,6 @@ The Patient Demographics Consumer should be robust as the response may contain P
 
 The Patient Demographics Consumer should follow the [Safety Guidelines for Client Search](http://hl7.org/fhir/R4/safety.html#search)
 
-##### 2:3.78.4.2.4 CapabilityStatement Resource
-Patient Demographics Suppliers implementing [ITI-78] shall provide a CapabilityStatement Resource as described in [ITI TF-2: Appendix Z.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.4-structuredefinition-resource) indicating the query interaction for the Patient Resource has been implemented and shall include all search parameters implemented for the Patient Resource.
-
-
 #### 2:3.78.4.3 Retrieve Patient Resource message
 This message represents an HTTP GET from the Patient Demographics Consumer to the Patient Demographics Supplier and provides a mechanism for retrieving a single Patient Resource with a known resource identifier.
 
