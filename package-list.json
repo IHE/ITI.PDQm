@@ -14,7 +14,7 @@
  {
   "version" : "2.4.0",  
   "date" : "2022-03-01", 
-  "desc" : "Trial Implementation",   
+  "desc" : "Normative release for Trial Implementation - Technical Corrections and google analytics",   
   "path" : "https://profiles.ihe.net/ITI/PDQm/2.4.0",   
   "status" : "trial-use",
   "fhirversion" : "4.0.1",
