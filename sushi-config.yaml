@@ -1,9 +1,9 @@
 id: ihe.iti.pdqm
 canonical: https://profiles.ihe.net/ITI/PDQm
-version: 2.4.0
-#releaseLabel: ci-build
-releaseLabel: Trial-Implementation
-date: 2022-03-01
+version: 2.4.1-current
+releaseLabel: ci-build
+#releaseLabel: Trial-Implementation
+#date: 2022-03-01
 name: IHE_PDQm
 title: "Patient Demographics Query for mobile (PDQm)"
 status: active
