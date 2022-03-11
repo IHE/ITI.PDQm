@@ -1,6 +1,6 @@
 {
  "package-id" : "ihe.iti.pdqm",
- "title" : "IHE Patient Demographics Query for Mobile", 
+ "title" : "IHE Patient Demographics Query for Mobile (PDQm)", 
  "canonical" : "https://profiles.ihe.net/ITI/PDQm", 
  "introduction" : "## The IHE Patient Demographics Query for Mobile (PDQm)\r\nThis IG provides a transaction for mobile and lightweight browser-based applications to query a patient demographics supplier.",
  "category": "Administration",
