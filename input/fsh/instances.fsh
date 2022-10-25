@@ -21,7 +21,7 @@ The PDQm Patient Demographics Consumer Actor requirements CapabililtyStatement e
   - mothersMaidenName
 """
 Usage: #definition
-* url = "http://profiles.ihe.net/ITI/PDQm/CapabilityStatement/IHE.PDQm.client"
+* url = "https://profiles.ihe.net/ITI/PDQm/CapabilityStatement/IHE.PDQm.client"
 * name = "IHE_PDQm_client"
 * title = "IHE PDQm client"
 * status = #active
@@ -105,7 +105,7 @@ The PDQm Patient Demographics Supplier Actor requirements CapabililtyStatement e
   - mothersMaidenName
 """
 Usage: #definition
-* url = "http://profiles.ihe.net/ITI/PDQm/CapabilityStatement/IHE.PDQm.server"
+* url = "https://profiles.ihe.net/ITI/PDQm/CapabilityStatement/IHE.PDQm.server"
 * name = "IHE_PDQm_supplier"
 * title = "IHE PDQm Server"
 * status = #active
