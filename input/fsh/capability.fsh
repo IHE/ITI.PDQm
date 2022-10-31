@@ -2,8 +2,27 @@
 
 Instance: IHE.PDQm.PatientDemographicsSupplier
 InstanceOf: CapabilityStatement
+Title: "PDQm Patient Demographics Supplier Actor"
 Usage: #definition
-* description = "CapabilityStatement for the Patient Demographics Supplier Actor in the IHE IT Infrastructure Technical Framework Supplement [IHE PDQm](index.html)."
+* description = """
+The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtyStatement expresses the requirements that shall be provided.
+
+- Query against the FHIR endpoint to the Patient Resource endpoint
+- Using FHIR R4
+- shall support both json or xml encoding
+- should use a security framework. Recommend [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-on-FHIR](http://www.hl7.org/fhir/smart-app-launch/)
+- [Search Parameters that shall be supported](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
+  - _id
+  - active
+  - family
+  - given
+  - identifier
+  - telecom
+  - birthdate
+  - address
+  - gender
+  - mothersMaidenName
+"""
 * name = "IHE_PDQM_PATIENT_DEMOGRAPHICS_SUPPLIER"
 * title = "IHE PDQm Patient Demographics Supplier"
 * status = #active
@@ -17,8 +36,7 @@ Usage: #definition
   * mode = #server
   * documentation = "PDQm Patient Demographics Supplier provides capability to discover Patient Identities by demographics and identities."
   * security
-    * cors = false
-    * description = "None mandated by IHE, encouraged IHE-IUA or SMART-on-FHIR"
+    * description = "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or SMART-on-FHIR"
   * resource[+]
     * type = #Patient
     * documentation = """
@@ -89,8 +107,27 @@ Mobile Patient Demographics Query [ITI-78]
 
 Instance: IHE.PDQm.PatientDemographicsConsumer
 InstanceOf: CapabilityStatement
+Title: "PDQm Patient Demographics Consumer Actor"
 Usage: #definition
-* description = "CapabilityStatement for the Patient Demographics Consumer Actor in the IHE IT Infrastructure Technical Framework Supplement [IHE PDQm](index.html)."
+* description = """
+The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtyStatement expresses the requirements that can be utilized while being compliant.
+
+- Query against the FHIR endpoint to the Patient Resource endpoint
+- Using FHIR R4
+- may request json or xml encoding
+- should use a security framework. Recommend [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-on-FHIR](http://www.hl7.org/fhir/smart-app-launch/)
+- [Search Parameters that may be used](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
+  - _id
+  - active
+  - family
+  - given
+  - identifier
+  - telecom
+  - birthdate
+  - address
+  - gender
+  - mothersMaidenName
+"""
 * name = "IHE_PDQM_PATIENT_DEMOGRAPHICS_CONSUMER"
 * title = "IHE PDQm Patient Demographics Consumer"
 * status = #active
@@ -104,8 +141,7 @@ Usage: #definition
   * mode = #client
   * documentation = "PDQm Patient Demographics Consumer provides capability to discover Patient Identities by demographics and identities."
   * security
-    * cors = false
-    * description = "None mandated by IHE, encouraged IHE-IUA or SMART-on-FHIR"
+    * description = "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or SMART-on-FHIR"
   * resource[+]
     * type = #Patient
     * documentation = """
