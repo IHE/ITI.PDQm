@@ -10,7 +10,7 @@ The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtySt
 - Query against the FHIR endpoint to the Patient Resource endpoint
 - Using FHIR R4
 - shall support both json or xml encoding
-- should use a security framework. Recommend [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-on-FHIR](http://www.hl7.org/fhir/smart-app-launch/)
+- should use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
 - [Search Parameters that shall be supported](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
   - _id
   - active
@@ -36,7 +36,7 @@ The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtySt
   * mode = #server
   * documentation = "PDQm Patient Demographics Supplier provides capability to discover Patient Identities by demographics and identities."
   * security
-    * description = "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or SMART-on-FHIR"
+    * description = "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)"
   * resource[+]
     * type = #Patient
     * documentation = """
@@ -115,7 +115,7 @@ The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtySt
 - Query against the FHIR endpoint to the Patient Resource endpoint
 - Using FHIR R4
 - may request json or xml encoding
-- should use a security framework. Recommend [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-on-FHIR](http://www.hl7.org/fhir/smart-app-launch/)
+- should use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
 - [Search Parameters that may be used](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
   - _id
   - active
@@ -141,7 +141,7 @@ The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtySt
   * mode = #client
   * documentation = "PDQm Patient Demographics Consumer provides capability to discover Patient Identities by demographics and identities."
   * security
-    * description = "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or SMART-on-FHIR"
+    * description = "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)"
   * resource[+]
     * type = #Patient
     * documentation = """
