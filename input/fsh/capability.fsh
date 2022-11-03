@@ -77,6 +77,10 @@ Mobile Patient Demographics Query [ITI-78]
       * type = #date
       * documentation = "The patient's date of birth"
     * searchParam[+]
+      * name = "address"
+      * type = #string
+      * documentation = "A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"
+    * searchParam[+]
       * name = "address-city"
       * type = #string
       * documentation = "A city specified in an address"
@@ -181,6 +185,10 @@ Mobile Patient Demographics Query [ITI-78]
       * name = "birthdate"
       * type = #date
       * documentation = "The patient's date of birth"
+    * searchParam[+]
+      * name = "address"
+      * type = #string
+      * documentation = "A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"
     * searchParam[+]
       * name = "address-city"
       * type = #string
