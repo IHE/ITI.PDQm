@@ -40,12 +40,13 @@ See [ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M
 
 #### 1:38.1.1.1 Patient Demographics Consumer
 
-No additional requirements.
+A `requirements` CapabilityStatements is provided for the [Patient Demographics Consumer](CapabilityStatement-IHE.PDQm.PatientDemographicsConsumer.html) that shows the query parameters available.
 
 #### 1:38.1.1.2 Patient Demographics Supplier
 
 The Patient Demographics Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction](http://hl7.org/fhir/R4/http.html#capabilities). 
 All supported search parameters and search methods (GET, POST) shall be specified. The [search parameters defined in \[ITI-78\]](ITI-78.html#23784121-search-parameters) shall be supported, other parameters may be supported.
+A `requirements` CapabilityStatements is provided for the [Patient Demographics Supplier](CapabilityStatement-IHE.PDQm.PatientDemographicsSupplier.html) that shows the query parameters to be supported.
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.
 
