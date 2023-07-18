@@ -23,18 +23,69 @@ Figure 1:38.1-1 shows the actors directly involved in the Patient Demographics Q
 
 **Figure 1:38.1-1: PQDm Actor Diagram**
 
-**Table 1:38.1-1: PDQm; Profile - Actors and Transactions**
+<table border="1" borderspacing="0" style='border: 1px solid black; border-collapse: collapse'>
+<caption>
+<b>
+Table 1:38.1-1: PDQm - Profile Actors and Transactions
+</b>
+</caption>
+<thead>
+<tr style='background: gray;'>
+<th>Actors</th>
+<th>Transactions</th>
+<th>Optionality</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+        <td rowspan="2">
+            Patient Demographics Consumer
+        </td>
+        <td>
+            <a href='ITI-78.html'>Mobile Patient Demographics Query [ITI-78]</a>
+        </td>
+        <td align='center'>
+            O
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href='ITI-YY.html'>Mobile Patient Demographics Match [ITI-YY]</a>
+        </td>
+        <td align='center'>
+            O
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="2">
+            Patient Demographics Supplier
+        </td>
+        <td>
+            <a href='ITI-78.html'>Mobile Patient Demographics Query [ITI-78]</a>
+        </td>
+        <td align='center'>
+            O
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href='ITI-YY.html'>Mobile Patient Demographics Match [ITI-YY]</a>
+        </td>
+        <td align='center'>
+            O
+        </td>
+    </tr>                        
+</tbody>
+</table>
 
-| Actors  | Transactions  | Initiator or Responder | Optionality| Reference|
-|---------|---------------|:----------------------:|:---------------:|-----------------------------------|
-| Patient Demographics Consumer | Mobile Patient Demographics Query [ITI-78]  | Initiator | R  | [ITI TF-2: 3.78](ITI-78.html) |
-| Patient Demographics Supplier | Mobile Patient Demographics Query [ITI-78] | Responder | R | [ITI TF-2: 3.78](ITI-78.html) |
-{:.grid}
 
-
-Note 1: The Mobile Patient Demographics Query [\[ITI-78\]](ITI-78.html) transaction corresponds to the transactions used in the [PDQ](https://profiles.ihe.net/ITI/TF/Volume1/ch-8.html) and [PDQv3](https://profiles.ihe.net/ITI/TF/Volume1/ch-24.html) Profiles and provides similar functionality. 
+Note 1: The Mobile Patient Demographics Query [\[ITI-YY\]](ITI-YY.html) transaction corresponds to the transactions used in the [PDQ](https://profiles.ihe.net/ITI/TF/Volume1/ch-8.html) and [PDQv3](https://profiles.ihe.net/ITI/TF/Volume1/ch-24.html) Profiles and provides similar functionality. 
 There is no transaction which corresponds to the Patient Demographics and Visit Query [ITI-22].
-See [ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) for a mapping of query fields for PDQ, PDQv3, and PDQm transactions.
+See [ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) for a mapping of query fields for PDQ, PDQv3, and PDQm transactions. TODO:  Verify this is stil accurate. 
+
+Note 2: The Patient Demographics Consumer shall implement at least one of the Mobile Patient Demographics Query [ITI-78] or Mobile Patient Demographics Match [ITI-YY] transactions. 
+
+Note 3: The Patient Demographics Supplier shall implement at least one of the Mobile Patient Demographics Query [ITI-78] or Mobile Patient Demographics Match [ITI-YY] transactions. 
 
 ### 1:38.1.1 Actor Descriptions and Actor Profile Requirements
 
