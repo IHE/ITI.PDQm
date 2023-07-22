@@ -200,8 +200,15 @@ In this use case a lab system obtains identities from multiple Patient ID domain
 ##### 1:38.4.2.3.1 Patient Demographics Query in an Enterprise with Multiple Patient ID Domains Use Case Description
 A lab technician enters some basic demographics data (e.g., patient name) into a lab application to query a patient demographics supplier to identify a patient for his lab exams. As the application also needs the patient identifier in another Patient ID Domain in the enterprise for results delivery, the application is configured to query for Patient IDs from other domains in the query response.
 
+#### 1:38.4.2.4 Use Case #4:  Patient Demographics Query by Known Business Identifier
+In this use case, a known and reliable business identifier is used to locate the Patient record.
+
+#### 1:38.4.2.4.1 Patient Demographics Query by Known Business Identifier Description
+A patient visits the office of the general practitioner they see regularly. The general practitioner needs to retrieve the patient's electronic medical record from the jurisdictional central database. In the local jurisdiction, patients are issued photo ID cards by the local jurisdictional authority that include identifiers unique to the patient. These identifiers end with a [check digit](https://en.wikipedia.org/wiki/Check_digit) using a strong algorithm, such as the modulo-11 algorithm. The practitioner's office clerk uses the unique identifier on the patient's photo ID card to locate and retrieve the patient's record from the jurisdictional database. 
 
 #### 1:38.4.3 Basic Process Flow in Patient Demographics Query for Mobile Profile
+
+The basic process flow is the standard, recommended, especially for use cases 1 and 2. It uses the Patient Demographics Match [ITI-119] transaction:
 
 <div>
 {%include Basic-Process-Flow-in-PDQm-Profile.svg%}
@@ -209,11 +216,23 @@ A lab technician enters some basic demographics data (e.g., patient name) into a
 <br clear="all">
 **Figure 1:38.4.3-1: Basic Process Flow in PDQm Profile**
 
+#### 1:38.4.4 Alternate Process Flow using Patient Search or Read
+
+This alternate flow is used when using the Mobile Patient Demographics Query [ITI-78] transaction. This transaction might be used in environments where the semantics of search or read are desired, such as in use case 4, or when migrating from a previous trial implementation version of this profile:
+
+<div>
+{%include Alternate-Process-Flow-in-PDQm-Profile.svg%}
+</div>
+<br clear="all">
+**Figure 1:38.4.4-1: Alternate Process Flow in PDQm Profile using Patient Search or Read**
+
 ## 1:38.5 PDQm Security Considerations
 
 Actors are expected to follow the recommendations and requirements found in [ITI TF-2: Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations). 
 
 Actors have requirements in the [ITI-78] [Security Considerations Section](ITI-78.html#23785-security-considerations) including requirements for Audit Logging when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), and Authentication and Authorization when grouped with [Internet User Authorization (IUA)](https://profiles.ihe.net/ITI/IUA/index.html) Actors.
+
+TODO:  Update with ITI-119
 
 ## 1:38.6 PDQm Cross-Profile Considerations
 

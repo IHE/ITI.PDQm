@@ -1,13 +1,13 @@
-@startuml Basic-Process-Flow-in-PDQm-Profile
+@startuml Alternate-Process-Flow-in-PDQm-Profile
 hide footbox
 skinparam ParticipantPadding 50
 participant "Patient Demographics\nConsumer" as Client
 participant "Patient Demographics\nSupplier" as Server
 
-Client -> Server : Patient Demographics\nMatch [ITI-119]
+Client -> Server : Mobile Patient Demographics\nQuery [ITI-78]
 activate Server
 activate Client
-Server -> Client : Patient Demographics\nMatch Response
+Server -> Client : Mobile Patient Demographics\nQuery Response
 deactivate Client
 deactivate Server
 @enduml
