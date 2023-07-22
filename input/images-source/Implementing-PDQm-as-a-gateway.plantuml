@@ -1,4 +1,4 @@
-@startuml
+@startuml Implementing-PDQm-as-a-gateway
 hide footbox
 
 Participant "Patient\nDemographics\nConsumer" as Client1
@@ -8,7 +8,7 @@ box "PDQm Implementation\ngrouped as a façade "
 endbox
 Participant "Patient\n Demographics\nSupplier" as Server2
 
-Client1 -> Server1: Mobile Patient\nDemographics\nQuery [ITI-78]
+Client1 -> Server1: Patient\nDemographics\nMatch [ITI-119]
 activate Client1
 activate Server1
 Server1 --> Client2: Internal processing
@@ -19,7 +19,7 @@ Client2 <- Server2: [ITI-21] or [ITI-47] Response
 Server1 <-- Client2: Internal processing
 deactivate Client2
 deactivate Server2
-Client1 <- Server1: [ITI-78] Response
+Client1 <- Server1: [ITI-119] Response
 deactivate Client2
 deactivate Server1
 
