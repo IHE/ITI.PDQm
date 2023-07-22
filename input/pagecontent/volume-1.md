@@ -63,7 +63,7 @@ Table 1:38.1-1: PDQm - Profile Actors and Transactions
             <a href='ITI-78.html'>Mobile Patient Demographics Query [ITI-78]</a>
         </td>
         <td align='center'>
-            O
+            R
         </td>
     </tr>
     <tr>
@@ -71,7 +71,7 @@ Table 1:38.1-1: PDQm - Profile Actors and Transactions
             <a href='ITI-119.html'>Patient Demographics Match [ITI-119]</a>
         </td>
         <td align='center'>
-            O
+            R
         </td>
     </tr>                        
 </tbody>
@@ -83,8 +83,6 @@ There is no transaction which corresponds to the Patient Demographics and Visit 
 See [ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) for a mapping of query fields for PDQ, PDQv3, and PDQm transactions. TODO:  Verify this is still accurate. 
 
 Note 2: The Patient Demographics Consumer shall implement at least one of the Mobile Patient Demographics Query [ITI-78] or Patient Demographics Match [ITI-119] transactions. 
-
-Note 3: The Patient Demographics Supplier shall implement at least one of the Mobile Patient Demographics Query [ITI-78] or Patient Demographics Match [ITI-119] transactions. 
 
 ### 1:38.1.1 Actor Descriptions and Actor Profile Requirements
 

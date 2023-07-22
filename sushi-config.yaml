@@ -1,6 +1,6 @@
 id: ihe.iti.pdqm
 canonical: https://profiles.ihe.net/ITI/PDQm
-version: 2.4.1-current
+version: 3.0-current
 releaseLabel: ci-build
 #releaseLabel: Trial-Implementation
 #date: 2022-03-01
