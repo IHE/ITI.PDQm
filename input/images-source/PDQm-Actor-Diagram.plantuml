@@ -8,5 +8,5 @@ Client ---> Server  : "Mobile Patient\nDemographics\nQuery [ITI-78]"
 Client -[hidden]->Server 
 Client -[hidden]->Server 
 Client -[hidden]->Server 
-Client ---> Server  : "Mobile Patient\nDemographics\nMatch [ITI-YY]"
+Client ---> Server  : "Patient\nDemographics\nMatch [ITI-119]"
 @enduml
