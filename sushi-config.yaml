@@ -62,6 +62,9 @@ pages:
   ITI-78.md:
     title: 2:3.78 Mobile Patient Demographics Query [ITI-78]
     generation: markdown
+  ITI-119.md:
+    title: 2:3.119 Patient Demographics Match [ITI-119]
+    generation: markdown
   testplan.md:
     title: PDQm Test Plan
     generation: markdown
@@ -84,6 +87,7 @@ menu:
     Cross-Profile Considerations: volume-1.html#1386-pdqm-cross-profile-considerations    
   Volume 2:
     "Mobile Patient Demographics Query [ITI-78]": ITI-78.html
+    "Patient Demographics Match [ITI-119]": ITI-119.html
   Test Plan: testplan.html
   Artifacts: artifacts.html
   Other: other.html

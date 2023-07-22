@@ -50,7 +50,7 @@ Table 1:38.1-1: PDQm - Profile Actors and Transactions
     </tr>
     <tr>
         <td>
-            <a href='ITI-YY.html'>Mobile Patient Demographics Match [ITI-YY]</a>
+            <a href='ITI-119.html'>Patient Demographics Match [ITI-119]</a>
         </td>
         <td align='center'>
             O
@@ -69,7 +69,7 @@ Table 1:38.1-1: PDQm - Profile Actors and Transactions
     </tr>
     <tr>
         <td>
-            <a href='ITI-YY.html'>Mobile Patient Demographics Match [ITI-YY]</a>
+            <a href='ITI-119.html'>Patient Demographics Match [ITI-119]</a>
         </td>
         <td align='center'>
             O
@@ -79,13 +79,13 @@ Table 1:38.1-1: PDQm - Profile Actors and Transactions
 </table>
 
 
-Note 1: The Mobile Patient Demographics Query [\[ITI-YY\]](ITI-YY.html) transaction corresponds to the transactions used in the [PDQ](https://profiles.ihe.net/ITI/TF/Volume1/ch-8.html) and [PDQv3](https://profiles.ihe.net/ITI/TF/Volume1/ch-24.html) Profiles and provides similar functionality. 
+Note 1: The Mobile Patient Demographics Query [\[ITI-119\]](ITI-119.html) transaction corresponds to the transactions used in the [PDQ](https://profiles.ihe.net/ITI/TF/Volume1/ch-8.html) and [PDQv3](https://profiles.ihe.net/ITI/TF/Volume1/ch-24.html) Profiles and provides similar functionality. 
 There is no transaction which corresponds to the Patient Demographics and Visit Query [ITI-22].
 See [ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) for a mapping of query fields for PDQ, PDQv3, and PDQm transactions. TODO:  Verify this is stil accurate. 
 
-Note 2: The Patient Demographics Consumer shall implement at least one of the Mobile Patient Demographics Query [ITI-78] or Mobile Patient Demographics Match [ITI-YY] transactions. 
+Note 2: The Patient Demographics Consumer shall implement at least one of the Mobile Patient Demographics Query [ITI-78] or Patient Demographics Match [ITI-119] transactions. 
 
-Note 3: The Patient Demographics Supplier shall implement at least one of the Mobile Patient Demographics Query [ITI-78] or Mobile Patient Demographics Match [ITI-YY] transactions. 
+Note 3: The Patient Demographics Supplier shall implement at least one of the Mobile Patient Demographics Query [ITI-78] or Patient Demographics Match [ITI-119] transactions. 
 
 ### 1:38.1.1 Actor Descriptions and Actor Profile Requirements
 
@@ -110,19 +110,19 @@ Mobile Patient Demographics Query is used by the Patient Demographics Consumer t
 
 For more details see the detailed [transaction description](ITI-78.html).
 
-#### 1:38.1.2.2 Mobile Patient Demographics Match transaction
+#### 1:38.1.2.2 Patient Demographics Match transaction
 
-Mobile Patient Demographics Match is used by the Patient Demographics Consumer to request that the Patient Demographics Supplier identify Patient records that match the demographics supplied in the request message. The request is received by the Patient Demographics Supplier. The Patient Demographics Supplier processes the request according to its internal matching algorithm and returns a response in the form of demographics information for the matching patients. 
+Patient Demographics Match is used by the Patient Demographics Consumer to request that the Patient Demographics Supplier identify Patient records that match the demographics supplied in the request message. The request is received by the Patient Demographics Supplier. The Patient Demographics Supplier processes the request according to its internal matching algorithm and returns a response in the form of demographics information for the matching patients. 
 
-For more details, see the detailed [transaction description](ITI-YY.html).
+For more details, see the detailed [transaction description](ITI-119.html).
 
-#### 1:38.1.2.3 Differences Between the Patient Demographics Query [ITI-78] and Mobile Patient Demographics Match [ITI-YY] transactions
+#### 1:38.1.2.3 Differences Between the Mobile Patient Demographics Query [ITI-78] and Patient Demographics Match [ITI-119] transactions
 
-The Mobile Patient Demographics Query [ITI-78] and Mobile Patient Demographics Match [ITI-YY] transactions serve similar purposes in that they enable a Patient Demographics Consumer with a set of patient demographics to ask the Patient Demographics Supplier to identify patients with matching demographics. However, they are based on entirely different FHIR interactions, and thus the semantic behavior is different between the two. 
+The Mobile Patient Demographics Query [ITI-78] and Patient Demographics Match [ITI-119] transactions serve similar purposes in that they enable a Patient Demographics Consumer with a set of patient demographics to ask the Patient Demographics Supplier to identify patients with matching demographics. However, they are based on entirely different FHIR interactions, and thus the semantic behavior is different between the two. 
 
 The Mobile Patient Demographics Query [ITI-78] transaction follows the semantics of the [FHIR Search](http://hl7.org/fhir/R4/search.html) and [FHIR Read](http://hl7.org/fhir/R4/http.html#read) interactions. When using the search interaction, the Patient Demographics Supplier will perform a comparison for each query parameter. Patient records that are returned will be all those, and only those, that match each search parameter as specified by the Patient Demographics Consumer. This meansthe Patient Demographics Consumer is responsible for querying with known, accurate demographics, and then performing its own logic to filter the results. The read interaction is used when the Patient Demographics Consumer has knowledge of the FHIR Resource ID of the needed Patient resource. 
 
-The Mobile Patient Demographics Match [ITI-YY] transaction, on the other hand, follows the semantics of the FHIR [$match](http://hl7.org/fhir/R4/patient-operation-match.html) operation. This FHIR interaction is intended to provide an interface into a [Master Patient Index (MPI)](https://en.wikipedia.org/wiki/Enterprise_master_patient_index), which is a service used to manage patient identites across multiple databases. This interaction gives the Patient Demographics Supplier full authority to implement the patient matching algorithm of its choice, rather than following the strict rules of the FHIR search interaction. An MPI will often use a scoring algorithm to match patients to the given demographics, and return results that exceed a threshold. The MPI might assign partial credit to demographics that match partially, such as names with alternate spellings or identifiers with transposed digits. Thus, this is a more powerful search that puts responsibility on the Patient Demographics Supplier to perform the most complex logic. The Patient Demographics Consumer can even request that only 'certain' matches be returned, ensuring that weak matches are not even presented. 
+The Patient Demographics Match [ITI-119] transaction, on the other hand, follows the semantics of the FHIR [$match](http://hl7.org/fhir/R4/patient-operation-match.html) operation. This FHIR operation is intended to provide an interface into a [Master Patient Index (MPI)](https://en.wikipedia.org/wiki/Enterprise_master_patient_index), which is a service used to manage patient identites across multiple databases. This interaction gives the Patient Demographics Supplier full authority to implement the patient matching algorithm of its choice, rather than following the strict rules of the FHIR search interaction. An MPI will often use a scoring algorithm to match patients to the given demographics, and return results that exceed a threshold. The MPI might assign partial credit to demographics that match partially, such as names with alternate spellings or identifiers with transposed digits. Thus, this is a more powerful search that puts responsibility on the Patient Demographics Supplier to perform the most complex logic. The Patient Demographics Consumer can even request that only 'certain' matches be returned, ensuring that weak matches are not even presented. 
 
 The [FHIR Patient Resource Page](http://hl7.org/fhir/R4/patient.html#match) has an informative and detailed description on the differences between performing a Patient Search and a $match interatction. 
 
@@ -134,7 +134,7 @@ Given these differences, the Mobile Patient Demographics Query [ITI-78] transact
 * The Patient Demographics Consumer knows a business identifer unique to the Patient, such as an MRN (search). Note that searching only by identifier if the identifier assigning authority does not protect against typos by including a checksum or similar mechanism. 
 * The Patient Demographics Consumer already knows the FHIR Resource ID of the needed Patient Resource, and needs only to retrieve the full Patient information (read).
 
-The Mobile Patient Demographics Match [ITI-YY] transaction tends to be appropriate when:
+The Mobile Patient Demographics Match [ITI-119] transaction tends to be appropriate when:
 
 * The Patient Demographics Consumer wishes to rely on the Patient Demographics Supplier's MPI based matching algorithm. 
 * The Patient Demographics Consumer has low confidence that its demographics are exactly matched to those of the Patient Demographics Supplier. 
