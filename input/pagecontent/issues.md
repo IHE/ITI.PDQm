@@ -1,5 +1,8 @@
 <div markdown="1" class="stu-note">
 
+## Signification changes from PDQm, Rev 2.4.1
+- TODO
+
 ## Significant changes from PDQm, Rev 2.4:
 - changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
   - changes to RESTful type, and query subtype
@@ -24,6 +27,7 @@ These issues were known as part of the publication, and IHE invites comments.
 - PDQm_102: Normative vs Trial-Implementation - Currently the HL7 FHIR standard components used (e.g., Patient, Bundle, etc) in this profile are at Normative state. Some portions of PDQm are relying on STU content (such as query parameters, mothersMaidenName).
 - PDQm_103: PDQm has a small volume 1 content. Thus breaking each H2 out into independent html files makes it harder to address. We may choose to do similar to PIXm and have just one volume 1 content with deep links.
 - [PDQm_issue_66](https://github.com/IHE/ITI.PDQm/issues/66): PDQm has allowed clients to use GET or POST search, and thus mandated that servers must support both GET and POST. The previous versions of PDQm had only mentioned GET search, but we learned that FHIR core mandated POST and does not allow us to not also mandate it. This leaves regions that want to use only one of these verbs for search seemingly forced to support both verbs for search. The current discussion in FHIR core offers that "support" could include implementing a "policy" that forces an http 405 response. This seems to be a workable solution, and the alternative would not be much different than this anyway.
+- [PDQm_issue_92](https://github.com/IHE/ITI.PDQm/issues/92): Currently we are mandating that Patient Demographics Suppliers support both ITI-78 and ITI-119, while Patient Demographics Consumers have the option to choose to support either one or both transactions. Is requiring support for both transactions a problem for any Patient Demographics Suppliers? We note that prior versions of the specification included only ITI-78, meaning this is new functionality existing suppliers will need to incorporate. Do we want named options here?
 
 ### Closed Issues
 These issues have been decided and documented in the publication.
