@@ -211,7 +211,7 @@ A patient visits the office of the general practitioner they see regularly. The 
 The MPI based process flow is used when MPI semantics are desired. This process flow is recommended for new implementations with use cases similar to use cases 1 and 2. It uses the Patient Demographics Match [ITI-119] transaction:
 
 <div>
-{%include Basic-Process-Flow-in-PDQm-Profile.svg%}
+{%include MPI-Based-Process-Flow-in-PDQm-Profile.svg%}
 </div>
 <br clear="all">
 **Figure 1:38.4.3-1: MPI Based Process Flow in PDQm Profile**
@@ -221,7 +221,7 @@ The MPI based process flow is used when MPI semantics are desired. This process 
 The search based process flow is used when using the Mobile Patient Demographics Query [ITI-78] transaction. This transaction might be used in environments where the semantics of search or read are desired, such as in use case 4, or when migrating from a previous trial implementation version of this profile:
 
 <div>
-{%include Alternate-Process-Flow-in-PDQm-Profile.svg%}
+{%include Search-Process-Flow-in-PDQm-Profile.svg%}
 </div>
 <br clear="all">
 **Figure 1:38.4.4-1: Search Based Process Flow in PDQm Profile using Patient Search or Read**
