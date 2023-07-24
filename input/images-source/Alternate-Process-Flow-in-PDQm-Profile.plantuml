@@ -1,4 +1,4 @@
-@startuml Alternate-Process-Flow-in-PDQm-Profile
+@startuml Search-Process-Flow-in-PDQm-Profile
 hide footbox
 skinparam ParticipantPadding 50
 participant "Patient Demographics\nConsumer" as Client

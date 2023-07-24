@@ -1,4 +1,4 @@
-@startuml Basic-Process-Flow-in-PDQm-Profile
+@startuml MPI-Based-Process-Flow-in-PDQm-Profile
 hide footbox
 skinparam ParticipantPadding 50
 participant "Patient Demographics\nConsumer" as Client

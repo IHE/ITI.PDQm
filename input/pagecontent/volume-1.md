@@ -206,25 +206,25 @@ In this use case, a known and reliable business identifier is used to locate the
 #### 1:38.4.2.4.1 Patient Demographics Query by Known Business Identifier Description
 A patient visits the office of the general practitioner they see regularly. The general practitioner needs to retrieve the patient's electronic medical record from the jurisdictional central database. In the local jurisdiction, patients are issued photo ID cards by the local jurisdictional authority that include identifiers unique to the patient. These identifiers end with a [check digit](https://en.wikipedia.org/wiki/Check_digit) using a strong algorithm, such as the modulo-11 algorithm. The practitioner's office clerk uses the unique identifier on the patient's photo ID card to locate and retrieve the patient's record from the jurisdictional database. 
 
-#### 1:38.4.3 Basic Process Flow in Patient Demographics Query for Mobile Profile
+#### 1:38.4.3 MPI Based Process Flow in Patient Demographics Query for Mobile Profile
 
-The basic process flow is the standard, recommended, especially for use cases 1 and 2. It uses the Patient Demographics Match [ITI-119] transaction:
+The MPI based process flow is used when MPI semantics are desired. This process flow is recommended for new implementations with use cases similar to use cases 1 and 2. It uses the Patient Demographics Match [ITI-119] transaction:
 
 <div>
 {%include Basic-Process-Flow-in-PDQm-Profile.svg%}
 </div>
 <br clear="all">
-**Figure 1:38.4.3-1: Basic Process Flow in PDQm Profile**
+**Figure 1:38.4.3-1: MPI Based Process Flow in PDQm Profile**
 
-#### 1:38.4.4 Alternate Process Flow using Patient Search or Read
+#### 1:38.4.4 Search Based Process Flow using Patient Search or Read
 
-This alternate flow is used when using the Mobile Patient Demographics Query [ITI-78] transaction. This transaction might be used in environments where the semantics of search or read are desired, such as in use case 4, or when migrating from a previous trial implementation version of this profile:
+The search based process flow is used when using the Mobile Patient Demographics Query [ITI-78] transaction. This transaction might be used in environments where the semantics of search or read are desired, such as in use case 4, or when migrating from a previous trial implementation version of this profile:
 
 <div>
 {%include Alternate-Process-Flow-in-PDQm-Profile.svg%}
 </div>
 <br clear="all">
-**Figure 1:38.4.4-1: Alternate Process Flow in PDQm Profile using Patient Search or Read**
+**Figure 1:38.4.4-1: Search Based Process Flow in PDQm Profile using Patient Search or Read**
 
 ## 1:38.5 PDQm Security Considerations
 
