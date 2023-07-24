@@ -236,8 +236,7 @@ TODO:  Update with ITI-119
 
 ## 1:38.6 PDQm Cross-Profile Considerations
 
-
-When the Patient Demographics Supplier is grouped with actors in other IHE profiles that perform patient information reconciliation activities (e.g., the ADT Actor in the IHE Radiology Scheduled Workflow.b Profile), the Patient Demographics Supplier may use the updated information to respond to PDQm Queries. In addition, the Patient Demographics Query for Mobile Profile may play an integral workflow role in conjunction with other IHE profiles.
+When the PDQm Patient Demographics Supplier is grouped with actors in other IHE profiles that perform patient information reconciliation activities (e.g., the ADT Actor in the IHE Radiology Scheduled Workflow.b Profile), the Patient Demographics Supplier may use the updated information to respond to PDQm Queries. In addition, the Patient Demographics Query for Mobile Profile may play an integral workflow role in conjunction with other IHE profiles. A discussion of the various IHE profiles involved in patient identity management and how they relate to one another can be found in the [Enabling Document Sharing Health Information Exchange Using IHE Profiles White Paper](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html#5-patient-identity-management).
 
 Those systems that manage patient demographics could implement the Patient Demographics Supplier 
 in all three profiles: PDQ, PDQv3, and PDQm. In this way the Patient Demographics Consumer can 
@@ -245,7 +244,7 @@ choose the technology stack that best fits.
 [ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) provides additional 
 details about Patient Demographics Query Profiles and their relationship with one another. 
 
-The Patient Demographics Supplier may act as a proxy to an existing PDQ or PDQv3 environment as shown in Figure 1:38.6-1. 
+Figure 1:38.6-1 shows one example of how a PDQm Patient Demographics Supplier might act as a proxy to an existing PDQ or PDQv3 environment. 
 
 <div>
 {%include Implementing-PDQm-as-a-gateway.svg%}
@@ -253,4 +252,4 @@ The Patient Demographics Supplier may act as a proxy to an existing PDQ or PDQv3
 <br clear="all">
 **Figure 1:38.6-1: Implementing PDQm as a Gateway**
 
-
+Note that this is but one possibility, other configurations are also possible. 

@@ -1,12 +1,12 @@
 @startuml Implementing-PDQm-as-a-gateway
 hide footbox
 
-Participant "Patient\nDemographics\nConsumer" as Client1
-box "PDQm Implementation\ngrouped as a façade "
-    Participant "Patient\n Demographics\nSupplier" as Server1
-    Participant "Patient\n Demographics\nConsumer" as Client2
+Participant "PDQm Patient\nDemographics\nConsumer" as Client1
+box "PDQm Proxy to PDQ Environment"
+    Participant "PDQm Patient\n Demographics\nSupplier" as Server1
+    Participant "PDQ Patient\n Demographics\nConsumer" as Client2
 endbox
-Participant "Patient\n Demographics\nSupplier" as Server2
+Participant "PDQ Patient\n Demographics\nSupplier" as Server2
 
 Client1 -> Server1: Patient\nDemographics\nMatch [ITI-119]
 activate Client1
