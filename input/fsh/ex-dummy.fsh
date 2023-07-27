@@ -13,6 +13,8 @@ Description: "Dummy patient example for completeness sake. No actual use of this
 Usage: #example
 // history - http://playgroundjungle.com/2018/02/origins-of-john-jacob-jingleheimer-schmidt.html
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* identifier[+].system = "http://example.org/exampleSystem"
+* identifier[=].value = "8675309"
 * name[+].use = #usual
 * name[=].family = "Schmidt"
 * name[=].given = "John"
