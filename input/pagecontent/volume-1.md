@@ -121,7 +121,7 @@ The Mobile Patient Demographics Query [ITI-78] and Patient Demographics Match [I
 
 The Mobile Patient Demographics Query [ITI-78] transaction follows the semantics of the [FHIR Search](http://hl7.org/fhir/R4/search.html) and [FHIR Read](http://hl7.org/fhir/R4/http.html#read) interactions. When using the search interaction, the Patient Demographics Supplier will perform a comparison for each query parameter. Patient records that are returned will be all those, and only those, that match each search parameter as specified by the Patient Demographics Consumer. This means the Patient Demographics Consumer is responsible for querying with known, accurate demographics, and then performing its own logic to filter the results. The read interaction is used when the Patient Demographics Consumer has knowledge of the FHIR Resource ID of the needed Patient resource. 
 
-The Patient Demographics Match [ITI-119] transaction, on the other hand, follows the semantics of the FHIR [$match](http://hl7.org/fhir/R4/patient-operation-match.html) operation. This FHIR operation is intended to provide an interface into a [Master Patient Index (MPI)](https://en.wikipedia.org/wiki/Enterprise_master_patient_index), which is a service used to manage patient identities across multiple databases. This interaction gives the Patient Demographics Supplier full authority to implement the patient matching algorithm of its choice, rather than following the strict rules of the FHIR search interaction. An MPI will often use a scoring algorithm to match patients to the given demographics, and return results that meet or exceed a threshold. The MPI might assign partial credit to demographics that match partially, such as names with alternate spellings or identifiers with transposed digits. Thus, this is a more powerful search that puts responsibility on the Patient Demographics Supplier to perform the most complex logic. The Patient Demographics Consumer can even request that only 'certain' matches be returned, ensuring that weak matches are not even presented. 
+The Patient Demographics Match [ITI-119] transaction, on the other hand, follows the semantics of the FHIR [$match](http://hl7.org/fhir/R4/patient-operation-match.html) operation. This FHIR operation is intended to provide an interface into systems such as a [Master Patient Index (MPI)](https://en.wikipedia.org/wiki/Enterprise_master_patient_index), which is a service used to manage patient identities across multiple databases. This interaction gives the Patient Demographics Supplier full authority to implement the patient matching algorithm of its choice, rather than following the strict rules of the FHIR search interaction. These types of systems will often use a scoring algorithm to match patients to the given demographics, and return results that meet or exceed a threshold. The algorithm might assign partial credit to demographics that match partially, such as names with alternate spellings or identifiers with transposed digits. Thus, this is a more powerful search that puts responsibility on the Patient Demographics Supplier to perform the complex patient matching logic. The Patient Demographics Consumer can even request that only 'certain' matches be returned, ensuring that weak matches are not even presented. 
 
 The [FHIR Patient Resource Page](http://hl7.org/fhir/R4/patient.html#match) has an informative and detailed description on the differences between performing a Patient Search and a $match interaction. 
 
@@ -206,15 +206,15 @@ In this use case, a known and reliable business identifier is used to locate the
 #### 1:38.4.2.4.1 Patient Demographics Query by Known Business Identifier Description
 A patient visits the office of the general practitioner they see regularly. The general practitioner needs to retrieve the patient's electronic medical record from the jurisdictional central database. In the local jurisdiction, patients are issued photo ID cards by the local jurisdictional authority that include identifiers unique to the patient. These identifiers end with a [check digit](https://en.wikipedia.org/wiki/Check_digit) using a strong algorithm, such as the modulo-11 algorithm. The practitioner's office clerk uses the unique identifier on the patient's photo ID card to locate and retrieve the patient's record from the jurisdictional database. 
 
-#### 1:38.4.3 MPI Based Process Flow in Patient Demographics Query for Mobile Profile
+#### 1:38.4.3 Match Based Process Flow in Patient Demographics Query for Mobile Profile
 
-The MPI based process flow is used when MPI semantics are desired. This process flow is recommended for new implementations with use cases similar to use cases 1 and 2. It uses the Patient Demographics Match [ITI-119] transaction:
+The Match based process flow is used when MPI matching style semantics are desired. This process flow is recommended for new implementations with use cases similar to use cases 1 and 2. It uses the Patient Demographics Match [ITI-119] transaction:
 
 <div>
 {%include MPI-Based-Process-Flow-in-PDQm-Profile.svg%}
 </div>
 <br clear="all">
-**Figure 1:38.4.3-1: MPI Based Process Flow in PDQm Profile**
+**Figure 1:38.4.3-1: Match Based Process Flow in PDQm Profile**
 
 #### 1:38.4.4 Search Based Process Flow using Patient Search or Read
 
