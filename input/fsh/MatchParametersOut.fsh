@@ -17,7 +17,7 @@ than inside of a Parameters resource.
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #closed
-* entry ^slicing.description = "Bundle.entry should consist of only IHE.PDQm.Patient and Operation Outcome"
+* entry ^slicing.description = "Bundle.entry should consist of only IHE.PDQm.Patient and OperationOutcome"
 * entry ^slicing.ordered = false
 
 * entry
