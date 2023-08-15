@@ -14,6 +14,7 @@ and to constring the output parameters to use the [PDQm Patient Profile](Structu
 * status = #draft
 * kind = #operation
 * affectsState = false
+* resource = #Patient
 * system = false
 * type = true
 * instance = false
