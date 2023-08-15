@@ -5,6 +5,7 @@ Description: "Example of Bundle resource to be returned for ITI-119 output"
 Usage: #example
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* total = 1
 * link
   * relation = "self"
   * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output.html"
