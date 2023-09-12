@@ -7,6 +7,8 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * identifier[+].system = "http://example.org/exampleSystem"
 * identifier[=].value = "8675310"
+* text.status = #empty
+* text.div = "<div xmlns=\"http://www.w3.org/1999/xhtml\">This Patient Resource contains a set of discrete demographics to serve as input to the $match operation.</div>"
 * name[+].family = "Schmidt"
 * name[=].given = "John"
 * gender = #other
