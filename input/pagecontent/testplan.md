@@ -11,8 +11,13 @@ PDQm specifies a query transaction between two actors. The transaction between a
 
 ### Patient Demographics Query for Mobile [[ITI-78]](ITI-78.html) 
 
-* Patient Demographics Consumer initiates the ITI-78 queries with various combinations of parameters, as supported
+* If supported, Patient Demographics Consumer initiates the ITI-78 queries with various combinations of parameters, as supported
 * Patient Demographics Supplier responds to the ITI-78 queries as appropriate 
+
+### Patient Demographics Match [[ITI-119]](ITI-119.html) 
+
+* If supported, Patient Demographics Consumer initiates the ITI-119 operation with a Patient resource containing various demographics, as supported, and possibly also specifies the `onlyCertainMatches` and `count` parameters
+* Patient Demographics Supplier responds to the ITI-119 requests as appropriate 
 
 ### Options 
 
