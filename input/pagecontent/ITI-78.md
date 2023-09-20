@@ -79,7 +79,7 @@ For example, a Patient Demographics Consumer wishing to filter for patients with
 
 	  ?family=SMITH&identifier=urn:oid:1.2.3.4.5|
 
-The Patient Demographics Consumer shall populate the patient identity domain portion of the token with values described in [ITI TF-2: Appendix E](https://profiles.ihe.net/ITI/TF/Volume2/ch-E.htm).
+The Patient Demographics Consumer shall populate the patient identity domain portion of the token with values described in [ITI TF-2: Appendix E](https://profiles.ihe.net/ITI/TF/Volume2/ch-E.html).
 
 ###### 2:3.78.4.1.2.4 Populating Expected Response Format <a name="format"> </a>
 The FHIR standard provides encodings for responses as either XML or JSON. Patient Demographics Suppliers shall support both message encodings, whilst Patient Demographics Consumers shall support one and may support both.
