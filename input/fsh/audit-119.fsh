@@ -15,8 +15,8 @@ Defines constraints on the AuditEvent (AuditMessage) Resource for a Patient Demo
 """
 * modifierExtension 0..0
 * subtype 2..
-* subtype contains iti67 1..1
-* subtype[iti67] = urn:ihe:event-type-code#ITI-78 "Mobile Patient Demographics Query"
+* subtype contains iti119 1..1
+* subtype[iti119] = urn:ihe:event-type-code#ITI-119 "Patient Demographics Match"
 * agent[client] obeys val-audit-source
 * agent[client] ^short = "Patient Demographics Consumer"
 * agent[server] ^short = "Patient Demographics Supplier"
