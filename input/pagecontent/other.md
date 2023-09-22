@@ -24,7 +24,8 @@ This section contains modifications to other IHE publications and profiles, and 
 
 | Transaction                              | Definition                                                                              |
 | ---------------------------------------- | --------------------------------------------------------------------------------------- |
-| Mobile Patient Demographics Query \[ITI-78\]   | Performs a query against a patient demographics supplier using HTTP, REST, and JSON/XML message encoding. |
+| Mobile Patient Demographics Query \[ITI-78\]   | Performs a query against a patient demographics supplier using HTTP, REST, and JSON/XML message encoding. 
+| Patient Demographics Match \[ITI-119\] | Requests that a patient demographics supplier using the FHIR $match operation.|
 {:.grid .table-striped}
 
 
