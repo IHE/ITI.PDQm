@@ -111,10 +111,10 @@ Mobile Patient Demographics Query [ITI-78]
 
 Instance: IHE.PDQm.PatientDemographicsConsumer
 InstanceOf: CapabilityStatement
-Title: "PDQm Patient Demographics Consumer Actor"
+Title: "PDQm Patient Demographics Consumer Actor Implementing ITI-78"
 Usage: #definition
 * description = """
-The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtyStatement expresses the requirements that can be utilized while being compliant.
+The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtyStatement expresses the requirements that can be utilized while being compliant. This capability statement implements the ITI-78 transaction.
 
 - Query against the FHIR endpoint to the Patient Resource endpoint
 - Using FHIR R4
@@ -132,8 +132,8 @@ The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtySt
   - gender
   - mothersMaidenName
 """
-* name = "IHE_PDQM_PATIENT_DEMOGRAPHICS_CONSUMER"
-* title = "IHE PDQm Patient Demographics Consumer"
+* name = "IHE_PDQM_PATIENT_DEMOGRAPHICS_CONSUMER_ITI_78"
+* title = "IHE PDQm Patient Demographics Consumer Implementing ITI-78"
 * status = #active
 * experimental = false
 * date = "2022-10-28"

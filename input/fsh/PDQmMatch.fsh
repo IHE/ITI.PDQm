@@ -1,6 +1,6 @@
 Instance: PDQmMatch
 InstanceOf: OperationDefinition
-Title: "PDQm $Match Operation"
+Title: "PDQm $Match"
 Usage: #definition
 Description: """
 This operation implements the [Patient Demographics Match \[ITI-119\]](ITI-119.html) transaction.
