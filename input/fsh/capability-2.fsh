@@ -1,6 +1,6 @@
 Instance: IHE.PDQm.PatientDemographicsConsumerMatch
 InstanceOf: CapabilityStatement
-Title: "PDQm Patient Demographics Consumer Actor Implementing ITI_119"
+Title: "PDQm Patient Demographics Consumer Actor Implementing ITI-119"
 Usage: #definition
 * description = """
 The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtyStatement expresses the requirements that can be utilized while being compliant. This capability statement implements the ITI-119 transaction.

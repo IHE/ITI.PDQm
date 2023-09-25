@@ -9,8 +9,8 @@ The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtySt
 
 - Query against the FHIR endpoint to the Patient Resource endpoint
 - Using FHIR R4
-- shall support both json or xml encoding
-- should use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
+- Shall support both json or xml encoding
+- Should use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
 - [Search Parameters that shall be supported](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
   - _id
   - active
@@ -22,12 +22,14 @@ The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtySt
   - address
   - gender
   - mothersMaidenName
+- Shall support the PDQm $match operation
+- Shall return Patient Resources conforming to the PDQm Patient Profile
 """
 * name = "IHE_PDQM_PATIENT_DEMOGRAPHICS_SUPPLIER"
 * title = "IHE PDQm Patient Demographics Supplier"
 * status = #active
 * experimental = false
-* date = "2022-10-28"
+* date = "2023-09-25"
 * kind = #requirements
 * fhirVersion = #4.0.1
 * format[+] = #application/fhir+xml
@@ -39,8 +41,9 @@ The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtySt
     * description = "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)"
   * resource[+]
     * type = #Patient
+    * supportedProfile[+] = Canonical(IHE.PDQm.Patient)
     * documentation = """
-Mobile Patient Demographics Query [ITI-78]
+Mobile Patient Demographics Query [ITI-78] and Patient Demographics Match [ITI-119]
 """
     * interaction[+].code = #read
     * interaction[+].code = #search-type
@@ -106,10 +109,13 @@ Mobile Patient Demographics Query [ITI-78]
       * type = #string
       * documentation = "Mother's maiden (unmarried) name, commonly collected to help verify patient identity."
   * interaction.code = #search-system
+  * operation
+    * name = "PDQm $Match"
+    * definition = Canonical(PDQmMatch)
 
 
 
-Instance: IHE.PDQm.PatientDemographicsConsumer
+Instance: IHE.PDQm.PatientDemographicsConsumerQuery
 InstanceOf: CapabilityStatement
 Title: "PDQm Patient Demographics Consumer Actor Implementing ITI-78"
 Usage: #definition
