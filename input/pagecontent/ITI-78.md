@@ -41,7 +41,7 @@ The search target follows the FHIR http specification, addressing the Patient Re
 This URL is configurable by the Patient Demographics Supplier and is subject to the following constraints. The `<parameters>` represents a series of encoded name-value pairs representing the filter for the search parameters specified below, as well as control parameters to modify the behavior of the Patient Demographics Supplier such as response format, or pagination.
 
 ###### 2:3.78.4.1.2.1 Search Parameters
-The Patient Demographics Consumer may supply, and the Patient Demographics Supplier shall be capable of processing, all parameters listed below. All parameter values shall be appropriately encoded per [RFC3986](https://tools.ietf.org/html/rfc3986) “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
+The Patient Demographics Consumer may supply, and the Patient Demographics Supplier shall be capable of processing all parameters listed below. All parameter values shall be appropriately encoded per [RFC3986](https://tools.ietf.org/html/rfc3986) “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
 Patient Demographics Suppliers may choose to support additional parameters beyond the subset listed below. Any additional parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored, See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
 
 FHIR defines methods of supporting multiple parameter values in an AND and OR relationship. The Patient Demographics Supplier shall support both AND and OR relationships. See FHIR specification on Composite Search Parameters [http://hl7.org/fhir/R4/search.html#combining](http://hl7.org/fhir/R4/search.html#combining).
@@ -65,6 +65,14 @@ For example
 GET https://server.example.com/fhir/Patient?family=MOHR&given=ALICE&active=true&gender=female
 Accept: application/fhir+json; fhirVersion=4.0
 ```
+
+###### 2:3.78.4.1.2.1.1 Combinations of search parameters
+While the above search parameters shall all be supported individually, support for combinations of parameters is needed fo effective searching. The Patient Demographics Supplier shall support filtering on the following combinations of search parameters:
+
+* `family` and `gender`
+* `birthdate` and `family`
+
+The Patient Demographics Supplier may support additional combinations of parameters. When the Patient Demographics Consumer specifies a set of search parameters that, in combination, are not supported by the Patient Demographics Supplier, the Patient Demographics Supplier shall choose which parameters to respect, and indicate this fact in the response message Bundle self link, according to [Section 3.1.1.6 of the FHIR specification](http://hl7.org/fhir/R4/search.html).
 
 ###### 2:3.78.4.1.2.2 Parameter Modifiers
 Patient Demographics Suppliers shall support the `“:exact”` parameter modifier on all search parameters of type string. When supplied by the Patient Demographics Consumer, the `“:exact”` parameter modifier instructs the Patient Demographics Supplier that exact matching should be performed.
