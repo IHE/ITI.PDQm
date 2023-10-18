@@ -154,6 +154,16 @@ code|not-supported
 
 The Patient Demographics Supplier may be capable of servicing requests for response formats not listed in Section [3.78.4.1.2.5](#format), but shall, at minimum, be capable of producing XML and JSON encodings.
 
+**Case 6**: The Patient Demographics Supplier finds a deprecated Patient record that matches the query parameters. In this case, it shall return `HTTP 200` (OK), and a Resource Bundle with one of the following properties:
+
+* The returned Resource Bundle contains the Patient, which has the `active` element set to `false`.
+
+* The returned Resource Bundle does not include the deprecated Patient record. It may contain other records that match the search, or it may be empty. 
+
+* The returned Resource Bundle contains the Patient, which has the `active` element set to `false` and the `link` element points at another Patient, which is also included in the Bundle. This indicates that the deprecated Patient is deprecated because it has been merged into the linked Patient. 
+
+The option chosen by the Patient Demographics Supplier is based on policy. 
+
 The Patient Demographics Supplier may return other HTTP status codes to represent specific error conditions. When HTTP error status codes are returned by the Patient Demographics Supplier, they shall conform to the HTTP standard [RFC2616](https://tools.ietf.org/html/rfc2616). Their use is not further constrained or specified by this transaction.
 
 
@@ -236,6 +246,14 @@ Attribute|Value
 severity|error
 code|not-found
 {:.grid}
+
+**Case 3**: The Patient Demographics Supplier finds the patient demographics record matching the `resourceId` sent in teh HTTP request, and the record is deprecated. 
+
+In this case, the Patient Demographics Supplier may either:
+
+* Return `HTTP 200` (OK) as in Case 1, with the `active` flag set to `false`, or
+* Return `HTTP 404` (Not Found) as in Case 2.
+
 
 The Patient Demographics Supplier may return other HTTP status codes to represent specific error conditions. When HTTP error status codes are returned by the Patient Demographics Supplier, they shall conform to the HTTP standard [RFC2616](https://tools.ietf.org/html/rfc2616). Their use is not further constrained or specified by this transaction.
 
