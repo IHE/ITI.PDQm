@@ -16,7 +16,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 
 ### 2:3.78.3 Referenced Standards
 
-* [HL7 FHIR Release 4](http://www.hl7.org/FHIR/R4)
+* [HL7 FHIR Release 4]({{site.data.fhir.path}})
 
 ### 2:3.78.4 Messages
 
@@ -33,8 +33,8 @@ This message represents a parameterized search from the Patient Demographics Con
 ##### 2:3.78.4.1.1 Trigger Events
 When a Patient Demographics Consumer needs to select a patient based on demographic information about patients whose information matches a minimal set of known data, it issues a Query Patient Resource.
 ##### 2:3.78.4.1.2 Message Semantics
-The Patient Demographics Consumer may use GET or POST based searches. The Patient Demographics Supplier shall support both GET and POST based [searches](http://hl7.org/fhir/R4/http.html#search).
-The search target follows the FHIR http specification, addressing the Patient Resource type  [http://hl7.org/fhir/R4/http.html](http://hl7.org/fhir/R4/http.html):
+The Patient Demographics Consumer may use GET or POST based searches. The Patient Demographics Supplier shall support both GET and POST based [searches]({{site.data.fhir.path}}http.html#search).
+The search target follows the FHIR http specification, addressing the Patient Resource type  [{{site.data.fhir.path}}http.html]({{site.data.fhir.path}}http.html):
 ```
     [base]/Patient?<parameters>
 ```
@@ -42,9 +42,9 @@ This URL is configurable by the Patient Demographics Supplier and is subject to 
 
 ###### 2:3.78.4.1.2.1 Search Parameters
 The Patient Demographics Consumer may supply, and the Patient Demographics Supplier shall be capable of processing all parameters listed below. All parameter values shall be appropriately encoded per [RFC3986](https://tools.ietf.org/html/rfc3986) “percent” encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
-Patient Demographics Suppliers may choose to support additional parameters beyond the subset listed below. Any additional parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored, See [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors).
+Patient Demographics Suppliers may choose to support additional parameters beyond the subset listed below. Any additional parameters supported shall be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported should be ignored, See [{{site.data.fhir.path}}search.html#errors]({{site.data.fhir.path}}search.html#errors).
 
-FHIR defines methods of supporting multiple parameter values in an AND and OR relationship. The Patient Demographics Supplier shall support both AND and OR relationships. See FHIR specification on Composite Search Parameters [http://hl7.org/fhir/R4/search.html#combining](http://hl7.org/fhir/R4/search.html#combining).
+FHIR defines methods of supporting multiple parameter values in an AND and OR relationship. The Patient Demographics Supplier shall support both AND and OR relationships. See FHIR specification on Composite Search Parameters [{{site.data.fhir.path}}search.html#combining]({{site.data.fhir.path}}search.html#combining).
 
 Parameter | definitions
 ---|---
@@ -53,10 +53,10 @@ Parameter | definitions
 `family` and `given` | These parameters of type `string`, when supplied, specify the name of the person whose information is being queried. For this parameter the Patient Demographics Consumer may use either family name, given name or a combination of both names to filter by family, given or family and given names respectively. See [ITI TF-2: Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type.
 `identifier` | This repeating parameter of type `token`, when supplied, specifies an identifier associated with the patient whose information is being queried (e.g., a local identifier, account identifier, etc.). See [ITI TF-2: Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type. If multiple instances of this parameter are provided in the query, the query represents a logical AND condition (i.e., all of the associated identifiers must match). For example, a query searching for patients having identifier145 assigned by authority “1.2.3.4” and SSN 123456789 would be represented as:<br /> `?identifier=urn:oid:1.2.3.4|145&identifier=urn:oid:2.16.840.1.113883.4.1|123456789` <br />If no `system` portion of the identifier parameter is specified, then the matching would be performed on any identifier regardless of issuing system. 
 `telecom` | This parameter of type `token`, when supplied, specifies the telecommunications details
-`birthdate` | This parameter of type `date`, when supplied, specifies the birth date of the person whose information is being queried. The Patient Demographics Consumer shall use the date and interval mechanism to indicate a specific date of birth or a date that lies within the range specified by the parameter. See [http://hl7.org/fhir/R4/search.html#date](http://hl7.org/fhir/R4/search.html#date)
+`birthdate` | This parameter of type `date`, when supplied, specifies the birth date of the person whose information is being queried. The Patient Demographics Consumer shall use the date and interval mechanism to indicate a specific date of birth or a date that lies within the range specified by the parameter. See [{{site.data.fhir.path}}search.html#date]({{site.data.fhir.path}}search.html#date)
 `address` | This parameter of type `string`, when supplied, specifies one or more address parts associated with the person whose information is being queried. For details on matching rules, see [ITI TF-2: Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters).
 `address-city`,<br /> `address-country`,<br /> `address-postalcode`,<br /> `address-state` | These parameters of type `string`, when supplied, specify a match against the specified address part associated with the person whose information is being queried. Note that national conventions for addresses may affect utility of these fields.
-`gender` | This parameter of type `token`, when supplied, specifies the administrative gender of the person whose information is being queried. For this parameter item, a single administrative gender code from value set http://hl7.org/fhir/R4/valueset-administrative-gender.html shall be specified as the only value of the token. See [ITI TF-2: Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type.
+`gender` | This parameter of type `token`, when supplied, specifies the administrative gender of the person whose information is being queried. For this parameter item, a single administrative gender code from value set {{site.data.fhir.path}}valueset-administrative-gender.html shall be specified as the only value of the token. See [ITI TF-2: Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type.
 `mothersMaidenName` | This parameter of type `string`, when supplied, specifies the mother's maiden (unmarried) name, commonly collected to help verify patient identity. This is search extension defined in FHIR<br />Expression: Patient.extension(`http://hl7.org/fhir/StructureDefinition/patient-extensions-Patient-mothersMaidenName`)
 {:.grid}
 
@@ -72,18 +72,18 @@ While the above search parameters shall all be supported individually, support f
 * `family` and `gender`
 * `birthdate` and `family`
 
-The Patient Demographics Supplier may support additional combinations of parameters. When the Patient Demographics Consumer specifies a set of search parameters that, in combination, are not supported by the Patient Demographics Supplier, the Patient Demographics Supplier shall choose which parameters to respect, and indicate this fact in the response message Bundle self link, according to [Section 3.1.1.6 of the FHIR specification](http://hl7.org/fhir/R4/search.html).
+The Patient Demographics Supplier may support additional combinations of parameters. When the Patient Demographics Consumer specifies a set of search parameters that, in combination, are not supported by the Patient Demographics Supplier, the Patient Demographics Supplier shall choose which parameters to respect, and indicate this fact in the response message Bundle self link, according to [Section 3.1.1.6 of the FHIR specification]({{site.data.fhir.path}}search.html).
 
 ###### 2:3.78.4.1.2.2 Parameter Modifiers
 Patient Demographics Suppliers shall support the `“:exact”` parameter modifier on all search parameters of type string. When supplied by the Patient Demographics Consumer, the `“:exact”` parameter modifier instructs the Patient Demographics Supplier that exact matching should be performed.
 The Patient Demographics Consumer should not use, and Patient Demographics Supplier may ignore, any additional parameter modifiers listed in the FHIR standard, which are considered out of scope in the context of this transaction
 
 ###### 2:3.78.4.1.2.3 Populating Which Domains are Returned <a name="domainpop"> </a>
-The Patient Demographics Consumer may constrain the domains from which patient identifiers are returned from the Patient Demographics Supplier in the resulting bundle. The Patient Demographics Consumer shall convey this by specifying the patient identity domains in the system component of repeating `identifier` parameters using the [OR format](http://hl7.org/fhir/R4/search.html#combining) (example of using `,` in a request for identifier domain `1.2.3` *OR* `4.5.6`):
+The Patient Demographics Consumer may constrain the domains from which patient identifiers are returned from the Patient Demographics Supplier in the resulting bundle. The Patient Demographics Consumer shall convey this by specifying the patient identity domains in the system component of repeating `identifier` parameters using the [OR format]({{site.data.fhir.path}}search.html#combining) (example of using `,` in a request for identifier domain `1.2.3` *OR* `4.5.6`):
 
     &identifier=urn:oid:1.2.3|,urn:oid:4.5.6|
 
-For example, a Patient Demographics Consumer wishing to filter for patients with a last name of SMITH having identifiers from an identity domain with OID 1.2.3.4.5 would convey this search using the [AND format](http://hl7.org/fhir/R4/search.html#combining) as (example of requesting a family name of SMITH *AND* in the identifier domain 1.2.3.4.5):
+For example, a Patient Demographics Consumer wishing to filter for patients with a last name of SMITH having identifiers from an identity domain with OID 1.2.3.4.5 would convey this search using the [AND format]({{site.data.fhir.path}}search.html#combining) as (example of requesting a family name of SMITH *AND* in the identifier domain 1.2.3.4.5):
 
 	  ?family=SMITH&identifier=urn:oid:1.2.3.4.5|
 
@@ -137,7 +137,7 @@ code|not-found
 diagnostics|“targetSystem not found”
 {:.grid}
 
-The OperationOutcome Resource may indicate the search parameter used and the domain in error within the `diagnostics` attribute. See FHIR discussion of search error handling [http://hl7.org/fhir/R4/search.html#errors](http://hl7.org/fhir/R4/search.html#errors)
+The OperationOutcome Resource may indicate the search parameter used and the domain in error within the `diagnostics` attribute. See FHIR discussion of search error handling [{{site.data.fhir.path}}search.html#errors]({{site.data.fhir.path}}search.html#errors)
 
 **Case 5**: The Patient Demographics Supplier is not capable of producing a response in the requested format specified by _format parameter (specified in Section [3.78.4.1.2.5](#format)).
 
@@ -185,18 +185,18 @@ See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z
 The Patient Resource(s) contained within the Query Patient Resource Response message should conform to [Patient Profile for PDQm](StructureDefinition-IHE.PDQm.Patient.html).
 
 ###### 2:3.78.4.2.2.2 Mother’s Maiden Name <a name="mmn"> </a>
-Patient Demographics Suppliers shall include the mother’s maiden name, if known, in this extension: [http://hl7.org/fhir/R4/extension-patient-mothersmaidenname.html](http://hl7.org/fhir/R4/extension-patient-mothersmaidenname.html)
+Patient Demographics Suppliers shall include the mother’s maiden name, if known, in this extension: [{{site.data.fhir.path}}extension-patient-mothersmaidenname.html]({{site.data.fhir.path}}extension-patient-mothersmaidenname.html)
 
 ###### 2:3.78.4.2.2.3 Resource Bundling
 Please see [ITI TF-2: Appendix Z.1](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.1-resource-bundles) for details on the IHE guidelines for implementing FHIR bundles.
 
 ###### 2:3.78.4.2.2.4 Incremental Response Processing - Paging of Resource Bundle
-The Patient Demographics Supplier shall represent these incremental responses as specified in [FHIR Paging](http://hl7.org/fhir/R4/http.html#paging)
+The Patient Demographics Supplier shall represent these incremental responses as specified in [FHIR Paging]({{site.data.fhir.path}}http.html#paging)
 
 ###### 2:3.78.4.2.2.5 Quality of Match
 The Patient Demographics Supplier may convey the quality of each match based on strength of the particular result to the supplied search parameters. The mechanism for determining the confidence of match is considered a product specific feature and is not specified in this transaction.
 
-If the Patient Demographics Supplier wishes to convey the quality of match, it shall represent the confidence of a particular match within the bundle as a score attribute. See FHIR Relevance section [http://hl7.org/fhir/R4/search.html#score](http://hl7.org/fhir/R4/search.html#score)
+If the Patient Demographics Supplier wishes to convey the quality of match, it shall represent the confidence of a particular match within the bundle as a score attribute. See FHIR Relevance section [{{site.data.fhir.path}}search.html#score]({{site.data.fhir.path}}search.html#score)
 
 
 ##### 2:3.78.4.2.3 Expected Actions
@@ -207,7 +207,7 @@ The constraints specified in Section [3.78.4.2.2](#2378422-message-semantics) re
 
 The Patient Demographics Consumer should be robust as the response may contain Patient Resources that match the search parameters but are not compliant with the PDQm constraints defined in [Patient Profile for PDQm](StructureDefinition-IHE.PDQm.Patient.html).
 
-The Patient Demographics Consumer should follow the [Safety Guidelines for Client Search](http://hl7.org/fhir/R4/safety.html#search)
+The Patient Demographics Consumer should follow the [Safety Guidelines for Client Search]({{site.data.fhir.path}}safety.html#search)
 
 #### 2:3.78.4.3 Retrieve Patient Resource message
 This message represents an HTTP GET from the Patient Demographics Consumer to the Patient Demographics Supplier and provides a mechanism for retrieving a single Patient Resource with a known resource identifier.
@@ -272,7 +272,7 @@ See [ITI TF-2: Appendix Z.6](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z
 If the Patient Demographics Supplier is unable to produce a response in the requested format, it shall respond with an `HTTP 400` error indicating that it was unable to fulfill the request. The Patient Demographics Supplier may be capable of servicing requests for response formats not listed, but shall, at minimum, be capable of producing XML and JSON encodings.
 
 ###### 2:3.78.4.4.2.1 Patient Resource Definition in the Context of Retrieve Patient Resource Response
-The Patient Resource definition in the context of a retrieve interaction is the FHIR definition of the Patient Resource, see [http://hl7.org/fhir/R4/patient.html](http://hl7.org/fhir/R4/patient.html).
+The Patient Resource definition in the context of a retrieve interaction is the FHIR definition of the Patient Resource, see [{{site.data.fhir.path}}patient.html]({{site.data.fhir.path}}patient.html).
 
 ### 2:3.78.5 Security Considerations
 See the general Security Consideration in [ITI TF-1: 38.5](volume-1.html#1385-pdqm-security-considerations)
