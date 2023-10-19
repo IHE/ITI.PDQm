@@ -57,7 +57,7 @@ Usage: #example
 
 Instance:   ex-match-output-error
 InstanceOf: IHE.PDQm.MatchParametersOut
-Title:      "Example $match Output Bundle - An Error Occurred"
+Title:      "Example $match Output Bundle - Error"
 Description: "Example of Bundle resource to be returned for ITI-119 output. No Patients are found in the search result."
 Usage: #example
 
@@ -73,7 +73,7 @@ Usage: #example
 
 Instance:   ex-match-output-warning
 InstanceOf: IHE.PDQm.MatchParametersOut
-Title:      "Example $match Output Bundle - A patient was found with a warning"
+Title:      "Example $match Output Bundle - 1 Patient and 1 Warning"
 Description: "Example of Bundle resource to be returned for ITI-119 output. 1 patient is returned alongside a warning."
 Usage: #example
 

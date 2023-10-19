@@ -1,6 +1,6 @@
 Instance:   ex-match-failure
 InstanceOf: OperationOutcome
-Title:      "Example OperationOutcome resulting from a failure to invoke $match"
+Title:      "Example OperationOutcome - $match Failure"
 Description: "Example OperationOutcome resulting from a failure to invoke $match"
 Usage: #example
 
@@ -12,7 +12,7 @@ Usage: #example
 
 Instance:   ex-match-warning
 InstanceOf: OperationOutcome
-Title:      "Example OperationOutcome containing a warning to be returned for $match"
+Title:      "Example OperationOutcome - $match Warning"
 Description: "Example OperationOutcome containing a warning to be returned for $match"
 Usage: #example
 
