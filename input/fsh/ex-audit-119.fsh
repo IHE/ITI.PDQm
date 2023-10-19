@@ -4,7 +4,7 @@ Title: "Audit Example of ITI-119 at Consumer"
 Description: """
 Audit Event for PDQm Query Transaction by the Patient Identifier Cross-reference Consumer
 
-Where the $match operation was executed with the [example request parameters Bundle](Parameters-ex-match-input.html).
+Where the $match operation was executed with the [example request parameters Bundle](Parameters-ex-match-input-patient-only.html).
 
 """
 Usage: #example
@@ -36,7 +36,7 @@ Title: "Audit Example of ITI-119 at Supplier"
 Description: """
 Audit Event for PDQm Match Transaction by the Patient Identifier Cross-reference Supplier
 
-Where the $match operation was executed with the [example request parameters Bundle](Parameters-ex-match-input.html).
+Where the $match operation was executed with the [example request parameters Bundle](Parameters-ex-match-input-patient-only.html).
 
 Note the Supplier may choose to record patient identities found, but is not required to.
 
