@@ -98,7 +98,7 @@ without being wrapped in a Parameters Resource, as long as it conforms to the [P
 * parameter
   * modifierExtension 0..0
 
-  Profile: MatchParametersOut
+Profile: MatchParametersOut
 Parent: Bundle 
 Id: IHE.PDQm.MatchParametersOut
 Title: "PDQm Match Output Bundle Profile"
