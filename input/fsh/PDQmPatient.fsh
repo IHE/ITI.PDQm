@@ -6,7 +6,7 @@ Description: """
 The PDQm Patient Profile, based on the IPA Patient Profile
 - when any element in FHIR Core Patient are known, and when authorized to return the element, then all elements that are core to FHIR Patient should be returned
 - forbids modifier extensions and implicit rules - so that all uses do not need to be concerned with changes to the meaning of the core elements of the Patient resource
-- adds the `patient-mothersMaidenName` extension as an extension available to hold the mothers maiden name
+- adds the `patient-mothersMaidenName` extension as an extension available to hold the mother's maiden name
 
 Following the IPA Patient Profile, `Patient.identifier` is required. Including business identifiers in `Patient.identifier` is important for
 allowing the Patient resource to maintain identity outside of the context of the FHIR server on which it resides. 
