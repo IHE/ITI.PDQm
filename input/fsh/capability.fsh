@@ -251,7 +251,7 @@ The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtySt
     * description = "Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)"
   * resource[+]
     * type = #Patient
-    * supportedProfile[+] = Canonical(IHE.PDQm.MatchInput)
+    * supportedProfile[+] = Canonical(IHE.PDQm.MatchInputPatient)
     * supportedProfile[+] = Canonical(IHE.PDQm.Patient)
     * documentation = "Patient Demographics Match [ITI-119]"
     * operation

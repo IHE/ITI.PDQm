@@ -5,7 +5,7 @@ Usage: #definition
 Description: """
 This operation implements the [Patient Demographics Match \[ITI-119\]](ITI-119.html) transaction.
 It is fully compatible with the [$match Operation on Patient](http://hl7.org/fhir/R4/patient-operation-match.html). 
-The only changes are to constrain the input parameters to use the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInput.html) profile
+The only changes are to constrain the input parameters to use the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInputPatient.html) profile
 and to constring the output parameters to use the [PDQm Patient Profile](StructureDefinition-IHE.PDQm.Patient.html) profile.
 """
 
@@ -58,10 +58,10 @@ Title: "PDQm Match Input Parameters Profile"
 Description: """
 The PDQm Match Input Parameters Profile describes the Parameters Resource that is to be posted to the $match endpoint when invoking ITI-119.
 This profile is consistent with the expections of the [Patient-match operation in FHIR core](http://hl7.org/fhir/R4/patient-operation-match.html),
-except the input resource shall be an instance of the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInput.html).
+except the input resource shall be an instance of the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInputPatient.html).
 
 Note that the only required parameter is the Patient Resource. When only the Patient is supplied, it can be POSTed directly to the $match endpoint
-without being wrapped in a Parameters Resource, as long as it conforms to the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInput.html).
+without being wrapped in a Parameters Resource, as long as it conforms to the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInputPatient.html).
 """
 
 * implicitRules 0..0
@@ -78,7 +78,7 @@ without being wrapped in a Parameters Resource, as long as it conforms to the [P
   * name = "resource"
   * value[x] 0..0
   * resource 1..1
-  * resource only IHE.PDQm.MatchInput
+  * resource only IHE.PDQm.MatchInputPatient
   * part 0..0
 * parameter contains onlyCertainMatches 0..1
 * parameter[onlyCertainMatches]
@@ -138,7 +138,7 @@ than inside of a Parameters resource.
 
 Profile: PDQmMatchInput
 Parent: Patient 
-Id: IHE.PDQm.MatchInput
+Id: IHE.PDQm.MatchInputPatient
 Title: "PDQm Patient Profile for $match Input"
 Description: """
 The PDQm Patient Profile for $match Input shall be provided as input to the ITI-119 transaction. 
