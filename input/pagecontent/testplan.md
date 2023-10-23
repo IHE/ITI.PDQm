@@ -32,7 +32,7 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 #### Gazelle PatientManager - Simulator 
 
 * Provider: INRIA (Rennes, France), [KEREVAL](https://www.kereval.com/)
-* Gazelle PatientManager online: https://gazelle.ihe.net/PatientManager/home.seam
+* [Gazelle PatientManager online](https://gazelle.ihe.net/PatientManager/home.seam)
 * [User Manual](https://gazelle.ihe.net/gazelle-documentation/Patient-Manager/user.html)
 * [Tool support](https://gazelle.ihe.net/jira/projects/PAM)
 * Actors (options) tested: Patient Demographics Consumer, Patient Demographics Supplier for ITI-78:
@@ -42,7 +42,7 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 #### Gazelle External Validation Service (aka "EVS Client") - Validator
 
 * Provider: INRIA (Rennes, France), [KEREVAL](https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
-* Gazelle EVSClient online: https://gazelle.ihe.net/EVSClient/home.seam
+* [Gazelle EVSClient online](https://gazelle.ihe.net/evs/home.seam)
 * [User Manual](https://gazelle.ihe.net/gazelle-documentation/EVS-Client/user.html)
 * [Tool support](https://gazelle.ihe.net/jira/browse/EVSCLT)
 * Scope of testing: validation using StructureDefinitions for PDQm IG
