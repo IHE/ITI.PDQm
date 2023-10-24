@@ -1,6 +1,6 @@
 id: ihe.iti.pdqm
 canonical: https://profiles.ihe.net/ITI/PDQm
-version: 2.4.1-current
+version: 3.0-current
 releaseLabel: ci-build
 #releaseLabel: Trial-Implementation
 #date: 2022-03-01
@@ -26,7 +26,10 @@ dependencies:
   ihe.iti.balp:
     id: iheitibasicaudit
     uri: https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp
-    version: 1.1.2
+    version: 1.1.x
+  hl7.fhir.uv.ipa:
+    uri:  http://hl7.org/fhir/uv/ipa/ImplementationGuide/hl7.fhir.uv.ipa
+    version: 1.0.x
 
 parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
   path-resource:
@@ -62,6 +65,9 @@ pages:
   ITI-78.md:
     title: 2:3.78 Mobile Patient Demographics Query [ITI-78]
     generation: markdown
+  ITI-119.md:
+    title: 2:3.119 Patient Demographics Match [ITI-119]
+    generation: markdown
   testplan.md:
     title: PDQm Test Plan
     generation: markdown
@@ -84,6 +90,7 @@ menu:
     Cross-Profile Considerations: volume-1.html#1386-pdqm-cross-profile-considerations    
   Volume 2:
     "Mobile Patient Demographics Query [ITI-78]": ITI-78.html
+    "Patient Demographics Match [ITI-119]": ITI-119.html
   Test Plan: testplan.html
   Artifacts: artifacts.html
   Other: other.html

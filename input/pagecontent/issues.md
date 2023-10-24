@@ -3,6 +3,13 @@
 ## Significant changes from PDQm, Rev 2.4:
 - changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
   - changes to RESTful type, and query subtype
+- Introduced [ITI-119 Patient Demographics Match](ITI-119.html) as an alternative to [ITI-78 Mobile Patient Demographics Query](ITI-78.html)
+- Added dependency on [HL7 IPA](http://hl7.org/fhir/uv/ipa/STU1/ImplementationGuide-hl7.fhir.uv.ipa.html) and updated the [PDQm Patient Profile](StructureDefinition-IHE.PDQm.Patient.html) to derive from [IPA Patient](http://hl7.org/fhir/uv/ipa/STU1/StructureDefinition-ipa-patient.html)
+- Added requirements for which combinations of search parameters shall be supported by Patient Demographics consumers in section 2:3.78.4.1.2.1.1. 
+  - Resolves [PDQm_issue_90](https://github.com/IHE/ITI.PDQm/issues/90)
+- Added recommended response patterns for handling deprecated patient identifies to sections 2:3.78.4.1.3 and 2:3.78.4.3.3. 
+  - Resolves [PDQm_issue_86](https://github.com/IHE/ITI.PDQm/issues/86)
+- Added Use Case #4 - Patient Demographics Query by Known Business Identifier
 
 ## Significant changes from PDQm, Rev 2.2:
 - FHIR Implementation Guide instead of [pdf - Rev. 2.2](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf)
@@ -24,6 +31,8 @@ These issues were known as part of the publication, and IHE invites comments.
 - PDQm_102: Normative vs Trial-Implementation - Currently the HL7 FHIR standard components used (e.g., Patient, Bundle, etc) in this profile are at Normative state. Some portions of PDQm are relying on STU content (such as query parameters, mothersMaidenName).
 - PDQm_103: PDQm has a small volume 1 content. Thus breaking each H2 out into independent html files makes it harder to address. We may choose to do similar to PIXm and have just one volume 1 content with deep links.
 - [PDQm_issue_66](https://github.com/IHE/ITI.PDQm/issues/66): PDQm has allowed clients to use GET or POST search, and thus mandated that servers must support both GET and POST. The previous versions of PDQm had only mentioned GET search, but we learned that FHIR core mandated POST and does not allow us to not also mandate it. This leaves regions that want to use only one of these verbs for search seemingly forced to support both verbs for search. The current discussion in FHIR core offers that "support" could include implementing a "policy" that forces an http 405 response. This seems to be a workable solution, and the alternative would not be much different than this anyway.
+- [PDQm_issue_92](https://github.com/IHE/ITI.PDQm/issues/92): Currently we are mandating that Patient Demographics Suppliers support both ITI-78 and ITI-119, while Patient Demographics Consumers have the option to choose to support either one or both transactions. Is requiring support for both transactions a problem for any Patient Demographics Suppliers? We note that prior versions of the specification included only ITI-78, meaning this is new functionality existing suppliers will need to incorporate. Do we want named options here?
+- [PDQm_issue_94](https://github.com/IHE/ITI.PDQm/issues/94): In PDQ, PDQv3, and PDQm ITI-78, we have the ability for the client to limit the search results to patients with an identifier issued by a particular patient identification domain. We do not have equivalent functionality in ITI-119. While a client could suggest that it is interested in a particular patient identification domain by including the assigning authority of that domain as an identifier system in the $match input parameters, the semantics of $match would not require the server to honor that request. Is this functionality needed in ITI-119?
 
 ### Closed Issues
 These issues have been decided and documented in the publication.

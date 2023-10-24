@@ -1,0 +1,10 @@
+@startuml ITI-119-seq
+hide footbox
+
+participant "Patient Demographics\nConsumer" as Client
+participant "Patient Demographics\nSupplier" as Server
+
+Client -> Server : Match Patient Resource
+Server -> Client : Match Patient Resource Response
+
+@enduml

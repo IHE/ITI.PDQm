@@ -1,5 +1,12 @@
-@startuml
+@startuml PDQm-Actor-Diagram
+skinparam linetype ortho
+skinparam ParticipantPadding 300
+
 agent "Patient Demographics\nConsumer" as Client
 agent "Patient Demographics\nSupplier" as Server
-Client -down-> Server  : "Mobile Patient\nDemographics\nQuery [ITI-78]"
+Client ---> Server  : "Mobile Patient\nDemographics\nQuery [ITI-78]"
+Client -[hidden]->Server 
+Client -[hidden]->Server 
+Client -[hidden]->Server 
+Client ---> Server  : "Patient\nDemographics\nMatch [ITI-119]"
 @enduml

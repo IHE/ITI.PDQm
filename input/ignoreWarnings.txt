@@ -3,4 +3,5 @@
 # IHE valueset that is not yet a real valueset
 Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
 
-
+# $match bundles do not have a search string
+No types could be determined from the search string, so the types can''t be checked

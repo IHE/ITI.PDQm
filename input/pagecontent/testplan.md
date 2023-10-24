@@ -11,8 +11,38 @@ PDQm specifies a query transaction between two actors. The transaction between a
 
 ### Patient Demographics Query for Mobile [[ITI-78]](ITI-78.html) 
 
-* Patient Demographics Consumer initiates the ITI-78 queries with various combinations of parameters, as supported
-* Patient Demographics Supplier responds to the ITI-78 queries as appropriate 
+* If supported, Patient Demographics Consumer initiates the ITI-78 queries with various combinations of parameters, as supported.
+* Patient Demographics Supplier responds to the ITI-78 queries as appropriate.
+* The Patient Demographics Supplier shall be capable of filtering the response search set by the following parameters individually, based on the content of the Patient resources it stores (it need not be capable of filtering on parameters where the corresponding data is never present in Patient Resources it might return):
+  * `_id`
+  * `active`
+  * `family`
+  * `given`
+  * `identifier`
+  * `telecom`
+  * `birthdate`
+  * `address`
+  * `address-city`
+  * `address-country`
+  * `address-postalcode`
+  * `address-state`
+  * `gender`
+  * `mothersMaidenName`
+* The Patient Demographics Supplier shall be capable of filtering the response search set by the following combinations of search parameters:
+  * `family` and `gender`
+  * `birthdate` and `family`
+
+### Patient Demographics Match [[ITI-119]](ITI-119.html) 
+
+* If supported, Patient Demographics Consumer initiates the ITI-119 operation with a Patient resource containing various demographics, as supported, and possibly also specifies the `onlyCertainMatches` and `count` parameters
+* Patient Demographics Supplier responds to the ITI-119 requests as appropriate 
+* If supported, the Patient Demographics Consumer may initiate the ITI-119 transaction with a Patient resource containing various demographics, as supported. When prompted with such a request, the Patient Demographics Supplier shall be able to respond with the set of matching patients from its database. The methodology the Patient Demographics Supplier uses to determine matches is not specified by this profile. 
+* The Patient Demographics Supplier shall populate Patient entries in the response Bundle with a `search.score` between 0 and 1, where higher values indicate higher match quality. The method used to compute the score is otherwise not specified by this profile. 
+* The Patient Demographics Supplier shall populate Patient entries in the response Bundle with the [match-grade]({{site.data.fhir.path}}extension-match-grade.html) extension containing an [appropriate code]({{site.data.fhir.path}}valueset-match-grade.html) to describe the match quality. The method the Patient Demographics Supplier uses to assess the match grade is not specified by this profile. 
+* The Patient Demographics Consumer may specify the `onlyCertainMatches` parameter in the request message. In response, the Patient Demographics Supplier shall include only results for which the `match-grade` is `certain`. 
+* The Patient Demographics Consumer may specify the `count` parameter in the request message. In response, the Patient Demographics Supplier shall include no more than `count` Patients in the response. 
+* When the request message does not match any Patient records in the Patient Demographics Supplier, and no error is encountered when performing the search, then the Patient Demographics Supplier shall respond with `HTTP 200 (OK)`. The response Bundle shall not contain any Patient entries, and any OperationOutcome entries shall not have `fatal` or `error` severity. 
+* When the `count` and `onlyCertainMatches` parameters are not used, the Patient Demographics Consumer may invoke the ITI-119 transaction using either a raw Patient Resource, or a Parameters Resource containing a Patient Resource. The Patient Demographics Supplier shall be capable of handling both request formats in the same way.  
 
 ### Options 
 
@@ -27,7 +57,7 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 #### Gazelle PatientManager - Simulator 
 
 * Provider: INRIA (Rennes, France), [KEREVAL](https://www.kereval.com/)
-* Gazelle PatientManager online: https://gazelle.ihe.net/PatientManager/home.seam
+* [Gazelle PatientManager online](https://gazelle.ihe.net/PatientManager/home.seam)
 * [User Manual](https://gazelle.ihe.net/gazelle-documentation/Patient-Manager/user.html)
 * [Tool support](https://gazelle.ihe.net/jira/projects/PAM)
 * Actors (options) tested: Patient Demographics Consumer, Patient Demographics Supplier for ITI-78:
@@ -37,7 +67,7 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 #### Gazelle External Validation Service (aka "EVS Client") - Validator
 
 * Provider: INRIA (Rennes, France), [KEREVAL](https://www.kereval.com/), and Mallinckrodt Institute of Radiology (Saint Louis, USA) 
-* Gazelle EVSClient online: https://gazelle.ihe.net/EVSClient/home.seam
+* [Gazelle EVSClient online](https://gazelle.ihe.net/evs/home.seam)
 * [User Manual](https://gazelle.ihe.net/gazelle-documentation/EVS-Client/user.html)
 * [Tool support](https://gazelle.ihe.net/jira/browse/EVSCLT)
 * Scope of testing: validation using StructureDefinitions for PDQm IG
