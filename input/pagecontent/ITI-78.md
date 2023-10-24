@@ -67,7 +67,7 @@ Accept: application/fhir+json; fhirVersion=4.0
 ```
 
 ###### 2:3.78.4.1.2.1.1 Combinations of search parameters
-While the above search parameters shall all be supported individually, support for combinations of parameters is needed fo effective searching. The Patient Demographics Supplier shall support filtering on the following combinations of search parameters:
+While the above search parameters shall all be supported individually, support for combinations of parameters is needed for effective searching. The Patient Demographics Supplier shall support filtering on the following combinations of search parameters:
 
 * `family` and `gender`
 * `birthdate` and `family`
