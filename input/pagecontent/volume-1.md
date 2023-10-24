@@ -88,7 +88,7 @@ Note 2: The Patient Demographics Consumer shall implement at least one of the Mo
 
 #### 1:38.1.1.1 Patient Demographics Consumer
 
-`requirements` CapabilityStatements are provided for the [Patient Demographics Consumer implementing Mobile Patient Demographics Query](CapabilityStatement-IHE.PDQm.PatientDemographicsConsumerQuery.html), which shows the query parameters available, and the [Patient Demographics Consumer implementing Patient Demographics Match](CapabilityStatement-IHE.PDQm.PatientDemographicsConsumerQuery.html).
+Two `requirements` CapabilityStatements are provided for the [Patient Demographics Consumer implementing Mobile Patient Demographics Query](CapabilityStatement-IHE.PDQm.PatientDemographicsConsumerQuery.html), which shows the query parameters available, and the [Patient Demographics Consumer implementing Patient Demographics Match](CapabilityStatement-IHE.PDQm.PatientDemographicsConsumerQuery.html).
 
 #### 1:38.1.1.2 Patient Demographics Supplier
 
