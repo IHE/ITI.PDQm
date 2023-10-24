@@ -247,7 +247,7 @@ severity|error
 code|not-found
 {:.grid}
 
-**Case 3**: The Patient Demographics Supplier finds the patient demographics record matching the `resourceId` sent in teh HTTP request, and the record is deprecated. 
+**Case 3**: The Patient Demographics Supplier finds the patient demographics record matching the `resourceId` sent in the HTTP request, and the record is deprecated. 
 
 In this case, the Patient Demographics Supplier may either:
 
