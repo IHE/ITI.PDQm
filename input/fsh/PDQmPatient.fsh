@@ -34,3 +34,18 @@ return the same identifier, but it is not required in environments where doing s
 * implicitRules 0..0
 * extension contains http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named MothersMaidenName 0..1 
 
+Profile:        QueryPatientResourceResponseMessage
+Parent:         Bundle
+Id:             IHE.PDQm.QueryPatientResourceResponseMessage
+Title:          "PDQm Query Patient Resource Response message"
+Description:    "A profile on the Query Patient Resource Response message for ITI-78"
+* type = #searchset (exactly)
+* total 1..
+* entry ^slicing.discriminator[0].type = #profile
+* entry ^slicing.discriminator[0].path = "resource"
+* entry ^slicing.rules = #open
+* entry.fullUrl 1..
+* entry contains Patient 0..*
+* entry[Patient] ^short = "Patient"
+* entry[Patient].resource 1..
+* entry[Patient].resource only PDQmPatient
