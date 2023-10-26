@@ -1,0 +1,16 @@
+{
+    "package-id" : "ihe.iti.pdqm",
+    "version" : "3.0-current",
+    "path" : "https://profiles.ihe.net/ITI/PDQm/3.0.0/",
+    "mode" : "working",
+    "status" : "ballot",
+    "sequence" : "Publication",
+    "desc" : "PDQm updated with $match operation for Public Comment",
+    "descmd" : "@publication_request_description.md",
+    "changes" : "issues.html",
+    "first" : false,
+    "title" : "Patient Demographics Query for mobile",
+    "ci-build" : "https://build.fhir.org/ig/IHE/ITI.PDQm/",
+    "category" : "Administration",
+    "introduction" : "The Patient Demographics Query for Mobile (PDQm) Profile defines a lightweight RESTful interface to a patient demographics supplier leveraging technologies readily available to mobile applications and lightweight browser based applications."
+  }
