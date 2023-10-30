@@ -1,4 +1,4 @@
-/input/images/Thumbs.db
+*.db
 temp
 template
 output
@@ -6,3 +6,7 @@ input-cache
 fsh-generated
 .vscode
 www
+/_genonce.sh
+/_gencontinuous.bat
+/_gencontinuous.sh
+/_genonce.bat
