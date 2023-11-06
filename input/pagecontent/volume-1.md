@@ -230,7 +230,7 @@ This process flow is aligned most closely with use case #4.
 
 ## 1:38.5 PDQm Security Considerations
 
-Actors are expected to follow the recommendations and requirements found in [ITI TF-2: Appendix Z.8 “Mobile Security Considerations”](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations). 
+Actors are expected to follow the recommendations and requirements found in [ITI TF-2: Appendix Z.8 "Mobile Security Considerations"](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.8-mobile-security-considerations). 
 
 Actors have requirements in the [ITI-78] [Security Considerations Section](ITI-78.html#23785-security-considerations) and the [ITI-119] [Security Considerations Section](ITI-119.html#231195-security-considerations) including requirements for Audit Logging when grouped with [ATNA Secure Node or Secure Application](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), and Authentication and Authorization when grouped with [Internet User Authorization (IUA)](https://profiles.ihe.net/ITI/IUA/index.html) Actors.
 
