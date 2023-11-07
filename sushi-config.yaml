@@ -4,7 +4,7 @@ version: 3.0.0-ballot
 releaseLabel: ballot
 #releaseLabel: ci-build
 #releaseLabel: Trial-Implementation
-#date: 2022-03-01
+date: 2023-11-17
 name: IHE_PDQm
 title: "Patient Demographics Query for mobile (PDQm)"
 status: active
