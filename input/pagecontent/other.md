@@ -5,7 +5,7 @@ This section contains modifications to other IHE publications and profiles, and 
 ## IHE Technical Frameworks General Introduction Appendix A – Actor Summary Definitions
 
 |------------------------------------------------|
-| Editor, Add the following new or modified Actors definition in the [IHE Technical Frameworks General Introduction Appendix A](https://profiles.ihe.net/GeneralIntro/ch-A.html): |
+| Editor, Add the following new or modified Actors definition to the [IHE Technical Frameworks General Introduction Appendix A](https://profiles.ihe.net/GeneralIntro/ch-A.html): |
 {:.grid .bg-info}
 
 | Actor                         | Definition                                                                                |
