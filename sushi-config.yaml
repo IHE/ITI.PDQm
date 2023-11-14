@@ -76,6 +76,9 @@ pages:
   other.md:
     title: Changes to other IHE Specifications
     generation: markdown
+  download.md:
+    title: Download and Analysis
+    generation: markdown
 
 menu:
   PDQm Home: index.html
