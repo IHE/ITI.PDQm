@@ -1,6 +1,8 @@
 <div markdown="1" class="stu-note">
 
-## Significant changes from PDQm, Rev 2.4:
+## Significant Changes
+
+### Significant changes from PDQm, Rev 2.4:
 - changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
   - changes to RESTful type, and query subtype
 - Introduced [ITI-119 Patient Demographics Match](ITI-119.html) as an alternative to [ITI-78 Mobile Patient Demographics Query](ITI-78.html)
@@ -11,15 +13,17 @@
   - Resolves [PDQm_issue_86](https://github.com/IHE/ITI.PDQm/issues/86)
 - Added Use Case #4 - Patient Demographics Query by Known Business Identifier
 
-## Significant changes from PDQm, Rev 2.2:
+### Significant changes from PDQm, Rev 2.2:
 - FHIR Implementation Guide instead of [pdf - Rev. 2.2](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf)
 - Patient is now profiled to forbid modifier extensions
 - AuditEvent is fully profiled using structureDefinition with examples
 
-## Issues
+##Issues
+
+### Submit an Issue
 
 IHE welcomes [New Issues](https://github.com/IHE/ITI.PDQm/issues/new/choose) from the GitHub community. 
-For those without GitHub access, issues may be submitted to the [Public Comment form](https://www.ihe.net/resources/public_comment/).
+For those without GitHub access, issues may be submitted to the [Public Comment form](https://www.ihe.net/ITI_Public_Comments/).
 
 As issues are submitted they will be managed on the [PDQm GitHub Issues](https://github.com/IHE/ITI.PDQm/issues), where discussion and workarounds may be found. These issues, when critical, will be processed using the normal [IHE Change Proposal](https://wiki.ihe.net/index.php/Category:CPs) management and balloting. 
 It is important to note that as soon as a Change Proposal is approved, it carries the same weight as a published Implementation Guide (i.e., it is testable at an [IHE Connectathon](https://www.ihe.net/participate/connectathon/) from the time it is approved, even if it will not be integrated until several months later).
