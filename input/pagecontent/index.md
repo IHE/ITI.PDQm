@@ -26,12 +26,12 @@ This guide is organized into the following sections:
    - [3.119 Patient Demographics Match \[ITI-119\]](ITI-119.html)
 
 - Other
-   - [Test Plan](testplan.html)
    - [Changes to Other IHE Specifications](other.html)
-   - [Download and Analysis](download.html) 
+   - [Download and Analysis](download.html)
+   - [Test Plan](testplan.html)   
 
-See also the [table of contents](toc.html) and
-the index of [artifacts](artifacts.html) defined as part of this implementation guide.
+See also the [Table of Contents](toc.html) and
+the index of [Artifacts](artifacts.html) defined as part of this implementation guide.
 
 ### Conformance Expectations
 
