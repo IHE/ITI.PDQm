@@ -71,7 +71,7 @@ pages:
     title: PDQm Test Plan
     generation: markdown
   issues.md:
-    title: Significant Changes & Issues
+    title: Significant Changes and Issues
     generation: markdown
   other.md:
     title: Changes to other IHE Specifications
@@ -91,7 +91,7 @@ menu:
     "Mobile Patient Demographics Query [ITI-78]": ITI-78.html
     "Patient Demographics Match [ITI-119]": ITI-119.html
   Artifacts: artifacts.html
-  Other: other.html
-    Changes to Other IHE Specifications: other.md
-    Download and Analysis: download.md
+  Other:
+    Changes to Other IHE Specifications: other.html
+    Download and Analysis: download.html
     Test Plan: testplan.html
