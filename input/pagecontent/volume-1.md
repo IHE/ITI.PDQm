@@ -78,11 +78,11 @@ Table 1:38.1-1: PDQm - Profile Actors and Transactions
 </table>
 
 
-Note 1: The Mobile Patient Demographics Query [\[ITI-78\]](ITI-78.html) and Patient Demographics Match [\[ITI-119\]](ITI-119.html) transactions correspond to the transactions used in the [PDQ](https://profiles.ihe.net/ITI/TF/Volume1/ch-8.html) and [PDQv3](https://profiles.ihe.net/ITI/TF/Volume1/ch-24.html) Profiles and provide similar functionality. 
+**Note 1:** The Mobile Patient Demographics Query [\[ITI-78\]](ITI-78.html) and Patient Demographics Match [\[ITI-119\]](ITI-119.html) transactions correspond to the transactions used in the [PDQ](https://profiles.ihe.net/ITI/TF/Volume1/ch-8.html) and [PDQv3](https://profiles.ihe.net/ITI/TF/Volume1/ch-24.html) Profiles and provide similar functionality. 
 There is no transaction which corresponds to the Patient Demographics and Visit Query [ITI-22].
 See [ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) for a mapping of query fields for PDQ, PDQv3, and PDQm transactions.
 
-Note 2: The Patient Demographics Consumer shall implement at least one of the Mobile Patient Demographics Query [ITI-78] or Patient Demographics Match [ITI-119] transactions. 
+**Note 2:** The Patient Demographics Consumer shall implement at least one of the Mobile Patient Demographics Query [ITI-78] or Patient Demographics Match [ITI-119] transactions. 
 
 ### 1:38.1.1 Actor Descriptions and Actor Profile Requirements
 
@@ -139,11 +139,11 @@ Cross-Profile Considerations describes some optional groupings in other related 
 
 ### 1:38.4.1 Concepts
 The PDQm Profile supports all of the use cases of PDQ while keeping the technology as lightweight as possible. Example uses include:
-*   Mobile devices used by physicians (for example: a mobile app for electronic patient charts) which need to establish patient context by scanning a bracelet,
-*	Web based EHR/EMR applications which wish to provide dynamic updates of patient demographic information such as a non-postback search, additional demographic detail, etc.
-*	A document source/consumer wishing to perform an operation in the IHE Mobile access to Health Documents (MHD) Profile, where patient ID in the appropriate patient ID domain needs to be resolved by the source/consumer,
-*	A health portal securely exposing demographics data to browser-based plugins,
-*	Medical devices which need to access patient demographic information.
+- Mobile devices used by physicians (for example: a mobile app for electronic patient charts) which need to establish patient context by scanning a bracelet,
+-  Web based EHR/EMR applications which wish to provide dynamic updates of patient demographic information such as a non-postback search, additional demographic detail, etc.
+- A document source/consumer wishing to perform an operation in the IHE Mobile access to Health Documents (MHD) Profile, where patient ID in the appropriate patient ID domain needs to be resolved by the source/consumer,
+- A health portal securely exposing demographics data to browser-based plugins,
+- Medical devices which need to access patient demographic information.
 Each of these specific use cases is generalized into two general use cases. The first is one where a system must obtain patient demographics to populate a user interface via a known demographic field (such as bracelet ID) or search parameters provided by a user. The second is as a prerequisite step whereby an application must obtain an identifier from another patient ID domain in order to complete another workflow.
 This profile is applicable for use by any application which requires access to patient demographics where lightweight REST/JSON or REST/XML is a more suitable technology than traditional PDQ or PDQv3 Profiles.
 
@@ -155,10 +155,10 @@ In this use case an admitted patient is assigned a bed and may not be able to pr
 ##### 1:38.4.2.1.1 Patient Information Entering at Bedside Use Case Description
 An admitted patient is assigned to a bed. The patient may or may not be able to provide positive ID information. The nurse needs to enter patient identity information into some bedside equipment to establish the relationship of the assigned bed to the patient. The equipment issues a query for a patient pick list to a patient demographics supplier that provides data for a patient pick list. Search criteria entered by the nurse might include one or more of the following:
 
-*	Partial or complete patient name (printed on the patient record or told by the patient)
-*	Patient ID (this may be obtained from printed barcode, a bed-side chart, etc.)
-*	Patient ID entry or scan.
-*	Date of birth / age range
+- Partial or complete patient name (printed on the patient record or told by the patient)
+- Patient ID (this may be obtained from printed barcode, a bed-side chart, etc.)
+- Patient ID entry or scan
+- Date of birth / age range
 
 The system returns a list of patients showing Patient ID, full name, age, sex and displays the list to the nurse. The nurse then selects the appropriate record to enter the patient identity information into the bedside equipment application.
 
@@ -197,10 +197,10 @@ The [FHIR Patient Resource Page]({{site.data.fhir.path}}patient.html#match) has 
 
 The Mobile Patient Demographics Match [ITI-119] transaction tends to be appropriate when:
 
-* The Patient Demographics Consumer wishes to rely on the Patient Demographics Supplier's MPI based matching algorithm. 
-* The Patient Demographics Consumer has low confidence that its demographics are exactly matched to those of the Patient Demographics Supplier. 
-* The Patient Demographics Consumer wants to only encounter high quality matches to its query. 
-* The Patient Demographics Consumer might know a business identifier for the patient, but it does not have full confidence in that identifier, such that additional logic to confirm demographics is desired. 
+- The Patient Demographics Consumer wishes to rely on the Patient Demographics Supplier's MPI based matching algorithm. 
+- The Patient Demographics Consumer has low confidence that its demographics are exactly matched to those of the Patient Demographics Supplier. 
+- The Patient Demographics Consumer wants to only encounter high quality matches to its query. 
+- The Patient Demographics Consumer might know a business identifier for the patient, but it does not have full confidence in that identifier, such that additional logic to confirm demographics is desired. 
 
 This process flow is aligned most closely with use cases #1 and #2. 
 
@@ -214,11 +214,11 @@ This process flow is aligned most closely with use cases #1 and #2.
 
 The Mobile Patient Demographics Query [ITI-78] transaction tends to be appropriate when:
 
-* The Patient Demographics Consumer is looking to search for a group of different patients that have a property in common, such as a specific age range (search).
-* The Patient Demographics Consumer wishes to present its user with a list of patients based on literal search parameter matching (search).
-* The Patient Demographics Consumer has a high degree of confidence that the demographics it is searching on should match those of the Patient Demographics Supplier (search). 
-* The Patient Demographics Consumer knows a business identifier unique to the Patient, such as an MRN (search). Note that searching only by identifier might be unsafe if the identifier assigning authority does not protect against corrupt or mistyped identifiers by including a checksum or similar mechanism.
-* The Patient Demographics Consumer already knows the FHIR Resource ID of the needed Patient Resource, and needs only to retrieve the full Patient information (read).
+- The Patient Demographics Consumer is looking to search for a group of different patients that have a property in common, such as a specific age range (search).
+- The Patient Demographics Consumer wishes to present its user with a list of patients based on literal search parameter matching (search).
+- The Patient Demographics Consumer has a high degree of confidence that the demographics it is searching on should match those of the Patient Demographics Supplier (search). 
+- The Patient Demographics Consumer knows a business identifier unique to the Patient, such as an MRN (search). Note that searching only by identifier might be unsafe if the identifier assigning authority does not protect against corrupt or mistyped identifiers by including a checksum or similar mechanism.
+- The Patient Demographics Consumer already knows the FHIR Resource ID of the needed Patient Resource, and needs only to retrieve the full Patient information (read).
 
 This process flow is aligned most closely with use case #4.
 
