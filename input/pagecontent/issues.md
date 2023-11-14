@@ -18,7 +18,7 @@
 - Patient is now profiled to forbid modifier extensions
 - AuditEvent is fully profiled using structureDefinition with examples
 
-##Issues
+## Issues
 
 ### Submit an Issue
 
