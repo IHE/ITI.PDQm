@@ -14,7 +14,7 @@
 - Added Use Case #4 - Patient Demographics Query by Known Business Identifier
 
 ### Significant changes from PDQm, Rev 2.2:
-- FHIR Implementation Guide instead of [pdf - Rev. 2.2](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm.pdf)
+- FHIR Implementation Guide instead of [PDF - Rev. 2.2](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm_Rev2-2_TI_2020-08-28.pdf)
 - Patient is now profiled to forbid modifier extensions
 - AuditEvent is fully profiled using structureDefinition with examples
 
