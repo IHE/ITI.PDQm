@@ -9,5 +9,5 @@ Usage: #example
 * link[0].url = "test.fhir.net/R4/fhir/Patient?family=Schmidt"
 * total = 1
 * timestamp = 2023-09-25T15:42:00Z
-* entry[0].fullUrl = "http://example.org/DocumentReference/ex-DocumentReferenceMinimal"
+* entry[0].fullUrl = "http://example.org/Patient/ex-patient"
 * entry[0].resource = ex-patient
