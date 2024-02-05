@@ -6,6 +6,6 @@ A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the
 # $match bundles do not have a search string
 No types could be determined from the search string, so the types can''t be checked
 
-#Draft Code Systems
+# Draft Code Systems
 Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/audit-entity-type|0.5.0
 Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/object-role|0.5.0
