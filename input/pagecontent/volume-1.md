@@ -71,7 +71,7 @@ Table 1:38.1-1: PDQm - Profile Actors and Transactions
             <a href='ITI-119.html'>Patient Demographics Match [ITI-119]</a>
         </td>
         <td align='center'>
-            R
+            O
         </td>
     </tr>                        
 </tbody>
@@ -123,9 +123,14 @@ Options that MAY be selected for each actor in this profile, if any, are listed 
 
 Actor	| Option Name |	Reference
 ---|---|---
-Patient Demographics Consumer |	none |	-
-Patient Demographics Supplier |	none |	-
+Patient Demographics Consumer |	Patient Search | 1:38.2.1
+Patient Demographics Consumer | Match Operation | 1:38.2.2
+Patient Demographics Supplier |	Match Operation | 1:38.2.2
 {:.grid}
+
+### 1:38.2.1 Patient Search Option
+
+### 1:38.2.2 Match Operation Option
 
 ## 1:38.3 PDQm Required Actor Grouping
 
