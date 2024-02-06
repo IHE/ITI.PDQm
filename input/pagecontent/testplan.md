@@ -11,8 +11,8 @@ PDQm specifies a query transaction between two actors. The transaction between a
 
 ### Patient Demographics Query for Mobile [[ITI-78]](ITI-78.html) 
 
-* If supported, Patient Demographics Consumer initiates the ITI-78 queries with various combinations of parameters, as supported.
-* Patient Demographics Supplier responds to the ITI-78 queries as appropriate.
+* If supported, the Patient Demographics Consumer initiates the ITI-78 queries with various combinations of parameters, as supported.
+* The Patient Demographics Supplier responds to the ITI-78 queries as appropriate.
 * The Patient Demographics Supplier SHALL be capable of filtering the response search set by the following parameters individually, based on the content of the Patient resources it stores (it need not be capable of filtering on parameters where the corresponding data is never present in Patient Resources it might return):
   * `_id`
   * `active`
@@ -34,8 +34,8 @@ PDQm specifies a query transaction between two actors. The transaction between a
 
 ### Patient Demographics Match [[ITI-119]](ITI-119.html) 
 
-* If supported, Patient Demographics Consumer initiates the ITI-119 operation with a Patient resource containing various demographics, as supported, and possibly also specifies the `onlyCertainMatches` and `count` parameters
-* Patient Demographics Supplier responds to the ITI-119 requests as appropriate 
+* If supported, the Patient Demographics Consumer initiates the ITI-119 operation with a Patient resource containing various demographics, as supported, and possibly also specifies the `onlyCertainMatches` and `count` parameters
+* If supported, the Patient Demographics Supplier responds to the ITI-119 requests as appropriate 
 * If supported, the Patient Demographics Consumer MAY initiate the ITI-119 transaction with a Patient resource containing various demographics, as supported. When prompted with such a request, the Patient Demographics Supplier SHALL be able to respond with the set of matching patients from its database. The methodology the Patient Demographics Supplier uses to determine matches is not specified by this profile. 
 * The Patient Demographics Supplier SHALL populate Patient entries in the response Bundle with a `search.score` between 0 and 1, where higher values indicate higher match quality. The method used to compute the score is otherwise not specified by this profile. 
 * The Patient Demographics Supplier SHALL populate Patient entries in the response Bundle with the [match-grade]({{site.data.fhir.path}}extension-match-grade.html) extension containing an [appropriate code]({{site.data.fhir.path}}valueset-match-grade.html) to describe the match quality. The method the Patient Demographics Supplier uses to assess the match grade is not specified by this profile. 

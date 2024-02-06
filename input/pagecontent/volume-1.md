@@ -88,15 +88,19 @@ See [ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M
 
 #### 1:38.1.1.1 Patient Demographics Consumer
 
-Two `requirements` CapabilityStatements are provided for the [Patient Demographics Consumer implementing Mobile Patient Demographics Query](CapabilityStatement-IHE.PDQm.PatientDemographicsConsumerQuery.html), which shows the query parameters available, and the [Patient Demographics Consumer implementing Patient Demographics Match](CapabilityStatement-IHE.PDQm.PatientDemographicsConsumerQuery.html).
+Two `requirements` CapabilityStatements are provided for the Patient Demographics Consumer. 
+The [Patient Demographics Consumer Implementing the Patient Search Option](CapabilityStatement-IHE.PDQm.PatientDemographicsConsumerQuery.html) statement shows the query parameters available and the requirements that need to be implemented by a Patient Demographics Consumer implementing the Patient Search Option. 
+The [Patient Demographics Consumer Implementing the Match Operation Option](CapabilityStatement-IHE.PDQm.PatientDemographicsConsumerMatch.html) describes support for the [PDQm $Match operation](OperationDefinition-PDQmMatch.html).
 
 #### 1:38.1.1.2 Patient Demographics Supplier
 
-A `requirements` CapabilityStatements is provided for the [Patient Demographics Supplier](CapabilityStatement-IHE.PDQm.PatientDemographicsSupplier.html) that shows the query parameters and operations to be supported.
+Two `requirements` CapabilityStatements are provided for the Patient Demographics Supplier.
+The [Patient Demographics Supplier](CapabilityStatement-IHE.PDQm.PatientDemographicsSupplier.html) statement shows the query parameters to be supported by all Patient Demographics Suppliers.
+The [Patient Demographics Supplier Implementing Match Operation Option](CapabilityStatement-IHE.PDQm.PatientDemographicsSupplierMatch.html) shows the additional capabilities of a Patient Demographics Supplier that implements the Match Operation Option, including support for the [PDQm $Match operation](OperationDefinition-PDQmMatch.html).
 
 The Patient Demographics Supplier SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
 All supported search parameters and search methods (GET, POST) SHALL be specified. The [search parameters defined in \[ITI-78\]](ITI-78.html#23784121-search-parameters) SHALL be supported, other parameters MAY be supported.
-The [PDQm $Match Operation](OperationDefinition-PDQmMatch.html) SHALL also be supported. 
+The [PDQm $Match Operation](OperationDefinition-PDQmMatch.html) SHALL also be supported if the Match Operation Option is declared. 
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.
 
@@ -129,8 +133,14 @@ Patient Demographics Supplier |	Match Operation | 1:38.2.2
 {:.grid}
 
 ### 1:38.2.1 Patient Search Option
+The Patient Search Option is declared by Patient Demographics Consumers that search for patient information using the FHIR Search operation. 
+This option uses the [Mobile Patient Demographics Query transaction](ITI-78.html).
+The Patient Demographics Supplier is REQUIRED to support the Mobile Patient Demographics Query transaction, and thus there is no Patient Search Option on the Patient Demographics Supplier.  
 
 ### 1:38.2.2 Match Operation Option
+The Match Operation Option is declared by Patient Demographics Consumers that use, and Patient Demographics Suppliers that support locating patient information using the [PDQm $Match Operation](OperationDefinition-PDQmMatch.html). 
+
+Because this option is available for both the Patient Demographics Consumer and the Patient Demographics Supplier, Patient Demographics Consumers that implement the Match Operation Option but not the Patient Search Option can only interoperate with Patient Demographics Suppliers that implement the Match Operation Option. 
 
 ## 1:38.3 PDQm Required Actor Grouping
 

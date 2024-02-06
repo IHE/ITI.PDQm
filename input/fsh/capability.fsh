@@ -110,7 +110,7 @@ Mobile Patient Demographics Query [ITI-78]
 
 Instance: IHE.PDQm.PatientDemographicsSupplierMatch
 InstanceOf: CapabilityStatement
-Title: "PDQm Patient Demographics Supplier Actor implementing Match Operation Option"
+Title: "PDQm Patient Demographics Supplier Actor Implementing Match Operation Option"
 Usage: #definition
 * description = """
 The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtyStatement expresses the requirements that SHALL be provided. This capability statement implements the Match Operation Option.
