@@ -34,21 +34,21 @@ and to constring the output parameters to use the [PDQm Patient Profile](Structu
   * use = #in
   * min = 0
   * max = "1"
-  * documentation = "If there are multiple potential matches, then the match should not return the results with this flag set to true. When false, the server may return multiple results with each result graded accordingly."
+  * documentation = "If there are multiple potential matches, then the match SHOULD not return the results with this flag set to true. When false, the server MAY return multiple results with each result graded accordingly."
   * type = #boolean
 * parameter[+]
   * name = #count
   * use = #in
   * min = 0
   * max = "1"
-  * documentation = "The maximum number of records to return. If no value is provided, the server decides how many matches to return. Note that clients should be careful when using this, as it may prevent probable - and valid - matches from being returned."
+  * documentation = "The maximum number of records to return. If no value is provided, the server decides how many matches to return. Note that clients SHOULD be careful when using this, as it MAY prevent probable - and valid - matches from being returned."
   * type = #integer
 * parameter[+]
   * name = #return
   * use = #out
   * min = 1
   * max = "1"
-  * documentation = "A bundle contain a set of Patient records that represent possible matches, optionally it may also contain an OperationOutcome with further information about the search results (such as warnings or information messages, such as a count of records that were close but eliminated) If the operation was unsuccessful, then an OperationOutcome may be returned along with a BadRequest status Code (e.g. security issue, or insufficient properties in patient fragment - check against profile).\n\nNote: as this is the only out parameter, it is a resource, and it has the name 'return', the result of this operation is returned directly as a resource"
+  * documentation = "A bundle contain a set of Patient records that represent possible matches, optionally it MAY also contain an OperationOutcome with further information about the search results (such as warnings or information messages, such as a count of records that were close but eliminated) If the operation was unsuccessful, then an OperationOutcome MAY be returned along with a BadRequest status Code (e.g. security issue, or insufficient properties in patient fragment - check against profile).\n\nNote: as this is the only out parameter, it is a resource, and it has the name 'return', the result of this operation is returned directly as a resource"
   * type = #Bundle
 
 Profile: MatchParametersIn
@@ -58,7 +58,7 @@ Title: "PDQm Match Input Parameters Profile"
 Description: """
 The PDQm Match Input Parameters Profile describes the Parameters Resource that is to be posted to the $match endpoint when invoking ITI-119.
 This profile is consistent with the expections of the [Patient-match operation in FHIR core](http://hl7.org/fhir/R4/patient-operation-match.html),
-except the input resource shall be an instance of the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInputPatient.html).
+except the input resource SHALL be an instance of the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInputPatient.html).
 
 Note that the only required parameter is the Patient Resource. When only the Patient is supplied, it can be POSTed directly to the $match endpoint
 without being wrapped in a Parameters Resource, as long as it conforms to the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInputPatient.html).
@@ -70,7 +70,7 @@ without being wrapped in a Parameters Resource, as long as it conforms to the [P
 * parameter ^slicing.discriminator.type = #value
 * parameter ^slicing.discriminator.path = "name"
 * parameter ^slicing.rules = #closed
-* parameter ^slicing.description = "Parameters should match those of the $match input, with PDQm Profile Restrictions"
+* parameter ^slicing.description = "Parameters SHOULD match those of the $match input, with PDQm Profile Restrictions"
 * parameter ^slicing.ordered = false
 
 * parameter contains resource 1..1
@@ -103,9 +103,9 @@ Parent: Bundle
 Id: IHE.PDQm.MatchParametersOut
 Title: "PDQm Match Output Bundle Profile"
 Description: """
-The PDQm Match Output Bundle Profile describes the Bundle that shall be returned in response to an ITI-119 transaction.
+The PDQm Match Output Bundle Profile describes the Bundle that SHALL be returned in response to an ITI-119 transaction.
 This profile is consistent with the expections of the [Patient-match operation in FHIR core](http://hl7.org/fhir/R4/patient-operation-match.html),
-except the Patient Resources shall be instances of the [PDQm Patient Profile](StructureDefinition-IHE.PDQm.Patient.html).
+except the Patient Resources SHALL be instances of the [PDQm Patient Profile](StructureDefinition-IHE.PDQm.Patient.html).
 
 Since the response to the $match Operation contains only one parameter, the Bundle resource is returned directly rather
 than inside of a Parameters resource. 
@@ -117,7 +117,7 @@ than inside of a Parameters resource.
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #closed
-* entry ^slicing.description = "Bundle.entry should consist of only IHE.PDQm.Patient and OperationOutcome"
+* entry ^slicing.description = "Bundle.entry SHOULD consist of only IHE.PDQm.Patient and OperationOutcome"
 * entry ^slicing.ordered = false
 
 * entry
@@ -141,8 +141,8 @@ Parent: Patient
 Id: IHE.PDQm.MatchInputPatient
 Title: "PDQm Patient Profile for $match Input"
 Description: """
-The PDQm Patient Profile for $match Input shall be provided as input to the ITI-119 transaction. 
-- While it is not required that the input to $match be a valid FHIR instance, it is recommended to supply as many elements as possible to facilitate matching.
+The PDQm Patient Profile for $match Input SHALL be provided as input to the ITI-119 transaction. 
+- While it is not required that the input to $match be a valid FHIR instance, it is RECOMMENDED to supply as many elements as possible to facilitate matching.
 - modifierExtension and implicitRules SHALL not be specified.
 - The patient-mothersMaidenName extension is available to hold the mother's maiden name
 """

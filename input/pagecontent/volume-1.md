@@ -82,7 +82,7 @@ Table 1:38.1-1: PDQm - Profile Actors and Transactions
 There is no transaction which corresponds to the Patient Demographics and Visit Query [ITI-22].
 See [ITI TF-2: Appendix M.4](https://profiles.ihe.net/ITI/TF/Volume2/ch-M.html#M.4) for a mapping of query fields for PDQ, PDQv3, and PDQm transactions.
 
-**Note 2:** The Patient Demographics Consumer shall implement at least one of the Mobile Patient Demographics Query [ITI-78] or Patient Demographics Match [ITI-119] transactions. 
+**Note 2:** The Patient Demographics Consumer SHALL implement at least one of the Mobile Patient Demographics Query [ITI-78] or Patient Demographics Match [ITI-119] transactions. 
 
 ### 1:38.1.1 Actor Descriptions and Actor Profile Requirements
 
@@ -94,9 +94,9 @@ Two `requirements` CapabilityStatements are provided for the [Patient Demographi
 
 A `requirements` CapabilityStatements is provided for the [Patient Demographics Supplier](CapabilityStatement-IHE.PDQm.PatientDemographicsSupplier.html) that shows the query parameters and operations to be supported.
 
-The Patient Demographics Supplier shall publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
-All supported search parameters and search methods (GET, POST) shall be specified. The [search parameters defined in \[ITI-78\]](ITI-78.html#23784121-search-parameters) shall be supported, other parameters may be supported.
-The [PDQm $Match Operation](OperationDefinition-PDQmMatch.html) shall also be supported. 
+The Patient Demographics Supplier SHALL publish an `instance` CapabilityStatement at the metadata endpoint following [ITI Appendix Z.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.3-capabilitystatement-resource) using the [FHIR capabilities interaction]({{site.data.fhir.path}}http.html#capabilities). 
+All supported search parameters and search methods (GET, POST) SHALL be specified. The [search parameters defined in \[ITI-78\]](ITI-78.html#23784121-search-parameters) SHALL be supported, other parameters MAY be supported.
+The [PDQm $Match Operation](OperationDefinition-PDQmMatch.html) SHALL also be supported. 
 
 This capabilities response will typically include all of the capabilities inclusive of all grouped actors and additional functionality.
 
@@ -117,7 +117,7 @@ For more details, see the detailed [transaction description](ITI-119.html).
 
 ## 1:38.2 PDQm Actor Options
 
-Options that may be selected for each actor in this profile, if any, are listed in Table 1:38.2-1. Dependencies between options when applicable are specified in notes.
+Options that MAY be selected for each actor in this profile, if any, are listed in Table 1:38.2-1. Dependencies between options when applicable are specified in notes.
 
 **Table 1:38.2-1: Patient Demographics Query for Mobile - Actors and Options**
 
@@ -131,9 +131,9 @@ Patient Demographics Supplier |	none |	-
 
 No required groupings.
 
-The Security Considerations page describes some optional groupings that may be of interest for security considerations.
+The Security Considerations page describes some OPTIONAL groupings that MAY be of interest for security considerations.
 
-Cross-Profile Considerations describes some optional groupings in other related profiles.
+Cross-Profile Considerations describes some OPTIONAL groupings in other related profiles.
 
 ## 1:38.4 PDQm Overview
 
@@ -156,7 +156,7 @@ In this use case an admitted patient is assigned a bed and may not be able to pr
 An admitted patient is assigned to a bed. The patient may or may not be able to provide positive ID information. The nurse needs to enter patient identity information into some bedside equipment to establish the relationship of the assigned bed to the patient. The equipment issues a query for a patient pick list to a patient demographics supplier that provides data for a patient pick list. Search criteria entered by the nurse might include one or more of the following:
 
 - Partial or complete patient name (printed on the patient record or told by the patient)
-- Patient ID (this may be obtained from printed barcode, a bed-side chart, etc.)
+- Patient ID (this might be obtained from printed barcode, a bed-side chart, etc.)
 - Patient ID entry or scan
 - Date of birth / age range
 
@@ -236,7 +236,7 @@ Actors have requirements in the [ITI-78] [Security Considerations Section](ITI-7
 
 ## 1:38.6 PDQm Cross-Profile Considerations
 
-When the PDQm Patient Demographics Supplier is grouped with actors in other IHE profiles that perform patient information reconciliation activities (e.g., the ADT Actor in the IHE Radiology Scheduled Workflow.b Profile), the Patient Demographics Supplier may use the updated information to respond to PDQm Queries. In addition, the Patient Demographics Query for Mobile Profile may play an integral workflow role in conjunction with other IHE profiles. A discussion of the various IHE profiles involved in patient identity management and how they relate to one another can be found in the [Enabling Document Sharing Health Information Exchange Using IHE Profiles White Paper](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html#5-patient-identity-management).
+When the PDQm Patient Demographics Supplier is grouped with actors in other IHE profiles that perform patient information reconciliation activities (e.g., the ADT Actor in the IHE Radiology Scheduled Workflow.b Profile), the Patient Demographics Supplier MAY use the updated information to respond to PDQm Queries. In addition, the Patient Demographics Query for Mobile Profile MAY play an integral workflow role in conjunction with other IHE profiles. A discussion of the various IHE profiles involved in patient identity management and how they relate to one another can be found in the [Enabling Document Sharing Health Information Exchange Using IHE Profiles White Paper](https://profiles.ihe.net/ITI/HIE-Whitepaper/index.html#5-patient-identity-management).
 
 Those systems that manage patient demographics could implement the Patient Demographics Supplier 
 in all three profiles: PDQ, PDQv3, and PDQm. In this way the Patient Demographics Consumer can 

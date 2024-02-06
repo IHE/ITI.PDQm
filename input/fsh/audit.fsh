@@ -14,9 +14,9 @@ Defines constraints on the AuditEvent (AuditMessage) Resource when a Patient Dem
 - add the ITI-78 as a subtype
 - client is Patient Demographics Consumer
 - server is Patient Demographics Supplier
-- entity slice for query are required
+- entity slice for query are REQUIRED
 - entity slice for transaction is available
-- entity for patient should be used when one patient is explicitly identified in the query parameters
+- entity for patient SHOULD be used when one patient is explicitly identified in the query parameters
 - source is the server
 """
 * modifierExtension 0..0
@@ -45,9 +45,9 @@ Defines constraints on the AuditEvent (AuditMessage) Resource for a Patient Demo
 - add the ITI-78 as a subtype
 - client is Patient Demographics Consumer
 - server is Patient Demographics Supplier
-- entity slice for query are required
+- entity slice for query are REQUIRED
 - entity slice for transaction is available
-- entity for patient should be used when one patient is explicitly identified in the query parameters
+- entity for patient SHOULD be used when one patient is explicitly identified in the query parameters
 - source is the client
 """
 * modifierExtension 0..0
@@ -75,9 +75,9 @@ Defines constraints on the AuditEvent (AuditMessage) Resource when a Patient Dem
 - add the ITI-119 as a subtype
 - client is Patient Demographics Consumer
 - server is Patient Demographics Supplier
-- entity slice for query are required
+- entity slice for query are REQUIRED
 - entity slice for transaction is available
-- entity for patient should be used when one patient is explicitly identified in the query parameters
+- entity for patient SHOULD be used when one patient is explicitly identified in the query parameters
 - source is the server
 """
 * modifierExtension 0..0
@@ -105,9 +105,9 @@ Defines constraints on the AuditEvent (AuditMessage) Resource for a Patient Demo
 - add the ITI-119 as a subtype
 - client is Patient Demographics Consumer
 - server is Patient Demographics Supplier
-- entity slice for query are required
+- entity slice for query are REQUIRED
 - entity slice for transaction is available
-- entity for patient should be used when one patient is explicitly identified in the query parameters
+- entity for patient SHOULD be used when one patient is explicitly identified in the query parameters
 - source is the client
 """
 * modifierExtension 0..0

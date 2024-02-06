@@ -5,13 +5,13 @@ InstanceOf: CapabilityStatement
 Title: "PDQm Patient Demographics Supplier Actor"
 Usage: #definition
 * description = """
-The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtyStatement expresses the requirements that shall be provided.
+The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtyStatement expresses the requirements that SHALL be provided.
 
 - Query against the FHIR endpoint to the Patient Resource endpoint
 - Using FHIR R4
-- Shall support both json or xml encoding
-- Should use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
-- [Search Parameters that shall be supported](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
+- SHALL support both json or xml encoding
+- SHOULD use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
+- [Search Parameters that SHALL be supported](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
   - _id
   - active
   - family
@@ -22,8 +22,8 @@ The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtySt
   - address
   - gender
   - mothersMaidenName
-- Shall support the PDQm $match operation
-- Shall return Patient Resources conforming to the PDQm Patient Profile
+- SHALL support the PDQm $match operation
+- SHALL return Patient Resources conforming to the PDQm Patient Profile
 """
 * name = "IHE_PDQM_PATIENT_DEMOGRAPHICS_SUPPLIER"
 * title = "IHE PDQm Patient Demographics Supplier"
@@ -82,7 +82,7 @@ Mobile Patient Demographics Query [ITI-78] and Patient Demographics Match [ITI-1
     * searchParam[+]
       * name = "address"
       * type = #string
-      * documentation = "A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"
+      * documentation = "A server defined search that MAY match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"
     * searchParam[+]
       * name = "address-city"
       * type = #string
@@ -124,9 +124,9 @@ The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtySt
 
 - Query against the FHIR endpoint to the Patient Resource endpoint
 - Using FHIR R4
-- may request json or xml encoding
-- should use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
-- [Search Parameters that may be used](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
+- MAY request json or xml encoding
+- SHOULD use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
+- [Search Parameters that MAY be used](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
   - _id
   - active
   - family
@@ -194,7 +194,7 @@ Mobile Patient Demographics Query [ITI-78]
     * searchParam[+]
       * name = "address"
       * type = #string
-      * documentation = "A server defined search that may match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"
+      * documentation = "A server defined search that MAY match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"
     * searchParam[+]
       * name = "address-city"
       * type = #string
@@ -232,8 +232,8 @@ The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtySt
 - Invoke the $match operation on a FHIR endpoint
 - Using FHIR R4
 - Input and output parameters conform to the PDQm Profiles
-- may request json or xml encoding
-- should use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
+- MAY request json or xml encoding
+- SHOULD use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
 """
 * name = "IHE_PDQM_PATIENT_DEMOGRAPHICS_CONSUMER_ITI_119"
 * title = "IHE PDQm Patient Demographics Consumer Implementing ITI-119"
