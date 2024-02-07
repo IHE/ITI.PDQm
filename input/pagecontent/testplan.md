@@ -77,7 +77,7 @@ Unit testing this context entails testing a SUT with a simulator or validator to
 
 ## Integration Test Procedure (Interoperability Testing)
 
-Integration Testing in this context is where two SUT of paired actors test against each other. Integration testing is often limited by the capability of the client (Patient Demographics Consumer), which might support only a subset of the semantics required to be supported by the server (Patient Demographics Supplier). Full message semantics and failure-modes are generally more thoroughly exercised with unit (conformance) tests.
+Integration Testing in this context is where two SUT of paired actors test against each other. Integration testing is often limited by the capability of the client (Patient Demographics Consumer), which might support only a subset of the semantics REQUIRED to be supported by the server (Patient Demographics Supplier). Full message semantics and failure-modes are generally more thoroughly exercised with unit (conformance) tests.
 
 The tests listed below are defined in [Gazelle Master Model](https://gazelle.ihe.net/GMM) and are performed by systems testing PDQm at IHE Connectathons.
 

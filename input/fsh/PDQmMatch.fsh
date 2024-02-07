@@ -60,7 +60,7 @@ The PDQm Match Input Parameters Profile describes the Parameters Resource that i
 This profile is consistent with the expections of the [Patient-match operation in FHIR core](http://hl7.org/fhir/R4/patient-operation-match.html),
 except the input resource SHALL be an instance of the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInputPatient.html).
 
-Note that the only required parameter is the Patient Resource. When only the Patient is supplied, it can be POSTed directly to the $match endpoint
+Note that the only REQUIRED parameter is the Patient Resource. When only the Patient is supplied, it can be POSTed directly to the $match endpoint
 without being wrapped in a Parameters Resource, as long as it conforms to the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInputPatient.html).
 """
 
@@ -142,7 +142,7 @@ Id: IHE.PDQm.MatchInputPatient
 Title: "PDQm Patient Profile for $match Input"
 Description: """
 The PDQm Patient Profile for $match Input SHALL be provided as input to the ITI-119 transaction. 
-- While it is not required that the input to $match be a valid FHIR instance, it is RECOMMENDED to supply as many elements as possible to facilitate matching.
+- While it is not REQUIRED that the input to $match be a valid FHIR instance, it is RECOMMENDED to supply as many elements as possible to facilitate matching.
 - modifierExtension and implicitRules SHALL not be specified.
 - The patient-mothersMaidenName extension is available to hold the mother's maiden name
 """

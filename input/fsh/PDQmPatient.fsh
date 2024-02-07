@@ -27,7 +27,7 @@ SHALL be `urn:ietf:rfc:3986`.
 **Option 2**:  Populate `Patient.identifier.value` with a [Universally Unique Identifier](https://en.wikipedia.org/wiki/Universally_unique_identifier),
 including the `urn:uuid:` prefix. In this case, the corresponding value for `Patient.identifier.system` 
 SHALL be `urn:ietf:rfc:3986`. The UUID SHOULD be persisted within the FHIR resource so that subsequent accesses 
-return the same identifier, but it is not required in environments where doing so is not possible. 
+return the same identifier, but it is not REQUIRED in environments where doing so is not possible. 
 """
 
 * modifierExtension 0..0

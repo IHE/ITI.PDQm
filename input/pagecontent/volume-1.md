@@ -8,7 +8,7 @@ The following list provides a few examples of how PDQm might be leveraged by imp
 -   Mobile devices used by physicians (example bedside eCharts) which need to establish patient context by scanning a bracelet
 -   Web based EHR/EMR applications which wish to provide dynamic updates of patient demographic information such as a non-postback search,  additional demographic detail, etc.
 -   Any low resource application which exposes patient demographic search functionality
--   Any application using the MHD Profile to access documents may use PDQm to find an appropriate patient identifier
+-   Any application using the MHD Profile to access documents MAY use PDQm to find an appropriate patient identifier
 
 This implementation guide is intended to be fully compliant with the HL7 [FHIR](http://hl7.org/fhir/) specification, providing only use-case driven constraints to aid with interoperability, deterministic results, and compatibility with existing PDQ and PDQv3 Profiles.
 
@@ -144,7 +144,7 @@ Because this option is available for both the Patient Demographics Consumer and 
 
 ## 1:38.3 PDQm Required Actor Grouping
 
-No required groupings.
+No REQUIRED groupings.
 
 The Security Considerations page describes some OPTIONAL groupings that MAY be of interest for security considerations.
 
@@ -159,16 +159,16 @@ The PDQm Profile supports all of the use cases of PDQ while keeping the technolo
 - A document source/consumer wishing to perform an operation in the IHE Mobile access to Health Documents (MHD) Profile, where patient ID in the appropriate patient ID domain needs to be resolved by the source/consumer,
 - A health portal securely exposing demographics data to browser-based plugins,
 - Medical devices which need to access patient demographic information.
-Each of these specific use cases is generalized into two general use cases. The first is one where a system must obtain patient demographics to populate a user interface via a known demographic field (such as bracelet ID) or search parameters provided by a user. The second is as a prerequisite step whereby an application must obtain an identifier from another patient ID domain in order to complete another workflow.
+Each of these specific use cases is generalized into two general use cases. The first is one where a system needs to obtain patient demographics to populate a user interface via a known demographic field (such as bracelet ID) or search parameters provided by a user. The second is as a prerequisite step whereby an application needs to obtain an identifier from another patient ID domain in order to complete another workflow.
 This profile is applicable for use by any application which requires access to patient demographics where lightweight REST/JSON or REST/XML is a more suitable technology than traditional PDQ or PDQv3 Profiles.
 
 ### 1:38.4.2 Use Cases
 
 #### 1:38.4.2.1 Use Case #1: Patient Information Entering at Bedside
-In this use case an admitted patient is assigned a bed and may not be able to provide positive ID information. The nurse uses the PDQm Profile to establish patient context.
+In this use case an admitted patient is assigned a bed and might not be able to provide positive ID information. The nurse uses the PDQm Profile to establish patient context.
 
 ##### 1:38.4.2.1.1 Patient Information Entering at Bedside Use Case Description
-An admitted patient is assigned to a bed. The patient may or may not be able to provide positive ID information. The nurse needs to enter patient identity information into some bedside equipment to establish the relationship of the assigned bed to the patient. The equipment issues a query for a patient pick list to a patient demographics supplier that provides data for a patient pick list. Search criteria entered by the nurse might include one or more of the following:
+An admitted patient is assigned to a bed. The patient might or might not be able to provide positive ID information. The nurse needs to enter patient identity information into some bedside equipment to establish the relationship of the assigned bed to the patient. The equipment issues a query for a patient pick list to a patient demographics supplier that provides data for a patient pick list. Search criteria entered by the nurse might include one or more of the following:
 
 - Partial or complete patient name (printed on the patient record or told by the patient)
 - Patient ID (this might be obtained from printed barcode, a bed-side chart, etc.)
@@ -231,7 +231,7 @@ The Mobile Patient Demographics Query [ITI-78] transaction tends to be appropria
 
 - The Patient Demographics Consumer is looking to search for a group of different patients that have a property in common, such as a specific age range (search).
 - The Patient Demographics Consumer wishes to present its user with a list of patients based on literal search parameter matching (search).
-- The Patient Demographics Consumer has a high degree of confidence that the demographics it is searching on should match those of the Patient Demographics Supplier (search). 
+- The Patient Demographics Consumer has a high degree of confidence that the demographics it is searching on will match those of the Patient Demographics Supplier (search). 
 - The Patient Demographics Consumer knows a business identifier unique to the Patient, such as an MRN (search). Note that searching only by identifier might be unsafe if the identifier assigning authority does not protect against corrupt or mistyped identifiers by including a checksum or similar mechanism.
 - The Patient Demographics Consumer already knows the FHIR Resource ID of the needed Patient Resource, and needs only to retrieve the full Patient information (read).
 
