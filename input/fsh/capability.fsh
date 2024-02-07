@@ -216,10 +216,14 @@ Mobile Patient Demographics Query [ITI-78] and Patient Demographics Match [ITI-1
       * definition = "http://hl7.org/fhir/SearchParameter/patient-extensions-Patient-mothersMaidenName"
       * type = #string
       * documentation = "Mother's maiden (unmarried) name, commonly collected to help verify patient identity."
+    * operation
+      * name = "match"
+      * definition = Canonical(PDQmMatch)
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #SHALL
+      * documentation = """Implementation SHALL conform to [ITI-119](ITI-119.html)"""   
   * interaction.code = #search-system
-  * operation
-    * name = "PDQm $Match"
-    * definition = Canonical(PDQmMatch)
+
 
 
 Instance: IHE.PDQm.PatientDemographicsConsumerQuery
@@ -362,5 +366,8 @@ The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtySt
     * supportedProfile[+] = Canonical(IHE.PDQm.Patient)
     * documentation = "Patient Demographics Match [ITI-119]"
     * operation
-      * name = "PDQm $Match"
+      * name = "match"
       * definition = Canonical(PDQmMatch)
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #SHALL
+      * documentation = """Implementation SHALL conform to [ITI-119](ITI-119.html)"""   
