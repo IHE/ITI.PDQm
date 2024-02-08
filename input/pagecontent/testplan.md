@@ -11,8 +11,13 @@ PDQm specifies a query transaction between two actors. The transaction between a
 
 ### Patient Demographics Query for Mobile [[ITI-78]](ITI-78.html) 
 
-* If supported, the Patient Demographics Consumer initiates the ITI-78 queries with various combinations of parameters, as supported.
-* The Patient Demographics Supplier responds to the ITI-78 queries as appropriate.
+#### Patient Demographics Consumer
+* The Patient Demographics Consumer only supports the ITI-78 transaction when the Patient Search Option is declared. See tests under the Patient Search Option below.
+
+#### Patient Demographics Supplier
+* ITI-78 is REQUIRED for all Patient Demographics Suppliers, and thus these these apply to all Patient Demographics Suppliers. 
+
+* The Patient Demographics Supplier SHALL be able to respond with a set of matching patients from its database.
 * The Patient Demographics Supplier SHALL be capable of filtering the response search set by the following parameters individually, based on the content of the Patient resources it stores (it need not be capable of filtering on parameters where the corresponding data is never present in Patient Resources it might return):
   * `_id`
   * `active`
@@ -31,22 +36,58 @@ PDQm specifies a query transaction between two actors. The transaction between a
 * The Patient Demographics Supplier SHALL be capable of filtering the response search set by the following combinations of search parameters:
   * `family` and `gender`
   * `birthdate` and `family`
-
-### Patient Demographics Match [[ITI-119]](ITI-119.html) 
-
-* If supported, the Patient Demographics Consumer initiates the ITI-119 operation with a Patient resource containing various demographics, as supported, and possibly also specifies the `onlyCertainMatches` and `count` parameters
-* If supported, the Patient Demographics Supplier responds to the ITI-119 requests as appropriate 
-* If supported, the Patient Demographics Consumer MAY initiate the ITI-119 transaction with a Patient resource containing various demographics, as supported. When prompted with such a request, the Patient Demographics Supplier SHALL be able to respond with the set of matching patients from its database. The methodology the Patient Demographics Supplier uses to determine matches is not specified by this profile. 
-* The Patient Demographics Supplier SHALL populate Patient entries in the response Bundle with a `search.score` between 0 and 1, where higher values indicate higher match quality. The method used to compute the score is otherwise not specified by this profile. 
-* The Patient Demographics Supplier SHALL populate Patient entries in the response Bundle with the [match-grade]({{site.data.fhir.path}}extension-match-grade.html) extension containing an [appropriate code]({{site.data.fhir.path}}valueset-match-grade.html) to describe the match quality. The method the Patient Demographics Supplier uses to assess the match grade is not specified by this profile. 
-* The Patient Demographics Consumer MAY specify the `onlyCertainMatches` parameter in the request message. In response, the Patient Demographics Supplier SHALL include only results for which the `match-grade` is `certain`. 
-* The Patient Demographics Consumer MAY specify the `count` parameter in the request message. In response, the Patient Demographics Supplier SHALL include no more than `count` Patients in the response. 
-* When the request message does not match any Patient records in the Patient Demographics Supplier, and no error is encountered when performing the search, then the Patient Demographics Supplier SHALL respond with `HTTP 200 (OK)`. The response Bundle SHALL not contain any Patient entries, and any OperationOutcome entries SHALL not have `fatal` or `error` severity. 
-* When the `count` and `onlyCertainMatches` parameters are not used, the Patient Demographics Consumer MAY invoke the ITI-119 transaction using either a raw Patient Resource, or a Parameters Resource containing a Patient Resource. The Patient Demographics Supplier SHALL be capable of handling both request formats in the same way.  
+* All Patient Resources returned by the Patient Demographics Supplier SHALL conform to the [PDQm Patient Profile](StructureDefinition-IHE.PDQm.Patient.html).
+* The Patient Demographics Supplier SHALL be able to return the response in either JSON or XML format, as requested in the Accept HTTP header. 
 
 ### Options 
 
-* None
+#### Patient Search Option
+
+##### Patient Demographics Consumer
+* The Patient Demographics Consumer SHALL be able to initiate the ITI-78 queries with various search parameters, as supported.
+* The Patient Demographics Consumer SHALL be able to process a successful response containing a single Patient which conforms to the [PDQm Patient Profile](StructureDefinition-IHE.PDQm.Patient.html) in some way meaningful to the application. 
+* The Patient Demographics Consumer SHALL be able to process a successful response containing multiple Patient Resources which all conform to the PDQm Patient Profile. It MAY treat this as a failure when it requires a unique result, but it SHALL handle the response gracefully (any error reported should demonstrate it recognizes the result, and, for example, did not crash). 
+* The Patient Demographics Consumer SHALL be able to process a successful response containing no results. It SHALL handle the response gracefully (any error reported should demonstrate that it recognizes the result, and, for example, did not crash). 
+* The Patient Demographics Consumer SHALL be able to gracefully (ie, without crashing) handle a response that contains an HTTP status code in the 4xx to 5xx range. 
+* The Patient Demographics Consumer SHALL be able to gracefully (ie, without crashing) handle a response that contains a single OperationOutcome outside of a Bundle with `error` or `fatal` severity. 
+* The Patient Demographics Consumer SHALL be able to gracefully (ie, without crashing) handle a response that contains one or more OperationOutcomes inside of a Bundle with at least one having `error` or `fatal` severity. Such a response SHOULD be treated as an error response, even if it also contains matching results. 
+* The Patient Demographics Consumer SHALL be able to gracefully (ie, without crashing) handle a response that contains one or more OperationOutcomes with `warning` severity (but where none have `error` or `fatal` severity). It MAY treat such a response as successful, failed, or some indeterminate state, as is appropriate for its needs. 
+* The Patient Demographics Consumer SHALL be able to handle a response that contains one or more OperationOutcomes with `information` severity (but where none have `warning`, `fatal`, or `error` severity). It SHALL treat the response the same as a successful response, but it MAY report the outcome in its result. 
+* The Patient Demographics Consumer SHALL be able to handle a response that contains one or more Patient resources which violate the PDQm Patient Profile. It MAY accept the response as successful, reject as failed, or perform some other indeterminate action, but it SHALL do so gracefully (ie, without crashing). 
+* The Patient Demographics Consumer SHALL be able to handle a response that contains unknown extension elements on any resource. Such extension elements SHALL NOT cause the Patient Demographics Consumer to fail to process the response. 
+* The Patient Demographics Consumer SHALL be able to handle a successful response that contains an unknown modifierExtension. When processing the response, it SHALL do so according to the [base FHIR specification of how to handle unknown modifier extensions]({{site.data.fhir.path}}extensibility.html#modifierExtension). 
+
+#### Match Operation Option
+
+Tests for this option involve testing the Patient Demographics Match [[ITI-119]](ITI-119.html) transaction.
+
+##### Patient Demographics Consumer
+* The Patient Demographics Consumer can initiate the ITI-119 operation with a Patient resource containing various demographics, as supported, and which conforms to the [PDQm Patient Profile for $match Input](StructureDefinition-IHE.PDQm.MatchInputPatient.html). It MAY also specify the `onlyCertainMatches` and `count` parameters.
+* The Patient Demographics Consumer SHALL be able to process a successful response containing a single Patient which conforms to the [PDQm Patient Profile](StructureDefinition-IHE.PDQm.Patient.html) in some way meaningful to the application. 
+* The Patient Demographics Consumer SHALL be able to process a successful response containing multiple Patient Resources which all conform to the PDQm Patient Profile. It MAY treat this as a failure if it submitted the request with `onlyCertainMatches=true`, but it SHALL handle the response gracefully (any error reported should demonstrate it recognizes the result, and, for example, did not crash). If it did not specify `onlyCertainMatches=true` in the request, then it SHALL handle multiple results as successful in some way meaningful to the application.
+* The Patient Demographics Consumer SHALL be able to process a successful response containing no results. It SHALL handle the response gracefully (any error reported should demonstrate that it recognizes the result, and, for example, did not crash). 
+* The Patient Demographics Consumer SHALL be able to gracefully (ie, without crashing) handle a response that contains an HTTP status code in the 4xx to 5xx range. 
+* The Patient Demographics Consumer SHALL be able to gracefully (ie, without crashing) handle a response that contains a single OperationOutcome outside of a Bundle with `error` or `fatal` severity. 
+* The Patient Demographics Consumer SHALL be able to gracefully (ie, without crashing) handle a response that contains one or more OperationOutcomes inside of a Bundle with at least one having `error` or `fatal` severity. Such a response SHOULD be treated as an error response, even if it also contains matching results. 
+* The Patient Demographics Consumer SHALL be able to gracefully (ie, without crashing) handle a response that contains one or more OperationOutcomes with `warning` severity (but where none have `error` or `fatal` severity). It MAY treat such a response as successful, failed, or some indeterminate state, as is appropriate for its needs. 
+* The Patient Demographics Consumer SHALL be able to handle a response that contains one or more OperationOutcomes with `information` severity (but where none have `warning`, `fatal`, or `error` severity). It SHALL treat the response the same as a successful response, but it MAY report the outcome in its result.
+* The Patient Demographics Consumer SHALL be able to handle a response that contains one or more Patient resources which violate the PDQm Patient Profile. It MAY accept the response as successful, reject as failed, or perform some other indeterminate action, but it SHALL do so gracefully (ie, without crashing).  
+* The Patient Demographics Consumer SHALL be able to handle a response that contains unknown extension elements on any resource. Such extension elements SHALL NOT cause the Patient Demographics Consumer to fail to process the response.
+* The Patient Demographics Consumer SHALL be able to handle a successful response that contains an unknown modifierExtension. When processing the response, it SHALL do so according to the [base FHIR specification of how to handle unknown modifier extensions]({{site.data.fhir.path}}extensibility.html#modifierExtension).  
+
+##### Patient Demographics Supplier
+* The Patient Demographics Supplier SHALL be able to respond to ITI-119 requests with a set of matching patients from its database. The methodology the Patient Demographics Supplier uses to determine matches is not specified by this profile. 
+* The Patient Demographics Supplier SHALL populate Patient entries in the response Bundle with a `search.score` between 0 and 1, where higher values indicate higher match quality. The method used to compute the score is otherwise not specified by this profile. 
+* The Patient Demographics Supplier SHALL populate Patient entries in the response Bundle with the [match-grade]({{site.data.fhir.path}}extension-match-grade.html) extension containing an [appropriate code]({{site.data.fhir.path}}valueset-match-grade.html) to describe the match quality. The method the Patient Demographics Supplier uses to assess the match grade is not specified by this profile. 
+* If the `onlyCertainMatches` parameter is specified as `true` in the request message, then the Patient Demographics Supplier SHALL include only results for which the `match-grade` is `certain`. 
+* If the `count` parameter is specified in the request message, then the Patient Demographics Supplier SHALL include no more than `count` Patients in the response. 
+* When the request message does not match any Patient records in the Patient Demographics Supplier, and no error is encountered when performing the search, then the Patient Demographics Supplier SHALL respond with `HTTP 200 (OK)`. The response Bundle SHALL not contain any Patient entries, and any OperationOutcome entries SHALL not have `fatal` or `error` severity. 
+* The request message MAY be invoked with either a raw Patient Resource, or a Parameters Resource containing a Patient Resource, potentially alongside OPTIONAL parameters. The Patient Demographics Supplier SHALL be capable of handling both request formats. 
+* All Patient Resources returned by the Patient Demographics Supplier SHALL conform to the [PDQm Patient Profile](StructureDefinition-IHE.PDQm.Patient.html).
+* The Patient Demographics Supplier SHALL be able to return the response in either JSON or XML format, as requested in the Accept HTTP header.
+* The Patient Demographics Supplier SHALL respond to a request that contains an unrecognized modifierExtension by returning an `HTTP 400` code. The response SHALL NOT contain any Patient Resources. 
+* A request that contains unrecognized extensions SHALL NOT cause the Patient Demographics Supplier to fail to return a response.  
+
 
 ## Unit Test Procedure (Conformance Testing)
 
