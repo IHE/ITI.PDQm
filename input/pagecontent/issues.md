@@ -6,7 +6,9 @@
 - changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
   - changes to RESTful type, and query subtype
 - Introduced [ITI-119 Patient Demographics Match](ITI-119.html) as an alternative to [ITI-78 Mobile Patient Demographics Query](ITI-78.html)
-- Added dependency on [HL7 IPA](http://hl7.org/fhir/uv/ipa/STU1/ImplementationGuide-hl7.fhir.uv.ipa.html) and updated the [PDQm Patient Profile](StructureDefinition-IHE.PDQm.Patient.html) to derive from [IPA Patient](http://hl7.org/fhir/uv/ipa/STU1/StructureDefinition-ipa-patient.html)
+- Added two new options on the Patient Demographics Consumer - Patient Search and Match Operation, corresponding to support for ITI-78 and ITI-119, respectively. The Patient Demographics Consumer MAY implement either or both of these options. 
+- Added the Match Operation option, corresponding to ITI-119, to the Patient Demographics Supplier. The Patient Demographics Supplier MAY implement the Match Operation option but SHALL continue to support ITI-78.
+- Updated the [PDQm Patient Profile](StructureDefinition-IHE.PDQm.Patient.html) to require the presence of Patient.identifier, marked demographics elements as MustSupport, and added guidance around the use of the Patient.link element. 
 - Added requirements for which combinations of search parameters SHALL be supported by Patient Demographics consumers in section 2:3.78.4.1.2.1.1. 
   - Resolves [PDQm_issue_90](https://github.com/IHE/ITI.PDQm/issues/90)
 - Added RECOMMENDED response patterns for handling deprecated patient identifies to sections 2:3.78.4.1.3 and 2:3.78.4.3.3. 
