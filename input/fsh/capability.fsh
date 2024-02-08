@@ -273,63 +273,93 @@ Mobile Patient Demographics Query [ITI-78]
     * searchParam[+]
       * name = "_lastUpdated"
       * type = #date
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "When the resource version last changed"
     * searchParam[+]
       * name = "_id"
       * type = #token
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "Logical id of this artifact"
     * searchParam[+]
       * name = "active"
       * type = #token
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "Whether the patient record is active"
     * searchParam[+]
       * name = "family"
       * type = #string
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "A portion of the family name of the patient"
     * searchParam[+]
       * name = "given"
       * type = #string
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "A portion of the given name of the patient"
     * searchParam[+]
       * name = "identifier"
       * type = #token
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "A patient identifier"
     * searchParam[+]
       * name = "telecom"
       * type = #token
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "The value in any kind of telecom details of the patient"
     * searchParam[+]
       * name = "birthdate"
       * type = #date
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "The patient's date of birth"
     * searchParam[+]
       * name = "address"
       * type = #string
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "A server defined search that MAY match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"
     * searchParam[+]
       * name = "address-city"
       * type = #string
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "A city specified in an address"
     * searchParam[+]
       * name = "address-country"
       * type = #string
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "A country specified in an address"
     * searchParam[+]
       * name = "address-postalcode"
       * type = #string
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "A postalCode specified in an address"
     * searchParam[+]
       * name = "address-state"
       * type = #string
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "A state specified in an address"
     * searchParam[+]
       * name = "gender"
       * type = #token
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "Gender of the patient"
     * searchParam[+]
       * name = "mothersMaidenName"
       * definition = "http://hl7.org/fhir/SearchParameter/patient-extensions-Patient-mothersMaidenName"
       * type = #string
+      * extension.url = "http://hl7.org/fhir/StructureDefinition/capabilitystatement-expectation"
+      * extension.valueCode = #MAY
       * documentation = "Mother's maiden (unmarried) name, commonly collected to help verify patient identity."
   * interaction.code = #search-system
 
