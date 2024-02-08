@@ -1,0 +1,12 @@
+{
+    "package-id" : "ihe.iti.pdqm",
+    "version" : "3.0.0",
+    "path" : "https://profiles.ihe.net/ITI/PDQm/3.0.0",
+    "mode" : "milestone",
+    "status" : "trial-use",
+    "sequence" : "Publication",
+    "desc" : "PDQm updated with $match operation for Trial Implementation",
+    "descmd" : "@publication_request_description.md",
+    "changes" : "issues.html",
+    "first" : false
+  }
