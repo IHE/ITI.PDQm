@@ -1,5 +1,7 @@
 This section corresponds to transaction [ITI-78] of the IHE Technical Framework. Transaction [ITI-78] is used by the Patient Demographics Consumer and Patient Demographics Supplier Actors. The [ITI-78] transaction is used to query on patient identity information and get back resulting Patient resources.
 
+Note:  Examples on this page use either the HTTP or HTTPS scheme. Examples are for illustrative purposes only and are not intended to imply that either HTTP or HTTPS should be used, though the use of HTTPS is RECOMMENDED for production deployments. 
+
 ### 2:3.78.1 Scope
 
 This transaction is used by the Patient Demographics Consumer to solicit information about patients whose demographics data match data provided in the search parameters on the request message. The request is received by the Patient Demographics Supplier. The Patient Demographics Supplier processes the request and returns a response in the form of demographics information for the matching patients.
@@ -33,27 +35,28 @@ This message represents a parameterized search from the Patient Demographics Con
 ##### 2:3.78.4.1.1 Trigger Events
 When a Patient Demographics Consumer needs to select a patient based on demographic information about patients whose information matches a minimal set of known data, it issues a Query Patient Resource.
 ##### 2:3.78.4.1.2 Message Semantics
-The Patient Demographics Consumer MAY use GET or POST based searches. The Patient Demographics Supplier SHALL support both GET and POST based [searches]({{site.data.fhir.path}}http.html#search).
-The search target follows the FHIR http specification, addressing the Patient Resource type  [{{site.data.fhir.path}}http.html]({{site.data.fhir.path}}http.html):
+The request message is a standard [FHIR Search]({{site.data.fhir.path}}search.html) request.
+The Patient Demographics Consumer MAY use GET or POST based searches, and the Patient Demographics Supplier SHALL support both GET and POST based searches.
+This operation can be invoked at the following path:
+
 ```
     [base]/Patient?<parameters>
 ```
-This URL is configurable by the Patient Demographics Supplier and is subject to the following constraints. The `<parameters>` represents a series of encoded name-value pairs representing the filter for the search parameters specified below, as well as control parameters to modify the behavior of the Patient Demographics Supplier such as response format, or pagination.
 
 ###### 2:3.78.4.1.2.1 Search Parameters
 The Patient Demographics Consumer MAY supply, and the Patient Demographics Supplier SHALL be capable of processing all parameters listed below. All parameter values SHALL be appropriately encoded per [RFC3986](https://tools.ietf.org/html/rfc3986) "percent" encoding rules. Note that percent encoding does restrict the character set to a subset of ASCII characters which is used for encoding all other characters used in the URL.
 Patient Demographics Suppliers MAY choose to support additional parameters beyond the subset listed below. Any additional parameters supported SHALL be supported according to the core FHIR specification. Such additional parameters are considered out of scope for this transaction. Any additional parameters not supported SHOULD be ignored, See [{{site.data.fhir.path}}search.html#errors]({{site.data.fhir.path}}search.html#errors).
 
-FHIR defines methods of supporting multiple parameter values in an AND and OR relationship. The Patient Demographics Supplier SHALL support both AND and OR relationships. See FHIR specification on Composite Search Parameters [{{site.data.fhir.path}}search.html#combining]({{site.data.fhir.path}}search.html#combining).
+FHIR defines methods of supporting multiple parameter values in an AND and OR relationship. The Patient Demographics Supplier SHALL support both AND and OR relationships. See FHIR specification on Composite Search Parameters [{{site.data.fhir.path}}search.html#combining]({{site.data.fhir.path}}search.html#combining) for more information on how to handle multiple parameter values.
 
 Parameter | definitions
 ---|---
 `_id` |This parameter of type string, when supplied, represents the resource identifier for the Patient Resource being queried. See [ITI TF-2: Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type. Note: A search using `_id` is always an exact match search.
 `active` | This parameter of type `token`, when supplied, specifies the active state. The active state indicates whether the patient record is active. Note: use `active=true`.
 `family` and `given` | These parameters of type `string`, when supplied, specify the name of the person whose information is being queried. For this parameter the Patient Demographics Consumer MAY use either family name, given name or a combination of both names to filter by family, given or family and given names respectively. See [ITI TF-2: Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `string` data type.
-`identifier` | This repeating parameter of type `token`, when supplied, specifies an identifier associated with the patient whose information is being queried (e.g., a local identifier, account identifier, etc.). See [ITI TF-2: Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type. If multiple instances of this parameter are provided in the query, the query represents a logical AND condition (i.e., all of the associated identifiers MUST match). For example, a query searching for patients having identifier145 assigned by authority "1.2.3.4" and SSN 123456789 would be represented as:<br /> `?identifier=urn:oid:1.2.3.4|145&identifier=urn:oid:2.16.840.1.113883.4.1|123456789`. <br />If no `system` portion of the identifier parameter is specified, then the matching would be performed on any identifier regardless of issuing system. 
+`identifier` | This repeating parameter of type `token`, when supplied, specifies an identifier associated with the patient whose information is being queried (e.g., a local identifier, account identifier, etc.). See [ITI TF-2: Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type. 
 `telecom` | This parameter of type `token`, when supplied, specifies the telecommunications details.
-`birthdate` | This parameter of type `date`, when supplied, specifies the birth date of the person whose information is being queried. The Patient Demographics Consumer SHALL use the date and interval mechanism to indicate a specific date of birth or a date that lies within the range specified by the parameter. See [{{site.data.fhir.path}}search.html#date]({{site.data.fhir.path}}search.html#date).
+`birthdate` | This parameter of type `date`, when supplied, specifies the birth date of the person whose information is being queried. See [{{site.data.fhir.path}}search.html#date]({{site.data.fhir.path}}search.html#date) for guidance and pitfalls when working with date search parameters.
 `address` | This parameter of type `string`, when supplied, specifies one or more address parts associated with the person whose information is being queried. For details on matching rules, see [ITI TF-2: Appendix Z.2.3](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters).
 `address-city`,<br /> `address-country`,<br /> `address-postalcode`,<br /> `address-state` | These parameters of type `string`, when supplied, specify a match against the specified address part associated with the person whose information is being queried. Note that national conventions for addresses might affect utility of these fields.
 `gender` | This parameter of type `token`, when supplied, specifies the administrative gender of the person whose information is being queried. For this parameter item, a single administrative gender code from value set {{site.data.fhir.path}}valueset-administrative-gender.html SHALL be specified as the only value of the token. See [ITI TF-2: Appendix Z.2.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters) for use of the `token` data type.
@@ -94,7 +97,7 @@ The FHIR standard provides encodings for responses as either XML or JSON. Patien
 See [ITI TF-2: Appendix Z.6 for details](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.6-populating-the-expected-response-format).
 
 ##### 2:3.78.4.1.3 Expected Actions
-The Patient Demographics Supplier SHALL return demographic records that reflect the match to all of the search criteria provided by the Patient Demographics Consumer. The Patient Demographics Supplier SHALL respond with a [Query Patient Resource Response message](#query-response) synchronously (i.e., on the same connection as was used to initiate the request).
+The Patient Demographics Supplier SHALL return demographic records that reflect the match to all of the search criteria provided by the Patient Demographics Consumer. The Patient Demographics Supplier SHALL respond with a [Query Patient Resource Response message](#query-response).
 
 The Patient Demographics Supplier SHALL return all exact matches to the search parameters sent by the Patient Demographics Consumer; IHE does not further specify matching requirements. Additional details for handling query parameters are described in [ITI TF-2: Appendix Z.2](https://profiles.ihe.net/ITI/TF/Volume2/ch-Z.html#z.2-query-parameters).
 
@@ -160,7 +163,7 @@ The Patient Demographics Supplier MAY be capable of servicing requests for respo
 
 * The returned Resource Bundle does not include the deprecated Patient record. It MAY contain other records that match the search, or it MAY be empty. 
 
-* The returned Resource Bundle contains the Patient, which has the `active` element set to `false` and the `link` element points at another Patient, which is also included in the Bundle. This indicates that the deprecated Patient is deprecated because it has been merged into the linked Patient. 
+* The returned Resource Bundle contains the Patient, which has the `active` element set to `false` and the `link` element points at another Patient with `link.type` set to `replaced-by`. The linked Patient is also included in the Bundle. This indicates that the deprecated Patient is deprecated because it has been merged into the linked Patient. 
 
 The option chosen by the Patient Demographics Supplier is based on policy. 
 
@@ -216,15 +219,15 @@ This message represents an HTTP GET from the Patient Demographics Consumer to th
 When the Patient Demographics Consumer possesses a Patient Resource’s identifier (either through query, database lookup, or other mechanism) for which it requires additional or new information, it issues a Retrieve Patient Resource interaction.
 
 ##### 2:3.78.4.3.2  Message Semantics
-The Retrieve Patient Resource is conducted by executing an HTTP GET against the Patient Demographics Supplier’s Patient Resource URL, providing the resource id of the patient being retrieved. The target is formatted as:
+This message is an invocation of the [FHIR Read interaction]({{site.data.fhir.path}}http.html#read). The Retrieve Patient Resource is conducted by executing an HTTP GET against the Patient Demographics Supplier’s Patient Resource URL, providing the resource id of the patient being retrieved. The target is formatted as:
 
-```    GET [base]/Patient/[resourceId]```
+```
+GET [base]/Patient/[resourceId]
+```
 
-The Patient Demographics Supplier SHALL respond to this query by sending a single Patient Resource instance. The specification for `[base]` is identified in Section 3.78.4.1.2.
+The Patient Demographics Supplier SHALL respond to this query by sending a single Patient Resource instance.
 
 The `resourceId` included in the request always represents the unique identifier for the Resource within the scope of the URL. For example, while `http://example1.org/ihe/Patient/1` and `http://example2.com/ihe/Patient/1` both contain the same `[resourceId]`, they reference two different resource instances.
-
-Note: The use of "http" or "https" in URL does not override requirements to use TLS for security purposes.
 
 ##### 2:3.78.4.3.3 Expected Actions
 The Patient Demographics Supplier SHALL retrieve the demographic record indicated by the Resource identifier on the HTTP GET supplied by the Patient Demographics Consumer. The Patient Demographics Supplier SHALL respond to the retrieve request as described by the following cases:
