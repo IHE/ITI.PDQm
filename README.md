@@ -8,9 +8,8 @@ The IHE PDQm Profile text is Trial Use, this IG publication is Informative. Afte
 
 This Continuous Build will appear https://build.fhir.org/ig/IHE/ITI.PDQm/branches/main/index.html
 
-After review, Formal Publication will be at https://profiles.ihe.net/ITI/PDQm 
+After review, Formal Publication will be at https://profiles.ihe.net/ITI/PDQm
 
-October 22, 2021 - ITI-Tech approved for Trial Implementation.
+### Match Branch
 
-poke build May 18, 2022
-poke build Feb 8, 2023
+The Continuous Build for the Match Capability branch will appear https://build.fhir.org/ig/IHE/ITI.PDQm/branches/match/index.html

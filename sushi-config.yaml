@@ -1,9 +1,10 @@
 id: ihe.iti.pdqm
 canonical: https://profiles.ihe.net/ITI/PDQm
-version: 2.4.1-current
+version: 3.0.0-current2
+#releaseLabel: ballot
 releaseLabel: ci-build
 #releaseLabel: Trial-Implementation
-#date: 2022-03-01
+#date: 2023-11-17
 name: IHE_PDQm
 title: "Patient Demographics Query for mobile (PDQm)"
 status: active
@@ -26,7 +27,7 @@ dependencies:
   ihe.iti.balp:
     id: iheitibasicaudit
     uri: https://profiles.ihe.net/ITI/BALP/ImplementationGuide/ihe.iti.balp
-    version: current #1.1.1
+    version: 1.1.x
 
 parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
   path-resource:
@@ -50,8 +51,6 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
 
 
 
-
-
 pages:
   index.md:
     title: Patient Demographics Query for Mobile
@@ -62,14 +61,20 @@ pages:
   ITI-78.md:
     title: 2:3.78 Mobile Patient Demographics Query [ITI-78]
     generation: markdown
+  ITI-119.md:
+    title: 2:3.119 Patient Demographics Match [ITI-119]
+    generation: markdown
   testplan.md:
     title: PDQm Test Plan
     generation: markdown
   issues.md:
-    title: PDQm Open and Closed issues
+    title: Significant Changes and Issues
     generation: markdown
   other.md:
-    title: Changes to other Profiles
+    title: Changes to other IHE Specifications
+    generation: markdown
+  download.md:
+    title: Download and Analysis
     generation: markdown
 
 menu:
@@ -84,6 +89,9 @@ menu:
     Cross-Profile Considerations: volume-1.html#1386-pdqm-cross-profile-considerations    
   Volume 2:
     "Mobile Patient Demographics Query [ITI-78]": ITI-78.html
-  Test Plan: testplan.html
+    "Patient Demographics Match [ITI-119]": ITI-119.html
   Artifacts: artifacts.html
-  Other: other.html
+  Other:
+    Changes to Other IHE Specifications: other.html
+    Download and Analysis: download.html
+    Test Plan: testplan.html

@@ -1,6 +1,11 @@
 == Suppressed Messages ==
 
 # IHE valueset that is not yet a real valueset
-Code System URI 'urn:ihe:event-type-code' is unknown so the code cannot be validated
+A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
 
+# $match bundles do not have a search string
+No types could be determined from the search string, so the types can''t be checked
 
+# Draft Code Systems
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/audit-entity-type|0.5.0
+Reference to draft CodeSystem http://terminology.hl7.org/CodeSystem/object-role|0.5.0

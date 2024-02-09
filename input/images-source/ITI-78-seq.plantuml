@@ -1,4 +1,4 @@
-@startuml
+@startuml ITI-78-seq
 hide footbox
 
 participant "Patient Demographics\nConsumer" as Client
