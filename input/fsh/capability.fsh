@@ -20,6 +20,7 @@ The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtySt
   - address
   - gender
   - mothersMaidenName
+- SHALL support the `:exact` modifier on search parameters of type string
 - SHALL return Patient Resources conforming to the PDQm Patient Profile
 """
 * name = "IHE_PDQM_PATIENT_DEMOGRAPHICS_SUPPLIER"
@@ -61,9 +62,17 @@ Mobile Patient Demographics Query [ITI-78]
       * type = #string
       * documentation = "A portion of the family name of the patient"
     * searchParam[+]
+      * name = "family:exact"
+      * type = #string
+      * documentation = "A portion of the family name of the patient, modified to use exact string matching"
+    * searchParam[+]
       * name = "given"
       * type = #string
       * documentation = "A portion of the given name of the patient"
+    * searchParam[+]
+      * name = "given:exact"
+      * type = #string
+      * documentation = "A portion of the given name of the patient, modified to use exact string matching"
     * searchParam[+]
       * name = "identifier"
       * type = #token
@@ -81,21 +90,41 @@ Mobile Patient Demographics Query [ITI-78]
       * type = #string
       * documentation = "A server defined search that MAY match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"
     * searchParam[+]
+      * name = "address:exact"
+      * type = #string
+      * documentation = "A server defined search that MAY match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text, modified to use exact string matching"
+    * searchParam[+]
       * name = "address-city"
       * type = #string
       * documentation = "A city specified in an address"
+    * searchParam[+]
+      * name = "address-city:exact"
+      * type = #string
+      * documentation = "A city specified in an address, modified to use exact string matching"
     * searchParam[+]
       * name = "address-country"
       * type = #string
       * documentation = "A country specified in an address"
     * searchParam[+]
+      * name = "address-country:exact"
+      * type = #string
+      * documentation = "A country specified in an address, modified to use exact string matching"
+    * searchParam[+]
       * name = "address-postalcode"
       * type = #string
       * documentation = "A postalCode specified in an address"
     * searchParam[+]
+      * name = "address-postalcode:exact"
+      * type = #string
+      * documentation = "A postalCode specified in an address, modified to use exact string matching"
+    * searchParam[+]
       * name = "address-state"
       * type = #string
       * documentation = "A state specified in an address"
+    * searchParam[+]
+      * name = "address-state:exact"
+      * type = #string
+      * documentation = "A state specified in an address, modified to use exact matching"
     * searchParam[+]
       * name = "gender"
       * type = #token
@@ -105,6 +134,11 @@ Mobile Patient Demographics Query [ITI-78]
       * definition = "http://hl7.org/fhir/SearchParameter/patient-extensions-Patient-mothersMaidenName"
       * type = #string
       * documentation = "Mother's maiden (unmarried) name, commonly collected to help verify patient identity."
+    * searchParam[+]
+      * name = "mothersMaidenName:exact"
+      * definition = "http://hl7.org/fhir/SearchParameter/patient-extensions-Patient-mothersMaidenName"
+      * type = #string
+      * documentation = "Mother's maiden (unmarried) name, commonly collected to help verify patient identity, modified to use exact string matching."
   * interaction.code = #search-system
 
 
@@ -130,6 +164,7 @@ The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtySt
   - address
   - gender
   - mothersMaidenName
+- SHALL support the `:exact` modifier on search parameters of type string
 - SHALL support the PDQm $match operation
 - SHALL return Patient Resources conforming to the PDQm Patient Profile
 """
@@ -172,9 +207,17 @@ Mobile Patient Demographics Query [ITI-78] and Patient Demographics Match [ITI-1
       * type = #string
       * documentation = "A portion of the family name of the patient"
     * searchParam[+]
+      * name = "family:exact"
+      * type = #string
+      * documentation = "A portion of the family name of the patient, modified to use exact string matching"
+    * searchParam[+]
       * name = "given"
       * type = #string
       * documentation = "A portion of the given name of the patient"
+    * searchParam[+]
+      * name = "given:exact"
+      * type = #string
+      * documentation = "A portion of the given name of the patient, modified to use exact string matching"
     * searchParam[+]
       * name = "identifier"
       * type = #token
@@ -192,21 +235,41 @@ Mobile Patient Demographics Query [ITI-78] and Patient Demographics Match [ITI-1
       * type = #string
       * documentation = "A server defined search that MAY match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text"
     * searchParam[+]
+      * name = "address:exact"
+      * type = #string
+      * documentation = "A server defined search that MAY match any of the string fields in the Address, including line, city, district, state, country, postalCode, and/or text, modified to use exact string matching"
+    * searchParam[+]
       * name = "address-city"
       * type = #string
       * documentation = "A city specified in an address"
+    * searchParam[+]
+      * name = "address-city:exact"
+      * type = #string
+      * documentation = "A city specified in an address, modified to use exact string matching"
     * searchParam[+]
       * name = "address-country"
       * type = #string
       * documentation = "A country specified in an address"
     * searchParam[+]
+      * name = "address-country:exact"
+      * type = #string
+      * documentation = "A country specified in an address, modified to use exact string matching"
+    * searchParam[+]
       * name = "address-postalcode"
       * type = #string
       * documentation = "A postalCode specified in an address"
     * searchParam[+]
+      * name = "address-postalcode:exact"
+      * type = #string
+      * documentation = "A postalCode specified in an address, modified to use exact string matching"
+    * searchParam[+]
       * name = "address-state"
       * type = #string
       * documentation = "A state specified in an address"
+    * searchParam[+]
+      * name = "address-state:exact"
+      * type = #string
+      * documentation = "A state specified in an address, modified to use exact matching"
     * searchParam[+]
       * name = "gender"
       * type = #token
@@ -216,6 +279,11 @@ Mobile Patient Demographics Query [ITI-78] and Patient Demographics Match [ITI-1
       * definition = "http://hl7.org/fhir/SearchParameter/patient-extensions-Patient-mothersMaidenName"
       * type = #string
       * documentation = "Mother's maiden (unmarried) name, commonly collected to help verify patient identity."
+    * searchParam[+]
+      * name = "mothersMaidenName:exact"
+      * definition = "http://hl7.org/fhir/SearchParameter/patient-extensions-Patient-mothersMaidenName"
+      * type = #string
+      * documentation = "Mother's maiden (unmarried) name, commonly collected to help verify patient identity, modified to use exact string matching."
     * operation
       * name = "match"
       * definition = Canonical(PDQmMatch)

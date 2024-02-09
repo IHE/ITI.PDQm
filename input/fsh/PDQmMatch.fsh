@@ -126,6 +126,7 @@ than inside of a Parameters resource.
 * entry contains patient 0..*
 * entry[patient]
   * resource only IHE.PDQm.Patient
+  * resource 1..1
   * search 1..1
   * search
     * score 1..1
@@ -135,6 +136,7 @@ than inside of a Parameters resource.
 * entry contains operationOutcome 0..*
 * entry[operationOutcome]
   * resource only OperationOutcome
+  * resource 1..1
 
 Profile: PDQmMatchInput
 Parent: Patient 

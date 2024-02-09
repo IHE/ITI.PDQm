@@ -1,4 +1,4 @@
-This section corresponds to transaction [ITI-78] of the IHE Technical Framework. Transaction [ITI-78] is used by the Patient Demographics Consumer and Patient Demographics Supplier Actors. The [ITI-78] transaction is used to query on patient identity information and get back resulting Patient resources.
+This section corresponds to transaction [ITI-78] of the IHE Technical Framework. Transaction [ITI-78] is used by the Patient Demographics Supplier Actors and Patient Demographics Consumer Actors that support the Patient Search option. The [ITI-78] transaction is used to query on patient identity information and get back resulting Patient resources.
 
 Note:  Examples on this page use either the HTTP or HTTPS scheme. Examples are for illustrative purposes only and are not intended to imply that either HTTP or HTTPS should be used, though the use of HTTPS is RECOMMENDED for production deployments. 
 
