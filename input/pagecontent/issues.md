@@ -3,17 +3,17 @@
 ## Significant Changes
 
 ### Significant changes from PDQm, Rev 2.4:
-- changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html)
-  - changes to RESTful type, and query subtype
-- Introduced [ITI-119 Patient Demographics Match](ITI-119.html) as an alternative to [ITI-78 Mobile Patient Demographics Query](ITI-78.html)
+- Changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html).
+  - Changes to RESTful type, and query subtype
+- Introduced [ITI-119 Patient Demographics Match](ITI-119.html) as an alternative to [ITI-78 Mobile Patient Demographics Query](ITI-78.html).
 - Added two new options on the Patient Demographics Consumer - Patient Search and Match Operation, corresponding to support for ITI-78 and ITI-119, respectively. The Patient Demographics Consumer MAY implement either or both of these options. 
 - Added the Match Operation option, corresponding to ITI-119, to the Patient Demographics Supplier. The Patient Demographics Supplier MAY implement the Match Operation option but SHALL continue to support ITI-78.
 - Updated the [PDQm Patient Profile](StructureDefinition-IHE.PDQm.Patient.html) to require the presence of Patient.identifier, marked demographics elements as MustSupport, and added guidance around the use of the Patient.link element. 
 - Added requirements for which combinations of search parameters SHALL be supported by Patient Demographics consumers in section 2:3.78.4.1.2.1.1. 
-  - Resolves [PDQm_issue_90](https://github.com/IHE/ITI.PDQm/issues/90)
+  - Resolves [PDQm_issue_90](https://github.com/IHE/ITI.PDQm/issues/90).
 - Added RECOMMENDED response patterns for handling deprecated patient identifies to sections 2:3.78.4.1.3 and 2:3.78.4.3.3. 
-  - Resolves [PDQm_issue_86](https://github.com/IHE/ITI.PDQm/issues/86)
-- Added Use Case #4 - Patient Demographics Query by Known Business Identifier
+  - Resolves [PDQm_issue_86](https://github.com/IHE/ITI.PDQm/issues/86).
+- Added Use Case #4 - Patient Demographics Query by Known Business Identifier.
 
 ### Significant changes from PDQm, Rev 2.2:
 - FHIR Implementation Guide instead of [PDF - Rev. 2.2](https://www.ihe.net/uploadedFiles/Documents/ITI/IHE_ITI_Suppl_PDQm_Rev2-2_TI_2020-08-28.pdf)
@@ -25,7 +25,7 @@
 ### Submit an Issue
 
 IHE welcomes [New Issues](https://github.com/IHE/ITI.PDQm/issues/new/choose) from the GitHub community. 
-For those without GitHub access, issues can be submitted to the [Public Comment form](https://www.ihe.net/ITI_Public_Comments/).
+For those without GitHub access, issues can be submitted to the [Public Comment Form](https://www.ihe.net/ITI_Public_Comments/).
 
 As issues are submitted they will be managed on the [PDQm GitHub Issues](https://github.com/IHE/ITI.PDQm/issues), where discussion and workarounds might be found. These issues, when critical, will be processed using the normal [IHE Change Proposal](https://wiki.ihe.net/index.php/Category:CPs) management and balloting. 
 It is important to note that as soon as a Change Proposal is approved, it carries the same weight as a published Implementation Guide (i.e., it is testable at an [IHE Connectathon](https://www.ihe.net/participate/connectathon/) from the time it is approved, even if it will not be integrated until several months later).
@@ -50,7 +50,7 @@ When updating PDQm to a version of FHIR with FHIR-37361 and FHIR-40880 applied, 
 ### Closed Issues
 These issues have been decided and documented in the publication.
 
-- Upgraded to FHIR R4
+- Upgraded to FHIR R4.
 - Case 4, where one or more identifier domains are indicated by the client but are not authoritative by the server, has been extensively discussed. The conclusion is to stay with allowing a server to return 404 or 200, and to require an OperationOutcome to indicate a warning. There is concern that the clients might not notice that they did not get results for a domain they requested, the client MUST take the initiative to look for the OperationOutcome to determine if they got full authoritative results. This looking for an OperationOutcome SHOULD always be inspected to assure results are what was expected. As such we did update client requirements to explicitly look for patient safety reasons.
 - Removed the Pediatric Demographics Option as unnecessary and confusing. Most of the functionality needed for the use-case is natural part of the normal path of PDQm. The additional search parameters and extensions are allowed for those that need them. There has been little to no implementation of this option in the PDQ or PDQv3 environments. 
 - [PDQm_issue_94](https://github.com/IHE/ITI.PDQm/issues/94): In PDQ, PDQv3, and PDQm ITI-78, we have the ability for the client to limit the search results to patients with an identifier issued by a particular patient identification domain. We do not have equivalent functionality in ITI-119. While a client could suggest that it is interested in a particular patient identification domain by including the assigning authority of that domain as an identifier system in the $match input parameters, the semantics of $match would not require the server to honor that request. We do not believe this is likely to be an issue for real world implementations of ITI-119. 
