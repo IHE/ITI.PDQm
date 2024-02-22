@@ -14,7 +14,7 @@ This implementation guide is intended to be fully compliant with the HL7 [FHIR](
 
 ## 1:38.1 PDQm Actors, and Transactions
 
-Figure 1:38.1-1 shows the actors directly involved in the Patient Demographics Query for Mobile Profile and the relevant transactions between them. Note that the actors in this profile are the same as the actors defined in the PDQ Profile (ITI TF-1: 8.1).
+Figure 1:38.1-1 shows the actors directly involved in the Patient Demographics Query for Mobile Profile and the relevant transactions between them. Note that the actors in this profile are the same as the actors defined in the PDQ Profile [ITI TF-1: 8.1](https://profiles.ihe.net/ITI/TF/Volume1/ch-8.html#8.1).
 <div>
 {%include PDQm-Actor-Diagram.svg %}
 </div>
@@ -107,13 +107,13 @@ This capabilities response will typically include all of the capabilities inclus
 ### 1:38.1.2 Transaction Descriptions
 The transactions in this profile are summarized in the sections below.
 
-#### 1:38.1.2.1 Mobile Patient Demographics Query transaction
+#### 1:38.1.2.1 Mobile Patient Demographics Query Transaction
 
 Mobile Patient Demographics Query is used by the Patient Demographics Consumer to search for information about patients whose demographics data match data provided in the query parameters on the request message. The request is received by the Patient Demographics Supplier. The Patient Demographics Supplier processes the search and returns a response in the form of demographics information for the matching patients.
 
 For more details see the detailed [transaction description](ITI-78.html).
 
-#### 1:38.1.2.2 Patient Demographics Match transaction
+#### 1:38.1.2.2 Patient Demographics Match Transaction
 
 Patient Demographics Match is used by the Patient Demographics Consumer to request that the Patient Demographics Supplier identify Patient records that match the demographics supplied in the request message. The request is received by the Patient Demographics Supplier. The Patient Demographics Supplier processes the request according to its internal matching algorithm and returns a response in the form of demographics information for the matching patients. 
 
@@ -155,7 +155,7 @@ Cross-Profile Considerations describes some OPTIONAL groupings in other related 
 ### 1:38.4.1 Concepts
 The PDQm Profile supports all of the use cases of PDQ while keeping the technology as lightweight as possible. Example uses include:
 - Mobile devices used by physicians (for example: a mobile app for electronic patient charts) which need to establish patient context by scanning a bracelet,
--  Web based EHR/EMR applications which wish to provide dynamic updates of patient demographic information such as a non-postback search, additional demographic detail, etc.
+- Web based EHR/EMR applications which wish to provide dynamic updates of patient demographic information such as a non-postback search, additional demographic detail, etc.
 - A document source/consumer wishing to perform an operation in the IHE Mobile access to Health Documents (MHD) Profile, where patient ID in the appropriate patient ID domain needs to be resolved by the source/consumer,
 - A health portal securely exposing demographics data to browser-based plugins,
 - Medical devices which need to access patient demographic information.
@@ -241,7 +241,7 @@ This process flow is aligned most closely with use case #4.
 {%include Search-Process-Flow-in-PDQm-Profile.svg%}
 </div>
 <br clear="all">
-**Figure 1:38.4.3.3-1: Search Based Process Flow in PDQm Profile using Patient Search or Read**
+**Figure 1:38.4.3.3-1: Search Based Process Flow in PDQm Profile Using Patient Search or Read**
 
 ## 1:38.5 PDQm Security Considerations
 
