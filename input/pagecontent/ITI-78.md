@@ -1,4 +1,4 @@
-This section corresponds to transaction [ITI-78] of the IHE Technical Framework. Transaction [ITI-78] is used by the Patient Demographics Supplier Actors and Patient Demographics Consumer Actors that support the Patient Search option. The [ITI-78] transaction is used to query on patient identity information and get back resulting Patient resources.
+This section corresponds to transaction [ITI-78] of the IHE Technical Framework. Transaction [ITI-78] is used by the Patient Demographics Supplier Actors and Patient Demographics Consumer Actors that support the Patient Search Option. The [ITI-78] transaction is used to query on patient identity information and get back resulting Patient resources.
 
 Note:  Examples on this page use either the HTTP or HTTPS scheme. Examples are for illustrative purposes only and are not intended to imply that either HTTP or HTTPS should be used, though the use of HTTPS is RECOMMENDED for production deployments. 
 
@@ -18,7 +18,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 
 ### 2:3.78.3 Referenced Standards
 
-* [HL7 FHIR Release 4]({{site.data.fhir.path}})
+- [HL7 FHIR Release 4]({{site.data.fhir.path}})
 
 ### 2:3.78.4 Messages
 
@@ -27,7 +27,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 </div>
 <br clear="all">
 
-**Figure: 2:3.78.4-1: Interaction Diagram**
+**Figure 2:3.78.4-1: Interaction Diagram**
 
 #### 2:3.78.4.1 Query Patient Resource message
 This message represents a parameterized search from the Patient Demographics Consumer to the Patient Demographics Supplier.
@@ -72,8 +72,8 @@ Accept: application/fhir+json; fhirVersion=4.0
 ###### 2:3.78.4.1.2.1.1 Combinations of search parameters
 While the above search parameters SHALL all be supported individually, support for combinations of parameters is needed for effective searching. The Patient Demographics Supplier SHALL support filtering on the following combinations of search parameters:
 
-* `family` and `gender`
-* `birthdate` and `family`
+- `family` and `gender`
+- `birthdate` and `family`
 
 The Patient Demographics Supplier MAY support additional combinations of parameters. When the Patient Demographics Consumer specifies a set of search parameters that, in combination, are not supported by the Patient Demographics Supplier, the Patient Demographics Supplier SHALL choose which parameters to respect, and indicate this fact in the response message Bundle self link, according to [Section 3.1.1.6 of the FHIR specification]({{site.data.fhir.path}}search.html).
 
@@ -159,11 +159,11 @@ The Patient Demographics Supplier MAY be capable of servicing requests for respo
 
 **Case 6**: The Patient Demographics Supplier finds a deprecated Patient record that matches the query parameters. In this case, it SHALL return `HTTP 200` (OK), and a Resource Bundle with one of the following properties:
 
-* The returned Resource Bundle contains the Patient, which has the `active` element set to `false`.
+- The returned Resource Bundle contains the Patient, which has the `active` element set to `false`.
 
-* The returned Resource Bundle does not include the deprecated Patient record. It MAY contain other records that match the search, or it MAY be empty. 
+- The returned Resource Bundle does not include the deprecated Patient record. It MAY contain other records that match the search, or it MAY be empty. 
 
-* The returned Resource Bundle contains the Patient, which has the `active` element set to `false` and the `link` element points at another Patient with `link.type` set to `replaced-by`. The linked Patient is also included in the Bundle. This indicates that the deprecated Patient is deprecated because it has been merged into the linked Patient. 
+- The returned Resource Bundle contains the Patient, which has the `active` element set to `false` and the `link` element points at another Patient with `link.type` set to `replaced-by`. The linked Patient is also included in the Bundle. This indicates that the deprecated Patient is deprecated because it has been merged into the linked Patient. 
 
 The option chosen by the Patient Demographics Supplier is based on policy. 
 
@@ -254,8 +254,8 @@ code|not-found
 
 In this case, the Patient Demographics Supplier MAY either:
 
-* Return `HTTP 200` (OK) as in Case 1, with the `active` flag set to `false`, or
-* Return `HTTP 404` (Not Found) as in Case 2.
+- Return `HTTP 200` (OK) as in Case 1, with the `active` flag set to `false`, or
+- Return `HTTP 404` (Not Found) as in Case 2.
 
 
 The Patient Demographics Supplier MAY return other HTTP status codes to represent specific error conditions. When HTTP error status codes are returned by the Patient Demographics Supplier, they SHALL conform to the HTTP standard [RFC2616](https://tools.ietf.org/html/rfc2616). Their use is not further constrained or specified by this transaction.
@@ -278,7 +278,7 @@ If the Patient Demographics Supplier is unable to produce a response in the requ
 The Patient Resource definition in the context of a retrieve interaction is the FHIR definition of the Patient Resource, see [{{site.data.fhir.path}}patient.html]({{site.data.fhir.path}}patient.html).
 
 ### 2:3.78.5 Security Considerations
-See the general Security Consideration in [ITI TF-1: 38.5](volume-1.html#1385-pdqm-security-considerations)
+See the general Security Consideration in [ITI TF-1: 38.5](volume-1.html#1385-pdqm-security-considerations).
 
 #### 2:3.78.5.1 Security Audit Considerations
 
