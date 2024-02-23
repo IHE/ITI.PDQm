@@ -6,7 +6,7 @@ version: 3.0.0
 releaseLabel: Trial-Implementation
 date: 2024-02-29
 name: IHE_PDQm
-title: "Patient Demographics Query for mobile (PDQm)"
+title: "Patient Demographics Query for Mobile (PDQm)"
 status: active
 publisher:
   - name: IHE IT Infrastructure Technical Committee

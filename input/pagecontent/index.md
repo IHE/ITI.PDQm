@@ -12,18 +12,18 @@ The Patient Demographics Query for Mobile (PDQm) Profile defines a lightweight R
 ### Organization of This Guide
 This guide is organized into the following sections:
 
-- Volume 1:
-   - [38 PDQm Introduction](volume-1.html)
-   - [38.1 PDQm Actors and Transactions](volume-1.html#1381-pdqm-actors-and-transactions)
-   - [38.2 PDQm Actor Options](volume-1.html#1382-pdqm-actor-options)
-   - [38.3 PDQm Required Groupings](volume-1.html#1383-pdqm-required-actor-grouping)
-   - [38.4 PDQm Overview](volume-1.html#1384-pdqm-overview)
-   - [38.5 PDQm Security Considerations](volume-1.html#1385-pdqm-security-considerations)
-   - [38.6 PDQm Cross-Profile Considerations](volume-1.html#1386-pdqm-cross-profile-considerations)
+- Volume 1: Profiles
+   - [PDQm Introduction](volume-1.html)
+   - [PDQm Actors and Transactions](volume-1.html#1381-pdqm-actors-and-transactions)
+   - [PDQm Actor Options](volume-1.html#1382-pdqm-actor-options)
+   - [PDQm Required Groupings](volume-1.html#1383-pdqm-required-actor-grouping)
+   - [PDQm Overview](volume-1.html#1384-pdqm-overview)
+   - [PDQm Security Considerations](volume-1.html#1385-pdqm-security-considerations)
+   - [PDQm Cross-Profile Considerations](volume-1.html#1386-pdqm-cross-profile-considerations)
 
 - Volume 2: Transaction Detail
-   - [3.78 Mobile Patient Demographics Query \[ITI-78\]](ITI-78.html)
-   - [3.119 Patient Demographics Match \[ITI-119\]](ITI-119.html)
+   - [Mobile Patient Demographics Query \[ITI-78\]](ITI-78.html)
+   - [Patient Demographics Match \[ITI-119\]](ITI-119.html)
 
 - Other
    - [Changes to Other IHE Specifications](other.html)

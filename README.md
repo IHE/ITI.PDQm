@@ -12,4 +12,4 @@ After review, Formal Publication will be at https://profiles.ihe.net/ITI/PDQm
 
 ### Match Branch
 
-The Continuous Build for the Match Capability branch will appear https://build.fhir.org/ig/IHE/ITI.PDQm/branches/match/index.html
+The Continuous Build for the Match Capability branch will appear https://build.fhir.org/ig/IHE/ITI.PDQm/branches/match/index.html.
