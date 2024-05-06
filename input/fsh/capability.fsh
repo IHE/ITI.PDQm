@@ -9,7 +9,7 @@ The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtySt
 - Using FHIR R4
 - SHALL support both json or xml encoding
 - SHOULD use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
-- [Search Parameters that SHALL be supported](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
+- [Search Parameters that SHALL be supported](ITI-78.html#23784121-search-parameters)
   - _id
   - active
   - family
@@ -153,7 +153,7 @@ The PDQm Patient Demographics Supplier Actor (server) requirements CapabililtySt
 - Using FHIR R4
 - SHALL support both json or xml encoding
 - SHOULD use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
-- [Search Parameters that SHALL be supported](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
+- [Search Parameters that SHALL be supported](ITI-78.html#23784121-search-parameters)
   - _id
   - active
   - family
@@ -305,7 +305,7 @@ The PDQm Patient Demographics Consumer Actor (client) requirements CapabililtySt
 - Using FHIR R4
 - MAY request json or xml encoding
 - SHOULD use a security framework. Recommend [ATNA](https://profiles.ihe.net/ITI/TF/Volume1/ch-9.html), encouraged [IHE-IUA](https://profiles.ihe.net/ITI/IUA/index.html) or [SMART-app-launch](http://www.hl7.org/fhir/smart-app-launch/)
-- [Search Parameters that MAY be used](https://profiles.ihe.net/ITI/PDQm/ITI-78.html#23784121-query-search-parameters)
+- [Search Parameters that MAY be used](ITI-78.html#23784121-search-parameters)
   - _id
   - active
   - family
