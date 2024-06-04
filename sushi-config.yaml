@@ -1,6 +1,6 @@
 id: ihe.iti.pdqm
 canonical: https://profiles.ihe.net/ITI/PDQm
-version: 3.0.1-ci
+version: 3.0.1-current
 #releaseLabel: ballot
 releaseLabel: ci-build
 #releaseLabel: Trial-Implementation
