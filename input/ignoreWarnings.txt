@@ -4,7 +4,7 @@
 A definition for CodeSystem 'urn:ihe:event-type-code' could not be found, so the code cannot be validated
 
 # $match bundles do not have a search string
-No types could be determined from the search string, so the types can''t be checked
+No types could be determined from the search string, so the types can't be checked
 
 # Draft resources are known and accepted
 MSG_DRAFT
