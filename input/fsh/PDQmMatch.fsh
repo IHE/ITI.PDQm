@@ -51,7 +51,6 @@ and to constring the output parameters to use the [PDQm Patient Profile](Structu
   * type = #Bundle
   * targetProfile[+] = Canonical(IHE.PDQm.MatchParametersOut)
 
-
 Profile: MatchParametersIn
 Parent: Parameters 
 Id: IHE.PDQm.MatchParametersIn
