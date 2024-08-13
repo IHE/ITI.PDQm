@@ -20,7 +20,6 @@ and to constring the output parameters to use the [PDQm Patient Profile](Structu
 * instance = false
 * code = #match
 * inputProfile = Canonical(IHE.PDQm.MatchParametersIn)
-* outputProfile = Canonical(IHE.PDQm.MatchParametersOut)
 
 * parameter[+]
   * name = #resource
@@ -50,6 +49,8 @@ and to constring the output parameters to use the [PDQm Patient Profile](Structu
   * max = "1"
   * documentation = "A bundle contain a set of Patient records that represent possible matches, optionally it MAY also contain an OperationOutcome with further information about the search results (such as warnings or information messages, such as a count of records that were close but eliminated) If the operation was unsuccessful, then an OperationOutcome MAY be returned along with a BadRequest status Code (e.g. security issue, or insufficient properties in patient fragment - check against profile).\n\nNote: as this is the only out parameter, it is a resource, and it has the name 'return', the result of this operation is returned directly as a resource"
   * type = #Bundle
+  * targetProfile[+] = Canonical(IHE.PDQm.MatchParametersOut)
+
 
 Profile: MatchParametersIn
 Parent: Parameters 
