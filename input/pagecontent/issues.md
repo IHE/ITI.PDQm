@@ -2,6 +2,10 @@
 
 ## Significant Changes
 
+### Revision 3.1.0
+
+- Integration of CP-ITI-1314 fixing $match output Parameters profile
+
 ### Significant changes from PDQm, Rev 2.4:
 - Changed to AuditEvent profiling leveraging [Basic Audit Log Patterns (BALP) Release 1.1.0](https://profiles.ihe.net/ITI/BALP/index.html).
   - Changes to RESTful type, and query subtype
