@@ -7,7 +7,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * link
   * relation = "self"
-  * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output.html"
+  * url = "http://example.org/fhir/Bundle-ex-match-output.html"
 * entry[patient] 
   * resource = ex-patient
   * search
