@@ -15,6 +15,7 @@ Usage: #example
     * extension[MatchGrade] 
       * valueCode = #certain
   * fullUrl = "https://profiles.ihe.net/ITI/PDQm/Patient-ex-patient.html"
+* total = 1
 
 
 Instance:   ex-match-output-multiple
@@ -41,6 +42,7 @@ Usage: #example
     * extension[MatchGrade]
       * valueCode = #possible
   * fullUrl = "https://profiles.ihe.net/ITI/PDQm/Patient-ex-patient-mothers-maiden-name.html"
+* total = 2
 
 
 Instance:   ex-match-output-empty
@@ -53,12 +55,13 @@ Usage: #example
 * link
   * relation = "self"
   * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output-empty.html"
+* total = 0
 
 
 Instance:   ex-match-output-error
 InstanceOf: IHE.PDQm.MatchParametersOut
 Title:      "Example $match Output Bundle - Error"
-Description: "Example of Bundle resource to be returned for ITI-119 output. No Patients are found in the search result."
+Description: "Example of Bundle resource to be returned for ITI-119 output. The search failed due to an error."
 Usage: #example
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
@@ -92,3 +95,4 @@ Usage: #example
   * resource = ex-match-failure
   * search.mode = #outcome
   * fullUrl = "https://profiles.ihe.net/ITI/PDQm/OperationOutcome-ex-match-warning.html"
+* total = 1
