@@ -19,7 +19,6 @@ and to constring the output parameters to use the [PDQm Patient Profile](Structu
 * type = true
 * instance = false
 * code = #match
-* inputProfile = Canonical(IHE.PDQm.MatchParametersIn)
 
 * parameter[+]
   * name = #resource
@@ -28,6 +27,7 @@ and to constring the output parameters to use the [PDQm Patient Profile](Structu
   * max = "1"
   * documentation = "Use this to provide an entire set of patient details for the MPI to match against (e.g. POST a patient record to Patient/$match)."
   * type = #Patient
+  * targetProfile[+] = Canonical(IHE.PDQm.MatchInputPatient)
 * parameter[+]
   * name = #onlyCertainMatches
   * use = #in
