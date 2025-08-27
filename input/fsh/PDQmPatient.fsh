@@ -63,7 +63,11 @@ Patient Demographics Consumers SHOULD be able to traverse Patient.link and use P
   * ^condition = iti-pdqm-linkstatus
   * type
     * ^definition = "The type of link between this patient resource and another patient resource. When this Patient Resource has been subsumed by another, the type SHALL be replaced-by."
-* extension contains http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named MothersMaidenName 0..1 
+* extension contains http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named MothersMaidenName 0..1 and
+     http://hl7.org/fhir/StructureDefinition/individual-genderIdentity named genderIdentity 0..* and
+     http://hl7.org/fhir/StructureDefinition/individual-pronouns named pronouns 0..* and
+     http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender named recordedSexOrGender 0..*
+
 * obeys iti-pdqm-linkstatus
 
 Invariant:   iti-pdqm-patname
