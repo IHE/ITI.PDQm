@@ -268,3 +268,5 @@ Figure 1:38.6-1 shows one example of how a PDQm Patient Demographics Supplier mi
 **Figure 1:38.6-1: Implementing PDQm as a Gateway**
 
 Note that this is but one possibility, other configurations are also possible. 
+
+When a person’s gender identity, pronouns or recorded sex or gender are to be represented within the Patient resource, actors implementing this capability SHALL encode them using the R4-compatible versions of the extensions defined in the [HL7 Cross Paradigm Implementation Guide: Gender Harmony - Sex and Gender Representation, Edition 1](https://hl7.org/xprod/ig/uv/gender-harmony/).
