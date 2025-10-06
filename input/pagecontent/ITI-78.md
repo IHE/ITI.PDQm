@@ -19,6 +19,7 @@ This transaction is used by the Patient Demographics Consumer to solicit informa
 ### 2:3.78.3 Referenced Standards
 
 - [HL7 FHIR Release 4]({{site.data.fhir.path}})
+- [HL7 Cross Paradigm Implementation Guide: Gender Harmony - Sex and Gender Representation, Edition 1](https://hl7.org/xprod/ig/uv/gender-harmony/)
 
 ### 2:3.78.4 Messages
 

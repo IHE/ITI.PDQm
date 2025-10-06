@@ -151,4 +151,7 @@ The PDQm Patient Profile for $match Input SHALL be provided as input to the ITI-
 
 * modifierExtension 0..0
 * implicitRules 0..0
-* extension contains http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named MothersMaidenName 0..1 
+* extension contains http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName named MothersMaidenName 0..1  and
+    http://hl7.org/fhir/StructureDefinition/individual-genderIdentity named genderIdentity 0..*  and
+	   http://hl7.org/fhir/StructureDefinition/individual-pronouns named pronouns 0..*  and
+    http://hl7.org/fhir/StructureDefinition/individual-recordedSexOrGender named recordedSexOrGender 0..*
