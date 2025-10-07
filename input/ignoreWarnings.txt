@@ -7,6 +7,9 @@ No definition could be found for URL value 'urn:ihe:event-type-code'
 # $match bundles do not have a search string
 No types could be determined from the search string, so the types can't be checked
 
+# $match bundles do not have a self link Per https://chat.fhir.org/#narrow/channel/179166-implementers/topic/Search.20Bundle.20self.20link/with/390737845
+SearchSet Bundles should have a self link that specifies what the search was
+
 # any version will do
 There are multiple different potential matches for the url 'http://hl7.org/fhir/SearchParameter/patient-extensions-Patient-mothersMaidenName'.%
 There are multiple different potential matches for the url 'http://terminology.hl7.org/ValueSet/v3-PurposeOfUse'.%
