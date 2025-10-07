@@ -5,9 +5,6 @@ Description: "Example of Bundle resource to be returned for ITI-119 output. This
 Usage: #example
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* link
-  * relation = "self"
-  * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output.html"
 * entry[patient] 
   * resource = ex-patient
   * search
@@ -24,9 +21,6 @@ Description: "Example of Bundle resource to be returned for ITI-119 output. 2 Pa
 Usage: #example
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* link
-  * relation = "self"
-  * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output-multiple.html"
 * entry[patient] 
   * resource = ex-patient
   * search
@@ -50,9 +44,6 @@ Description: "Example of Bundle resource to be returned for ITI-119 output. No P
 Usage: #example
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* link
-  * relation = "self"
-  * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output-empty.html"
 
 
 Instance:   ex-match-output-error
@@ -62,9 +53,6 @@ Description: "Example of Bundle resource to be returned for ITI-119 output. No P
 Usage: #example
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* link
-  * relation = "self"
-  * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output-empty.html"
 * entry[operationOutcome]
   * resource = ex-match-failure
   * search.mode = #outcome
@@ -78,9 +66,6 @@ Description: "Example of Bundle resource to be returned for ITI-119 output. 1 pa
 Usage: #example
 
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
-* link
-  * relation = "self"
-  * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output-warning.html"
 * entry[patient] 
   * resource = ex-patient
   * search
