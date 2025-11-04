@@ -2,12 +2,12 @@
 
 ## Significant Changes
 
-### Revision 3.1.1
+### Revision 3.2.0
 
+- CP-ITI-1297 - Gender Identity
 - QA Fixes
   - Error on $match operation
 - CP-ITI-1214
-- CP-ITI-1297 - Gender Identity
 
 ### Revision 3.1.0
 
