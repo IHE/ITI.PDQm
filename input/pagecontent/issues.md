@@ -2,6 +2,13 @@
 
 ## Significant Changes
 
+### Revision 3.1.1
+
+- QA Fixes
+  - Error on $match operation
+- CP-ITI-1214
+- CP-ITI-1297 - Gender Identity
+
 ### Revision 3.1.0
 
 - Integration of CP-ITI-1314 fixing $match output Parameters profile

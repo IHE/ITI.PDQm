@@ -7,7 +7,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * link
   * relation = "self"
-  * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output.html"
+  * url = "http://example.com/fhir/Bundle-ex-match-output.html"
 * entry[patient] 
   * resource = ex-patient
   * search
@@ -26,7 +26,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * link
   * relation = "self"
-  * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output-multiple.html"
+  * url = "http://example.com/fhir/Bundle-ex-match-output-multiple.html"
 * entry[patient] 
   * resource = ex-patient
   * search
@@ -52,7 +52,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * link
   * relation = "self"
-  * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output-empty.html"
+  * url = "http://example.com/fhir/Bundle-ex-match-output-empty.html"
 
 
 Instance:   ex-match-output-error
@@ -64,7 +64,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * link
   * relation = "self"
-  * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output-empty.html"
+  * url = "http://example.com/fhir/Bundle-ex-match-output-empty.html"
 * entry[operationOutcome]
   * resource = ex-match-failure
   * search.mode = #outcome
@@ -80,7 +80,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * link
   * relation = "self"
-  * url = "http://profiles.ihe.net/IHE/ITI.PDQm/branches/match/Bundle-ex-match-output-warning.html"
+  * url = "http://example.com/fhir/Bundle-ex-match-output-warning.html"
 * entry[patient] 
   * resource = ex-patient
   * search

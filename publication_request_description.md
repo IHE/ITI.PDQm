@@ -1,3 +1,6 @@
-PDQm Version 3.1.0 for Trial Implementation
+PDQm Version 3.1.1 for Trial Implementation
 
-- Integration of CP-ITI-1314 fixing $match output Parameters profile
+- QA Fixes
+  - Error on $match operation
+- CP-ITI-1214
+- CP-ITI-1297 - Gender Identity

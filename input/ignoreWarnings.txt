@@ -8,3 +8,10 @@ No types could be determined from the search string, so the types can't be check
 
 # Draft resources are known and accepted
 MSG_DRAFT
+
+# understood pinning
+PIN_VERSION
+
+# warning inherited, not understood
+MSG_DEPENDS_ON_DEPRECATED
+

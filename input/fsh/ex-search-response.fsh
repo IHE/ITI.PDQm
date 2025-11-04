@@ -6,7 +6,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * type = #searchset
 * link[0].relation = "self"
-* link[0].url = "test.fhir.net/R4/fhir/Patient?family=Schmidt"
+* link[0].url = "test.example.com/R4/fhir/Patient?family=Schmidt"
 * total = 1
 * timestamp = 2023-09-25T15:42:00Z
 * entry[0].fullUrl = "http://example.org/Patient/ex-patient"

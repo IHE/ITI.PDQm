@@ -1,11 +1,11 @@
 {
     "package-id" : "ihe.iti.pdqm",
-    "version" : "3.1.0",
-    "path" : "https://profiles.ihe.net/ITI/PDQm/3.1.0",
+    "version" : "3.1.1",
+    "path" : "https://profiles.ihe.net/ITI/PDQm/3.1.1",
     "mode" : "milestone",
     "status" : "trial-use",
     "sequence" : "Publication",
-    "desc" : "PDQm with integrated CP-ITI-1314",
+    "desc" : "PDQm QA and Gender Identity",
     "descmd" : "@publication_request_description.md",
     "changes" : "issues.html",
     "first" : false
