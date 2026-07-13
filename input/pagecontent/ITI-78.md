@@ -114,7 +114,7 @@ The Patient Demographics Supplier SHALL respond to the query request as describe
 
 `HTTP 200` (OK) is returned as the HTTP status code.
 
-A Resource Bundle is returned representing the result set. The Patient Demographics Supplier populates the `total` property of the bundle with the total number of matching results. One `entry` is returned from the Patient Demographics Supplier for each Patient Resource found.
+A Resource Bundle is returned representing the result set. The Patient Demographics Supplier populates the `total` element of the bundle with the total number of matching results. One `entry` is returned from the Patient Demographics Supplier for each Patient Resource found.
 
 **Case 2**: The Patient Demographics Supplier finds at least one patient record matching the criteria sent in the search parameters. One or more patient identifier domains are requested via the mechanism specified in Section [3.78.4.1.2.4](#domainpop), and Patient Demographics Supplier recognizes all domains.
 
