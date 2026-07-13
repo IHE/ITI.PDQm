@@ -2,6 +2,11 @@
 
 ## Significant Changes
 
+### Revision 3.2.x
+
+- QA Fixes / clarification
+  - total element on the operation outcome of Patient$match #121
+
 ### Revision 3.2.0
 
 - CP-ITI-1297 - Gender Identity
